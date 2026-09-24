@@ -3,7 +3,7 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.7.15",
+  "version": "3.8.0",
   "published": false,
   "download_url": "",
   "sha256": "",
@@ -12,6 +12,7 @@
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Pacote oficial confirmado: KBL_Conciliador_Contabil_v3_7_15.zip."
+    "Atualização oficial do KBL Conciliador Contábil para v3.8.0.",
+    "Pacote validado com compilação dos módulos principais e teste gráfico de inicialização."
   ]
 }
