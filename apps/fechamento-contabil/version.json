@@ -1,9 +1,15 @@
 {
+  "schema_version": 2,
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
+  "channel": "stable",
   "version": "0.0.0",
   "published": false,
-  "asset": "",
+  "download_url": "",
   "sha256": "",
+  "file_name": "",
+  "published_at": null,
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
   "notes": []
 }
