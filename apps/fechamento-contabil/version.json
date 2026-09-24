@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
@@ -11,5 +11,11 @@
   "published_at": null,
   "min_updater_version": "1.0.0",
   "mandatory": false,
-  "notes": []
+  "notes": [],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/fechamento-contabil/2.6/KBL_Fechamento_Contabil_v2_6_Obrigacoes_Contabeis.zip",
+    "auth": "github-cli"
+  }
 }
