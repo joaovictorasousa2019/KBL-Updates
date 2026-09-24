@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
@@ -11,5 +11,11 @@
   "published_at": null,
   "min_updater_version": "1.0.0",
   "mandatory": false,
-  "notes": []
+  "notes": [],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/irpj-csll/4.0.0/KBL_Apuracao_IRPJ_CSLL_v4_0_0.zip",
+    "auth": "github-cli"
+  }
 }
