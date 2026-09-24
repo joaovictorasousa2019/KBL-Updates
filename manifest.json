@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "apps": [
+    {
+      "app_id": "comparativo-despesas",
+      "manifest": "apps/comparativo-despesas/version.json"
+    },
+    {
+      "app_id": "composicao-saldos",
+      "manifest": "apps/composicao-saldos/version.json"
+    },
+    {
+      "app_id": "irpj-csll",
+      "manifest": "apps/irpj-csll/version.json"
+    },
+    {
+      "app_id": "fechamento-contabil",
+      "manifest": "apps/fechamento-contabil/version.json"
+    }
+  ]
+}
