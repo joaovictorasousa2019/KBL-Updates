@@ -4,11 +4,11 @@
   "name": "KBL Balancete Inteligente",
   "channel": "stable",
   "version": "14.10",
-  "published": false,
+  "published": true,
   "download_url": "",
-  "sha256": "f226381d2503c06415e9ae5b845a7a3fc48df4febcf1d1d12b9cd4769895150a",
-  "file_name": "KBL_Balancete_Inteligente_v14_10_Runtime.zip",
-  "published_at": null,
+  "sha256": "8f5e2ddbfad3dd0186f4c42603f797df0866d853b03b75e4322ee12edc265795",
+  "file_name": "KBL_Balancete_Inteligente_v14_10_Confirmacao_Direta.zip",
+  "published_at": "2026-09-24T18:06:14.570244+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
@@ -18,7 +18,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/balancete-inteligente/14.10/KBL_Balancete_Inteligente_v14_10_Runtime.zip",
+    "path": "packages/balancete-inteligente/14.10/KBL_Balancete_Inteligente_v14_10_Confirmacao_Direta.zip",
     "auth": "github-cli"
   }
 }
