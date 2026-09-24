@@ -1,0 +1,15 @@
+{
+  "schema_version": 2,
+  "app_id": "conciliador-contabil",
+  "name": "KBL Conciliador Contábil",
+  "channel": "stable",
+  "version": "3.7.15",
+  "published": false,
+  "download_url": "",
+  "sha256": "",
+  "file_name": "",
+  "published_at": null,
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": []
+}
