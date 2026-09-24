@@ -35,6 +35,11 @@
       "app_id": "ecac",
       "name": "KBL eCAC",
       "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/ecac/version.json"
+    },
+    {
+      "app_id": "balancete-inteligente",
+      "name": "KBL Balancete Inteligente",
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/balancete-inteligente/version.json"
     }
   ],
   "package_repository": {
