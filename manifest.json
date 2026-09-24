@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "channel": "stable",
   "updater": {
     "minimum_version": "1.0.0",
@@ -36,5 +36,11 @@
       "name": "KBL eCAC",
       "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/ecac/version.json"
     }
-  ]
+  ],
+  "package_repository": {
+    "provider": "github",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "visibility": "private",
+    "auth": "github-cli"
+  }
 }
