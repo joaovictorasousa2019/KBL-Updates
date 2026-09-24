@@ -11,5 +11,7 @@
   "published_at": null,
   "min_updater_version": "1.0.0",
   "mandatory": false,
-  "notes": []
+  "notes": [
+    "Pacote oficial confirmado: KBL_Comparativo_Despesas_v3_9_21.zip."
+  ]
 }
