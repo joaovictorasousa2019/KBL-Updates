@@ -1,0 +1,24 @@
+{
+  "schema_version": 3,
+  "app_id": "balancete-inteligente",
+  "name": "KBL Balancete Inteligente",
+  "channel": "stable",
+  "version": "14.10",
+  "published": false,
+  "download_url": "",
+  "sha256": "f226381d2503c06415e9ae5b845a7a3fc48df4febcf1d1d12b9cd4769895150a",
+  "file_name": "KBL_Balancete_Inteligente_v14_10_Runtime.zip",
+  "published_at": null,
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "KBL Balancete Inteligente v14.10.",
+    "Pacote preparado para instalação e atualização pelo KBL Hub."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/balancete-inteligente/14.10/KBL_Balancete_Inteligente_v14_10_Runtime.zip",
+    "auth": "github-cli"
+  }
+}
