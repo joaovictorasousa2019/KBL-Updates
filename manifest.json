@@ -1,21 +1,35 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
+  "channel": "stable",
+  "updater": {
+    "minimum_version": "1.0.0",
+    "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/manifest.json"
+  },
   "apps": [
     {
       "app_id": "comparativo-despesas",
-      "manifest": "apps/comparativo-despesas/version.json"
+      "name": "KBL Comparativo de Despesas",
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/comparativo-despesas/version.json"
     },
     {
       "app_id": "composicao-saldos",
-      "manifest": "apps/composicao-saldos/version.json"
+      "name": "KBL Composição de Saldos",
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/composicao-saldos/version.json"
+    },
+    {
+      "app_id": "conciliador-contabil",
+      "name": "KBL Conciliador Contábil",
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/conciliador-contabil/version.json"
     },
     {
       "app_id": "irpj-csll",
-      "manifest": "apps/irpj-csll/version.json"
+      "name": "KBL IRPJ e CSLL",
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/irpj-csll/version.json"
     },
     {
       "app_id": "fechamento-contabil",
-      "manifest": "apps/fechamento-contabil/version.json"
+      "name": "KBL Fechamento Contábil",
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/fechamento-contabil/version.json"
     }
   ]
 }
