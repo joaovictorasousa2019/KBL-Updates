@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "app_id": "ecac",
   "name": "KBL eCAC",
   "channel": "stable",
@@ -14,5 +14,11 @@
   "notes": [
     "Corrigido erro de inicialização Tkinter: bad screen distance \"0 12\".",
     "A interface foi validada em teste gráfico de inicialização."
-  ]
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/ecac/1.0.1/KBL_eCAC_v1_0_1.zip",
+    "auth": "github-cli"
+  }
 }
