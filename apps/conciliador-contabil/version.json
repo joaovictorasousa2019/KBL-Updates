@@ -11,5 +11,7 @@
   "published_at": null,
   "min_updater_version": "1.0.0",
   "mandatory": false,
-  "notes": []
+  "notes": [
+    "Pacote oficial confirmado: KBL_Conciliador_Contabil_v3_7_15.zip."
+  ]
 }
