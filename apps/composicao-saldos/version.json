@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
@@ -11,5 +11,11 @@
   "published_at": null,
   "min_updater_version": "1.0.0",
   "mandatory": false,
-  "notes": []
+  "notes": [],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/composicao-saldos/57/KBL_ComposicaoPatrimonial_v57_BASE_INICIAL.zip",
+    "auth": "github-cli"
+  }
 }
