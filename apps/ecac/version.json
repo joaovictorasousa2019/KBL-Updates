@@ -3,7 +3,7 @@
   "app_id": "ecac",
   "name": "KBL eCAC",
   "channel": "stable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "published": false,
   "download_url": "",
   "sha256": "",
@@ -12,6 +12,7 @@
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Versão inicial confirmada pelo pacote KBL_eCAC_v1.zip."
+    "Corrigido erro de inicialização Tkinter: bad screen distance \"0 12\".",
+    "A interface foi validada em teste gráfico de inicialização."
   ]
 }
