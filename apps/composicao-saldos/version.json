@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
   "app_id": "composicao-saldos",
-  "name": "KBL Composição de Saldos",
+  "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "0.0.0",
+  "version": "57",
   "published": false,
   "download_url": "",
   "sha256": "",
