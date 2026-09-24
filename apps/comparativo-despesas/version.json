@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
@@ -13,5 +13,11 @@
   "mandatory": false,
   "notes": [
     "Pacote oficial confirmado: KBL_Comparativo_Despesas_v3_9_21.zip."
-  ]
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/comparativo-despesas/3.9.21/KBL_Comparativo_Despesas_v3_9_21.zip",
+    "auth": "github-cli"
+  }
 }
