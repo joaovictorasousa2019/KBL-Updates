@@ -3,12 +3,12 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.8.0",
+  "version": "3.9.0",
   "published": true,
   "download_url": "",
-  "sha256": "ae6285cbb0cc8913fb22dcf5f7e88e2c12fc4dabbb6b242afab3eac021aab015",
-  "file_name": "KBL_Conciliador_Contabil_v3_8_0.zip",
-  "published_at": "2026-09-24T04:57:28.560186+00:00",
+  "sha256": "9a88acff12bebaccfbb5a8099c5fc98d46ee3804284ddfcf2af7cb7bf5a2a015",
+  "file_name": "KBL_Conciliador_Contabil_v3_9_0.zip",
+  "published_at": "2026-09-24T12:50:37.526453+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
@@ -18,7 +18,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.8.0/KBL_Conciliador_Contabil_v3_8_0.zip",
+    "path": "packages/conciliador-contabil/3.9.0/KBL_Conciliador_Contabil_v3_9_0.zip",
     "auth": "github-cli"
   }
 }
