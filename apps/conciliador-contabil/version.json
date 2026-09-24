@@ -1,5 +1,5 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
@@ -14,5 +14,11 @@
   "notes": [
     "Atualização oficial do KBL Conciliador Contábil para v3.8.0.",
     "Pacote validado com compilação dos módulos principais e teste gráfico de inicialização."
-  ]
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/conciliador-contabil/3.8.0/KBL_Conciliador_Contabil_v3_8_0.zip",
+    "auth": "github-cli"
+  }
 }
