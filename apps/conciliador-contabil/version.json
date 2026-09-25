@@ -3,22 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.18.2",
+  "version": "3.18.3",
   "published": true,
   "download_url": "",
-  "sha256": "6e41725cee357f0e6b9306e82e75c80f1d5ed9bc47ad26a344de374d9a52267b",
-  "file_name": "KBL_Conciliador_Contabil_v3_18_2.zip",
-  "published_at": "2026-09-25T17:07:29.785003+00:00",
+  "sha256": "707db92289d91ea262fdbe0f84e6be6635447511c72c1a948e9fa2676586193d",
+  "file_name": "KBL_Conciliador_Contabil_v3_18_3.zip",
+  "published_at": "2026-09-25T18:25:43.755Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Atualização oficial do KBL Conciliador Contábil para v3.8.0.",
-    "Pacote validado com compilação dos módulos principais e teste gráfico de inicialização."
+    "Corrige múltiplas instâncias do Conciliador e traz a instância existente para frente.",
+    "Cadastro de empresas passa a usar gravação JSON atômica e merge com o estado mais recente.",
+    "Gerenciador de empresas não abre duplicado e bloqueia abertura concorrente da mesma sessão.",
+    "Processos auxiliares do Windows são executados sem janela de CMD."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.18.2/KBL_Conciliador_Contabil_v3_18_2.zip",
+    "path": "packages/conciliador-contabil/3.18.3/KBL_Conciliador_Contabil_v3_18_3.zip",
     "auth": "github-cli"
   }
 }
