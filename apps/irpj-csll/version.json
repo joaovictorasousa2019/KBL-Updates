@@ -3,19 +3,19 @@
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
-  "version": "4.0.4",
+  "version": "4.0.5",
   "published": true,
   "download_url": "",
-  "sha256": "c6cf8091508fe84d84aa8ebced4f5025e229cb54c8cff47f96c282fa3a8f4a97",
-  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_4.zip",
-  "published_at": "2026-09-28T14:06:45.366472+00:00",
+  "sha256": "c766b304cd1fe5d5e85364efb0c161ca59a4387013e43103ef0082d43cbc6c08",
+  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_5.zip",
+  "published_at": "2026-09-28T14:14:34.425353+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/irpj-csll/4.0.4/KBL_Apuracao_IRPJ_CSLL_v4_0_4.zip",
+    "path": "packages/irpj-csll/4.0.5/KBL_Apuracao_IRPJ_CSLL_v4_0_5.zip",
     "auth": "github-cli"
   }
 }
