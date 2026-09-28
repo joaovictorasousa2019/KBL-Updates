@@ -1,0 +1,25 @@
+{
+  "schema_version": 3,
+  "app_id": "auditor-nfse",
+  "name": "KBL Auditor de NFS-e",
+  "channel": "stable",
+  "version": "2.0.0",
+  "published": true,
+  "download_url": "",
+  "sha256": "4aa592576ad9268e752e9767aef3e6f7bc7f73d71bfd89081d3ea33e365bdb65",
+  "file_name": "KBL_Auditor_NFSe_v2_0_0_Hub.zip",
+  "published_at": "2026-09-28T17:02:08.569Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Auditoria de classificação contábil de NFS-e.",
+    "Cruzamento de XML, razão e plano de contas.",
+    "Tema automático, claro e escuro."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/auditor-nfse/2.0.0/KBL_Auditor_NFSe_v2_0_0_Hub.zip",
+    "auth": "github-cli"
+  }
+}
