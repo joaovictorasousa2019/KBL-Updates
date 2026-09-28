@@ -3,12 +3,12 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.21",
+  "version": "3.9.24",
   "published": true,
   "download_url": "",
-  "sha256": "739563ea409615b8e276b57688786d780f0802dab541e9e279c04f21ef106307",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_21.zip",
-  "published_at": "2026-09-28T17:08:21.420123+00:00",
+  "sha256": "25117327484924cad36b7fed3eb9e6e9b3e03844a8ed2b8afc7e8c7804c604ea",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_24.zip",
+  "published_at": "2026-09-28T20:12:47.122726+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
@@ -17,7 +17,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.21/KBL_Comparativo_Despesas_v3_9_21.zip",
+    "path": "packages/comparativo-despesas/3.9.24/KBL_Comparativo_Despesas_v3_9_24.zip",
     "auth": "github-cli"
   }
 }
