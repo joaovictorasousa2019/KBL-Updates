@@ -3,12 +3,12 @@
   "app_id": "auditor-nfse",
   "name": "KBL Auditor de NFS-e",
   "channel": "stable",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "published": true,
   "download_url": "",
-  "sha256": "4aa592576ad9268e752e9767aef3e6f7bc7f73d71bfd89081d3ea33e365bdb65",
-  "file_name": "KBL_Auditor_NFSe_v2_0_0_Hub.zip",
-  "published_at": "2026-09-28T17:02:08.569Z",
+  "sha256": "19f564d43dc55bb1308fe0c218d9edd7d420f0f7c8eefc0b27dd492cc0ac40d3",
+  "file_name": "KBL_Auditor_NFSe_v2.2.0_Hub.zip",
+  "published_at": "2026-09-28T17:20:32.462588+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
@@ -19,7 +19,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/auditor-nfse/2.0.0/KBL_Auditor_NFSe_v2_0_0_Hub.zip",
+    "path": "packages/auditor-nfse/2.2.0/KBL_Auditor_NFSe_v2.2.0_Hub.zip",
     "auth": "github-cli"
   }
 }
