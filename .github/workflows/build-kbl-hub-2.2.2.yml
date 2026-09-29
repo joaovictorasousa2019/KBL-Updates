@@ -27,9 +27,12 @@ jobs:
           python-version: '3.12'
           architecture: 'x64'
 
-      - name: Restore base sources
+      - name: Validate committed Hub sources
         shell: pwsh
-        run: python build/hub/2.2.0/bootstrap.py
+        run: |
+          if (-not (Test-Path "hub-installer/kbl_hub.py")) { throw "kbl_hub.py não encontrado." }
+          if (-not (Test-Path "hub-installer/KBL_Hub.iss")) { throw "KBL_Hub.iss não encontrado." }
+          if (-not (Test-Path "hub-installer/bundled_catalog.json")) { throw "bundled_catalog.json não encontrado." }
 
       - name: Apply v2.2.2 UI patch
         shell: pwsh
