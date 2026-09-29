@@ -228,11 +228,18 @@ jobs:
           git diff --cached --quiet
           if($LASTEXITCODE -ne 0){
             git commit -m 'Publica KBL Hub v2.2.7'
+            # O build altera arquivos de trabalho (fonte patchada, ícone, ferramentas).
+            # Limpa somente o que não pertence ao commit antes do rebase.
+            git restore --worktree .
+            git clean -fd -e hub-installer/output/
             git fetch origin main
             git rebase origin/main
             if($LASTEXITCODE -ne 0){ throw 'Falha ao sincronizar com o catálogo remoto antes da publicação.' }
             git push origin HEAD:main
             if($LASTEXITCODE -ne 0){ throw 'Falha ao publicar o instalador no repositório.' }
+            # Garante o caminho usado pelo upload-artifact mesmo se o clean removeu auxiliares.
+            New-Item -ItemType Directory -Force -Path "hub-installer/output" | Out-Null
+            Copy-Item "hub-releases/2.2.7/KBL_Hub_Setup_v2.2.7.exe" "hub-installer/output/KBL_Hub_Setup_v2.2.7.exe" -Force
           } else {
             Write-Host 'No generated changes.'
           }
