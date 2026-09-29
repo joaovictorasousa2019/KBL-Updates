@@ -228,7 +228,11 @@ jobs:
           git diff --cached --quiet
           if($LASTEXITCODE -ne 0){
             git commit -m 'Publica KBL Hub v2.2.7'
-            git push
+            git fetch origin main
+            git rebase origin/main
+            if($LASTEXITCODE -ne 0){ throw 'Falha ao sincronizar com o catálogo remoto antes da publicação.' }
+            git push origin HEAD:main
+            if($LASTEXITCODE -ne 0){ throw 'Falha ao publicar o instalador no repositório.' }
           } else {
             Write-Host 'No generated changes.'
           }
