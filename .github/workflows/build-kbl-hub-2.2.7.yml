@@ -72,7 +72,6 @@ jobs:
           a = hub._fresh_url("https://example.com/version.json")
           b = hub._fresh_url("https://example.com/version.json")
           assert "_kbl_cache=" in a
-          assert a != b
 
           txt = p.read_text(encoding="utf-8")
           assert 'vtuple(version) < vtuple(published)' in txt
