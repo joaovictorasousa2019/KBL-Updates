@@ -3,12 +3,12 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "published": true,
   "download_url": "",
-  "sha256": "07b103c20122288d57f06d18423a060f85c9f685c2a408be0245a1389fc14473",
-  "file_name": "KBL_COLETOR_v2_2_1.zip",
-  "published_at": "2026-09-29T17:44:11.983Z",
+  "sha256": "006c66f466a5bdd6e36fe890dda49d88da493d85e6f1201c7c077bcddf1fc9cb",
+  "file_name": "KBL_COLETOR_v2_2_2.zip",
+  "published_at": "2026-09-29T17:52:35.823Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
@@ -23,13 +23,13 @@
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "entry": "KBL_COLETOR.pyw",
     "category": "Coleta e fechamento",
     "description": "Coleta centralizada por empresa e competência para Fiscal, Folha, Patrimônio e Contabilidade.",
     "status_file": "%APPDATA%\\KBLAccounting\\Shared\\coletor\\runtime_status.json",
     "shared_root": "%APPDATA%\\KBLAccounting\\Shared\\coletor",
-    "singleton": true,
+    "singleton": false,
     "supports_close": true,
     "supports_health": true,
     "supports_background": true,
@@ -40,7 +40,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.2.1/KBL_COLETOR_v2_2_1.zip",
+    "path": "packages/kbl-coletor/2.2.2/KBL_COLETOR_v2_2_2.zip",
     "auth": "github-cli"
   }
 }
