@@ -125,13 +125,13 @@ helper = """def published_version_from_repo(app_id):
 t = t.replace(anchor2, helper + anchor2, 1)
 
 # Bloqueio visual antes da confirmação.
-old_choose = """        current = self.remote_apps.get(app_id, {}).get("version", "—")
+old_choose = r"""        current = self.remote_apps.get(app_id, {}).get("version", "—")
         msg = (f"Aplicativo: {name}\n"
                f"Versão do pacote: {version}\n"
                f"Versão publicada: {current}\n\n"
                f"Publicar no KBL-Apps privado e ativar no KBL-Updates?")
 """
-new_choose = """        current = self.remote_apps.get(app_id, {}).get("version", "—")
+new_choose = r"""        current = self.remote_apps.get(app_id, {}).get("version", "—")
         if current not in ("", "—", None) and vtuple(version) <= vtuple(current):
             return messagebox.showerror(
                 "Publicação bloqueada",
