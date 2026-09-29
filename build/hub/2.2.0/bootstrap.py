@@ -12,3 +12,5 @@ PAYLOAD={
 for name,data in PAYLOAD.items():
     (TARGET/name).write_bytes(zlib.decompress(base64.b64decode(data)))
 print("KBL Hub 2.2.0 sources restored")
+
+# build-trigger
