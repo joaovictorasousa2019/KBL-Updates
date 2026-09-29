@@ -1,0 +1,178 @@
+name: Build KBL Hub 2.2.3
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'build/hub/2.2.3/**'
+      - '.github/workflows/build-kbl-hub-2.2.3.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          architecture: 'x64'
+
+      - name: Validate committed Hub sources
+        shell: pwsh
+        run: |
+          if (-not (Test-Path "hub-installer/kbl_hub.py")) { throw "kbl_hub.py não encontrado." }
+          if (-not (Test-Path "hub-installer/KBL_Hub.iss")) { throw "KBL_Hub.iss não encontrado." }
+          if (-not (Test-Path "hub-installer/bundled_catalog.json")) { throw "bundled_catalog.json não encontrado." }
+
+      - name: Apply current Hub UI
+        shell: pwsh
+        run: python build/hub/2.2.2/patch.py
+
+      - name: Set v2.2.3
+        shell: pwsh
+        run: python build/hub/2.2.3/version_patch.py
+
+      - name: Install build tools
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyinstaller pillow
+
+      - name: Generate KBL icon
+        shell: pwsh
+        run: python hub-installer/generate_icon.py
+
+      - name: Build KBL Hub executable
+        shell: pwsh
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed `
+            --name "KBL Hub" `
+            --icon "hub-installer/kbl_hub.ico" `
+            "hub-installer/kbl_hub.py"
+
+      - name: Download Python runtime installer
+        shell: pwsh
+        run: |
+          Invoke-WebRequest `
+            -Uri "https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe" `
+            -OutFile "hub-installer/python-installer.exe"
+
+      - name: Download portable GitHub CLI
+        shell: pwsh
+        run: |
+          $release = Invoke-RestMethod -Headers @{"User-Agent"="KBL-Hub-Build"} -Uri "https://api.github.com/repos/cli/cli/releases/latest"
+          $asset = $release.assets | Where-Object { $_.name -match 'windows_amd64\.zip$' } | Select-Object -First 1
+          if (-not $asset) { throw "GitHub CLI Windows AMD64 ZIP não encontrado." }
+          Invoke-WebRequest -Uri $asset.browser_download_url -OutFile "hub-installer/gh.zip"
+          Expand-Archive "hub-installer/gh.zip" -DestinationPath "hub-installer/gh-unpacked" -Force
+          $gh = Get-ChildItem "hub-installer/gh-unpacked" -Recurse -Filter gh.exe | Select-Object -First 1
+          if (-not $gh) { throw "gh.exe não encontrado no pacote." }
+          Copy-Item $gh.FullName "hub-installer/gh.exe" -Force
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: |
+          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) { choco install innosetup -y --no-progress }
+          if (-not (Test-Path $iscc)) { throw "ISCC.exe não encontrado." }
+
+      - name: Build Windows installer
+        shell: pwsh
+        run: |
+          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
+          Push-Location hub-installer
+          & $iscc `
+            "/DMyAppVersion=2.2.3" `
+            "/DHubExe=$PWD\..\dist\KBL Hub.exe" `
+            "/DPythonInstaller=$PWD\python-installer.exe" `
+            "/DGhExe=$PWD\gh.exe" `
+            "KBL_Hub.iss"
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Pop-Location
+
+      - name: Smoke-test fresh install
+        shell: pwsh
+        run: |
+          $setup = "$PWD\hub-installer\output\KBL_Hub_Setup_v2.2.3.exe"
+          if (-not (Test-Path $setup)) { throw "Instalador não foi gerado." }
+          $testDir = "$env:RUNNER_TEMP\KBLHubFresh"
+          $proc = Start-Process -FilePath $setup -ArgumentList "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /DIR=`"$testDir`"" -PassThru -Wait
+          if ($proc.ExitCode -ne 0) { throw "Instalação limpa falhou. ExitCode=$($proc.ExitCode)" }
+          $hub = Join-Path $testDir "KBL Hub.exe"
+          if (-not (Test-Path $hub)) { throw "KBL Hub.exe não foi instalado." }
+          $p = Start-Process -FilePath $hub -PassThru
+          Start-Sleep -Seconds 4
+          if ($p.HasExited) { throw "Hub encerrou no teste de instalação limpa." }
+          Stop-Process -Id $p.Id -Force
+
+      - name: Smoke-test upgrade with hidden Hub running
+        shell: pwsh
+        run: |
+          $oldSetup = "$PWD\hub-releases\2.2.2\KBL_Hub_Setup_v2.2.2.exe"
+          $newSetup = "$PWD\hub-installer\output\KBL_Hub_Setup_v2.2.3.exe"
+          if (-not (Test-Path $oldSetup)) { throw "Instalador 2.2.2 não encontrado para teste de upgrade." }
+
+          $testDir = "$env:RUNNER_TEMP\KBLHubUpgrade"
+          $oldInstall = Start-Process -FilePath $oldSetup -ArgumentList "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /DIR=`"$testDir`"" -PassThru -Wait
+          if ($oldInstall.ExitCode -ne 0) { throw "Falha ao preparar v2.2.2. ExitCode=$($oldInstall.ExitCode)" }
+
+          $hub = Join-Path $testDir "KBL Hub.exe"
+          $oldHub = Start-Process -FilePath $hub -PassThru
+          Start-Sleep -Seconds 4
+          if ($oldHub.HasExited) { throw "v2.2.2 não permaneceu aberta para simular processo em segundo plano." }
+
+          $upgrade = Start-Process -FilePath $newSetup -ArgumentList "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /DIR=`"$testDir`"" -PassThru -Wait
+          if ($upgrade.ExitCode -ne 0) { throw "Upgrade com Hub em execução falhou. ExitCode=$($upgrade.ExitCode)" }
+
+          if (-not (Test-Path $hub)) { throw "Hub desapareceu após upgrade." }
+          $newHub = Start-Process -FilePath $hub -PassThru
+          Start-Sleep -Seconds 4
+          if ($newHub.HasExited) { throw "v2.2.3 não abriu após upgrade." }
+          Stop-Process -Id $newHub.Id -Force
+
+      - name: Publish installer in repository
+        shell: pwsh
+        run: |
+          $src = "hub-installer/output/KBL_Hub_Setup_v2.2.3.exe"
+          $dir = "hub-releases/2.2.3"
+          New-Item -ItemType Directory -Force -Path $dir | Out-Null
+          $out = "$dir/KBL_Hub_Setup_v2.2.3.exe"
+          Copy-Item $src $out -Force
+          $sha = (Get-FileHash $out -Algorithm SHA256).Hash.ToLower()
+          $obj = [ordered]@{
+            version='2.2.3'; sha256=$sha; file_name='KBL_Hub_Setup_v2.2.3.exe';
+            path='hub-releases/2.2.3/KBL_Hub_Setup_v2.2.3.exe';
+            built_at=(Get-Date).ToUniversalTime().ToString('o')
+          }
+          $obj | ConvertTo-Json | Set-Content -Encoding UTF8 build/hub/2.2.3/version-output.json
+
+      - name: Commit generated installer
+        shell: pwsh
+        run: |
+          git config user.name 'KBL Build Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add hub-releases/2.2.3/KBL_Hub_Setup_v2.2.3.exe build/hub/2.2.3/version-output.json
+          git diff --cached --quiet
+          if($LASTEXITCODE -ne 0){
+            git commit -m 'Publica KBL Hub v2.2.3'
+            git push
+          } else {
+            Write-Host 'No generated changes.'
+          }
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: KBL-Hub-v2.2.3
+          path: hub-installer/output/KBL_Hub_Setup_v2.2.3.exe
+          if-no-files-found: error
+          retention-days: 30
