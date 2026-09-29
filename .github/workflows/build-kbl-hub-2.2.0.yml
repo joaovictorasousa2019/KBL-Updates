@@ -1,0 +1,115 @@
+name: Build KBL Hub 2.2.0
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'build/hub/2.2.0/**'
+      - '.github/workflows/build-kbl-hub-2.2.0.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Restore source
+        shell: pwsh
+        run: python build/hub/2.2.0/bootstrap.py
+
+      - name: Install build dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyinstaller pillow
+
+      - name: Generate icon
+        shell: pwsh
+        run: python hub-installer/generate_icon.py
+
+      - name: Build Hub executable
+        shell: pwsh
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed `
+            --name KBL_Hub `
+            --icon hub-installer/kbl_hub.ico `
+            hub-installer/kbl_hub.py
+          New-Item -ItemType Directory -Force -Path hub-installer/dist | Out-Null
+          Copy-Item dist/KBL_Hub.exe hub-installer/dist/KBL_Hub.exe -Force
+
+      - name: Download Python runtime installer
+        shell: pwsh
+        run: |
+          $url='https://www.python.org/ftp/python/3.12.10/python-3.12.10-amd64.exe'
+          Invoke-WebRequest -Uri $url -OutFile hub-installer/python-3.12.10-amd64.exe
+
+      - name: Download GitHub CLI portable
+        shell: pwsh
+        run: |
+          $ver='2.78.0'
+          $zip='hub-installer/gh.zip'
+          $url='https://github.com/cli/cli/releases/download/v' + $ver + '/gh_' + $ver + '_windows_amd64.zip'
+          Invoke-WebRequest -Uri $url -OutFile $zip
+          Expand-Archive $zip -DestinationPath hub-installer/gh-portable -Force
+          $gh=Get-ChildItem hub-installer/gh-portable -Recurse -Filter gh.exe | Select-Object -First 1
+          if(-not $gh){ throw 'gh.exe não encontrado' }
+          Copy-Item $gh.FullName hub-installer/gh.exe -Force
+
+      - name: Install Inno Setup
+        shell: pwsh
+        run: choco install innosetup --no-progress -y
+
+      - name: Build installer
+        shell: pwsh
+        run: |
+          $iscc = (Get-Command iscc.exe -ErrorAction SilentlyContinue).Source
+          if(-not $iscc){ $iscc='C:\Program Files (x86)\Inno Setup 6\ISCC.exe' }
+          & $iscc /DMyAppVersion=2.2.0 hub-installer/KBL_Hub.iss
+          if($LASTEXITCODE -ne 0){ exit $LASTEXITCODE }
+
+      - name: Publish installer in repository
+        shell: pwsh
+        run: |
+          $src = Get-ChildItem hub-installer -Recurse -Filter 'KBL_Hub_Setup*.exe' | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+          if(-not $src){ throw 'Instalador não encontrado' }
+          $dir='hub-releases/2.2.0'
+          New-Item -ItemType Directory -Force -Path $dir | Out-Null
+          $out="$dir/KBL_Hub_Setup_v2.2.0.exe"
+          Copy-Item $src.FullName $out -Force
+          $sha=(Get-FileHash $out -Algorithm SHA256).Hash.ToLower()
+          $obj=[ordered]@{
+            version='2.2.0'; sha256=$sha; file_name='KBL_Hub_Setup_v2.2.0.exe';
+            path='hub-releases/2.2.0/KBL_Hub_Setup_v2.2.0.exe';
+            built_at=(Get-Date).ToUniversalTime().ToString('o')
+          }
+          New-Item -ItemType Directory -Force -Path build/hub/2.2.0 | Out-Null
+          $obj | ConvertTo-Json | Set-Content -Encoding UTF8 build/hub/2.2.0/version-output.json
+
+      - name: Commit generated installer
+        shell: pwsh
+        run: |
+          git config user.name 'KBL Build Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add hub-releases/2.2.0/KBL_Hub_Setup_v2.2.0.exe build/hub/2.2.0/version-output.json
+          git diff --cached --quiet
+          if($LASTEXITCODE -ne 0){
+            git commit -m 'Publica KBL Hub v2.2.0'
+            git push
+          } else {
+            Write-Host 'No generated changes.'
+          }
+
+      - name: Upload installer artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: KBL-Hub-v2.2.0
+          path: hub-releases/2.2.0/KBL_Hub_Setup_v2.2.0.exe
