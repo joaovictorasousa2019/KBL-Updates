@@ -1,6 +1,6 @@
 #define MyAppName "KBL Hub"
 #ifndef MyAppVersion
-  #define MyAppVersion "2.2.0"
+  #define MyAppVersion "2.2.3"
 #endif
 #ifndef HubExe
   #define HubExe "dist\\KBL Hub.exe"
@@ -29,7 +29,7 @@ SetupIconFile=kbl_hub.ico
 UninstallDisplayIcon={app}\KBL Hub.exe
 OutputDir=output
 OutputBaseFilename=KBL_Hub_Setup_v{#MyAppVersion}
-CloseApplications=yes
+CloseApplications=no
 RestartApplications=no
 DisableProgramGroupPage=yes
 DisableReadyPage=no
@@ -66,6 +66,32 @@ Type: filesandordirs; Name: "{app}\tools"
 function PythonRuntimeExists(): Boolean;
 begin
   Result := FileExists(ExpandConstant('{localappdata}\KBL\Runtime\Python312\python.exe'));
+end;
+
+procedure StopKBLHubProcesses();
+var
+  ResultCode: Integer;
+begin
+  { O Hub pode continuar em segundo plano/bandeja mesmo sem janela visível.
+    O instalador encerra somente processos que podem bloquear os próprios
+    arquivos do Hub; os módulos instalados não são encerrados. }
+  Exec(ExpandConstant('{cmd}'),
+       '/C taskkill /F /T /IM "KBL Hub.exe" >nul 2>&1',
+       '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+  Exec(ExpandConstant('{cmd}'),
+       '/C taskkill /F /T /IM "KBL_Hub.exe" >nul 2>&1',
+       '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+  Exec(ExpandConstant('{cmd}'),
+       '/C taskkill /F /T /IM "gh.exe" >nul 2>&1',
+       '', SW_HIDE, ewWaitUntilTerminated, ResultCode);
+  Sleep(900);
+end;
+
+function PrepareToInstall(var NeedsRestart: Boolean): String;
+begin
+  StopKBLHubProcesses();
+  NeedsRestart := False;
+  Result := '';
 end;
 
 function InitializeSetup(): Boolean;
