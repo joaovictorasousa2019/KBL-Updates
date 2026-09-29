@@ -997,7 +997,8 @@ class Hub(tk.Tk):
             elif run_status:
                 status = run_status
             else:
-                status = "Atualizado" if cand else "Instalado"\n            self.tree.insert("", "end", iid=app_id, values=(name, local, avail, source, status))
+                status = "Atualizado" if cand else "Instalado"
+            self.tree.insert("", "end", iid=app_id, values=(name, local, avail, source, status))
 
         if keep and self.tree.exists(keep):
             self.tree.selection_set(keep)
