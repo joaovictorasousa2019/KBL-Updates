@@ -1,0 +1,38 @@
+{
+  "ecac": {
+    "name": "KBL eCAC",
+    "version": "1.0.1",
+    "file_name": "KBL_eCAC_v1_0_1.zip",
+    "sha256": "a0a8ebdc3fd7ae4e38a8513f54549c6a177100290bce7507023dbea128c690d7"
+  },
+  "composicao-saldos": {
+    "name": "KBL Composição Patrimonial",
+    "version": "57",
+    "file_name": "KBL_ComposicaoPatrimonial_v57_BASE_INICIAL.zip",
+    "sha256": "3ea46746cd2272a8b4fb5436bce806358ee30ec98e8d27e63b51de5c90f1a2bf"
+  },
+  "fechamento-contabil": {
+    "name": "KBL Fechamento Contábil",
+    "version": "2.6",
+    "file_name": "KBL_Fechamento_Contabil_v2_6_Obrigacoes_Contabeis.zip",
+    "sha256": "75fcdb380269a63ce40a0740365fc971bea21d9309a54e4f4e682dd0e54496b2"
+  },
+  "irpj-csll": {
+    "name": "KBL IRPJ e CSLL",
+    "version": "4.0.0",
+    "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_0.zip",
+    "sha256": "e6e94eb3b0c20b61f0810fc271fc444dcb2e5259d606735a748df79137039be1"
+  },
+  "comparativo-despesas": {
+    "name": "KBL Comparativo de Despesas",
+    "version": "3.9.21",
+    "file_name": "KBL_Comparativo_Despesas_v3_9_21.zip",
+    "sha256": "fa3dfb98c4769e33131c3654ade94a334e49bdc98b4a7ff9305991056225a3a6"
+  },
+  "conciliador-contabil": {
+    "name": "KBL Conciliador Contábil",
+    "version": "3.8.0",
+    "file_name": "KBL_Conciliador_Contabil_v3_8_0.zip",
+    "sha256": "ae6285cbb0cc8913fb22dcf5f7e88e2c12fc4dabbb6b242afab3eac021aab015"
+  }
+}
