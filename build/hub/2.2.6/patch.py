@@ -120,9 +120,9 @@ def runtime_pid_matches_app(app_id, pid, status=None):
     cmdline = _process_command_line(pid)
     if not cmdline:
         return False
-    norm = cmdline.casefold().replace("/", "\\")
+    norm = cmdline.casefold().replace("/", "\\\\")
 
-    folder = str(app_dir(app_id)).casefold().replace("/", "\\")
+    folder = str(app_dir(app_id)).casefold().replace("/", "\\\\")
     if folder and folder in norm:
         return True
 
