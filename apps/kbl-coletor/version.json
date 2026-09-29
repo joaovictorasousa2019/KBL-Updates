@@ -3,12 +3,12 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "published": true,
   "download_url": "",
-  "sha256": "0dd05fa9a8c95d5733cbb354c2cd7958801fcd33abaa2706228bb52e50558790",
-  "file_name": "KBL_COLETOR_v2_1_1.zip",
-  "published_at": "2026-09-29T16:24:00+00:00",
+  "sha256": "888969657918a39602e526455934cda4312126431e62486ebb738d8538d86325",
+  "file_name": "KBL_COLETOR_v2_2_0.zip",
+  "published_at": "2026-09-29T17:07:55.325056+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
@@ -23,21 +23,22 @@
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.1.1",
+    "version": "2.2.0",
     "entry": "KBL_COLETOR.pyw",
-    "native_entry": "INICIAR_KBL_COLETOR.vbs",
     "category": "Coleta e fechamento",
-    "description": "Coleta centralizada de Fiscal, Folha, Patrimônio e Contabilidade.",
-    "icon": "assets/KBL_COLETOR.ico",
-    "singleton": true,
+    "description": "Coleta centralizada por empresa e competência para Fiscal, Folha, Patrimônio e Contabilidade.",
     "status_file": "%APPDATA%\\KBLAccounting\\Shared\\coletor\\runtime_status.json",
     "shared_root": "%APPDATA%\\KBLAccounting\\Shared\\coletor",
-    "update_channel": "stable"
+    "singleton": true,
+    "supports_close": true,
+    "supports_health": true,
+    "supports_background": true,
+    "slogan": "Transformando decisões em legado."
   },
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.1.1/KBL_COLETOR_v2_1_1.zip",
+    "path": "packages/kbl-coletor/2.2.0/KBL_COLETOR_v2_2_0.zip",
     "auth": "github-cli"
   }
 }
