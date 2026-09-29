@@ -3,25 +3,25 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "published": true,
   "download_url": "",
-  "sha256": "07d99db1741a7c35b911b801a5fa5631b412dd6877e4b8479251c84d5cf3de79",
-  "file_name": "KBL_COLETOR_v2_3_0.zip",
-  "published_at": "2026-09-29T18:06:53.334Z",
+  "sha256": "e3beee457811c36525e0202fbd29e231d0472fa589227c833f2059f4e90c3ae2",
+  "file_name": "KBL_COLETOR_v2_3_1.zip",
+  "published_at": "2026-09-29T18:27:06.482Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Versão standalone: não depende do runtime Python do Hub para abrir.",
-    "Mantém cadastro por CNPJ, código Domínio e razão social automática.",
-    "Abre de forma independente mesmo com outros aplicativos KBL em execução."
+    "Versão onedir: executável e dependências próprias, sem depender do runtime Python do Hub.",
+    "Inicialização resiliente mesmo com dados locais antigos, corrompidos ou temporariamente bloqueados.",
+    "Validado sozinho, com estado legado problemático e com o KBL Comparativo de Despesas aberto."
   ],
   "hub": {
     "schema_version": 2,
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.3.0",
+    "version": "2.3.1",
     "entry": "KBL_COLETOR.exe",
     "category": "Coleta e fechamento",
     "description": "Coleta centralizada por empresa e competência para Fiscal, Folha, Patrimônio e Contabilidade.",
@@ -38,7 +38,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.3.0/KBL_COLETOR_v2_3_0.zip",
+    "path": "packages/kbl-coletor/2.3.1/KBL_COLETOR_v2_3_1.zip",
     "auth": "github-cli"
   }
 }
