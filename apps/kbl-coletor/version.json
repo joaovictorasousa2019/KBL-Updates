@@ -3,24 +3,42 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.0.6",
+  "version": "2.1.0",
   "published": true,
   "download_url": "",
-  "sha256": "7fbb43fec1eebf326e4d4a487a8264fe85f8de7eb029b1d9000265dacc17c930",
-  "file_name": "KBL_COLETOR_v2_0_6_Hub.zip",
-  "published_at": "2026-09-29T01:58:24.302Z",
+  "sha256": "8c0ea78717f9a602f6100bab023bb0818c2914918a7cbde8a66088132ecaf525",
+  "file_name": "KBL_COLETOR_v2_1_0_Hub.zip",
+  "published_at": "2026-09-29T13:17:19.544Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Coleta centralizada de Fiscal, Folha, Patrimônio e Contabilidade.",
-    "Execução via Windows PowerShell nativo, sem CMD visível.",
-    "Tema automático, claro e escuro com layout responsivo.",
-    "Launcher dedicado do Hub acompanha o processo PowerShell para controle correto de Abrir/Ocultar/Fechar."
+    "Central de coleta Fiscal, Folha, Patrimônio e Contabilidade.",
+    "Central da competência, perfis por empresa, coleta de pendências e fila multiempresa.",
+    "Teste de configuração, simulação, pacote de diagnóstico, favoritos e pesquisa de relatórios.",
+    "Pausa/continuação de fila, agendamento diário e integração de status com o KBL Hub.",
+    "Instância única, auditoria de ações, eventos de integração e manifesto compartilhado por competência."
   ],
+  "hub": {
+    "schema_version": 1,
+    "app_id": "kbl-coletor",
+    "name": "KBL COLETOR",
+    "version": "2.1.0",
+    "entry": "INICIAR_KBL_COLETOR.vbs",
+    "category": "Coleta e fechamento",
+    "description": "Coleta centralizada de Fiscal, Folha, Patrimônio e Contabilidade no Domínio.",
+    "window_title": "KBL COLETOR",
+    "status_file": "%APPDATA%\\KBLAccounting\\Hub\\status\\kbl-coletor.json",
+    "shared_root": "%APPDATA%\\KBLAccounting\\Shared\\coletor",
+    "single_instance": true,
+    "supports_close": true,
+    "supports_health": true,
+    "supports_background": true,
+    "slogan": "Transformando decisões em legado."
+  },
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.0.6/KBL_COLETOR_v2_0_6_Hub.zip",
+    "path": "packages/kbl-coletor/2.1.0/KBL_COLETOR_v2_1_0_Hub.zip",
     "auth": "github-cli"
   }
 }
