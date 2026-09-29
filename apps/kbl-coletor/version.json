@@ -1,0 +1,26 @@
+{
+  "schema_version": 3,
+  "app_id": "kbl-coletor",
+  "name": "KBL COLETOR",
+  "channel": "stable",
+  "version": "2.0.6",
+  "published": true,
+  "download_url": "",
+  "sha256": "33e95baeb869de2c4dc9e8b04b667768b383507f767279e18bd1065da325a725",
+  "file_name": "KBL_COLETOR_v2_0_6_Hub.zip",
+  "published_at": "2026-09-29T01:54:00.157Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Coleta centralizada de Fiscal, Folha, Patrimônio e Contabilidade.",
+    "Execução via Windows PowerShell nativo, sem dependências Python.",
+    "Tema automático, claro e escuro com layout responsivo.",
+    "Integração com KBL Hub."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/kbl-coletor/2.0.6/KBL_COLETOR_v2_0_6_Hub.zip",
+    "auth": "github-cli"
+  }
+}
