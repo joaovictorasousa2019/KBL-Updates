@@ -3,12 +3,12 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "published": true,
   "download_url": "",
-  "sha256": "36684add9a875e1300ee40692a17bbb788ae506a21e73ac6a798b83538dbe7de",
-  "file_name": "KBL_COLETOR_v2_4_0_RESTAURADO_HUB.zip",
-  "published_at": "2026-09-29T20:23:58.611189+00:00",
+  "sha256": "7165ad785ea5cf6cf2d7e9178ecf9abaef28080f8cdbb6d55698cab15414ce30",
+  "file_name": "KBL_COLETOR_v2_4_1_SEGUNDO_PLANO_STOP.zip",
+  "published_at": "2026-09-29T20:38:28.530857+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
@@ -21,10 +21,10 @@
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.4.0",
+    "version": "2.4.1",
     "entry": "app/START_KBL_COLETOR.ps1",
     "category": "Coleta e fechamento",
-    "description": "Coleta automática no Domínio para Fiscal, Folha, Patrimônio e Contabilidade.",
+    "description": "Coleta automática do Domínio em segundo plano, com Folha por Centro de Custo/Nome e parada imediata.",
     "icon": "assets/KBL_COLETOR.ico",
     "singleton": false,
     "single_instance": false,
@@ -39,7 +39,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.4.0/KBL_COLETOR_v2_4_0_RESTAURADO_HUB.zip",
+    "path": "packages/kbl-coletor/2.4.1/KBL_COLETOR_v2_4_1_SEGUNDO_PLANO_STOP.zip",
     "auth": "github-cli"
   }
 }
