@@ -346,5 +346,11 @@ if old_init not in t:
     raise RuntimeError("Inicialização remota não encontrada")
 t = t.replace(old_init, new_init, 1)
 
+# Corrige escape quebrado herdado do patch 2.2.6 no comando PowerShell.
+broken_pid = '            f"$p=Get-CimInstance Win32_Process -Filter "ProcessId = {int(pid)}" -ErrorAction SilentlyContinue; "'
+fixed_pid = '            f\'$p=Get-CimInstance Win32_Process -Filter "ProcessId = {int(pid)}" -ErrorAction SilentlyContinue; \''
+if broken_pid in t:
+    t = t.replace(broken_pid, fixed_pid, 1)
+
 p.write_text(t, encoding="utf-8")
 print("KBL Hub patched to 2.2.7")
