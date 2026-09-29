@@ -3,12 +3,12 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "published": true,
   "download_url": "",
-  "sha256": "8c0ea78717f9a602f6100bab023bb0818c2914918a7cbde8a66088132ecaf525",
-  "file_name": "KBL_COLETOR_v2_1_0_Hub.zip",
-  "published_at": "2026-09-29T13:17:19.544Z",
+  "sha256": "0dd05fa9a8c95d5733cbb354c2cd7958801fcd33abaa2706228bb52e50558790",
+  "file_name": "KBL_COLETOR_v2_1_1.zip",
+  "published_at": "2026-09-29T16:24:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
@@ -19,26 +19,25 @@
     "Instância única, auditoria de ações, eventos de integração e manifesto compartilhado por competência."
   ],
   "hub": {
-    "schema_version": 1,
+    "schema_version": 2,
+    "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.1.0",
-    "entry": "INICIAR_KBL_COLETOR.vbs",
+    "version": "2.1.1",
+    "entry": "KBL_COLETOR.pyw",
+    "native_entry": "INICIAR_KBL_COLETOR.vbs",
     "category": "Coleta e fechamento",
-    "description": "Coleta centralizada de Fiscal, Folha, Patrimônio e Contabilidade no Domínio.",
-    "window_title": "KBL COLETOR",
-    "status_file": "%APPDATA%\\KBLAccounting\\Hub\\status\\kbl-coletor.json",
+    "description": "Coleta centralizada de Fiscal, Folha, Patrimônio e Contabilidade.",
+    "icon": "assets/KBL_COLETOR.ico",
+    "singleton": true,
+    "status_file": "%APPDATA%\\KBLAccounting\\Shared\\coletor\\runtime_status.json",
     "shared_root": "%APPDATA%\\KBLAccounting\\Shared\\coletor",
-    "single_instance": true,
-    "supports_close": true,
-    "supports_health": true,
-    "supports_background": true,
-    "slogan": "Transformando decisões em legado."
+    "update_channel": "stable"
   },
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.1.0/KBL_COLETOR_v2_1_0_Hub.zip",
+    "path": "packages/kbl-coletor/2.1.1/KBL_COLETOR_v2_1_1.zip",
     "auth": "github-cli"
   }
 }
