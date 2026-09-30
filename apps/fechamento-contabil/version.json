@@ -3,25 +3,24 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.7",
+  "version": "2.7.1",
   "published": true,
   "download_url": "",
-  "sha256": "37aa64a134d92f663a117f1a95a2554ac6a8f65509754ea77133af40df80400d",
-  "file_name": "KBL_Fechamento_Contabil_v2_7_Etapas_Subetapas.zip",
-  "published_at": "2026-09-30T11:53:03.090Z",
+  "sha256": "52feb79e9cfc744aa6e1703bf2565829bf47419b959fcb5724041d01e18bbaff",
+  "file_name": "KBL_Fechamento_Contabil_v2_7_1.zip",
+  "published_at": "2026-09-30T16:40:00.675Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Aluguel de Equipamentos e Energia passam para dentro de Obrigações do Contábil.",
-    "Novo botão Organizar para editar etapas e subetapas.",
-    "Arraste e solte para alterar a ordem das etapas e das subetapas.",
-    "Permite converter etapa em subetapa e subetapa personalizada em etapa.",
-    "Pacote reempacotado para compatibilidade com o atualizador do KBL Hub."
+    "Corrige erro de inicialização IndentationError na rotina de notificações.",
+    "Remove bloco duplicado órfão que interrompia a abertura do KBL Fechamento.",
+    "Mantém as melhorias da 2.7: Aluguel de Equipamentos e Energia em Obrigações do Contábil.",
+    "Mantém o botão Organizar e a ordenação por arraste de etapas e subetapas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.7/KBL_Fechamento_Contabil_v2_7_Etapas_Subetapas.zip",
+    "path": "packages/fechamento-contabil/2.7.1/KBL_Fechamento_Contabil_v2_7_1.zip",
     "auth": "github-cli"
   }
 }
