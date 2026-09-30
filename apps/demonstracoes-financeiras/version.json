@@ -1,0 +1,45 @@
+{
+  "schema_version": 3,
+  "app_id": "demonstracoes-financeiras",
+  "name": "KBL Demonstrações Financeiras",
+  "channel": "stable",
+  "version": "0.4.0",
+  "published": true,
+  "download_url": "",
+  "sha256": "7721f2cf98e44ff4be4a487fdc12ce6098f1958b0c5899fb3cc1690eb936fca1",
+  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_0.zip",
+  "published_at": "2026-09-30T17:14:59.7523428Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Gera BP, DRE, DMPL, DFC e PDF completo para assinatura e envio ao cliente.",
+    "BP em duas páginas: Ativo na primeira; Passivo e Patrimônio Líquido na segunda.",
+    "Resultado ainda não encerrado é incorporado virtualmente ao PL apenas para apresentação, sem alterar o balancete.",
+    "Consolida o padrão simplificado das contas 266/267 em Lucros/Prejuízos Acumulados.",
+    "Papel timbrado KBL opcional integrado aos PDFs.",
+    "Pacote Windows onedir validado por compilação, abertura da interface e smoke test antes da publicação."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/demonstracoes-financeiras/0.4.0/KBL_Demonstracoes_Financeiras_v0_4_0.zip",
+    "auth": "github-cli"
+  },
+  "hub": {
+    "schema_version": 2,
+    "id": "demonstracoes-financeiras",
+    "app_id": "demonstracoes-financeiras",
+    "name": "KBL Demonstrações Financeiras",
+    "version": "0.4.0",
+    "entry": "KBL_Demonstracoes_Financeiras.exe",
+    "category": "Contábil",
+    "description": "Gera BP, DRE, DMPL e DFC em PDF a partir do plano de contas e balancetes, com resultado não encerrado no PL, consolidação 266/267 e papel timbrado KBL.",
+    "singleton": true,
+    "single_instance": true,
+    "supports_health": false,
+    "supports_close": false,
+    "supports_background": false,
+    "window_title": "KBL Demonstrações Financeiras",
+    "slogan": "Transformando decisões em legado."
+  }
+}
