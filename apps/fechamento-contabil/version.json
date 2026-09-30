@@ -3,19 +3,24 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.6",
+  "version": "2.7",
   "published": true,
   "download_url": "",
-  "sha256": "d01bb8ff1f7057c22af1e83ebf97e8bff0a67798f80e46d6f05179692efc75b1",
-  "file_name": "KBL_Fechamento_Contabil_v2_6_Obrigacoes_Contabeis.zip",
-  "published_at": "2026-09-28T17:08:04.398294+00:00",
+  "sha256": "7d9f83fb568af56a107862395d5dce8f1ac737c15751cc8950226809722e0e72",
+  "file_name": "KBL_Fechamento_Contabil_v2_7_Etapas_Subetapas.zip",
+  "published_at": "2026-09-30T11:33:09.347Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
-  "notes": [],
+  "notes": [
+    "Aluguel de Equipamentos e Energia passam para dentro de Obrigações do Contábil.",
+    "Novo botão Organizar para editar etapas e subetapas.",
+    "Arraste e solte para alterar a ordem das etapas e das subetapas.",
+    "Permite converter etapa em subetapa e subetapa personalizada em etapa."
+  ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.6/KBL_Fechamento_Contabil_v2_6_Obrigacoes_Contabeis.zip",
+    "path": "packages/fechamento-contabil/2.7/KBL_Fechamento_Contabil_v2_7_Etapas_Subetapas.zip",
     "auth": "github-cli"
   }
 }
