@@ -59,21 +59,6 @@ if old not in t:
     raise RuntimeError("barra simplificada do Hub não encontrada")
 t = t.replace(old, new, 1)
 
-# Also expose definitive exit in the overflow menu.
-old_menu = '''        menu.add_command(label="Verificar atualizações", command=self.refresh_remote)
-
-        try:
-'''
-new_menu = '''        menu.add_command(label="Verificar atualizações", command=self.refresh_remote)
-        menu.add_separator()
-        menu.add_command(label="Fechar KBL Hub definitivamente", command=self.quit_definitively)
-
-        try:
-'''
-if old_menu not in t:
-    raise RuntimeError("menu de ações não encontrado")
-t = t.replace(old_menu, new_menu, 1)
-
 # Replace expensive runtime tick with lightweight row update and tray helpers.
 old = '''    def _runtime_tick(self):
         try:
