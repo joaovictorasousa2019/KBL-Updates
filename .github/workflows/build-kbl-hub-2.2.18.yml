@@ -135,10 +135,11 @@ jobs:
           assert 'def quit_definitively' in txt
           assert 'Fechar definitivo' in txt
           assert 'self.protocol("WM_DELETE_WINDOW", self.minimize_to_tray)' in txt
-          assert 'self.after(4500, self._runtime_tick)' in txt
+          assert 'self.after(6500, self._runtime_tick)' in txt
           block=txt[txt.index('    def _runtime_tick'):txt.index('    def close_selected')]
           assert 'self.render()' not in block
-          assert 'self._update_runtime_rows()' in block
+          assert 'threading.Thread(target=self._runtime_scan_worker' in block
+          assert 'def _apply_runtime_rows' in block
           print("TRAY_AND_PERFORMANCE_RULES_OK")
           '@ | python -
 
