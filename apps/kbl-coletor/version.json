@@ -3,28 +3,28 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.4.2",
+  "version": "2.4.4",
   "published": true,
   "download_url": "",
-  "sha256": "ed3baeb77b8acb54bbdd8e40d41eb90fa46f00dd0715727267a9a371470985b9",
-  "file_name": "KBL_COLETOR_v2_4_2_FOLHA.zip",
-  "published_at": "2026-09-30T11:05:32.033123+00:00",
+  "sha256": "9f5bc380f3a9821d63d7b2654368ab92e0601b21737c59b2edab42a6cb45f899",
+  "file_name": "KBL_COLETOR_v2_4_4_MENU_DOMINIO.zip",
+  "published_at": "2026-10-01T13:28:38.547Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Versão onedir: executável e dependências próprias, sem depender do runtime Python do Hub.",
-    "Inicialização resiliente mesmo com dados locais antigos, corrompidos ou temporariamente bloqueados.",
-    "Validado sozinho, com estado legado problemático e com o KBL Comparativo de Despesas aberto."
+    "Corrige a coleta contábil quando o menu Relatórios do Domínio está visível, mas não aparece na UI Automation.",
+    "Balancete, Razão, Plano de Contas, DRE, Balanço e Livro Diário passam a tentar primeiro o menu Win32 nativo do Domínio.",
+    "A automação antiga por UI Automation permanece como fallback."
   ],
   "hub": {
     "schema_version": 2,
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.4.2",
+    "version": "2.4.4",
     "entry": "app/START_KBL_COLETOR.ps1",
     "category": "Coleta e fechamento",
-    "description": "Coleta automática da Folha no Domínio com rotas reais, Centro de Custo + Nome, segundo plano e parada.",
+    "description": "Coleta automática no Domínio com rota nativa para relatórios contábeis e fallback por UI Automation.",
     "icon": "assets/KBL_COLETOR.ico",
     "singleton": false,
     "single_instance": false,
@@ -39,7 +39,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.4.2/KBL_COLETOR_v2_4_2_FOLHA.zip",
+    "path": "packages/kbl-coletor/2.4.4/KBL_COLETOR_v2_4_4_MENU_DOMINIO.zip",
     "auth": "github-cli"
   }
 }
