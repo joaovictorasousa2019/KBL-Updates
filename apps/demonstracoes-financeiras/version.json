@@ -6,7 +6,7 @@
   "version": "0.4.18",
   "published": true,
   "download_url": "",
-  "sha256": "be7f003262ec4281e3dca5f223b30e28e7b98df51acc06e152c8a2dd3200876a",
+  "sha256": "33e926aed84620376fc3205665696e5fcc6ee101db00be2ef75dc91023ce507a",
   "file_name": "KBL_Demonstracoes_Financeiras_v0_4_18.zip",
   "published_at": "2026-10-01T00:11:44.7886340Z",
   "min_updater_version": "1.0.0",
@@ -48,5 +48,7 @@
     "supports_background": false,
     "window_title": "KBL Demonstrações Financeiras",
     "slogan": "Transformando decisões em legado."
-  }
+  },
+  "repaired_at": "2026-10-01T11:29:19.623Z",
+  "repair_reason": "sha256-synced-from-repository-package"
 }
