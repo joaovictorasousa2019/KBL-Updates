@@ -3,30 +3,31 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.4.9",
+  "version": "2.5.0",
   "published": true,
   "download_url": "",
-  "sha256": "af0072ee33137981f5432753ca724287c460235ed3459213ecf896f09268aeda",
-  "file_name": "KBL_COLETOR_v2_4_9_PERIODO_FAILFAST.zip",
-  "published_at": "2026-10-01T15:07:56.981Z",
+  "sha256": "16e05b42e22e8a40d364053a33ffb9bbcee7dfd02d4e2016f7ecec81df8a24c0",
+  "file_name": "KBL_COLETOR_v2_5_0_MOTOR_TELAS.zip",
+  "published_at": "2026-10-01T16:25:50.006Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige o preenchimento de período: o COLETOR não usa mais os primeiros campos editáveis da tela; procura Data Inicial/Final por rótulo/contexto e confirma os valores antes de gerar.",
-    "Balancete usa a rota oficial Relatórios > Balancete e só continua se a competência for confirmada na tela.",
-    "Automação fica isolada ao processo e módulo correto do Domínio.",
-    "A geração tem timeout e a fila para no primeiro erro para evitar travamento.",
-    "A exportação não reutiliza arquivos já existentes em Downloads, Desktop ou Documentos."
+    "Novo motor único de telas do Domínio.",
+    "Reconhece a janela específica de cada relatório antes de preencher qualquer campo.",
+    "Localiza campos por rótulo e posição na tela, em vez de usar os primeiros campos editáveis.",
+    "Balancete: Data Inicial/Final por rótulo, Imprimir plano = Total e botão OK na própria janela.",
+    "Cada relatório usa um perfil de tela; Fiscal, Folha, Patrimônio e Contabilidade reutilizam o mesmo motor com configurações próprias.",
+    "A geração é interrompida se os valores não forem confirmados ou se a janela não responder dentro do timeout."
   ],
   "hub": {
     "schema_version": 2,
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.4.9",
+    "version": "2.5.0",
     "entry": "app/START_KBL_COLETOR.ps1",
     "category": "Coleta e fechamento",
-    "description": "Coleta no Domínio com período validado, automação isolada ao processo correto e fila fail-fast.",
+    "description": "Motor único de telas do Domínio com perfis por relatório e validação de campos antes de gerar.",
     "icon": "assets/KBL_COLETOR.ico",
     "singleton": false,
     "single_instance": false,
@@ -41,7 +42,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.4.9/KBL_COLETOR_v2_4_9_PERIODO_FAILFAST.zip",
+    "path": "packages/kbl-coletor/2.5.0/KBL_COLETOR_v2_5_0_MOTOR_TELAS.zip",
     "auth": "github-cli"
   }
 }
