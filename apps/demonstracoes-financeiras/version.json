@@ -6,9 +6,9 @@
   "version": "0.4.34",
   "published": true,
   "download_url": "",
-  "sha256": "9b5794936448a98889fccf385148def2dd4e1e509a08f6b6557c4444e6cd3a3c",
+  "sha256": "4feaea0722ea945c9c2c8fcbd35bb8c579289ed0bd778e5d847c9686bcf7c7cc",
   "file_name": "KBL_Demonstracoes_Financeiras_v0_4_34.zip",
-  "published_at": "2026-10-01T17:44:11.5327475Z",
+  "published_at": "2026-10-01T17:57:43.6595827Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
@@ -16,10 +16,10 @@
     "Novo botão Renomear e suporte a duplo clique na coluna Descrição para editar o nome exibido.",
     "Novo botão Nome automático restaura somente a linha selecionada ao nome calculado pelo sistema.",
     "Os nomes alterados aparecem imediatamente na prévia e no PDF, que continuam consumindo a mesma estrutura de linhas.",
-    "Salvar para empresa passa a gravar também os nomes personalizados por CNPJ para reaproveitamento nas próximas competências.",
-    "Salvar como padrão passa a gravar os nomes atuais como padrão para empresas novas.",
+    "Salvar para empresa grava também os nomes personalizados por CNPJ para reaproveitamento nas próximas competências.",
+    "Salvar como padrão grava os nomes atuais como padrão para empresas novas.",
     "Usar padrão remove os nomes específicos da empresa e reaplica os nomes do padrão global, quando existirem.",
-    "Mantidas todas as regras anteriores de DRE, auditoria, reordenação, Balanço Patrimonial, assinaturas e padronização textual."
+    "Todos os testes da versão passaram, inclusive nomes editáveis, persistência por empresa/padrão, EXE e smoke test."
   ],
   "package": {
     "provider": "github-private-repo",
