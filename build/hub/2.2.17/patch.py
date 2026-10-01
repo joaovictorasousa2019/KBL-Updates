@@ -44,19 +44,35 @@ if old not in t:
     raise RuntimeError("init base não encontrado")
 t = t.replace(old, new, 1)
 
-# restore definitive close button on main UI, right side
-old = '''        ttk.Button(a, text="Atualizar todos", command=self.update_all).pack(side="right")
-        ttk.Button(a, text="Instalar todos", command=self.install_all).pack(side="right", padx=7)
-        ttk.Button(a, text="Verificar", command=self.refresh_remote).pack(side="right")
+# restore definitive close button on the simplified 2.2.2 UI
+old = '''        self.btn_more = ttk.Button(a, text="⋯", width=3, style="More.TButton", command=self._show_more_menu)
+        self.btn_more.grid(row=0, column=4, sticky="e", padx=(8, 0))
 '''
-new = '''        ttk.Button(a, text="Fechar definitivamente", command=self.quit_definitively).pack(side="right")
-        ttk.Button(a, text="Atualizar todos", command=self.update_all).pack(side="right", padx=(0, 7))
-        ttk.Button(a, text="Instalar todos", command=self.install_all).pack(side="right", padx=7)
-        ttk.Button(a, text="Verificar", command=self.refresh_remote).pack(side="right")
+new = '''        self.btn_more = ttk.Button(a, text="⋯", width=3, style="More.TButton", command=self._show_more_menu)
+        self.btn_more.grid(row=0, column=4, sticky="e", padx=(8, 0))
+
+        self.btn_quit = ttk.Button(a, text="Fechar definitivo", style="Action.TButton",
+                                   command=self.quit_definitively)
+        self.btn_quit.grid(row=0, column=5, sticky="e", padx=(8, 0))
 '''
 if old not in t:
-    raise RuntimeError("botões base não encontrados")
+    raise RuntimeError("barra simplificada do Hub não encontrada")
 t = t.replace(old, new, 1)
+
+# Also expose definitive exit in the overflow menu.
+old_menu = '''        menu.add_command(label="Verificar atualizações", command=self.refresh_remote)
+
+        try:
+'''
+new_menu = '''        menu.add_command(label="Verificar atualizações", command=self.refresh_remote)
+        menu.add_separator()
+        menu.add_command(label="Fechar KBL Hub definitivamente", command=self.quit_definitively)
+
+        try:
+'''
+if old_menu not in t:
+    raise RuntimeError("menu de ações não encontrado")
+t = t.replace(old_menu, new_menu, 1)
 
 # Replace expensive runtime tick with lightweight row update and tray helpers.
 old = '''    def _runtime_tick(self):
