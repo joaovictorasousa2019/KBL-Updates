@@ -3,29 +3,32 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.4.5",
+  "version": "2.4.6",
   "published": true,
   "download_url": "",
-  "sha256": "c8758d55fda12eec7b638c13226e741832779f52f4e9bc615e4ff5e15b878976",
-  "file_name": "KBL_COLETOR_v2_4_5_VALIDATED.zip",
-  "published_at": "2026-10-01T13:40:03.884Z",
+  "sha256": "8294728cf051469eab1539c8e3a9bc3e41d19e493ccbe4c78789f59221907924",
+  "file_name": "KBL_COLETOR_v2_4_6_ROTAS_OFICIAIS.zip",
+  "published_at": "2026-10-01T14:05:20.213Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige o erro de sintaxe introduzido na v2.4.4.",
-    "Refaz a alteração a partir da base limpa v2.4.3.",
-    "Validação automática do PowerShell concluída com 0 erros de sintaxe e sem blocos duplicados.",
-    "Mantém a nova rota Win32 nativa para abrir Relatórios no Domínio, com UI Automation como fallback."
+    "Corrige o erro 'Não é possível substituir a variável PID' da v2.4.5.",
+    "Atualiza o catálogo com rotas oficiais da Domínio por módulo e relatório.",
+    "Plano de Contas: Relatórios > Cadastrais > Contas.",
+    "Fiscal: Entradas/Saídas/Serviços em Relatórios > Acompanhamentos; PIS/COFINS e retenções em Relatórios > Impostos.",
+    "Patrimônio: Bens em Relatórios > Cadastrais > Bens e depreciação em Relatórios > Cálculo.",
+    "Adiciona fallback Alt+R quando o menu Relatórios não aparece na UI Automation.",
+    "Ignora overrides antigos de rota que foram gravados pelas versões anteriores, mantendo apenas overrides novos marcados como custom."
   ],
   "hub": {
     "schema_version": 2,
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.4.5",
+    "version": "2.4.6",
     "entry": "app/START_KBL_COLETOR.ps1",
     "category": "Coleta e fechamento",
-    "description": "Coleta automática no Domínio com rota nativa para relatórios contábeis e fallback por UI Automation.",
+    "description": "Coleta no Domínio com rotas oficiais por módulo, fallback Alt+R e configuração específica por relatório.",
     "icon": "assets/KBL_COLETOR.ico",
     "singleton": false,
     "single_instance": false,
@@ -40,7 +43,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.4.5/KBL_COLETOR_v2_4_5_VALIDATED.zip",
+    "path": "packages/kbl-coletor/2.4.6/KBL_COLETOR_v2_4_6_ROTAS_OFICIAIS.zip",
     "auth": "github-cli"
   }
 }
