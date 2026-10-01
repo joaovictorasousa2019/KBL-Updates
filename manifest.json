@@ -54,7 +54,7 @@
     {
       "app_id": "demonstracoes-financeiras",
       "name": "KBL Demonstrações Financeiras",
-      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/demonstracoes-financeiras/version.json?v=0.4.31"
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/demonstracoes-financeiras/version.json?v=0.4.32"
     }
   ],
   "package_repository": {
@@ -63,5 +63,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-10-01-demonstracoes-0.4.31"
+  "revision": "2026-10-01-demonstracoes-0.4.32"
 }
