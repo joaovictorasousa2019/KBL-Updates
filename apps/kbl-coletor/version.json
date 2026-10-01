@@ -3,32 +3,29 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "published": true,
   "download_url": "",
-  "sha256": "a2e1edb540b25fadbb4b7fb6c3fa37dc18d3796b5089b1ce03ec30bfe8e5d3ff",
-  "file_name": "KBL_COLETOR_v3_0_0_NATIVE.zip",
-  "published_at": "2026-10-01T17:06:17.552Z",
+  "sha256": "5717cf6983558bbe13807bf4b9e4650c953a65fd7a7eb1f6b96bf0d56af201d7",
+  "file_name": "KBL_COLETOR_v3_0_1_NATIVE.zip",
+  "published_at": "2026-10-01T17:20:04.273Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Reescrita nativa em .NET: o KBL COLETOR não usa mais PowerShell, VBS, BAT ou CMD para iniciar/executar.",
-    "Corrige o bloqueio do antivírus/AMSI que interrompia o KBL_COLETOR.ps1 antes mesmo da abertura.",
-    "Reaproveita os cadastros existentes em %APPDATA%\\KBLAccounting\\Coletor\\profiles.json.",
-    "Mantém cadastro por CNPJ, razão social, código no Domínio e apelido.",
-    "Usa as rotas cadastradas no catálogo para Contabilidade, Fiscal, Folha e Patrimônio.",
-    "Inclui modo Aprender tela para calibrar Inicial, Final, Total e OK no padrão real do Domínio.",
-    "Executa o relatório e salva pelo visualizador usando Excel ou PDF."
+    "Corrige a abertura de Balancete no Domínio Contabilidade.",
+    "O menu Relatórios do Domínio é visível, mas não é exposto corretamente pelo MSAA nesta instalação; para Diário, Razão, Balancete e Balanço a navegação agora usa o próprio teclado do menu visível.",
+    "Balancete é acionado diretamente como o terceiro item do menu Relatórios, sem depender da camada de acessibilidade que falhou na v3.0.0.",
+    "Mantém o runtime nativo .NET, sem PowerShell/VBS/BAT/CMD."
   ],
   "hub": {
     "schema_version": 2,
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "entry": "app/KBL_COLETOR.exe",
     "category": "Coleta e fechamento",
-    "description": "Versão nativa .NET sem PowerShell/VBS, com aprendizado de tela e coleta direta no Domínio.",
+    "description": "Versão nativa .NET; Balancete/Razão/Diário/Balanço usam navegação direta pelo menu visível do Domínio.",
     "icon": "assets/KBL_COLETOR.ico",
     "singleton": true,
     "single_instance": true,
@@ -43,7 +40,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/3.0.0/KBL_COLETOR_v3_0_0_NATIVE.zip",
+    "path": "packages/kbl-coletor/3.0.1/KBL_COLETOR_v3_0_1_NATIVE.zip",
     "auth": "github-cli"
   }
 }
