@@ -129,10 +129,10 @@ jobs:
           assert 'def minimize_to_tray' in txt
           assert 'def restore_from_tray' in txt
           assert 'def quit_definitively' in txt
-          assert 'Fechar definitivamente' in txt
+          assert 'Fechar definitivo' in txt
           assert 'self.protocol("WM_DELETE_WINDOW", self.minimize_to_tray)' in txt
           assert 'self.after(4500, self._runtime_tick)' in txt
-          block=txt[txt.index('def _runtime_tick'):txt.index('def close_selected')]
+          block=txt[txt.index('    def _runtime_tick'):txt.index('    def close_selected')]
           assert 'self.render()' not in block
           assert 'self._update_runtime_rows()' in block
           print("TRAY_AND_PERFORMANCE_RULES_OK")
@@ -167,124 +167,9 @@ jobs:
         shell: pwsh
         run: |
           $cmd = Get-Command gh -ErrorAction SilentlyContinue
-          if ($cmd) {
-            Copy-Item $cmd.Source "hub-installer/gh.exe" -Force
-            Write-Host "Usando gh.exe já disponível no runner."
-          } else {
-            $release = Invoke-RestMethod -Headers @{"User-Agent"="KBL-Hub-Build"} -Uri "https://api.github.com/repos/cli/cli/releases/latest"
-            $asset = $release.assets | Where-Object { $_.name -match 'windows_amd64\.zip
-      - name: Install Inno Setup
-        shell: pwsh
-        run: |
-          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
-          if (-not (Test-Path $iscc)) { choco install innosetup -y --no-progress }
-          if (-not (Test-Path $iscc)) { throw "ISCC.exe não encontrado." }
-
-      - name: Build Windows installer
-        shell: pwsh
-        run: |
-          $iscc = "C:\Program Files (x86)\Inno Setup 6\ISCC.exe"
-          Push-Location hub-installer
-          & $iscc `
-            "/DMyAppVersion=2.2.17" `
-            "/DHubExe=$PWD\..\dist\KBL Hub.exe" `
-            "/DPythonInstaller=$PWD\python-installer.exe" `
-            "/DGhExe=$PWD\gh.exe" `
-            "KBL_Hub.iss"
-          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-          Pop-Location
-
-      - name: Smoke-test fresh install
-        shell: pwsh
-        run: |
-          $setup = "$PWD\hub-installer\output\KBL_Hub_Setup_v2.2.17.exe"
-          if (-not (Test-Path $setup)) { throw "Instalador não foi gerado." }
-          $testDir = "$env:RUNNER_TEMP\KBLHubFresh224"
-          $proc = Start-Process -FilePath $setup -ArgumentList "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /DIR=`"$testDir`"" -PassThru -Wait
-          if ($proc.ExitCode -ne 0) { throw "Instalação limpa falhou. ExitCode=$($proc.ExitCode)" }
-          $hub = Join-Path $testDir "KBL Hub.exe"
-          if (-not (Test-Path $hub)) { throw "KBL Hub.exe não foi instalado." }
-          $p = Start-Process -FilePath $hub -PassThru
-          Start-Sleep -Seconds 4
-          if ($p.HasExited) { throw "Hub encerrou no teste de instalação limpa." }
-          Stop-Process -Id $p.Id -Force
-
-      - name: Smoke-test upgrade with Hub running
-        shell: pwsh
-        run: |
-          $oldSetup = "$PWD\hub-releases\2.2.3\KBL_Hub_Setup_v2.2.3.exe"
-          $newSetup = "$PWD\hub-installer\output\KBL_Hub_Setup_v2.2.17.exe"
-          if (-not (Test-Path $oldSetup)) { throw "Instalador 2.2.3 não encontrado." }
-          $testDir = "$env:RUNNER_TEMP\KBLHubUpgrade224"
-          $oldInstall = Start-Process -FilePath $oldSetup -ArgumentList "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /DIR=`"$testDir`"" -PassThru -Wait
-          if ($oldInstall.ExitCode -ne 0) { throw "Falha ao preparar v2.2.3." }
-          $hub = Join-Path $testDir "KBL Hub.exe"
-          $oldHub = Start-Process -FilePath $hub -PassThru
-          Start-Sleep -Seconds 4
-          if ($oldHub.HasExited) { throw "v2.2.3 não permaneceu aberta." }
-          $upgrade = Start-Process -FilePath $newSetup -ArgumentList "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /DIR=`"$testDir`"" -PassThru -Wait
-          if ($upgrade.ExitCode -ne 0) { throw "Upgrade para 2.2.17 falhou. ExitCode=$($upgrade.ExitCode)" }
-          $newHub = Start-Process -FilePath $hub -PassThru
-          Start-Sleep -Seconds 4
-          if ($newHub.HasExited) { throw "v2.2.17 não abriu após upgrade." }
-          Stop-Process -Id $newHub.Id -Force
-
-      - name: Publish installer in repository
-        shell: pwsh
-        run: |
-          $src = "hub-installer/output/KBL_Hub_Setup_v2.2.17.exe"
-          $dir = "hub-releases/2.2.17"
-          New-Item -ItemType Directory -Force -Path $dir | Out-Null
-          $out = "$dir/KBL_Hub_Setup_v2.2.17.exe"
-          Copy-Item $src $out -Force
-          $sha = (Get-FileHash $out -Algorithm SHA256).Hash.ToLower()
-          $obj = [ordered]@{
-            version='2.2.17'; sha256=$sha; file_name='KBL_Hub_Setup_v2.2.17.exe';
-            path='hub-releases/2.2.17/KBL_Hub_Setup_v2.2.17.exe';
-            built_at=(Get-Date).ToUniversalTime().ToString('o')
-          }
-          $obj | ConvertTo-Json | Set-Content -Encoding UTF8 build/hub/2.2.17/version-output.json
-
-      - name: Commit generated installer
-        shell: pwsh
-        run: |
-          git config user.name 'KBL Build Bot'
-          git config user.email 'actions@users.noreply.github.com'
-          git add hub-releases/2.2.17/KBL_Hub_Setup_v2.2.17.exe build/hub/2.2.17/version-output.json
-          git diff --cached --quiet
-          if($LASTEXITCODE -ne 0){
-            git commit -m 'Publica KBL Hub v2.2.17'
-            # O build altera arquivos de trabalho (fonte patchada, ícone, ferramentas).
-            # Limpa somente o que não pertence ao commit antes do rebase.
-            git restore --worktree .
-            git clean -fd -e hub-installer/output/
-            git fetch origin main
-            git rebase origin/main
-            if($LASTEXITCODE -ne 0){ throw 'Falha ao sincronizar com o catálogo remoto antes da publicação.' }
-            git push origin HEAD:main
-            if($LASTEXITCODE -ne 0){ throw 'Falha ao publicar o instalador no repositório.' }
-            # Garante o caminho usado pelo upload-artifact mesmo se o clean removeu auxiliares.
-            New-Item -ItemType Directory -Force -Path "hub-installer/output" | Out-Null
-            Copy-Item "hub-releases/2.2.17/KBL_Hub_Setup_v2.2.17.exe" "hub-installer/output/KBL_Hub_Setup_v2.2.17.exe" -Force
-          } else {
-            Write-Host 'No generated changes.'
-          }
-
-      - name: Upload installer artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: KBL-Hub-v2.2.17
-          path: hub-installer/output/KBL_Hub_Setup_v2.2.17.exe
-          if-no-files-found: error
-          retention-days: 30
- } | Select-Object -First 1
-            if (-not $asset) { throw "GitHub CLI Windows AMD64 ZIP não encontrado." }
-            Invoke-WebRequest -Uri $asset.browser_download_url -OutFile "hub-installer/gh.zip"
-            Expand-Archive "hub-installer/gh.zip" -DestinationPath "hub-installer/gh-unpacked" -Force
-            $gh = Get-ChildItem "hub-installer/gh-unpacked" -Recurse -Filter gh.exe | Select-Object -First 1
-            if (-not $gh) { throw "gh.exe não encontrado no pacote." }
-            Copy-Item $gh.FullName "hub-installer/gh.exe" -Force
-          }
+          if (-not $cmd) { throw "gh.exe não está disponível no runner." }
+          Copy-Item $cmd.Source "hub-installer/gh.exe" -Force
+          if (-not (Test-Path "hub-installer/gh.exe")) { throw "Falha ao preparar gh.exe." }
 
       - name: Install Inno Setup
         shell: pwsh
