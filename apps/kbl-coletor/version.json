@@ -3,30 +3,30 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.4.7",
+  "version": "2.4.9",
   "published": true,
   "download_url": "",
-  "sha256": "7c3129f1368a0985d1185b8c4fa85193ce6c8fa8299af2151cd075c5920ce1a8",
-  "file_name": "KBL_COLETOR_v2_4_7_MENU_MSAA.zip",
-  "published_at": "2026-10-01T14:13:21.113Z",
+  "sha256": "af0072ee33137981f5432753ca724287c460235ed3459213ecf896f09268aeda",
+  "file_name": "KBL_COLETOR_v2_4_9_PERIODO_FAILFAST.zip",
+  "published_at": "2026-10-01T15:07:56.981Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige a falha da v2.4.6 após o Alt+R: o menu Relatórios abria, mas Balancete/Razão/Cadastrais não eram encontrados.",
-    "Adiciona leitura de menus popup clássicos do Domínio por MSAA/oleacc.",
-    "Adiciona busca no Desktop UI Automation quando o popup não pertence à árvore da janela principal.",
-    "Mantém fallback de teclado como último recurso.",
-    "Registra no log os itens de menu que o Domínio expõe quando uma etapa falhar."
+    "Corrige o preenchimento de período: o COLETOR não usa mais os primeiros campos editáveis da tela; procura Data Inicial/Final por rótulo/contexto e confirma os valores antes de gerar.",
+    "Balancete usa a rota oficial Relatórios > Balancete e só continua se a competência for confirmada na tela.",
+    "Automação fica isolada ao processo e módulo correto do Domínio.",
+    "A geração tem timeout e a fila para no primeiro erro para evitar travamento.",
+    "A exportação não reutiliza arquivos já existentes em Downloads, Desktop ou Documentos."
   ],
   "hub": {
     "schema_version": 2,
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.4.7",
+    "version": "2.4.9",
     "entry": "app/START_KBL_COLETOR.ps1",
     "category": "Coleta e fechamento",
-    "description": "Coleta no Domínio com rotas oficiais e navegação resiliente por Win32, UIA, MSAA e teclado.",
+    "description": "Coleta no Domínio com período validado, automação isolada ao processo correto e fila fail-fast.",
     "icon": "assets/KBL_COLETOR.ico",
     "singleton": false,
     "single_instance": false,
@@ -41,7 +41,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.4.7/KBL_COLETOR_v2_4_7_MENU_MSAA.zip",
+    "path": "packages/kbl-coletor/2.4.9/KBL_COLETOR_v2_4_9_PERIODO_FAILFAST.zip",
     "auth": "github-cli"
   }
 }
