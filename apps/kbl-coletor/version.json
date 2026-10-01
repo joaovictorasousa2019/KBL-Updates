@@ -3,25 +3,26 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.4.4",
+  "version": "2.4.5",
   "published": true,
   "download_url": "",
-  "sha256": "9f5bc380f3a9821d63d7b2654368ab92e0601b21737c59b2edab42a6cb45f899",
-  "file_name": "KBL_COLETOR_v2_4_4_MENU_DOMINIO.zip",
-  "published_at": "2026-10-01T13:28:38.547Z",
+  "sha256": "c8758d55fda12eec7b638c13226e741832779f52f4e9bc615e4ff5e15b878976",
+  "file_name": "KBL_COLETOR_v2_4_5_VALIDATED.zip",
+  "published_at": "2026-10-01T13:40:03.884Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige a coleta contábil quando o menu Relatórios do Domínio está visível, mas não aparece na UI Automation.",
-    "Balancete, Razão, Plano de Contas, DRE, Balanço e Livro Diário passam a tentar primeiro o menu Win32 nativo do Domínio.",
-    "A automação antiga por UI Automation permanece como fallback."
+    "Corrige o erro de sintaxe introduzido na v2.4.4.",
+    "Refaz a alteração a partir da base limpa v2.4.3.",
+    "Validação automática do PowerShell concluída com 0 erros de sintaxe e sem blocos duplicados.",
+    "Mantém a nova rota Win32 nativa para abrir Relatórios no Domínio, com UI Automation como fallback."
   ],
   "hub": {
     "schema_version": 2,
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.4.4",
+    "version": "2.4.5",
     "entry": "app/START_KBL_COLETOR.ps1",
     "category": "Coleta e fechamento",
     "description": "Coleta automática no Domínio com rota nativa para relatórios contábeis e fallback por UI Automation.",
@@ -39,7 +40,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.4.4/KBL_COLETOR_v2_4_4_MENU_DOMINIO.zip",
+    "path": "packages/kbl-coletor/2.4.5/KBL_COLETOR_v2_4_5_VALIDATED.zip",
     "auth": "github-cli"
   }
 }
