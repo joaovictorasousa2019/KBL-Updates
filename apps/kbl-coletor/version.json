@@ -3,31 +3,30 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.5.0",
+  "version": "2.5.1",
   "published": true,
   "download_url": "",
-  "sha256": "16e05b42e22e8a40d364053a33ffb9bbcee7dfd02d4e2016f7ecec81df8a24c0",
-  "file_name": "KBL_COLETOR_v2_5_0_MOTOR_TELAS.zip",
-  "published_at": "2026-10-01T16:25:50.006Z",
+  "sha256": "c12665da52d0bbb30318d6afae0659cffab189cb8a56c3eb57794ddef437bea7",
+  "file_name": "KBL_COLETOR_v2_5_1_MODO_DIRETO.zip",
+  "published_at": "2026-10-01T16:43:48.325Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Novo motor único de telas do Domínio.",
-    "Reconhece a janela específica de cada relatório antes de preencher qualquer campo.",
-    "Localiza campos por rótulo e posição na tela, em vez de usar os primeiros campos editáveis.",
-    "Balancete: Data Inicial/Final por rótulo, Imprimir plano = Total e botão OK na própria janela.",
-    "Cada relatório usa um perfil de tela; Fiscal, Folha, Patrimônio e Contabilidade reutilizam o mesmo motor com configurações próprias.",
-    "A geração é interrompida se os valores não forem confirmados ou se a janela não responder dentro do timeout."
+    "Simplifica o COLETOR usando como base a navegação 2.4.8, que realmente chegou a abrir o Balancete no ambiente real.",
+    "Depois de abrir o relatório, o preenchimento passa a ser direto na janela padrão do Domínio, sem tentar descobrir controles por UI Automation.",
+    "Balancete: preenche Inicial e Final, seleciona Total e clica OK na própria janela.",
+    "Após gerar, usa diretamente os botões laterais do visualizador do Domínio para Excel ou PDF e preenche a janela Salvar Como.",
+    "Mantém uma tentativa por relatório e não usa Downloads/Desktop/Documentos como fonte."
   ],
   "hub": {
     "schema_version": 2,
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.5.0",
+    "version": "2.5.1",
     "entry": "app/START_KBL_COLETOR.ps1",
     "category": "Coleta e fechamento",
-    "description": "Motor único de telas do Domínio com perfis por relatório e validação de campos antes de gerar.",
+    "description": "Modo direto: abre o relatório, preenche a janela padrão, executa e salva pelos botões laterais do Domínio.",
     "icon": "assets/KBL_COLETOR.ico",
     "singleton": false,
     "single_instance": false,
@@ -42,7 +41,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.5.0/KBL_COLETOR_v2_5_0_MOTOR_TELAS.zip",
+    "path": "packages/kbl-coletor/2.5.1/KBL_COLETOR_v2_5_1_MODO_DIRETO.zip",
     "auth": "github-cli"
   }
 }
