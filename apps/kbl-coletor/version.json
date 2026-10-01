@@ -3,30 +3,30 @@
   "app_id": "kbl-coletor",
   "name": "KBL COLETOR",
   "channel": "stable",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "published": true,
   "download_url": "",
-  "sha256": "c12665da52d0bbb30318d6afae0659cffab189cb8a56c3eb57794ddef437bea7",
-  "file_name": "KBL_COLETOR_v2_5_1_MODO_DIRETO.zip",
-  "published_at": "2026-10-01T16:43:48.325Z",
+  "sha256": "73488e2e6e988690160f027fbe0a6562afdd87a7c6c52e90b76c888cbbed9008",
+  "file_name": "KBL_COLETOR_v2_5_2_MODO_DIRETO.zip",
+  "published_at": "2026-10-01T16:49:05.545Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Simplifica o COLETOR usando como base a navegação 2.4.8, que realmente chegou a abrir o Balancete no ambiente real.",
-    "Depois de abrir o relatório, o preenchimento passa a ser direto na janela padrão do Domínio, sem tentar descobrir controles por UI Automation.",
-    "Balancete: preenche Inicial e Final, seleciona Total e clica OK na própria janela.",
-    "Após gerar, usa diretamente os botões laterais do visualizador do Domínio para Excel ou PDF e preenche a janela Salvar Como.",
-    "Mantém uma tentativa por relatório e não usa Downloads/Desktop/Documentos como fonte."
+    "Simplifica a automação usando a navegação que já conseguia abrir o Balancete no ambiente real.",
+    "Depois de abrir o relatório, preenche a janela padrão do Domínio diretamente por posição, confirma as datas, seleciona Total e clica OK.",
+    "Após gerar, usa os botões laterais do visualizador do Domínio: Excel ou PDF; a própria tela Salvar Como é preenchida pelo KBL.",
+    "Ao precisar trocar de módulo, clica no cabeçalho DOMÍNIO e seleciona Contabilidade, Fiscal, Folha ou Patrimônio.",
+    "Mantém uma tentativa por relatório e não reutiliza arquivos existentes de Downloads/Desktop/Documentos."
   ],
   "hub": {
     "schema_version": 2,
     "id": "kbl-coletor",
     "app_id": "kbl-coletor",
     "name": "KBL COLETOR",
-    "version": "2.5.1",
+    "version": "2.5.2",
     "entry": "app/START_KBL_COLETOR.ps1",
     "category": "Coleta e fechamento",
-    "description": "Modo direto: abre o relatório, preenche a janela padrão, executa e salva pelos botões laterais do Domínio.",
+    "description": "Modo direto: troca módulo pelo cabeçalho DOMÍNIO, abre o relatório, preenche, executa e salva pelos botões laterais.",
     "icon": "assets/KBL_COLETOR.ico",
     "singleton": false,
     "single_instance": false,
@@ -41,7 +41,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-coletor/2.5.1/KBL_COLETOR_v2_5_1_MODO_DIRETO.zip",
+    "path": "packages/kbl-coletor/2.5.2/KBL_COLETOR_v2_5_2_MODO_DIRETO.zip",
     "auth": "github-cli"
   }
 }
