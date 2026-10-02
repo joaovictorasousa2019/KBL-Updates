@@ -3,23 +3,23 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "59",
+  "version": "60",
   "published": true,
   "download_url": "",
-  "sha256": "6f475cf7c750ca06169cfa85f2296c1c78677b8f6417ae5f0a58ab9fb70ec808",
-  "file_name": "KBL_ComposicaoPatrimonial_v59_CORRECAO_DATA_MENSAL.zip",
-  "published_at": "2026-10-02T14:30:00+00:00",
+  "sha256": "a276f3751e9b5b17e2f4b681480198c9829671b6cbfe0b46a8e70f326db47e2b",
+  "file_name": "KBL_ComposicaoPatrimonial_v60_BASE_INICIAL_LAYOUT_ATUAL.zip",
+  "published_at": "2026-10-02T14:48:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrigido o erro \"Data inválida: use DD/MM/AAAA\" ao criar planilhas mensais no Modo anual.",
-    "A geração anual não depende mais do campo de data oculto da aba de importação.",
-    "Mantidos o Modo anual por intervalo e o tema escuro no padrão KBL Hub."
+    "A Base inicial agora reconhece também o layout atual gerado pelo próprio KBL Composição Patrimonial.",
+    "Mantido suporte ao layout legado de composição.",
+    "No layout atual, empresa é identificada em D1, competência em D3 e classificação em E6 das fichas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/59/KBL_ComposicaoPatrimonial_v59_CORRECAO_DATA_MENSAL.zip",
+    "path": "packages/composicao-saldos/60/KBL_ComposicaoPatrimonial_v60_BASE_INICIAL_LAYOUT_ATUAL.zip",
     "auth": "github-cli"
   }
 }
