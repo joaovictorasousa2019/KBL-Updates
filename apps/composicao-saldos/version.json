@@ -3,23 +3,29 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "60",
+  "version": "61",
   "published": true,
   "download_url": "",
-  "sha256": "a276f3751e9b5b17e2f4b681480198c9829671b6cbfe0b46a8e70f326db47e2b",
-  "file_name": "KBL_ComposicaoPatrimonial_v60_BASE_INICIAL_LAYOUT_ATUAL.zip",
-  "published_at": "2026-10-02T14:48:00+00:00",
+  "sha256": "2418c5e986091ee2ccc7ecab9eb9d35ee63382ca74b8b073c129b57cd5f6597a",
+  "file_name": "KBL_ComposicaoPatrimonial_v61_CENTRAL_INTELIGENTE.zip",
+  "published_at": "2026-10-02T16:59:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "A Base inicial agora reconhece também o layout atual gerado pelo próprio KBL Composição Patrimonial.",
-    "Mantido suporte ao layout legado de composição.",
-    "No layout atual, empresa é identificada em D1, competência em D3 e classificação em E6 das fichas."
+    "Nova Central de fechamento com painel por conta, fonte principal, status, variação mensal, itens e diferenças.",
+    "Integração com o app de Clientes/Fornecedores: lê somente a aba Composição e importa os itens linha por linha.",
+    "Hierarquia e preferência de fontes por conta: Conciliação KBL, base histórica, documento de suporte ou Razão.",
+    "Biblioteca histórica por empresa, diagnóstico antes de importar base e mapeamento de contas antigas para classificações atuais.",
+    "Rastreabilidade por item com arquivo, aba, linha e status da origem no Excel gerado.",
+    "Novos status de Revisão, Diferença e KBL Conciliado, com invalidação quando arquivos-fonte mudam.",
+    "Auditoria prévia antes da geração, diagnóstico de resíduos e exportação de resumos por situação.",
+    "Autosave incremental e restauração de rascunhos.",
+    "Otimizações de desempenho: Razão paginado em blocos, uso rápido de todo o Razão sem renderizar milhares de linhas, cache limitado e varredura de fontes reduzida."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/60/KBL_ComposicaoPatrimonial_v60_BASE_INICIAL_LAYOUT_ATUAL.zip",
+    "path": "packages/composicao-saldos/61/KBL_ComposicaoPatrimonial_v61_CENTRAL_INTELIGENTE.zip",
     "auth": "github-cli"
   }
 }
