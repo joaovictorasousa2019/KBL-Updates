@@ -3,27 +3,23 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "63",
+  "version": "64",
   "published": true,
   "download_url": "",
-  "sha256": "228b2b41784a829f595bb2200a4537fa62c9d106d6deeecb36586dcfaeaad0aa",
-  "file_name": "KBL_ComposicaoPatrimonial_v63_LEITURA_COMPLETA.zip",
-  "published_at": "2026-10-02T17:33:00+00:00",
+  "sha256": "e063ec06c6f38046d53edab422878fb1edce3f2a4b9add5df2eafd4b52945e47",
+  "file_name": "KBL_ComposicaoPatrimonial_v64_BASE_CAMPO_VAZIO.zip",
+  "published_at": "2026-10-02T18:01:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Leitura completa da base anterior sem limite fixo de quantidade de fichas.",
-    "Removido o limite antigo de 2.000 linhas por ficha; composições extensas são lidas até a linha TOTAL.",
-    "Bases históricas agora tentam remapear classificações alteradas também pelo código reduzido e pela descrição da conta.",
-    "Contas patrimoniais que não aparecem no Razão, mas estão no Balancete, não são mais descartadas.",
-    "Contas ausentes do Razão e sem movimento são carregadas normalmente e não bloqueiam o modo anual.",
-    "Se uma conta ausente do Razão tiver movimento em um período acumulado, o app identifica apenas essas contas e solicita o detalhamento necessário, evitando atribuir movimento ao mês errado.",
-    "Diagnóstico da base informa quantas fichas do arquivo foram realmente lidas e deixa claro que não há limite fixo de contas."
+    "Campo de composição anterior inicia vazio.",
+    "Campo de base anterior pode ser apagado e editado.",
+    "Bases históricas continuam preservadas e podem ser usadas quando necessário."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/63/KBL_ComposicaoPatrimonial_v63_LEITURA_COMPLETA.zip",
+    "path": "packages/composicao-saldos/64/KBL_ComposicaoPatrimonial_v64_BASE_CAMPO_VAZIO.zip",
     "auth": "github-cli"
   }
 }
