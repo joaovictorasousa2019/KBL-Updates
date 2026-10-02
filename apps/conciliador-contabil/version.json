@@ -3,24 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.8.0",
+  "version": "3.20.0",
   "published": true,
   "download_url": "",
-  "sha256": "62ff2b8af43486033f6a0f20cfe5171f2ff0895774ee58cbe0343767d076d94b",
-  "file_name": "KBL_Conciliador_Contabil_v3_8_0.zip",
-  "published_at": "2026-09-28T17:08:30.878510+00:00",
+  "sha256": "8c4685a7b394530206d131899c88f1cd7fddef20ed889268491c9d67e2842390",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_0.zip",
+  "published_at": "2026-10-02T18:09:05+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige múltiplas instâncias do Conciliador e traz a instância existente para frente.",
-    "Cadastro de empresas passa a usar gravação JSON atômica e merge com o estado mais recente.",
-    "Gerenciador de empresas não abre duplicado e bloqueia abertura concorrente da mesma sessão.",
-    "Processos auxiliares do Windows são executados sem janela de CMD."
+    "Na Composição, Detalhes da conciliação agora oferece Gerenciar cadeia.",
+    "Permite retirar um ou vários lançamentos específicos, desvincular toda a cadeia e reintegrar movimentos.",
+    "Após o ajuste, a composição é recalculada automaticamente; cadeias que fecham passam para Baixas conciliadas.",
+    "Desvinculações manuais ficam salvas no perfil da empresa para preservar a revisão."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.8.0/KBL_Conciliador_Contabil_v3_8_0.zip",
+    "path": "packages/conciliador-contabil/3.20.0/KBL_Conciliador_Contabil_v3_20_0.zip",
     "auth": "github-cli"
   }
 }
