@@ -3,23 +3,25 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "64",
+  "version": "65",
   "published": true,
   "download_url": "",
-  "sha256": "e063ec06c6f38046d53edab422878fb1edce3f2a4b9add5df2eafd4b52945e47",
-  "file_name": "KBL_ComposicaoPatrimonial_v64_BASE_CAMPO_VAZIO.zip",
-  "published_at": "2026-10-02T18:01:00+00:00",
+  "sha256": "a173a6416431815617f45fba5ab5ef4ddb45ec288fbcd4dbb57f3ec29d67f539",
+  "file_name": "KBL_ComposicaoPatrimonial_v65_GERACAO_OTIMIZADA.zip",
+  "published_at": "2026-10-02T18:43:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Campo de composição anterior inicia vazio.",
-    "Campo de base anterior pode ser apagado e editado.",
-    "Bases históricas continuam preservadas e podem ser usadas quando necessário."
+    "Geração das planilhas mensais passou para segundo plano; a interface não deve mais entrar em 'Não está respondendo'.",
+    "Incluída janela de progresso com competência em processamento e tempo decorrido.",
+    "Removida a reabertura completa do XLSX após cada salvamento; a validação estrutural e contábil agora ocorre no workbook já em memória.",
+    "A checagem pós-gravação ficou leve e valida apenas a integridade estrutural do pacote XLSX.",
+    "A otimização beneficia especialmente empresas com muitas contas e o modo anual com vários meses."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/64/KBL_ComposicaoPatrimonial_v64_BASE_CAMPO_VAZIO.zip",
+    "path": "packages/composicao-saldos/65/KBL_ComposicaoPatrimonial_v65_GERACAO_OTIMIZADA.zip",
     "auth": "github-cli"
   }
 }
