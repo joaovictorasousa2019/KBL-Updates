@@ -3,28 +3,27 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.9",
+  "version": "3.20.10",
   "published": true,
   "download_url": "",
-  "sha256": "4394e615adb4460b902f5df0ce2c1a82d6abc68c9ef69bcf0cc4f7c5936b4f82",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_9.zip",
-  "published_at": "2026-10-02T20:28:18+00:00",
+  "sha256": "552abeb4a016cc6706d0e07b71c8c58d1a226e3fabd98a641696fdc793cafc54",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_10.zip",
+  "published_at": "2026-10-02T20:38:20+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Baixas conciliadas e Conciliações realizadas agora exibem somente operações com saldo efetivamente zerado.",
-    "Vínculos com residual, itens apenas justificados e transferências explicativas que preservam saldo permanecem somente na Composição.",
-    "Ajustes contábeis entram como conciliados somente quando zeram o saldo de origem.",
-    "O contador de conciliados/confirmados passa a considerar somente fechamentos efetivos.",
-    "Na tela Ajuste contábil da diferença, data digitada apenas com números é formatada automaticamente para dd/mm/aaaa.",
-    "A prévia volta a mostrar Débito e Crédito; o usuário informa somente a conta contrapartida e o sistema escolhe o sentido.",
-    "A justificativa oferece exemplos editáveis e diferenças de até R$ 5,00 continuam classificadas automaticamente como Juros.",
-    "Mantém Histórico / terceiro limpo e botão único Vincular / Desfazer vínculo na Central."
+    "Corrige de forma mais robusta o Histórico / terceiro quando o código e o nome da conta estão embutidos no próprio histórico, inclusive 1005, 1006 e 1117.",
+    "A conta contábil permanece somente na coluna Conta; a coluna Histórico / terceiro mostra a descrição útil.",
+    "Na tela Ajuste contábil da diferença, 01092026 vira automaticamente 01/09/2026.",
+    "A prévia exibe Débito e Crédito; o usuário informa somente a conta contrapartida e o sistema escolhe automaticamente o sentido.",
+    "A justificativa oferece exemplos editáveis e, em Fornecedores, abre por padrão com Reconhecimento da despesa lançada em fornecedores.",
+    "Diferenças de até R$ 5,00 continuam classificadas automaticamente como Juros.",
+    "Mantém o botão único Vincular / Desfazer vínculo e o autosave persistente."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.9/KBL_Conciliador_Contabil_v3_20_9.zip",
+    "path": "packages/conciliador-contabil/3.20.10/KBL_Conciliador_Contabil_v3_20_10.zip",
     "auth": "github-cli"
   }
 }
