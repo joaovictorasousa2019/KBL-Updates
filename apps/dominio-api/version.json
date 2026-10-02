@@ -3,29 +3,30 @@
   "app_id": "dominio-api",
   "name": "KBL Domínio API",
   "channel": "stable",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "published": true,
   "download_url": "",
-  "sha256": "320715fcccbe4f73475634638b365b04c4cb7c0bfeaeb2899b25b755bb9857a3",
-  "file_name": "KBL_Dominio_API_v0_1_2.zip",
-  "published_at": "2026-10-02T14:33:40.327Z",
+  "sha256": "bb4783fb59c910b0d79177fc6bd6fc0caedd1337330c63f35ea53c1fac2f3103",
+  "file_name": "KBL_Dominio_API_v0_1_3_x86.zip",
+  "published_at": "2026-10-02T14:55:45.947Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige a falha de inicialização 'Não é possível chamar Invoke ou BeginInvoke em um controle antes da criação do identificador de janela'.",
-    "O autostart da API não chama mais BeginInvoke no construtor; ele só é agendado depois do evento Shown, quando o Handle já existe.",
-    "O log da interface também ignora eventos antes da criação do Handle, preservando o log em arquivo sem derrubar a aplicação.",
-    "A build passou por smoke test no Windows exigindo processo ativo e MainWindowHandle diferente de zero."
+    "Corrige o erro IM014 de incompatibilidade de arquitetura ODBC ao publicar a API em win-x86.",
+    "Prioriza DSNs Contabil/Domínio/SQL Anywhere e evita sugerir Excel/Access quando existe um candidato do Domínio.",
+    "O campo de usuário não é mais preenchido automaticamente como EXTERNO; deve ser usado o nome real do usuário cadastrado no Domínio/ODBC.",
+    "Externo é tratado apenas como tipo de acesso do usuário no Domínio.",
+    "Mantém API somente leitura em 127.0.0.1."
   ],
   "hub": {
     "schema_version": 2,
     "id": "dominio-api",
     "app_id": "dominio-api",
     "name": "KBL Domínio API",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "entry": "app/KBL_Dominio_API.exe",
     "category": "Integração Domínio",
-    "description": "API local ODBC read-only com autostart corrigido após criação do Handle da janela.",
+    "description": "API ODBC local 32 bits para compatibilidade com o DSN Contabil do Domínio; usuário real do Domínio/ODBC.",
     "icon": "assets/KBL_Dominio_API.ico",
     "singleton": true,
     "single_instance": true,
@@ -40,7 +41,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/dominio-api/0.1.2/KBL_Dominio_API_v0_1_2.zip",
+    "path": "packages/dominio-api/0.1.3/KBL_Dominio_API_v0_1_3_x86.zip",
     "auth": "github-cli"
   }
 }
