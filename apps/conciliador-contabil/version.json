@@ -3,27 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.10",
+  "version": "3.20.11",
   "published": true,
   "download_url": "",
-  "sha256": "552abeb4a016cc6706d0e07b71c8c58d1a226e3fabd98a641696fdc793cafc54",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_10.zip",
-  "published_at": "2026-10-02T20:38:20+00:00",
+  "sha256": "30b44bfeb267f71df32021a291e5c69209eb4423238870898557cccc200c2cc0",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_11.zip",
+  "published_at": "2026-10-02T20:59:30+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige de forma mais robusta o Histórico / terceiro quando o código e o nome da conta estão embutidos no próprio histórico, inclusive 1005, 1006 e 1117.",
-    "A conta contábil permanece somente na coluna Conta; a coluna Histórico / terceiro mostra a descrição útil.",
-    "Na tela Ajuste contábil da diferença, 01092026 vira automaticamente 01/09/2026.",
-    "A prévia exibe Débito e Crédito; o usuário informa somente a conta contrapartida e o sistema escolhe automaticamente o sentido.",
-    "A justificativa oferece exemplos editáveis e, em Fornecedores, abre por padrão com Reconhecimento da despesa lançada em fornecedores.",
-    "Diferenças de até R$ 5,00 continuam classificadas automaticamente como Juros.",
-    "Mantém o botão único Vincular / Desfazer vínculo e o autosave persistente."
+    "A conta contábil de origem do ajuste da diferença agora é identificada automaticamente pela Composição/Razão; o usuário informa somente a contrapartida.",
+    "A tela mostra Conta de origem em modo somente leitura e calcula Débito/Crédito automaticamente.",
+    "O histórico da Central prioriza o campo de histórico real do Razão e não repete prefixos como 1005 - BANCO, 1006 - BANCO ou 1117 - ADIANTAMENTO.",
+    "Em Conciliações realizadas, o duplo clique abre uma grade padronizada igual à Composição, sem JSON bruto.",
+    "A tela padronizada mostra Data, Movimento, Débito, Crédito, Documento, Linha e Histórico/terceiro, com ações para abrir origem, desfazer conciliação e criar lançamento contábil.",
+    "Mantém data automática ao digitar somente números, sugestões de justificativa, juros até R$ 5,00, botão único Vincular/Desfazer e autosave persistente."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.10/KBL_Conciliador_Contabil_v3_20_10.zip",
+    "path": "packages/conciliador-contabil/3.20.11/KBL_Conciliador_Contabil_v3_20_11.zip",
     "auth": "github-cli"
   }
 }
