@@ -3,25 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.5",
+  "version": "3.20.6",
   "published": true,
   "download_url": "",
-  "sha256": "3b26a77fb235bd8b84ed5d5a19fa7493b1a41ca92b66e2b8e26776cd9615439d",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_5.zip",
-  "published_at": "2026-10-02T19:29:26+00:00",
+  "sha256": "a6f780218abf1508c432dfad167c2919d27f6f7317c36491c1dbe04e915567f5",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_6.zip",
+  "published_at": "2026-10-02T19:52:40+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige Adicionar lançamento: a inclusão é salva e aplicada imediatamente à Composição.",
-    "O saldo/residual da cadeia é recalculado na hora e a grade aberta é atualizada sem precisar fechar ou salvar manualmente.",
-    "Cadeias manuais usam identificação persistente para continuar reconhecidas ao reabrir ou reprocessar.",
-    "Fornecedores: pagamentos podem ocorrer até 60 dias antes da data da nota fiscal e continuar elegíveis à conciliação.",
-    "A janela de 60 dias apenas libera a data; fornecedor, documento, valor, histórico e demais evidências continuam sendo validados."
+    "Lançamento em lote agora cria somente um lançamento pela diferença líquida dos itens selecionados.",
+    "Diferenças de até R$ 5,00 são classificadas automaticamente como JUROS e a justificativa acompanha o vínculo e o histórico.",
+    "A tela de ajuste mostra somente a descrição real do lançamento, sem repetir código e nome da conta contábil.",
+    "Autosave da sessão completa passou para segundo plano, com gravação final segura ao fechar.",
+    "Ao reimportar o Razão da mesma empresa, competência e conta, o rascunho salvo é reaplicado automaticamente.",
+    "Desvínculos e cadeias manuais usam identificação persistente para sobreviver à reimportação e atualização do app."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.5/KBL_Conciliador_Contabil_v3_20_5.zip",
+    "path": "packages/conciliador-contabil/3.20.6/KBL_Conciliador_Contabil_v3_20_6.zip",
     "auth": "github-cli"
   }
 }
