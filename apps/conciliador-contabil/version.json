@@ -3,24 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.2",
+  "version": "3.20.3",
   "published": true,
   "download_url": "",
-  "sha256": "a3d9d168ec0332e287bff7f991237dc3cd2166c6a96b9a6a52d332ca4bd1f8ef",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_2.zip",
-  "published_at": "2026-10-02T18:49:09+00:00",
+  "sha256": "d73740da466e22c870a75896adfd924619ba803f8783de9b2ee6abeaf2e33bdd",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_3.zip",
+  "published_at": "2026-10-02T19:13:10+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Na Composição, o duplo clique abre diretamente Gerenciar cadeia econômica.",
-    "Retirar e reintegrar lançamentos agora recalcula a cadeia de forma incremental, sem repetir todo o matching.",
-    "Adicionar lançamento pesquisa somente itens que ainda estão na Composição, por valor, terceiro, documento, conta ou data.",
-    "Criar lançamento contábil permanece disponível diretamente na tela de gerenciamento da cadeia."
+    "Desfazer vínculo não fecha mais a Central de Composição.",
+    "Retirar, reintegrar, desvincular ou adicionar lançamento fecha somente a janela de gerenciamento da cadeia.",
+    "A Central de Composição permanece aberta e a grade é atualizada automaticamente após o recálculo.",
+    "O autosave continua registrando as alterações em segundo plano sem funcionar como comando de sair."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.2/KBL_Conciliador_Contabil_v3_20_2.zip",
+    "path": "packages/conciliador-contabil/3.20.3/KBL_Conciliador_Contabil_v3_20_3.zip",
     "auth": "github-cli"
   }
 }
