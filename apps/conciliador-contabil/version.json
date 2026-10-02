@@ -3,26 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.6",
+  "version": "3.20.7",
   "published": true,
   "download_url": "",
-  "sha256": "a6f780218abf1508c432dfad167c2919d27f6f7317c36491c1dbe04e915567f5",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_6.zip",
-  "published_at": "2026-10-02T19:52:40+00:00",
+  "sha256": "a80f963bee68790be16a67ec5b939db75877e3a203115f984bae14f3ec57ed8c",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_7.zip",
+  "published_at": "2026-10-02T20:02:11+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Lançamento em lote agora cria somente um lançamento pela diferença líquida dos itens selecionados.",
-    "Diferenças de até R$ 5,00 são classificadas automaticamente como JUROS e a justificativa acompanha o vínculo e o histórico.",
-    "A tela de ajuste mostra somente a descrição real do lançamento, sem repetir código e nome da conta contábil.",
-    "Autosave da sessão completa passou para segundo plano, com gravação final segura ao fechar.",
-    "Ao reimportar o Razão da mesma empresa, competência e conta, o rascunho salvo é reaplicado automaticamente.",
-    "Desvínculos e cadeias manuais usam identificação persistente para sobreviver à reimportação e atualização do app."
+    "Na Central de Conciliação, Vincular e Desfazer vínculo passam a ser a mesma ação contextual.",
+    "Seleção sem vínculo mostra Vincular; seleção já conciliada mostra Desfazer vínculo no mesmo botão.",
+    "O botão separado de desfazer vínculo foi removido da Central.",
+    "Novos vínculos são aplicados e salvos automaticamente na hora, sem depender de uma etapa intermediária de preparação.",
+    "Salvar conciliações continua disponível como salvamento manual adicional do estado atual."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.6/KBL_Conciliador_Contabil_v3_20_6.zip",
+    "path": "packages/conciliador-contabil/3.20.7/KBL_Conciliador_Contabil_v3_20_7.zip",
     "auth": "github-cli"
   }
 }
