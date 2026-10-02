@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "app_id": "dominio-api",
+  "name": "KBL Domínio API",
+  "channel": "stable",
+  "version": "0.1.0",
+  "published": true,
+  "download_url": "",
+  "sha256": "f9398629e1f826e53d02a0b2941b31fea9283f2f0cc33d6f7e1e9b74ddb83d87",
+  "file_name": "KBL_Dominio_API_v0_1_0.zip",
+  "published_at": "2026-10-02T13:53:52.419Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Primeira versão da API local do Domínio para substituir gradualmente a automação por tela.",
+    "Conexão ODBC com o Domínio Local usando usuário do tipo Externo.",
+    "A API escuta somente em 127.0.0.1 e expõe apenas endpoints GET.",
+    "Descobre automaticamente DSNs ODBC do Windows, tabelas, colunas e candidatos de empresas, plano de contas, lançamentos e saldos.",
+    "Permite consulta somente leitura de tabelas reconhecidas pelo catálogo ODBC.",
+    "Senha armazenada protegida pelo Windows para o usuário atual.",
+    "Gera snapshot de esquema para mapear Balancete, Razão, Plano de Contas, Fiscal, Folha e Patrimônio sem depender de cliques na interface."
+  ],
+  "hub": {
+    "schema_version": 2,
+    "id": "dominio-api",
+    "app_id": "dominio-api",
+    "name": "KBL Domínio API",
+    "version": "0.1.0",
+    "entry": "app/KBL_Dominio_API.exe",
+    "category": "Integração Domínio",
+    "description": "API local somente leitura para acessar o Domínio Local via ODBC sem automação de tela.",
+    "icon": "assets/KBL_Dominio_API.ico",
+    "singleton": true,
+    "single_instance": true,
+    "supports_health": true,
+    "supports_close": true,
+    "supports_background": true,
+    "status_file": "%APPDATA%\\KBLAccounting\\Shared\\dominio-api\\runtime_status.json",
+    "shared_root": "%APPDATA%\\KBLAccounting\\Shared\\dominio-api",
+    "window_title": "KBL Domínio API",
+    "slogan": "Transformando decisões em legado."
+  },
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/dominio-api/0.1.0/KBL_Dominio_API_v0_1_0.zip",
+    "auth": "github-cli"
+  }
+}
