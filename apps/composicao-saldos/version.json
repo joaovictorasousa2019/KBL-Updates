@@ -3,26 +3,27 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "62",
+  "version": "63",
   "published": true,
   "download_url": "",
-  "sha256": "6a70d34a583cc45bf90f7a9e72b42b68db12532dd3e0c214b45eb0c4fb8b5c2e",
-  "file_name": "KBL_ComposicaoPatrimonial_v62_CADASTRO_AUTOMATICO_EMPRESA.zip",
-  "published_at": "2026-10-02T17:11:00+00:00",
+  "sha256": "228b2b41784a829f595bb2200a4537fa62c9d106d6deeecb36586dcfaeaad0aa",
+  "file_name": "KBL_ComposicaoPatrimonial_v63_LEITURA_COMPLETA.zip",
+  "published_at": "2026-10-02T17:33:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Plano de Contas, Balancete e Razão podem ser selecionados mesmo sem empresa previamente cadastrada.",
-    "Ao processar os três relatórios, o sistema identifica a empresa pelo CNPJ e usa o cadastro existente quando encontrado.",
-    "Se o CNPJ ainda não estiver cadastrado, a empresa é criada automaticamente com razão social e CNPJ encontrados nos relatórios.",
-    "Depois da criação automática, o sistema solicita apenas o código da empresa no Domínio, com opção de informar agora ou continuar e cadastrar depois.",
-    "O mesmo fluxo automático foi aplicado ao modo anual.",
-    "A troca automática para a empresa identificada preserva os três arquivos já selecionados."
+    "Leitura completa da base anterior sem limite fixo de quantidade de fichas.",
+    "Removido o limite antigo de 2.000 linhas por ficha; composições extensas são lidas até a linha TOTAL.",
+    "Bases históricas agora tentam remapear classificações alteradas também pelo código reduzido e pela descrição da conta.",
+    "Contas patrimoniais que não aparecem no Razão, mas estão no Balancete, não são mais descartadas.",
+    "Contas ausentes do Razão e sem movimento são carregadas normalmente e não bloqueiam o modo anual.",
+    "Se uma conta ausente do Razão tiver movimento em um período acumulado, o app identifica apenas essas contas e solicita o detalhamento necessário, evitando atribuir movimento ao mês errado.",
+    "Diagnóstico da base informa quantas fichas do arquivo foram realmente lidas e deixa claro que não há limite fixo de contas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/62/KBL_ComposicaoPatrimonial_v62_CADASTRO_AUTOMATICO_EMPRESA.zip",
+    "path": "packages/composicao-saldos/63/KBL_ComposicaoPatrimonial_v63_LEITURA_COMPLETA.zip",
     "auth": "github-cli"
   }
 }
