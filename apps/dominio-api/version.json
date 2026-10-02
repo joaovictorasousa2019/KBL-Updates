@@ -3,31 +3,29 @@
   "app_id": "dominio-api",
   "name": "KBL Domínio API",
   "channel": "stable",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "published": true,
   "download_url": "",
-  "sha256": "cd781e80c4aec5fcb74cab5baaad20543441d231525f1ca9ad5e3b906d94abe0",
-  "file_name": "KBL_Dominio_API_v0_1_1.zip",
-  "published_at": "2026-10-02T14:04:21.418Z",
+  "sha256": "320715fcccbe4f73475634638b365b04c4cb7c0bfeaeb2899b25b755bb9857a3",
+  "file_name": "KBL_Dominio_API_v0_1_2.zip",
+  "published_at": "2026-10-02T14:33:40.327Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige o caso em que a KBL Domínio API era instalada, mas nenhuma janela aparecia.",
-    "A janela principal agora é explicitamente exibida, trazida para frente e registrada no runtime_status assim que abre.",
-    "Foi adicionado startup_error.log para qualquer falha durante a inicialização.",
-    "Erros de inicialização agora mostram uma mensagem com o caminho do log em vez de encerrar silenciosamente.",
-    "A configuração inicial ficou tolerante a falhas para que um DSN ausente ou configuração inválida não impeça a interface de abrir.",
-    "A build passou por smoke test real no Windows: o EXE foi iniciado e permaneceu ativo por 6 segundos antes da publicação."
+    "Corrige a falha de inicialização 'Não é possível chamar Invoke ou BeginInvoke em um controle antes da criação do identificador de janela'.",
+    "O autostart da API não chama mais BeginInvoke no construtor; ele só é agendado depois do evento Shown, quando o Handle já existe.",
+    "O log da interface também ignora eventos antes da criação do Handle, preservando o log em arquivo sem derrubar a aplicação.",
+    "A build passou por smoke test no Windows exigindo processo ativo e MainWindowHandle diferente de zero."
   ],
   "hub": {
     "schema_version": 2,
     "id": "dominio-api",
     "app_id": "dominio-api",
     "name": "KBL Domínio API",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "entry": "app/KBL_Dominio_API.exe",
     "category": "Integração Domínio",
-    "description": "API local ODBC read-only com diagnóstico de inicialização e janela forçada para frente.",
+    "description": "API local ODBC read-only com autostart corrigido após criação do Handle da janela.",
     "icon": "assets/KBL_Dominio_API.ico",
     "singleton": true,
     "single_instance": true,
@@ -42,7 +40,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/dominio-api/0.1.1/KBL_Dominio_API_v0_1_1.zip",
+    "path": "packages/dominio-api/0.1.2/KBL_Dominio_API_v0_1_2.zip",
     "auth": "github-cli"
   }
 }
