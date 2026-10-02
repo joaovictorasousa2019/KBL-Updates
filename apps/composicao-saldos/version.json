@@ -3,19 +3,23 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "57",
+  "version": "58",
   "published": true,
   "download_url": "",
-  "sha256": "a017e2dae80d832443f8d7d9b3e65ed979ce7275961c962469542062f08139de",
-  "file_name": "KBL_ComposicaoPatrimonial_v57_BASE_INICIAL.zip",
-  "published_at": "2026-09-28T17:07:55.664354+00:00",
+  "sha256": "0c0169702e730bed7208eb58acb23cf5c30169927aea5652d0ca15c7004391a4",
+  "file_name": "KBL_ComposicaoPatrimonial_v58_MODO_ANUAL_TEMA_HUB.zip",
+  "published_at": "2026-10-02T14:07:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
-  "notes": [],
+  "notes": [
+    "Modo anual aceita períodos parciais, como julho a agosto, sem exigir relatórios desde janeiro.",
+    "Usa a composição do mês imediatamente anterior quando disponível; sem base, usa o saldo inicial oficial do primeiro mês.",
+    "Tema escuro alinhado ao KBL Hub."
+  ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/57/KBL_ComposicaoPatrimonial_v57_BASE_INICIAL.zip",
+    "path": "packages/composicao-saldos/58/KBL_ComposicaoPatrimonial_v58_MODO_ANUAL_TEMA_HUB.zip",
     "auth": "github-cli"
   }
 }
