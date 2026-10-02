@@ -1,0 +1,71 @@
+name: Publish KBL Dominio API 0.1.0
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/publish-dominio-api-0.1.0.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Add app to Hub catalog
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p=Path('manifest.json')
+          data=json.loads(p.read_text(encoding='utf-8-sig'))
+
+          entry={
+              "app_id":"dominio-api",
+              "name":"KBL Domínio API",
+              "manifest_url":"https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/dominio-api/version.json"
+          }
+
+          apps=data.setdefault("apps",[])
+          apps=[x for x in apps if x.get("app_id")!="dominio-api"]
+          idx=next((i for i,x in enumerate(apps) if x.get("app_id")=="kbl-coletor"),len(apps))
+          apps.insert(idx,entry)
+          data["apps"]=apps
+          data["revision"]="2026-10-02-dominio-api-0.1.0"
+
+          p.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding='utf-8')
+          PY
+
+      - name: Validate published manifest
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=json.loads(Path('manifest.json').read_text(encoding='utf-8'))
+          ids=[x.get('app_id') for x in root['apps']]
+          assert ids.count('dominio-api')==1
+          assert Path('apps/dominio-api/version.json').exists()
+          app=json.loads(Path('apps/dominio-api/version.json').read_text(encoding='utf-8'))
+          assert app['version']=='0.1.0'
+          assert app['package']['path']=='packages/dominio-api/0.1.0/KBL_Dominio_API_v0_1_0.zip'
+          print('DOMINIO_API_PUBLISH_OK')
+          PY
+
+      - name: Commit
+        shell: bash
+        run: |
+          git config user.name 'KBL Build Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Adiciona KBL Domínio API ao Hub'
+            git push
+          fi
