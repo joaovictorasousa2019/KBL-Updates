@@ -3,22 +3,24 @@
   "app_id": "balancete-inteligente",
   "name": "KBL Balancete Inteligente",
   "channel": "stable",
-  "version": "14.10",
+  "version": "14.11",
   "published": true,
   "download_url": "",
-  "sha256": "8f5e2ddbfad3dd0186f4c42603f797df0866d853b03b75e4322ee12edc265795",
-  "file_name": "KBL_Balancete_Inteligente_v14_10_Confirmacao_Direta.zip",
-  "published_at": "2026-09-24T18:06:14.570244+00:00",
+  "sha256": "754b6a1a93e220190f7084e2c66b694c13948333b77297b1d26a66cebe76010c",
+  "file_name": "KBL_Balancete_Inteligente_v14_11_Layout_Assistido.zip",
+  "published_at": "2026-10-05T11:43:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "KBL Balancete Inteligente v14.10.",
-    "Pacote preparado para instalação e atualização pelo KBL Hub."
+    "KBL Balancete Inteligente v14.11.",
+    "Layout não reconhecido agora abre automaticamente o cadastro assistido de colunas.",
+    "Incluídos Testar layout, Importar só desta vez e Salvar e importar com aprendizado por empresa.",
+    "Layouts salvos são reaplicados automaticamente quando o mesmo desenho voltar."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/balancete-inteligente/14.10/KBL_Balancete_Inteligente_v14_10_Confirmacao_Direta.zip",
+    "path": "packages/balancete-inteligente/14.11/KBL_Balancete_Inteligente_v14_11_Layout_Assistido.zip",
     "auth": "github-cli"
   }
 }
