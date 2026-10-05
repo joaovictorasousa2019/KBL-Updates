@@ -3,26 +3,24 @@
   "app_id": "balancete-inteligente",
   "name": "KBL Balancete Inteligente",
   "channel": "stable",
-  "version": "14.12",
+  "version": "14.13",
   "published": true,
   "download_url": "",
-  "sha256": "91877c1c29317c329c76e31ab062f64f03894b4adf01b8e99e102f9a43184b56",
-  "file_name": "KBL_Balancete_Inteligente_v14_12_Assistente_Contabil_IA.zip",
-  "published_at": "2026-10-05T12:13:00+00:00",
+  "sha256": "32d27eb189a11d6a7cc7da6f004e1e66789f062846c77374cff6f62e9e488c39",
+  "file_name": "KBL_Balancete_Inteligente_v14_13_Correcao_OpenAI.zip",
+  "published_at": "2026-10-05T12:21:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "KBL Balancete Inteligente v14.12.",
-    "Novo Assistente Contábil KBL com integração opcional via OpenAI Responses API.",
-    "Fluxo obrigatório: regras fixas, memória da empresa, IA, validação local e somente então TXT.",
-    "A IA só pode sugerir contas previamente validadas pelo plano de contas.",
-    "Perguntas e comandos contábeis exigem confirmação antes de qualquer alteração.",
-    "O TXT Domínio continua sendo gerado exclusivamente pelo motor local."
+    "KBL Balancete Inteligente v14.13.",
+    "Corrige o erro No module named openai na inicialização.",
+    "A integração com a Responses API não depende mais do pacote Python openai.",
+    "Sem chave da API, o Balancete continua abrindo normalmente; apenas o Assistente IA fica indisponível."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/balancete-inteligente/14.12/KBL_Balancete_Inteligente_v14_12_Assistente_Contabil_IA.zip",
+    "path": "packages/balancete-inteligente/14.13/KBL_Balancete_Inteligente_v14_13_Correcao_OpenAI.zip",
     "auth": "github-cli"
   }
 }
