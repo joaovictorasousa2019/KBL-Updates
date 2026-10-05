@@ -3,24 +3,25 @@
   "app_id": "balancete-inteligente",
   "name": "KBL Balancete Inteligente",
   "channel": "stable",
-  "version": "14.14",
+  "version": "14.15",
   "published": true,
   "download_url": "",
-  "sha256": "6d6f6989cf8881eddab38836a2c3d3cf49d6c0575b2fd5adc0857cc255170954",
-  "file_name": "KBL_Balancete_Inteligente_v14_14_IA_Medium.zip",
-  "published_at": "2026-10-05T12:29:00+00:00",
+  "sha256": "d01370736caa13559bdafa585fa05a75674e41adcc6f104188d1915bd8ac39cd",
+  "file_name": "KBL_Balancete_Inteligente_v14_15_Configurar_API.zip",
+  "published_at": "2026-10-05T12:43:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "KBL Balancete Inteligente v14.14.",
-    "Assistente Contábil KBL fixado em reasoning.mode standard.",
-    "reasoning.effort medium em todas as chamadas da IA.",
-    "A configuração vale para análise de contrapartida, comandos e perguntas."
+    "KBL Balancete Inteligente v14.15.",
+    "Novo Configurar IA com campo protegido para OpenAI API key.",
+    "Chave salva pelo app é criptografada pelo Windows DPAPI e não vai para o SQLite.",
+    "Incluídos Testar conexão, Remover chave e acesso à página oficial de API keys.",
+    "GPT-6.1 Sol permanece em standard / medium."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/balancete-inteligente/14.14/KBL_Balancete_Inteligente_v14_14_IA_Medium.zip",
+    "path": "packages/balancete-inteligente/14.15/KBL_Balancete_Inteligente_v14_15_Configurar_API.zip",
     "auth": "github-cli"
   }
 }
