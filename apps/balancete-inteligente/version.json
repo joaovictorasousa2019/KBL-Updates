@@ -3,25 +3,26 @@
   "app_id": "balancete-inteligente",
   "name": "KBL Balancete Inteligente",
   "channel": "stable",
-  "version": "14.15",
+  "version": "14.16",
   "published": true,
   "download_url": "",
-  "sha256": "d01370736caa13559bdafa585fa05a75674e41adcc6f104188d1915bd8ac39cd",
-  "file_name": "KBL_Balancete_Inteligente_v14_15_Configurar_API.zip",
-  "published_at": "2026-10-05T12:43:00+00:00",
+  "sha256": "76b1af1d6d0647bb6295b5f75cb9ffcb86d7637e16cc42119763529d23cdeff0",
+  "file_name": "KBL_Balancete_Inteligente_v14_16_ChatGPT_Privado.zip",
+  "published_at": "2026-10-05T13:22:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "KBL Balancete Inteligente v14.15.",
-    "Novo Configurar IA com campo protegido para OpenAI API key.",
-    "Chave salva pelo app é criptografada pelo Windows DPAPI e não vai para o SQLite.",
-    "Incluídos Testar conexão, Remover chave e acesso à página oficial de API keys.",
-    "GPT-6.1 Sol permanece em standard / medium."
+    "KBL Balancete Inteligente v14.16.",
+    "Preparado para Continuar com ChatGPT mantendo o KBL privado.",
+    "Tela Configurar IA prioriza ChatGPT Plus/Pro e mostra Aguardando aprovação até existir client_id aprovado pela OpenAI.",
+    "OAuth Authorization Code + PKCE, tokens locais criptografados pelo Windows DPAPI e refresh automático.",
+    "Uso do plano exige chatgpt.tokens.use.direct e chamadas Responses com store=false e stream=true.",
+    "API key permanece disponível como fallback enquanto o cliente privado não for aprovado."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/balancete-inteligente/14.15/KBL_Balancete_Inteligente_v14_15_Configurar_API.zip",
+    "path": "packages/balancete-inteligente/14.16/KBL_Balancete_Inteligente_v14_16_ChatGPT_Privado.zip",
     "auth": "github-cli"
   }
 }
