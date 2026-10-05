@@ -3,24 +3,24 @@
   "app_id": "balancete-inteligente",
   "name": "KBL Balancete Inteligente",
   "channel": "stable",
-  "version": "14.13",
+  "version": "14.14",
   "published": true,
   "download_url": "",
-  "sha256": "32d27eb189a11d6a7cc7da6f004e1e66789f062846c77374cff6f62e9e488c39",
-  "file_name": "KBL_Balancete_Inteligente_v14_13_Correcao_OpenAI.zip",
-  "published_at": "2026-10-05T12:21:00+00:00",
+  "sha256": "6d6f6989cf8881eddab38836a2c3d3cf49d6c0575b2fd5adc0857cc255170954",
+  "file_name": "KBL_Balancete_Inteligente_v14_14_IA_Medium.zip",
+  "published_at": "2026-10-05T12:29:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "KBL Balancete Inteligente v14.13.",
-    "Corrige o erro No module named openai na inicialização.",
-    "A integração com a Responses API não depende mais do pacote Python openai.",
-    "Sem chave da API, o Balancete continua abrindo normalmente; apenas o Assistente IA fica indisponível."
+    "KBL Balancete Inteligente v14.14.",
+    "Assistente Contábil KBL fixado em reasoning.mode standard.",
+    "reasoning.effort medium em todas as chamadas da IA.",
+    "A configuração vale para análise de contrapartida, comandos e perguntas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/balancete-inteligente/14.13/KBL_Balancete_Inteligente_v14_13_Correcao_OpenAI.zip",
+    "path": "packages/balancete-inteligente/14.14/KBL_Balancete_Inteligente_v14_14_IA_Medium.zip",
     "auth": "github-cli"
   }
 }
