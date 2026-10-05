@@ -3,24 +3,26 @@
   "app_id": "balancete-inteligente",
   "name": "KBL Balancete Inteligente",
   "channel": "stable",
-  "version": "14.11",
+  "version": "14.12",
   "published": true,
   "download_url": "",
-  "sha256": "754b6a1a93e220190f7084e2c66b694c13948333b77297b1d26a66cebe76010c",
-  "file_name": "KBL_Balancete_Inteligente_v14_11_Layout_Assistido.zip",
-  "published_at": "2026-10-05T11:43:00+00:00",
+  "sha256": "91877c1c29317c329c76e31ab062f64f03894b4adf01b8e99e102f9a43184b56",
+  "file_name": "KBL_Balancete_Inteligente_v14_12_Assistente_Contabil_IA.zip",
+  "published_at": "2026-10-05T12:13:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "KBL Balancete Inteligente v14.11.",
-    "Layout não reconhecido agora abre automaticamente o cadastro assistido de colunas.",
-    "Incluídos Testar layout, Importar só desta vez e Salvar e importar com aprendizado por empresa.",
-    "Layouts salvos são reaplicados automaticamente quando o mesmo desenho voltar."
+    "KBL Balancete Inteligente v14.12.",
+    "Novo Assistente Contábil KBL com integração opcional via OpenAI Responses API.",
+    "Fluxo obrigatório: regras fixas, memória da empresa, IA, validação local e somente então TXT.",
+    "A IA só pode sugerir contas previamente validadas pelo plano de contas.",
+    "Perguntas e comandos contábeis exigem confirmação antes de qualquer alteração.",
+    "O TXT Domínio continua sendo gerado exclusivamente pelo motor local."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/balancete-inteligente/14.11/KBL_Balancete_Inteligente_v14_11_Layout_Assistido.zip",
+    "path": "packages/balancete-inteligente/14.12/KBL_Balancete_Inteligente_v14_12_Assistente_Contabil_IA.zip",
     "auth": "github-cli"
   }
 }
