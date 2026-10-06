@@ -3,24 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.20",
+  "version": "3.20.21",
   "published": true,
   "download_url": "",
-  "sha256": "f6f869510863ef72c1249fc76ffcf4993074c2ac845a24c876e36bfa6190b174",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_20.zip",
-  "published_at": "2026-10-06T14:55:00+00:00",
+  "sha256": "75ae270878f931c5daea14b9c5e4dd2695033e887efd793ae2ee76b2eae1aa6a",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_21.zip",
+  "published_at": "2026-10-06T15:11:30+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Composição: Gerenciar cadeia econômica agora reconstrói a cadeia completa pelos vínculos explícitos do motor.",
-    "A tela passa a exibir abertura/integração do Razão, documento fiscal, baixas/recebimentos, retenções/ajustes e devoluções.",
-    "Itens fiscais aparecem como evidência e não podem ser removidos como se fossem lançamentos contábeis.",
-    "A grade ganhou colunas Origem e Valor para facilitar a conferência."
+    "Cliente pagou bruto: o vínculo agora é reconhecido diretamente na Composição mesmo quando o matching inicial não criou o par.",
+    "Quando recebimento = saldo documental + retenções declaradas, as duas linhas são consolidadas automaticamente em um residual identificado, sem esconder a diferença real do Razão.",
+    "Caso validado: R$ 23.462,50 + R$ 1.537,50 = R$ 25.000,00.",
+    "Gerenciar cadeia econômica passa a mostrar NF/evidência fiscal, abertura do Razão, recebimento e retenções identificadas.",
+    "Quando há títulos economicamente indistinguíveis, o sistema usa FIFO por data/documento e registra essa decisão no relatório/auditoria."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.20/KBL_Conciliador_Contabil_v3_20_20.zip",
+    "path": "packages/conciliador-contabil/3.20.21/KBL_Conciliador_Contabil_v3_20_21.zip",
     "auth": "github-cli"
   }
 }
