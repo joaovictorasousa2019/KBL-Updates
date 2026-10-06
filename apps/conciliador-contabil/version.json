@@ -3,28 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.1",
+  "version": "3.21.2",
   "published": true,
   "download_url": "",
-  "sha256": "eb16a51bbef5f9f504af75d9e27541a1a42b8412d21ba5de01424e885a8b007f",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_1.zip",
-  "published_at": "2026-10-06T17:17:00+00:00",
+  "sha256": "28f872134703762856611743b47696a6e56adb98e058f89d6eddaae1494dc2c8",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_2.zip",
+  "published_at": "2026-10-06T17:49:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Auditoria de fechamento agora decompõe matematicamente a diferença entre Razão e Composição.",
-    "Mostra Diferença total, Já explicada, Ainda sem explicação e percentual de cobertura.",
-    "A aba O que forma a diferença lista somente os movimentos que explicam matematicamente o saldo faltante, ordenados por impacto.",
-    "A aba Itens sem origem transforma o contador em uma fila completa de pendências, também ordenada por impacto.",
-    "Duplo clique abre a cadeia econômica do item; a auditoria também oferece Por que?, Resolver selecionado e Reprocessar correções seguras.",
-    "A auditoria preserva os indicadores de retenções, resíduos até R$ 5 e duplicidades.",
-    "O Excel final ganhou a aba Diferença Explicada.",
-    "A publicação permanece bloqueada quando a regressão falha."
+    "Corrige a leitura do padrão Domínio 01/NF/parcela: por exemplo, 01/11723/1-1 agora identifica a NF 11723, e não o documento 1.",
+    "Baixas com várias NFs explicitamente citadas preservam a lista de referências e deixam de ser forçadas contra a primeira NF.",
+    "Nos arquivos usados para validação, 2.163 baixas tinham a referência afetada pelo formato 01/NF/parcela.",
+    "A correção aumenta fortemente o casamento automático entre baixas do Razão e documentos fiscais e reduz a Composição para os saldos realmente residuais.",
+    "A versão manteve o bloqueio de publicação por regressão e só foi liberada após os testes passarem."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.1/KBL_Conciliador_Contabil_v3_21_1.zip",
+    "path": "packages/conciliador-contabil/3.21.2/KBL_Conciliador_Contabil_v3_21_2.zip",
     "auth": "github-cli"
   }
 }
