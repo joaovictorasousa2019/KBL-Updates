@@ -126,7 +126,51 @@ if old not in t:
     raise RuntimeError("rodapé do menu Mais não encontrado")
 t = t.replace(old, new, 1)
 
-# A grade principal ignora arquivados até o usuário pedir para mostrá-los.
+# Runtime em background: arquivados continuam rastreáveis, mas não contam como atualização principal.
+start = t.index("    def _runtime_scan_worker(self):")
+end = t.index("    def _apply_runtime_rows", start)
+runtime = t[start:end]
+
+old = '''            for app_id in self.all_ids():
+                folder = app_dir(app_id)
+'''
+new = '''            for app_id in self.all_ids():
+                archived = self.is_archived(app_id)
+                folder = app_dir(app_id)
+'''
+if old not in runtime:
+    raise RuntimeError("loop do runtime não encontrado")
+runtime = runtime.replace(old, new, 1)
+
+old = '''                elif cand and vtuple(cand["version"]) > vtuple(local):
+                    status = (run_status + " • " if run_status else "") + "Atualização disponível"
+                    updates += 1
+'''
+new = '''                elif cand and vtuple(cand["version"]) > vtuple(local):
+                    status = (run_status + " • " if run_status else "") + "Atualização disponível"
+                    if not archived:
+                        updates += 1
+'''
+if old not in runtime:
+    raise RuntimeError("contador do runtime não encontrado")
+runtime = runtime.replace(old, new, 1)
+
+old = '''                rows[app_id] = (name, local, avail, source, status)
+'''
+new = '''                if archived:
+                    status = "Arquivado • " + status
+                rows[app_id] = (name, local, avail, source, status)
+'''
+if old not in runtime:
+    raise RuntimeError("linha do runtime não encontrada")
+runtime = runtime.replace(old, new, 1)
+t = t[:start] + runtime + t[end:]
+
+# Render: arquivados somem por padrão e reaparecem somente quando solicitado.
+start = t.index("    def render(self, offline=False):")
+end = t.index("    def install_selected", start)
+render = t[start:end]
+
 old = '''        for app_id in self.all_ids():
             folder = app_dir(app_id)
 '''
@@ -136,46 +180,22 @@ new = '''        for app_id in self.all_ids():
                 continue
             folder = app_dir(app_id)
 '''
-# Há dois loops semelhantes (runtime em background e render). O primeiro é o runtime.
-if old not in t:
-    raise RuntimeError("loop de runtime não encontrado")
-t = t.replace(old, '''        for app_id in self.all_ids():
-            archived = self.is_archived(app_id)
-            folder = app_dir(app_id)
-''', 1)
-# O segundo é o render.
-if old not in t:
-    raise RuntimeError("loop de render não encontrado")
-t = t.replace(old, new, 1)
+if old not in render:
+    raise RuntimeError("loop do render não encontrado")
+render = render.replace(old, new, 1)
 
-# Atualizações arquivadas não entram no contador principal. Quando visíveis, recebem rótulo claro.
 old = '''            elif cand and vtuple(cand["version"]) > vtuple(local):
                 status = (run_status + " • " if run_status else "") + "Atualização disponível"
                 updates += 1
-            elif run_status:
 '''
-new_runtime = '''            elif cand and vtuple(cand["version"]) > vtuple(local):
+new = '''            elif cand and vtuple(cand["version"]) > vtuple(local):
                 status = (run_status + " • " if run_status else "") + "Atualização disponível"
                 if not archived:
                     updates += 1
-            elif run_status:
 '''
-if old not in t:
-    raise RuntimeError("status de atualização do runtime não encontrado")
-t = t.replace(old, new_runtime, 1)
-if old not in t:
-    raise RuntimeError("status de atualização do render não encontrado")
-t = t.replace(old, new_runtime, 1)
-
-old = '''            rows[app_id] = (name, local, avail, source, status)
-'''
-new = '''            if archived:
-                status = "Arquivado • " + status
-            rows[app_id] = (name, local, avail, source, status)
-'''
-if old not in t:
-    raise RuntimeError("linha de cache do runtime não encontrada")
-t = t.replace(old, new, 1)
+if old not in render:
+    raise RuntimeError("contador do render não encontrado")
+render = render.replace(old, new, 1)
 
 old = '''            row_values = (name, local, avail, source, status)
             self.tree.insert("", "end", iid=app_id, values=row_values)
@@ -185,11 +205,15 @@ new = '''            if archived:
             row_values = (name, local, avail, source, status)
             self.tree.insert("", "end", iid=app_id, values=row_values)
 '''
-if old not in t:
-    raise RuntimeError("linha visual do render não encontrada")
-t = t.replace(old, new, 1)
+if old not in render:
+    raise RuntimeError("linha do render não encontrada")
+render = render.replace(old, new, 1)
+t = t[:start] + render + t[end:]
 
-# Operações em lote respeitam o arquivamento.
+# Instalar tudo ignora arquivados.
+start = t.index("    def install_all(self):")
+end = t.index("    def update_all", start)
+block = t[start:end]
 old = '''        ids = [i for i in self.all_ids()
                if self.candidate(i) and not (app_dir(i).exists() and any(app_dir(i).iterdir()))]
 '''
@@ -197,10 +221,15 @@ new = '''        ids = [i for i in self.all_ids()
                if not self.is_archived(i)
                and self.candidate(i) and not (app_dir(i).exists() and any(app_dir(i).iterdir()))]
 '''
-if old not in t:
+if old not in block:
     raise RuntimeError("install_all não encontrado")
-t = t.replace(old, new, 1)
+block = block.replace(old, new, 1)
+t = t[:start] + block + t[end:]
 
+# Atualizar tudo também ignora arquivados.
+start = t.index("    def update_all(self):")
+end = t.index("    def _batch", start)
+block = t[start:end]
 old = '''        for i in self.all_ids():
             c = self.candidate(i)
 '''
@@ -209,9 +238,10 @@ new = '''        for i in self.all_ids():
                 continue
             c = self.candidate(i)
 '''
-if old not in t:
+if old not in block:
     raise RuntimeError("update_all não encontrado")
-t = t.replace(old, new, 1)
+block = block.replace(old, new, 1)
+t = t[:start] + block + t[end:]
 
 p.write_text(t, encoding="utf-8")
 print("KBL Hub patched to 2.2.19")
