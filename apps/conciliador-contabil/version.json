@@ -3,24 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.17",
+  "version": "3.20.18",
   "published": true,
   "download_url": "",
-  "sha256": "4357bbf92a24071483923fc9454a2d61b00365a446f082f5d9238a2ca483227e",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_17.zip",
-  "published_at": "2026-10-06T14:30:00+00:00",
+  "sha256": "af7621e6082a291d9c35c8a47d3439028641523b2b2d7750f43b154ac4d1be8a",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_18.zip",
+  "published_at": "2026-10-06T14:37:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Motor: agora identifica recebimentos pelo valor bruto quando a NFS/serviço foi importada pelo valor líquido.",
-    "O matching considera líquido + retenções declaradas antes de classificar o recebimento como divergência.",
-    "Caso validado: R$ 23.462,50 líquido + R$ 1.537,50 de retenções = R$ 25.000,00 recebido.",
-    "Quando terceiro/CNPJ e os valores fecham de forma inequívoca, a conciliação é automática e a ocorrência das retenções permanece documentada."
+    "Corrigida a trava temporal antiga que ainda bloqueava recebimentos de clientes anteriores à emissão da NFS.",
+    "O matching econômico agora usa a janela real de até 60 dias antes da NF para Clientes e Fornecedores.",
+    "Caso OCTA coberto: recebimento em 22/07, NFS em 30/07, líquido R$ 23.462,50 + retenções R$ 1.537,50 = recebido R$ 25.000,00.",
+    "Quando terceiro/CNPJ e os valores fecham, o vínculo pode ser confirmado automaticamente e deixa de exigir Vincular manualmente."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.17/KBL_Conciliador_Contabil_v3_20_17.zip",
+    "path": "packages/conciliador-contabil/3.20.18/KBL_Conciliador_Contabil_v3_20_18.zip",
     "auth": "github-cli"
   }
 }
