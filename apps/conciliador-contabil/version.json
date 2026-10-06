@@ -3,30 +3,28 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.0",
+  "version": "3.21.1",
   "published": true,
   "download_url": "",
-  "sha256": "1556c154a378b511e302adfd12a2945cc63154cafb1c737af23236a92d6347c7",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_0.zip",
-  "published_at": "2026-10-06T16:52:00+00:00",
+  "sha256": "eb16a51bbef5f9f504af75d9e27541a1a42b8412d21ba5de01424e885a8b007f",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_1.zip",
+  "published_at": "2026-10-06T17:17:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Por que não conciliou?: cada pendência recebe score e fatores objetivos de terceiro/CNPJ, valor, data, documento e memória.",
-    "Revisão inteligente: vínculos médios ou ambíguos ficam em fila própria com prévia da cadeia antes da confirmação.",
-    "Retenções: IRRF/PCC e demais retenções continuam rastreáveis, incluindo cliente que paga o bruto e residual tributário identificado.",
-    "Cadeia econômica: o mesmo padrão visual é usado para conferência dos vínculos, reduzindo telas técnicas diferentes para o mesmo caso.",
-    "Resolver diferença: prioriza vínculos, retenções, resíduos até R$ 5, janela de 60 dias, N:N, saldo anterior, duplicidades e só depois lançamento contábil.",
-    "Memória por empresa: confirmações de cliente/fornecedor viram aprendizado com histórico e opção de desfazer o último aprendizado.",
-    "Confiança por cadeia: percentual e classificação explicável em vez de apenas rótulo genérico.",
-    "Auditoria de fechamento: status 100% OK somente quando Razão x Composição fecha e não há item sem identificação ou erro final.",
-    "Histórico de decisões: registra decisões automáticas e aprendizados para rastreabilidade.",
-    "Regressão obrigatória: 21 testes passaram e o pacote só é gerado quando toda a suite passa."
+    "Auditoria de fechamento agora decompõe matematicamente a diferença entre Razão e Composição.",
+    "Mostra Diferença total, Já explicada, Ainda sem explicação e percentual de cobertura.",
+    "A aba O que forma a diferença lista somente os movimentos que explicam matematicamente o saldo faltante, ordenados por impacto.",
+    "A aba Itens sem origem transforma o contador em uma fila completa de pendências, também ordenada por impacto.",
+    "Duplo clique abre a cadeia econômica do item; a auditoria também oferece Por que?, Resolver selecionado e Reprocessar correções seguras.",
+    "A auditoria preserva os indicadores de retenções, resíduos até R$ 5 e duplicidades.",
+    "O Excel final ganhou a aba Diferença Explicada.",
+    "A publicação permanece bloqueada quando a regressão falha."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.0/KBL_Conciliador_Contabil_v3_21_0.zip",
+    "path": "packages/conciliador-contabil/3.21.1/KBL_Conciliador_Contabil_v3_21_1.zip",
     "auth": "github-cli"
   }
 }
