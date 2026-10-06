@@ -3,24 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.14",
+  "version": "3.20.15",
   "published": true,
   "download_url": "",
-  "sha256": "cc77a46f22b6e159db74f4154ec486290a593960a777dd8bb92035dd469a0a2f",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_14.zip",
-  "published_at": "2026-10-06T13:40:00+00:00",
+  "sha256": "3be9a7033a698ccb55040408ad7bf08484b6b31fddda4a66363988553e6bbe87",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_15.zip",
+  "published_at": "2026-10-06T14:08:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Clientes: recebimentos até 60 dias antes da NF passam a ser aceitos usando dias corridos reais.",
-    "O motor identifica quando o cliente paga o valor bruto e a diferença para o líquido contabilizado fecha exatamente com as retenções informadas na NFS.",
-    "Nesses casos, a composição é liquidada sem residual fictício; a ocorrência fica registrada no detalhe, relatório e auditoria para revisão contábil das retenções.",
-    "O Resolver diferença agora separa itens já resolvidos, correções seguras e ações que ainda exigem decisão manual."
+    "Baixas conciliadas: o duplo clique agora reconstrói a cadeia completa do vínculo, incluindo abertura/integração do Razão, documento fiscal, recebimentos/baixas, retenções e devoluções ligadas ao mesmo documento.",
+    "O detalhe da conciliação foi padronizado com a visualização de cadeia da Composição e exibe saldo residual.",
+    "Composição: o filtro de Competência agora aceita várias competências simultaneamente.",
+    "É possível digitar 072026, 082026 ou selecionar várias competências no novo seletor."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.14/KBL_Conciliador_Contabil_v3_20_14.zip",
+    "path": "packages/conciliador-contabil/3.20.15/KBL_Conciliador_Contabil_v3_20_15.zip",
     "auth": "github-cli"
   }
 }
