@@ -3,23 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.13",
+  "version": "3.20.14",
   "published": true,
   "download_url": "",
-  "sha256": "a387f9168988ce36e569600e32d8355c4a405a834c31b6af4f9c7e60de013359",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_13.zip",
-  "published_at": "2026-10-06T12:45:00+00:00",
+  "sha256": "cc77a46f22b6e159db74f4154ec486290a593960a777dd8bb92035dd469a0a2f",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_14.zip",
+  "published_at": "2026-10-06T13:40:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrigido falso 'Data incompatível' quando os lançamentos selecionados possuem a mesma data.",
-    "A validação temporal agora prioriza a data efetiva do movimento/cadeia e usa competência somente como fallback; mantém a regra de até 60 dias para pagamento antecipado de fornecedores.",
-    "Em Baixas conciliadas, o duplo clique passa a abrir a cadeia em grade padronizada, igual ao detalhe da Composição, sem exibir o dicionário/JSON bruto."
+    "Clientes: recebimentos até 60 dias antes da NF passam a ser aceitos usando dias corridos reais.",
+    "O motor identifica quando o cliente paga o valor bruto e a diferença para o líquido contabilizado fecha exatamente com as retenções informadas na NFS.",
+    "Nesses casos, a composição é liquidada sem residual fictício; a ocorrência fica registrada no detalhe, relatório e auditoria para revisão contábil das retenções.",
+    "O Resolver diferença agora separa itens já resolvidos, correções seguras e ações que ainda exigem decisão manual."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.13/KBL_Conciliador_Contabil_v3_20_13.zip",
+    "path": "packages/conciliador-contabil/3.20.14/KBL_Conciliador_Contabil_v3_20_14.zip",
     "auth": "github-cli"
   }
 }
