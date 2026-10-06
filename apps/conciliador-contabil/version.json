@@ -3,24 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.15",
+  "version": "3.20.16",
   "published": true,
   "download_url": "",
-  "sha256": "3be9a7033a698ccb55040408ad7bf08484b6b31fddda4a66363988553e6bbe87",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_15.zip",
-  "published_at": "2026-10-06T14:08:00+00:00",
+  "sha256": "fe0e10338ecfd51ccf4d938f20ba4cebd4f80217621f873db19b6f18a3e2b01a",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_16.zip",
+  "published_at": "2026-10-06T14:20:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Baixas conciliadas: o duplo clique agora reconstrói a cadeia completa do vínculo, incluindo abertura/integração do Razão, documento fiscal, recebimentos/baixas, retenções e devoluções ligadas ao mesmo documento.",
-    "O detalhe da conciliação foi padronizado com a visualização de cadeia da Composição e exibe saldo residual.",
-    "Composição: o filtro de Competência agora aceita várias competências simultaneamente.",
-    "É possível digitar 072026, 082026 ou selecionar várias competências no novo seletor."
+    "Composição: filtros reorganizados e compactados, sem botão separado de seleção de competências.",
+    "Múltiplas competências continuam disponíveis diretamente no campo Competência(s), separadas por vírgula.",
+    "Conciliações realizadas: filtros, busca por conteúdo, ordenação e organização Cliente/Fornecedor + data foram padronizados com a Composição.",
+    "Conciliações realizadas: duplo clique e botão Abrir cadeia usam a visualização completa da cadeia conciliada."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.15/KBL_Conciliador_Contabil_v3_20_15.zip",
+    "path": "packages/conciliador-contabil/3.20.16/KBL_Conciliador_Contabil_v3_20_16.zip",
     "auth": "github-cli"
   }
 }
