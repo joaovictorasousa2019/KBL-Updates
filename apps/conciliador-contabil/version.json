@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.4",
+  "version": "3.21.5",
   "published": true,
   "download_url": "",
-  "sha256": "b686d98932036a378a87b07a2ea5c056fc641f3f7e13c98d32a76f156f676a77",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_4.zip",
-  "published_at": "2026-10-06T20:10:36.938Z",
+  "sha256": "eef9d25ead0aa95cb11ec4643ed87225e51ba1cdb7fc62dbc466991f20ee2238",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_5.zip",
+  "published_at": "2026-10-06T21:12:31.451Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Importa TXT de estado completo da conciliação.",
-    "Restaura vínculos conciliados, composição final, saldo residual e ajustes contábeis.",
-    "O estado importado fica persistido e volta automaticamente na próxima abertura.",
-    "Ajustes importados continuam disponíveis para exportação ao Domínio sem reduzir o saldo duas vezes.",
-    "Formato portátil KBL_CONCILIACAO_STATE v1, independente de IDs temporários.",
-    "Inclui EXEMPLO_IMPORTACAO_CONCILIACAO.txt e botão Modelo TXT."
+    "TXT passa a funcionar como composição anterior identificada.",
+    "Cliente e NF são preservados ao conciliar o mês seguinte.",
+    "Baixas do mês atual consomem o título anterior por documento.",
+    "Saldo inicial genérico é substituído pela composição documental importada.",
+    "Baixas parciais mantêm cliente, NF e saldo residual.",
+    "Grades recuperam cliente/NF pela cadeia quando a linha principal estiver incompleta."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.4/KBL_Conciliador_Contabil_v3_21_4.zip",
+    "path": "packages/conciliador-contabil/3.21.5/KBL_Conciliador_Contabil_v3_21_5.zip",
     "auth": "github-cli"
   }
 }
