@@ -3,19 +3,24 @@
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
-  "version": "4.0.12",
+  "version": "4.0.13",
   "published": true,
   "download_url": "",
-  "sha256": "51c657b17a8b74b95a8584438a68abc0bedcfc9284fe2a1df8fa3da4568acf82",
-  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_12.zip",
-  "published_at": "2026-09-29T16:21:50.967405+00:00",
+  "sha256": "37446df0eb73e41fad5189dcdac2ccb7f064e34d457fe0d5b999151e6b75ec4e",
+  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_13.zip",
+  "published_at": "2026-10-06T17:10:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
-  "notes": [],
+  "notes": [
+    "Lucro Real: provisão de IRPJ/CSLL pelo valor cheio antes da compensação de prejuízo fiscal/base negativa.",
+    "Realização do ativo fiscal diferido diretamente contra IRPJ/CSLL a recolher, conforme padrão validado no razão da Aplic 13.",
+    "IRRF, IR sobre aplicações e CSLL retida tratados separadamente da baixa do diferido.",
+    "Razão do Domínio identifica a contrapartida do passivo para distinguir diferido de créditos tributários."
+  ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/irpj-csll/4.0.12/KBL_Apuracao_IRPJ_CSLL_v4_0_12.zip",
+    "path": "packages/irpj-csll/4.0.13/KBL_Apuracao_IRPJ_CSLL_v4_0_13.zip",
     "auth": "github-cli"
   }
 }
