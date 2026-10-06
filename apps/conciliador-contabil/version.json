@@ -3,27 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.3",
+  "version": "3.21.4",
   "published": true,
   "download_url": "",
-  "sha256": "e47626851cfdf3cdcb21e65386864e2508b90f20dfdf28a10f4ab5517d5e7502",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_3.zip",
-  "published_at": "2026-10-06T18:04:00+00:00",
+  "sha256": "b686d98932036a378a87b07a2ea5c056fc641f3f7e13c98d32a76f156f676a77",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_4.zip",
+  "published_at": "2026-10-06T20:10:36.938Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Reconstrói automaticamente o saldo inicial quando não existe composição anterior.",
-    "O saldo de abertura é tratado como envelope por conta; nenhuma NF fictícia é criada.",
-    "Baixas com documento explícito no histórico só consomem o saldo inicial quando o documento não existe no fiscal carregado nem possui abertura no Razão do período atual.",
-    "Cadeias liquidadas ficam marcadas como RECONSTRUÍDO DO SALDO ANTERIOR e deixam de poluir a Composição.",
-    "O restante não comprovado fica consolidado em uma única linha SALDO INICIAL SEM IDENTIFICAÇÃO por conta.",
-    "Adiantamentos de clientes e fornecedores continuam segregados e não são usados genericamente para fechar o saldo inicial.",
-    "O Excel final ganhou a aba Saldo Inicial Reconstruído."
+    "Importa TXT de estado completo da conciliação.",
+    "Restaura vínculos conciliados, composição final, saldo residual e ajustes contábeis.",
+    "O estado importado fica persistido e volta automaticamente na próxima abertura.",
+    "Ajustes importados continuam disponíveis para exportação ao Domínio sem reduzir o saldo duas vezes.",
+    "Formato portátil KBL_CONCILIACAO_STATE v1, independente de IDs temporários.",
+    "Inclui EXEMPLO_IMPORTACAO_CONCILIACAO.txt e botão Modelo TXT."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.3/KBL_Conciliador_Contabil_v3_21_3.zip",
+    "path": "packages/conciliador-contabil/3.21.4/KBL_Conciliador_Contabil_v3_21_4.zip",
     "auth": "github-cli"
   }
 }
