@@ -3,24 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.18",
+  "version": "3.20.19",
   "published": true,
   "download_url": "",
-  "sha256": "af7621e6082a291d9c35c8a47d3439028641523b2b2d7750f43b154ac4d1be8a",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_18.zip",
-  "published_at": "2026-10-06T14:37:00+00:00",
+  "sha256": "11904b6cbecb179bd5417d5abab1580b9227b85389d0b606fb4ca9c2a44f1a8c",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_19.zip",
+  "published_at": "2026-10-06T14:47:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrigida a trava temporal antiga que ainda bloqueava recebimentos de clientes anteriores à emissão da NFS.",
-    "O matching econômico agora usa a janela real de até 60 dias antes da NF para Clientes e Fornecedores.",
-    "Caso OCTA coberto: recebimento em 22/07, NFS em 30/07, líquido R$ 23.462,50 + retenções R$ 1.537,50 = recebido R$ 25.000,00.",
-    "Quando terceiro/CNPJ e os valores fecham, o vínculo pode ser confirmado automaticamente e deixa de exigir Vincular manualmente."
+    "Fiscal/Serviços: PIS, COFINS e CSLL separados passam a compor corretamente o PCC/CRF retido.",
+    "O motor valida retenções pelo Total Retenções, pelas colunas tributárias e pela diferença entre bruto e líquido.",
+    "Caso OCTA coberto: IRRF R$ 375,00 + PCC/CRF R$ 1.162,50 = R$ 1.537,50; líquido R$ 23.462,50; recebido R$ 25.000,00.",
+    "PIS/COFINS/CSLL só são tratados automaticamente como retenção em documentos de serviços."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.18/KBL_Conciliador_Contabil_v3_20_18.zip",
+    "path": "packages/conciliador-contabil/3.20.19/KBL_Conciliador_Contabil_v3_20_19.zip",
     "auth": "github-cli"
   }
 }
