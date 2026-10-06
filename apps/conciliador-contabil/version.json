@@ -3,25 +3,30 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.22",
+  "version": "3.21.0",
   "published": true,
   "download_url": "",
-  "sha256": "d31841b517f0757b6fb8e9cb3c9988ab7602ca2659f721428439befa6c81e27c",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_22.zip",
-  "published_at": "2026-10-06T16:25:00+00:00",
+  "sha256": "1556c154a378b511e302adfd12a2945cc63154cafb1c737af23236a92d6347c7",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_0.zip",
+  "published_at": "2026-10-06T16:52:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Conciliações realizadas agora abre a central nova pelo botão Abrir conciliações e pelo atalho.",
-    "Duplo clique em qualquer conciliação abre a cadeia completa em grade, no mesmo padrão da Composição.",
-    "A tela técnica antiga com dump de objetos foi retirada do fluxo normal.",
-    "A cadeia exibe origem, data, movimento, débito, crédito, documento, linha e histórico/terceiro, além do residual.",
-    "Mantidos Abrir origem, Editar identificação, Desfazer conciliação e Criar lançamento contábil."
+    "Por que não conciliou?: cada pendência recebe score e fatores objetivos de terceiro/CNPJ, valor, data, documento e memória.",
+    "Revisão inteligente: vínculos médios ou ambíguos ficam em fila própria com prévia da cadeia antes da confirmação.",
+    "Retenções: IRRF/PCC e demais retenções continuam rastreáveis, incluindo cliente que paga o bruto e residual tributário identificado.",
+    "Cadeia econômica: o mesmo padrão visual é usado para conferência dos vínculos, reduzindo telas técnicas diferentes para o mesmo caso.",
+    "Resolver diferença: prioriza vínculos, retenções, resíduos até R$ 5, janela de 60 dias, N:N, saldo anterior, duplicidades e só depois lançamento contábil.",
+    "Memória por empresa: confirmações de cliente/fornecedor viram aprendizado com histórico e opção de desfazer o último aprendizado.",
+    "Confiança por cadeia: percentual e classificação explicável em vez de apenas rótulo genérico.",
+    "Auditoria de fechamento: status 100% OK somente quando Razão x Composição fecha e não há item sem identificação ou erro final.",
+    "Histórico de decisões: registra decisões automáticas e aprendizados para rastreabilidade.",
+    "Regressão obrigatória: 21 testes passaram e o pacote só é gerado quando toda a suite passa."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.22/KBL_Conciliador_Contabil_v3_20_22.zip",
+    "path": "packages/conciliador-contabil/3.21.0/KBL_Conciliador_Contabil_v3_21_0.zip",
     "auth": "github-cli"
   }
 }
