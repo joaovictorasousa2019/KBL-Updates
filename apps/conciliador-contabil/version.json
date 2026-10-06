@@ -3,23 +3,23 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.12",
+  "version": "3.20.13",
   "published": true,
   "download_url": "",
-  "sha256": "ebc55834e2603398074e060f0fe651d8a1112d1a18a2ce4397510e28af6fb095",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_12.zip",
-  "published_at": "2026-10-05T17:36:00+00:00",
+  "sha256": "a387f9168988ce36e569600e32d8355c4a405a834c31b6af4f9c7e60de013359",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_13.zip",
+  "published_at": "2026-10-06T12:45:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Gerenciar cadeia econômica agora mostra, logo abaixo da grade, Saldo original, Baixado/Recebido, Ajustes e Saldo residual.",
-    "O saldo residual usa o mesmo valor exibido na Composição e recebe indicador visual de zerado ou pendente para facilitar a conferência.",
-    "Mantém todas as correções e regras da versão 3.20.11."
+    "Corrigido falso 'Data incompatível' quando os lançamentos selecionados possuem a mesma data.",
+    "A validação temporal agora prioriza a data efetiva do movimento/cadeia e usa competência somente como fallback; mantém a regra de até 60 dias para pagamento antecipado de fornecedores.",
+    "Em Baixas conciliadas, o duplo clique passa a abrir a cadeia em grade padronizada, igual ao detalhe da Composição, sem exibir o dicionário/JSON bruto."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.12/KBL_Conciliador_Contabil_v3_20_12.zip",
+    "path": "packages/conciliador-contabil/3.20.13/KBL_Conciliador_Contabil_v3_20_13.zip",
     "auth": "github-cli"
   }
 }
