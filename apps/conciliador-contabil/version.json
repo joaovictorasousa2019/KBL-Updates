@@ -3,24 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.20.19",
+  "version": "3.20.20",
   "published": true,
   "download_url": "",
-  "sha256": "11904b6cbecb179bd5417d5abab1580b9227b85389d0b606fb4ca9c2a44f1a8c",
-  "file_name": "KBL_Conciliador_Contabil_v3_20_19.zip",
-  "published_at": "2026-10-06T14:47:00+00:00",
+  "sha256": "f6f869510863ef72c1249fc76ffcf4993074c2ac845a24c876e36bfa6190b174",
+  "file_name": "KBL_Conciliador_Contabil_v3_20_20.zip",
+  "published_at": "2026-10-06T14:55:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Fiscal/Serviços: PIS, COFINS e CSLL separados passam a compor corretamente o PCC/CRF retido.",
-    "O motor valida retenções pelo Total Retenções, pelas colunas tributárias e pela diferença entre bruto e líquido.",
-    "Caso OCTA coberto: IRRF R$ 375,00 + PCC/CRF R$ 1.162,50 = R$ 1.537,50; líquido R$ 23.462,50; recebido R$ 25.000,00.",
-    "PIS/COFINS/CSLL só são tratados automaticamente como retenção em documentos de serviços."
+    "Composição: Gerenciar cadeia econômica agora reconstrói a cadeia completa pelos vínculos explícitos do motor.",
+    "A tela passa a exibir abertura/integração do Razão, documento fiscal, baixas/recebimentos, retenções/ajustes e devoluções.",
+    "Itens fiscais aparecem como evidência e não podem ser removidos como se fossem lançamentos contábeis.",
+    "A grade ganhou colunas Origem e Valor para facilitar a conferência."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.20.19/KBL_Conciliador_Contabil_v3_20_19.zip",
+    "path": "packages/conciliador-contabil/3.20.20/KBL_Conciliador_Contabil_v3_20_20.zip",
     "auth": "github-cli"
   }
 }
