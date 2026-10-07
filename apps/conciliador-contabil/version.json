@@ -3,25 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.8",
+  "version": "3.21.9",
   "published": true,
   "download_url": "",
-  "sha256": "114d21b5aad457e653d4f2d2be6c85eefbf3385d61cc9ad5d6555aaaed15c2a6",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_8.zip",
-  "published_at": "2026-10-07T12:29:38.081Z",
+  "sha256": "41a1ce40f0b8cef57d068da8c9689ce53951ecff9c8328409a4488968638b318",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_9.zip",
+  "published_at": "2026-10-07T12:38:25.047Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "TXT importado funciona sem Razão/Fiscal para Excel, Central e aprovação.",
-    "Saldos antigos exibem o período de origem.",
-    "Gerar Excel habilitado imediatamente após a importação.",
+    "Corrige definitivamente o erro 'a' ao importar TXT.",
+    "TXT usa cadeias zeradas em vez de pares a/b do motor.",
+    "Gerar Excel funciona sem Razão/Fiscal.",
     "Conciliar abre a Central no modo TXT.",
-    "Corrigido erro 'a' ao aprovar conciliação importada."
+    "Período e origem da composição antiga ficam visíveis."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.8/KBL_Conciliador_Contabil_v3_21_8.zip",
+    "path": "packages/conciliador-contabil/3.21.9/KBL_Conciliador_Contabil_v3_21_9.zip",
     "auth": "github-cli"
   }
 }
