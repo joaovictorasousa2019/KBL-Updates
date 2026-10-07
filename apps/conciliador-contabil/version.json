@@ -3,24 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.11",
+  "version": "3.21.12",
   "published": true,
   "download_url": "",
-  "sha256": "5a19840e650403e821561f738925b2be170d47fc87ab224be4586d1866007851",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_11.zip",
-  "published_at": "2026-10-07T13:20:07.859Z",
+  "sha256": "ec9d30ebf0526a36ee35983567322f30257f191c630b16bb87f07c90bd0b611e",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_12.zip",
+  "published_at": "2026-10-07T18:49:57.286Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Salvar sessão funciona em competências importadas por TXT.",
-    "Sessão TXT reaparece em Empresas / histórico e reabre sem Razão/Fiscal.",
-    "Estado TXT completo é persistido na sessão.",
-    "Suporte a composição auxiliar de Adiantamento de Clientes separada do saldo principal."
+    "TXT mantém o saldo de controle declarado e sinaliza diferenças da composição.",
+    "Adiantamentos de clientes e fornecedores preservam conta e natureza separadas.",
+    "Financeiro não conferido permanece em branco e gera aviso de pendência.",
+    "Reconstrução anterior exige referência explícita de nota, evitando falsos números de CNPJ/título.",
+    "Perfil de tarifa de boleto aprendido de despesas explícitas; exceções exigem revisão e tarifas já registradas não geram novo ajuste."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.11/KBL_Conciliador_Contabil_v3_21_11.zip",
+    "path": "packages/conciliador-contabil/3.21.12/KBL_Conciliador_Contabil_v3_21_12.zip",
     "auth": "github-cli"
   }
 }
