@@ -3,25 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.7",
+  "version": "3.21.8",
   "published": true,
   "download_url": "",
-  "sha256": "461e6cd7deab52867f3149fea520651d22154ffd6b972f19d3e6734ed5e1e897",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_7.zip",
-  "published_at": "2026-10-07T11:47:42.579Z",
+  "sha256": "b6515dc230f91e6b0712f9cf71ca5500f2546b9dbf182a08fc02b2d0d24ae63c",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_8.zip",
+  "published_at": "2026-10-07T12:10:57.508Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Central de Conciliação volta ao mesmo padrão do Excel final.",
-    "Emissão, vencimento, Documento/NF, parcela e terceiro em colunas próprias.",
-    "NF fiscal não é confundida com título financeiro MIG.",
-    "Data fiscal só aparece quando sustentada pela base fiscal.",
-    "Detalhe de ajuste separa data do ajuste, NF, data da NF e data da baixa."
+    "TXT importado libera Gerar Excel imediatamente.",
+    "Corrige erro 'a' na exportação de conciliações importadas.",
+    "Conciliar não exige Razão/Fiscal ao apenas reabrir o estado TXT.",
+    "Composição antiga mostra Período Origem.",
+    "Aprovação do estado importado não reprocessa o motor."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.7/KBL_Conciliador_Contabil_v3_21_7.zip",
+    "path": "packages/conciliador-contabil/3.21.8/KBL_Conciliador_Contabil_v3_21_8.zip",
     "auth": "github-cli"
   }
 }
