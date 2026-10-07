@@ -6,17 +6,17 @@
   "version": "3.21.8",
   "published": true,
   "download_url": "",
-  "sha256": "b6515dc230f91e6b0712f9cf71ca5500f2546b9dbf182a08fc02b2d0d24ae63c",
+  "sha256": "114d21b5aad457e653d4f2d2be6c85eefbf3385d61cc9ad5d6555aaaed15c2a6",
   "file_name": "KBL_Conciliador_Contabil_v3_21_8.zip",
-  "published_at": "2026-10-07T12:10:57.508Z",
+  "published_at": "2026-10-07T12:29:38.081Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "TXT importado libera Gerar Excel imediatamente.",
-    "Corrige erro 'a' na exportação de conciliações importadas.",
-    "Conciliar não exige Razão/Fiscal ao apenas reabrir o estado TXT.",
-    "Composição antiga mostra Período Origem.",
-    "Aprovação do estado importado não reprocessa o motor."
+    "TXT importado funciona sem Razão/Fiscal para Excel, Central e aprovação.",
+    "Saldos antigos exibem o período de origem.",
+    "Gerar Excel habilitado imediatamente após a importação.",
+    "Conciliar abre a Central no modo TXT.",
+    "Corrigido erro 'a' ao aprovar conciliação importada."
   ],
   "package": {
     "provider": "github-private-repo",
