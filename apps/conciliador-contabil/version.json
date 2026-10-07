@@ -3,25 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.9",
+  "version": "3.21.10",
   "published": true,
   "download_url": "",
-  "sha256": "41a1ce40f0b8cef57d068da8c9689ce53951ecff9c8328409a4488968638b318",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_9.zip",
-  "published_at": "2026-10-07T12:38:25.047Z",
+  "sha256": "bf57f21fa6b3a442085d26b3a0a4c62ecaa5231c76e3731ec57608ca8c9247f6",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_10.zip",
+  "published_at": "2026-10-07T12:54:08.391Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige definitivamente o erro 'a' ao importar TXT.",
-    "TXT usa cadeias zeradas em vez de pares a/b do motor.",
-    "Gerar Excel funciona sem Razão/Fiscal.",
-    "Conciliar abre a Central no modo TXT.",
-    "Período e origem da composição antiga ficam visíveis."
+    "Corrige o erro SHA-256 inválido no Hub.",
+    "Mantém o hotfix do TXT da v3.21.9.",
+    "Importação TXT sem KeyError 'a'.",
+    "Gerar Excel e Central funcionam sem Razão/Fiscal no modo TXT.",
+    "Período/origem da composição antiga continuam visíveis."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.9/KBL_Conciliador_Contabil_v3_21_9.zip",
+    "path": "packages/conciliador-contabil/3.21.10/KBL_Conciliador_Contabil_v3_21_10.zip",
     "auth": "github-cli"
   }
 }
