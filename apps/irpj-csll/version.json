@@ -3,25 +3,25 @@
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
-  "version": "4.0.14",
+  "version": "4.0.15",
   "published": true,
   "download_url": "",
-  "sha256": "2111e0aab9a839f6257db90f5900c293c3f8b83a7eab0ece37ca6d19214edf43",
-  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_14.zip",
-  "published_at": "2026-10-06T20:40:00+00:00",
+  "sha256": "90801462765887c58d0685f4808b0f604043debaf20041d3922e697b2d5a846a",
+  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_15.zip",
+  "published_at": "2026-10-07T12:50:00+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Novo Planejamento JCP integrado ao Lucro Real, com base elegível do patrimônio líquido, TJLP pro rata dia e limites fiscais.",
-    "Comparação automática sem JCP x com JCP usando o motor real de IRPJ/CSLL, inclusive prejuízo fiscal, base negativa e diferidos.",
-    "Aprovação humana protegida e contabilização automática do JCP aprovado nas contas configuradas.",
-    "Exportação Excel inclui memória do Planejamento JCP e composição da base.",
-    "Corrigido o sinal do resultado antes de IRPJ/CSLL nos balancetes Domínio em Lucro Real."
+    "Exportação do Lucro Real refeita no modelo de papel de trabalho definido pela KBL.",
+    "Capa e Passo a Passo são removidas; permanecem as abas trimestrais, anuais, Parte B e Lançamentos, com nova aba JCP.",
+    "TJLP do JCP passa a ser atualizada automaticamente conforme a vigência, com consulta oficial e fallback seguro.",
+    "Período civil trimestral completo passa a liberar corretamente a aprovação do JCP.",
+    "Planejamento JCP mantém revisão manual de contas incluídas ou excluídas da base."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/irpj-csll/4.0.14/KBL_Apuracao_IRPJ_CSLL_v4_0_14.zip",
+    "path": "packages/irpj-csll/4.0.15/KBL_Apuracao_IRPJ_CSLL_v4_0_15.zip",
     "auth": "github-cli"
   }
 }
