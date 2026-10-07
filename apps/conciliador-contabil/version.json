@@ -3,25 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.10",
+  "version": "3.21.11",
   "published": true,
   "download_url": "",
-  "sha256": "bf57f21fa6b3a442085d26b3a0a4c62ecaa5231c76e3731ec57608ca8c9247f6",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_10.zip",
-  "published_at": "2026-10-07T12:54:08.391Z",
+  "sha256": "5a19840e650403e821561f738925b2be170d47fc87ab224be4586d1866007851",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_11.zip",
+  "published_at": "2026-10-07T13:20:07.859Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige o erro SHA-256 inválido no Hub.",
-    "Mantém o hotfix do TXT da v3.21.9.",
-    "Importação TXT sem KeyError 'a'.",
-    "Gerar Excel e Central funcionam sem Razão/Fiscal no modo TXT.",
-    "Período/origem da composição antiga continuam visíveis."
+    "Salvar sessão funciona em competências importadas por TXT.",
+    "Sessão TXT reaparece em Empresas / histórico e reabre sem Razão/Fiscal.",
+    "Estado TXT completo é persistido na sessão.",
+    "Suporte a composição auxiliar de Adiantamento de Clientes separada do saldo principal."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.10/KBL_Conciliador_Contabil_v3_21_10.zip",
+    "path": "packages/conciliador-contabil/3.21.11/KBL_Conciliador_Contabil_v3_21_11.zip",
     "auth": "github-cli"
   }
 }
