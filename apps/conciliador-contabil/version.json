@@ -3,27 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.13",
+  "version": "3.21.14",
   "published": true,
   "download_url": "",
-  "sha256": "4e6750ce2d8bb3c2b188453617284f3c3268f0bc1905a3603990900b0d488a35",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_13.zip",
-  "published_at": "2026-10-08T01:44:04.774Z",
+  "sha256": "800b7ca1af28c35fd6d7e52cd4acdc14249acd7bad685b33bc03e1186b664a50",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_14.zip",
+  "published_at": "2026-10-08T12:42:25.973Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Financeiro lido em todas as abas de XLS/XLSX; Pessoa, Receita, Despesa e Pagamento/Repasse reconhecidos.",
-    "Título financeiro separado da NF; documento, terceiro e vencimento de mensalidades precedem valor/FIFO.",
-    "Notas divididas e pagamentos em lote/rateio conservam o valor; excedentes continuam separados para conferência.",
-    "Adiantamentos vinculados a notas anteriores ou posteriores, limitados ao saldo disponível; transferência contábil permanece proposta.",
-    "Tarifas no padrão são identificadas; exceções entram na revisão e despesas já contabilizadas não são duplicadas.",
-    "Ajustes contabilizados sem origem preservam o saldo; baixa posterior ao corte não comprova o mês anterior.",
-    "98 verificações automáticas, compatibilidade TXT e validação com relatórios financeiros reais."
+    "Cadastro de multiempresas com CNPJ completo, código Domínio, apelido e grupo.",
+    "Abertura limpa do conciliador; rascunhos abertos somente por escolha explícita.",
+    "Rascunhos separados por empresa, competência e conta, com salvamento atômico e backup recuperável.",
+    "Relatório final Excel no modelo solicitado, com Composição, Conciliação, Ajustes e bases auditáveis.",
+    "Preserva as melhorias financeiras e do motor publicadas na versão 3.21.13.",
+    "82 verificações automáticas aprovadas; interface e executável Windows não executados neste ambiente."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.13/KBL_Conciliador_Contabil_v3_21_13.zip",
+    "path": "packages/conciliador-contabil/3.21.14/KBL_Conciliador_Contabil_v3_21_14.zip",
     "auth": "github-cli"
   }
 }
