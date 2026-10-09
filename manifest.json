@@ -9,7 +9,7 @@
     {
       "app_id": "comparativo-despesas",
       "name": "KBL Comparativo de Despesas",
-      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/comparativo-despesas/version.json?v=3.9.35"
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/comparativo-despesas/version.json?v=3.9.36"
     },
     {
       "app_id": "composicao-saldos",
@@ -68,5 +68,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-10-09-comparativo-despesas-3.9.35"
+  "revision": "2026-10-09-comparativo-despesas-3.9.36"
 }

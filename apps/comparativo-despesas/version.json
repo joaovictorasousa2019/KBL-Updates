@@ -3,23 +3,26 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.35",
+  "version": "3.9.36",
   "published": true,
   "download_url": "",
-  "sha256": "c82ac0e1ef26feb508bb622637838202aa051573627b59aaef1babec70a10978",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_35.zip",
-  "published_at": "2026-10-09T20:05:28.979Z",
+  "sha256": "781b595908f2293fca47fee9d48b1008c77a934bc79116427693e7f7bd6ab2fd",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_36.zip",
+  "published_at": "2026-10-09T20:27:25.477Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Oculta contas sem movimento nos meses do comparativo em todos os filtros.",
-    "Mantém contas com movimento atual ou anterior.",
-    "Indicador de contas analíticas considera somente contas com movimento."
+    "Decompõe a variação por fornecedor/evento e confere o fechamento com o razão.",
+    "Nova aba O que explica a diferença com fatos, hipóteses entre contas e perguntas específicas.",
+    "Usa descrições do histórico e das NFS-e vinculadas pelo Auditor, sem inventar a causa.",
+    "Separa preço e quantidade somente com medidas documentadas e comparáveis.",
+    "Aprende eventos e estilo das revisões humanas aprovadas, isolados por empresa/conta.",
+    "Preserva textos humanos e exige valores exatos na atribuição da variação."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.35/KBL_Comparativo_Despesas_v3_9_35.zip",
+    "path": "packages/comparativo-despesas/3.9.36/KBL_Comparativo_Despesas_v3_9_36.zip",
     "auth": "github-cli"
   }
 }
