@@ -3,24 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.21",
+  "version": "3.21.22",
   "published": true,
   "download_url": "",
-  "sha256": "6cada38a4948e045eefb785898398748e255f3b69cbabf53f3124c7296c3d65a",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_21.zip",
-  "published_at": "2026-10-09T16:46:43.616Z",
+  "sha256": "72bd91a9fe3ab8f88646272ffa5fc5c0b5af07d8f5bd19eee8b83a574cb8d007",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_22.zip",
+  "published_at": "2026-10-09T16:55:02.825Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige maximum recursion depth exceeded ao abrir rascunhos com referências circulares.",
-    "Atualização dos nomes percorre cada componente uma vez, sem recursão e preservando vínculos.",
-    "Mantém filtros de situações múltiplas, novo nome das baixas e Excel simplificado com cores.",
-    "26 testes aprovados, incluindo referências circulares e estruturas profundas."
+    "Permite vincular baixas identificadas ao saldo anterior sem abertura da mesma conta.",
+    "Mantém o residual como saldo anterior aberto, com justificativa e cadeia dos movimentos.",
+    "Exige sentido contrário e valor até o saldo disponível; bloqueia contas diferentes e excedentes.",
+    "Vínculos permanecem ao reabrir e podem ser desfeitos.",
+    "28 testes aprovados, incluindo o cenário de R$ 332.099,79 menos R$ 4.113,50."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.21/KBL_Conciliador_Contabil_v3_21_21.zip",
+    "path": "packages/conciliador-contabil/3.21.22/KBL_Conciliador_Contabil_v3_21_22.zip",
     "auth": "github-cli"
   }
 }
