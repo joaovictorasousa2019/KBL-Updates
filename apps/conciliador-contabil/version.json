@@ -3,25 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.22",
+  "version": "3.21.23",
   "published": true,
   "download_url": "",
-  "sha256": "72bd91a9fe3ab8f88646272ffa5fc5c0b5af07d8f5bd19eee8b83a574cb8d007",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_22.zip",
-  "published_at": "2026-10-09T16:55:02.825Z",
+  "sha256": "a0e2a48e1c7f25ebc60ed54805c1a431fccf5b17033a051ec48c7224898bd50c",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_23.zip",
+  "published_at": "2026-10-09T17:01:55.781Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Permite vincular baixas identificadas ao saldo anterior sem abertura da mesma conta.",
-    "Mantém o residual como saldo anterior aberto, com justificativa e cadeia dos movimentos.",
-    "Exige sentido contrário e valor até o saldo disponível; bloqueia contas diferentes e excedentes.",
-    "Vínculos permanecem ao reabrir e podem ser desfeitos.",
-    "28 testes aprovados, incluindo o cenário de R$ 332.099,79 menos R$ 4.113,50."
+    "Conciliar com sessão aberta exige confirmação e recalcula em outro rascunho, preservando o original e sua aprovação.",
+    "Cancelamento ou falha no salvamento impedem o recálculo.",
+    "Recuperação lê a cópia anterior antes de salvar a sessão ativa, evitando substituição prematura do backup.",
+    "A cópia recuperada ganha identidade própria e preserva a aprovação gravada.",
+    "32 testes aprovados. Recuperação depende da cópia ainda disponível."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.22/KBL_Conciliador_Contabil_v3_21_22.zip",
+    "path": "packages/conciliador-contabil/3.21.23/KBL_Conciliador_Contabil_v3_21_23.zip",
     "auth": "github-cli"
   }
 }
