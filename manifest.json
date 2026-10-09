@@ -44,7 +44,7 @@
     {
       "app_id": "auditor-nfse",
       "name": "KBL Auditor de NFS-e",
-      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/auditor-nfse/version.json"
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/auditor-nfse/version.json?v=2.5.1"
     },
     {
       "app_id": "dominio-api",
@@ -68,5 +68,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-10-09-conciliador-contabil-3.21.23"
+  "revision": "2026-10-09-auditor-nfse-2.5.1"
 }
