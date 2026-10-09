@@ -3,25 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.17",
+  "version": "3.21.18",
   "published": true,
   "download_url": "",
-  "sha256": "fbcf97bf1c889789de790ad3bd44a2a687c41ecff46556c609088f775b187641",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_17.zip",
-  "published_at": "2026-10-09T14:51:32.846Z",
+  "sha256": "32f8fcf40f9bd7b4155415e7fbcf6c5de8598e53276d6a0a076cfb4d8e24b9b4",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_18.zip",
+  "published_at": "2026-10-09T14:56:53.694Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Lançamentos em lote preenchem e bloqueiam a conta do ajuste automaticamente.",
-    "Somente a contrapartida começa em branco para preenchimento.",
-    "Débito e crédito são definidos para reduzir o saldo conforme a natureza da conta.",
-    "Bloqueia contrapartida igual à conta do ajuste e seleção com conta ausente ou ambígua.",
-    "Mantém as três abas do Excel e a vinculação de ajustes ao saldo anterior."
+    "Duplo clique em Lançamentos contábeis abre diretamente o editor.",
+    "Seleção de vários lançamentos habilita edição em lote de data e contrapartida.",
+    "Prévia mostra data, débito e crédito antes e depois; preserva a conta do ajuste.",
+    "Valida todo o lote antes de salvar e registra alterações no histórico e rascunho.",
+    "Lançamentos já exportados e alterados ficam marcados para reexportar.",
+    "Mantém conta automática na criação em lote e Excel final com três abas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.17/KBL_Conciliador_Contabil_v3_21_17.zip",
+    "path": "packages/conciliador-contabil/3.21.18/KBL_Conciliador_Contabil_v3_21_18.zip",
     "auth": "github-cli"
   }
 }
