@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.18",
+  "version": "3.21.19",
   "published": true,
   "download_url": "",
-  "sha256": "32f8fcf40f9bd7b4155415e7fbcf6c5de8598e53276d6a0a076cfb4d8e24b9b4",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_18.zip",
-  "published_at": "2026-10-09T14:56:53.694Z",
+  "sha256": "45025a1fe45cc22811ae69e163223540dd51405ad8611f401c8174a7876c50e5",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_19.zip",
+  "published_at": "2026-10-09T16:29:12.884Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Duplo clique em Lançamentos contábeis abre diretamente o editor.",
-    "Seleção de vários lançamentos habilita edição em lote de data e contrapartida.",
-    "Prévia mostra data, débito e crédito antes e depois; preserva a conta do ajuste.",
-    "Valida todo o lote antes de salvar e registra alterações no histórico e rascunho.",
-    "Lançamentos já exportados e alterados ficam marcados para reexportar.",
-    "Mantém conta automática na criação em lote e Excel final com três abas."
+    "Remove Item, Natureza, Grupo, Conta e Código conta das abas finais em que existiam.",
+    "Situação passa para a primeira coluna da Composição.",
+    "Conciliação destaca linhas com diferença zero em verde claro e residual em amarelo claro.",
+    "Cores acompanham o resultado das fórmulas, incluindo diferenças positivas e negativas.",
+    "Fórmulas e totais ajustados às novas posições; mantém apenas três abas e o padrão visual.",
+    "Preserva edição direta e edição em lote de lançamentos da versão 3.21.18."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.18/KBL_Conciliador_Contabil_v3_21_18.zip",
+    "path": "packages/conciliador-contabil/3.21.19/KBL_Conciliador_Contabil_v3_21_19.zip",
     "auth": "github-cli"
   }
 }
