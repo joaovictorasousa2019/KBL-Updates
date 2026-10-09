@@ -3,26 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.20",
+  "version": "3.21.21",
   "published": true,
   "download_url": "",
-  "sha256": "3e8930234305a5f3fad7b40f2defc9eb0439e9bded603ab94ccbf7c8fcf537ab",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_20.zip",
-  "published_at": "2026-10-09T16:43:14.831Z",
+  "sha256": "6cada38a4948e045eefb785898398748e255f3b69cbabf53f3124c7296c3d65a",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_21.zip",
+  "published_at": "2026-10-09T16:46:43.616Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Filtro Situação aceita múltiplas opções na Composição e nas Conciliações realizadas, com seleção persistente.",
-    "Novo nome: Baixa identificada sem documento vinculado. Compatível com rascunhos e filtros anteriores.",
-    "Remove Linha razão e Linha financeiro da Composição no Excel, ajustando as fórmulas.",
-    "Grava verde claro nas linhas com diferença zero e amarelo claro nas linhas com residual da Conciliação.",
-    "Mantém regras automáticas de cor para acompanhar alterações feitas no Excel.",
-    "Preserva as funcionalidades das versões anteriores."
+    "Corrige maximum recursion depth exceeded ao abrir rascunhos com referências circulares.",
+    "Atualização dos nomes percorre cada componente uma vez, sem recursão e preservando vínculos.",
+    "Mantém filtros de situações múltiplas, novo nome das baixas e Excel simplificado com cores.",
+    "26 testes aprovados, incluindo referências circulares e estruturas profundas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.20/KBL_Conciliador_Contabil_v3_21_20.zip",
+    "path": "packages/conciliador-contabil/3.21.21/KBL_Conciliador_Contabil_v3_21_21.zip",
     "auth": "github-cli"
   }
 }
