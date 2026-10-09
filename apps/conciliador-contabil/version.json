@@ -3,25 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.23",
+  "version": "3.21.24",
   "published": true,
   "download_url": "",
-  "sha256": "a0e2a48e1c7f25ebc60ed54805c1a431fccf5b17033a051ec48c7224898bd50c",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_23.zip",
-  "published_at": "2026-10-09T17:01:55.781Z",
+  "sha256": "bdbb611f7ef9582d6d8f2635e48818cc92d884de30c37d921cacab470e9b9ff7",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_24.zip",
+  "published_at": "2026-10-09T18:04:06.600Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Conciliar com sessão aberta exige confirmação e recalcula em outro rascunho, preservando o original e sua aprovação.",
-    "Cancelamento ou falha no salvamento impedem o recálculo.",
-    "Recuperação lê a cópia anterior antes de salvar a sessão ativa, evitando substituição prematura do backup.",
-    "A cópia recuperada ganha identidade própria e preserva a aprovação gravada.",
-    "32 testes aprovados. Recuperação depende da cópia ainda disponível."
+    "Inclui Cliente / fornecedor depois da Data na Conciliação do Excel.",
+    "Identificação pelo documento fiscal, integração, financeiro ou vínculo manual.",
+    "Grupos manuais mostram os terceiros envolvidos sem duplicação; ausências ficam como Não identificado.",
+    "Fórmulas e cores ajustadas à nova coluna.",
+    "34 testes aprovados e conferência visual da Conciliação."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.23/KBL_Conciliador_Contabil_v3_21_23.zip",
+    "path": "packages/conciliador-contabil/3.21.24/KBL_Conciliador_Contabil_v3_21_24.zip",
     "auth": "github-cli"
   }
 }
