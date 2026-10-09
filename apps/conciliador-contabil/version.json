@@ -3,25 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.15",
+  "version": "3.21.16",
   "published": true,
   "download_url": "",
-  "sha256": "ab362706fc965016e2c8152eabfadde1be95553f4cb5373d9bbaf9f73e97df45",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_15.zip",
-  "published_at": "2026-10-09T14:16:53.700Z",
+  "sha256": "f2f4f010b0c24e7ed55c756b9e0ce40bfaded2439ec170d5ba6a4e7e9710a881",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_16.zip",
+  "published_at": "2026-10-09T14:41:20.615Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Composição permite vincular ajustes já contabilizados ao saldo anterior sem abertura.",
-    "Exige mesma conta, ajustes em sentido contrário e valor até o saldo anterior disponível.",
-    "Saldo restante continua sem abertura documental, com justificativa e cadeia preservadas.",
-    "Vínculos podem ser reprocessados e desfeitos sem apagar lançamentos.",
-    "Validação com arquivos da Faculdade CDPI e 73 casos automáticos; interface Windows não executada neste ambiente."
+    "Excel final com apenas Composição, Conciliação e Pagamentos sem NF ou Recebimentos sem NF.",
+    "Exportação normal e de TXT seguem as mesmas três abas.",
+    "Fórmulas da Composição usam colunas da própria aba, sem dependência de abas técnicas.",
+    "Valores zerados e itens com fiscal vinculado ficam fora da aba sem NF.",
+    "Preserva a vinculação de ajustes ao saldo anterior da versão 3.21.15."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.15/KBL_Conciliador_Contabil_v3_21_15.zip",
+    "path": "packages/conciliador-contabil/3.21.16/KBL_Conciliador_Contabil_v3_21_16.zip",
     "auth": "github-cli"
   }
 }
