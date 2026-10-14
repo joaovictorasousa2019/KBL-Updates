@@ -3,25 +3,24 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "65",
+  "version": "66",
   "published": true,
   "download_url": "",
-  "sha256": "a173a6416431815617f45fba5ab5ef4ddb45ec288fbcd4dbb57f3ec29d67f539",
-  "file_name": "KBL_ComposicaoPatrimonial_v65_GERACAO_OTIMIZADA.zip",
-  "published_at": "2026-10-02T18:43:00+00:00",
+  "sha256": "373512aa3f675c1de6735e16e5909e92db8ddeb8446a1e71743fbe2cf0a2ccb5",
+  "file_name": "KBL_ComposicaoPatrimonial_v66_BASE_ANTERIOR_SUPORTE_LOTE.zip",
+  "published_at": "2026-10-14T12:46:42.835Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Geração das planilhas mensais passou para segundo plano; a interface não deve mais entrar em 'Não está respondendo'.",
-    "Incluída janela de progresso com competência em processamento e tempo decorrido.",
-    "Removida a reabertura completa do XLSX após cada salvamento; a validação estrutural e contábil agora ocorre no workbook já em memória.",
-    "A checagem pós-gravação ficou leve e valida apenas a integridade estrutural do pacote XLSX.",
-    "A otimização beneficia especialmente empresas com muitas contas e o modo anual com vários meses."
+    "Corrige uso da composição anterior selecionada, digitada ou colada no campo da base.",
+    "Recupera competências individuais de backups em lote e mostra o mês correto no histórico.",
+    "Preserva a base ao selecionar novamente seu próprio arquivo salvo.",
+    "Inclui Arquivo de suporte na edição em lote mensal e anual, com seleção, abertura e salvamento do vínculo."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/65/KBL_ComposicaoPatrimonial_v65_GERACAO_OTIMIZADA.zip",
+    "path": "packages/composicao-saldos/66/KBL_ComposicaoPatrimonial_v66_BASE_ANTERIOR_SUPORTE_LOTE.zip",
     "auth": "github-cli"
   }
 }
