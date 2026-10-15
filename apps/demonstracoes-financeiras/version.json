@@ -3,24 +3,24 @@
   "app_id": "demonstracoes-financeiras",
   "name": "KBL Demonstrações Contábeis",
   "channel": "stable",
-  "version": "0.4.51",
+  "version": "0.4.52",
   "published": true,
   "download_url": "",
-  "sha256": "3257baec7b4de7e18ae25484f55ee4652b64853327b9d2f7389bcc8c3222476f",
-  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_51.zip",
-  "published_at": "2026-10-15T14:48:01.1552818Z",
+  "sha256": "636defb8989656e9cb28a58d2e7c0d9c8ac6031036472f2ec1a2f9bd0702de92",
+  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_52.zip",
+  "published_at": "2026-10-15T16:17:33.3160534Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "O título da DRA mostra a competência importada no formato MM/AAAA, por exemplo 08/2026, sem acrescentar ano anterior.",
-    "Conferido em agosto e setembro/2026, janeiro/2027 e dezembro/2025; PDFs das Aplic 13 e 28 continuam com três páginas e saldos conciliados.",
-    "Preserva o CRC e os dados de assinatura existentes.",
-    "Preserva o CNPJ no cabeçalho e as correções de diferidos, patrimônio líquido, custos e tributos das versões anteriores."
+    "Padroniza a competência em MM/AAAA nos títulos e cabeçalhos de valores de todas as três demonstrações: Balanço Patrimonial, DRE e DRA.",
+    "Remove a data por extenso e o dia da competência dessas apresentações, incluindo prévia da DRE e revisão final.",
+    "Validado com a Aplic 28 em agosto/2026 sem qualquer data DD/MM/AAAA nas três páginas do PDF.",
+    "Preserva saldos, CNPJ e CRC e as correções anteriores de diferidos, patrimônio líquido, custos e tributos."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/demonstracoes-financeiras/0.4.51/KBL_Demonstracoes_Financeiras_v0_4_51.zip",
+    "path": "packages/demonstracoes-financeiras/0.4.52/KBL_Demonstracoes_Financeiras_v0_4_52.zip",
     "auth": "github-cli"
   },
   "hub": {
@@ -28,7 +28,7 @@
     "id": "demonstracoes-financeiras",
     "app_id": "demonstracoes-financeiras",
     "name": "KBL Demonstrações Contábeis",
-    "version": "0.4.51",
+    "version": "0.4.52",
     "entry": "KBL_Demonstracoes_Financeiras.exe",
     "category": "Contábil",
     "description": "Demonstrações contábeis com tributos diferidos, patrimônio líquido sem ajuste residual e conferência dos saldos de origem, além de assinaturas e conferências em lote.",
