@@ -3,24 +3,24 @@
   "app_id": "demonstracoes-financeiras",
   "name": "KBL Demonstrações Contábeis",
   "channel": "stable",
-  "version": "0.4.62",
+  "version": "0.4.63",
   "published": true,
   "download_url": "",
-  "sha256": "e01036f89c33b2cfb49a07433e20cb059ddf8d0afd7ba121751dba6b5ef92e67",
-  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_62.zip",
-  "published_at": "2026-10-15T20:24:16.3501247Z",
+  "sha256": "6c1f7981c6ea685e52289f6a7594ae5eb8cd262007d1c7b606ee6c22483b41c7",
+  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_63.zip",
+  "published_at": "2026-10-15T20:53:13.5295552Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Altera somente o título da DRE para datas completas por extenso e em maiúsculas, conforme as datas efetivas dos balancetes importados, como no Balanço Patrimonial. As colunas de valores continuam em mês/ano.",
-    "Inclui o campo CNPJ da empresa logo abaixo da razão social nas duas assinaturas, com documento próprio separado do responsável. O CNPJ é formatado e impresso abaixo da empresa no PDF e no Excel.",
-    "Preenche inicialmente o CNPJ da empresa cliente a partir do balancete e preserva os documentos e cadastros existentes, com validação de preenchimento e salvamento.",
-    "Mantém as 12 abas, classificações no início dos quadros, fórmulas, saldos e a recuperação do modelo Excel. Geração de PDF e Excel validada pelo executável extraído do pacote."
+    "Adota as medidas do PDF final fornecido: A4 paisagem, tipografia Arial, conteúdo compacto, posições, espaçamentos e linhas dos quadros.",
+    "Exibe datas completas nas colunas do Balanço e da DRE, como 31/08/2026 e 31/12/2025, e mantém os títulos com datas por extenso em maiúsculas.",
+    "Preserva CNPJ abaixo da empresa, assinaturas completas e editáveis e CRC independente. Os códigos internos de classificação permanecem na planilha.",
+    "Mantém os saldos, fórmulas, 12 abas e classificações originais. Executável extraído do pacote validado para gerar PDF e Excel, inclusive com recuperação do modelo."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/demonstracoes-financeiras/0.4.62/KBL_Demonstracoes_Financeiras_v0_4_62.zip",
+    "path": "packages/demonstracoes-financeiras/0.4.63/KBL_Demonstracoes_Financeiras_v0_4_63.zip",
     "auth": "github-cli"
   },
   "hub": {
@@ -28,7 +28,7 @@
     "id": "demonstracoes-financeiras",
     "app_id": "demonstracoes-financeiras",
     "name": "KBL Demonstrações Contábeis",
-    "version": "0.4.62",
+    "version": "0.4.63",
     "entry": "KBL_Demonstracoes_Financeiras.exe",
     "category": "Contábil",
     "description": "Balanço, DRE e DRA em A4 paisagem, com páginas uniformes, comparativo opcional e seleção de emissão.",
