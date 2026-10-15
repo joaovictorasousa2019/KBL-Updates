@@ -3,24 +3,25 @@
   "app_id": "demonstracoes-financeiras",
   "name": "KBL Demonstrações Contábeis",
   "channel": "stable",
-  "version": "0.4.57",
+  "version": "0.4.58",
   "published": true,
   "download_url": "",
-  "sha256": "0a88cac62c40cdd9896eb1e00f9aaf93fc1856ff84f8b83687c562b6025d6682",
-  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_57.zip",
-  "published_at": "2026-10-15T18:17:24.8474519Z",
+  "sha256": "73181166793a9506487ec8e7f6e9381d42f08208e2beff1d82537cd56e0be28a",
+  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_58.zip",
+  "published_at": "2026-10-15T19:03:10.1022328Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Apresenta Deduções da receita com o total em negrito e as contas reais abaixo, com recuo e fonte normal, inclusive nos valores.",
-    "Inclui a composição das deduções no período atual e no comparativo, sem duplicar saldos ou alterar o resultado da DRE.",
-    "Concilia as contas das deduções com o total de cada período antes da emissão.",
-    "Mantém a composição da receita bruta, o CNPJ no cabeçalho e o padrão uniforme de Balanço, DRE e DRA."
+    "Ajusta a apresentação do Balanço, DRE e DRA com base na planilha completa fornecida, mantendo o CNPJ e o formato A4 paisagem.",
+    "Gera automaticamente a planilha Excel preenchida na mesma pasta do PDF, com os demonstrativos selecionados, plano de contas e balancetes atual e anterior.",
+    "Inclui a composição completa das rubricas por conta contábil, fórmulas editáveis e valores atuais e comparativos conciliados com o PDF.",
+    "Substitui dados antigos do modelo por contas da empresa importada, corrige sinais, referências e acréscimos fixos indevidos e incorpora ao PL somente o resultado contábil aberto.",
+    "Mantém receita e deduções com total em negrito e composição em fonte normal, datas do Balanço completas em maiúsculas, competências mês/ano, CRC e arredondamento consistente entre PDF e Excel."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/demonstracoes-financeiras/0.4.57/KBL_Demonstracoes_Financeiras_v0_4_57.zip",
+    "path": "packages/demonstracoes-financeiras/0.4.58/KBL_Demonstracoes_Financeiras_v0_4_58.zip",
     "auth": "github-cli"
   },
   "hub": {
@@ -28,7 +29,7 @@
     "id": "demonstracoes-financeiras",
     "app_id": "demonstracoes-financeiras",
     "name": "KBL Demonstrações Contábeis",
-    "version": "0.4.57",
+    "version": "0.4.58",
     "entry": "KBL_Demonstracoes_Financeiras.exe",
     "category": "Contábil",
     "description": "Balanço, DRE e DRA em A4 paisagem, com páginas uniformes, comparativo opcional e seleção de emissão.",
