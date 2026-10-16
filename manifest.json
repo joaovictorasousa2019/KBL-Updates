@@ -44,7 +44,7 @@
     {
       "app_id": "auditor-nfse",
       "name": "KBL Auditor de NFS-e",
-      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/auditor-nfse/version.json?v=2.5.1"
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/auditor-nfse/version.json?v=2.5.2"
     },
     {
       "app_id": "dominio-api",
@@ -68,5 +68,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-10-16-comparativo-despesas-3.9.39"
+  "revision": "2026-10-16-auditor-nfse-2.5.2"
 }
