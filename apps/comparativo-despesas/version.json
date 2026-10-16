@@ -3,25 +3,25 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.38",
+  "version": "3.9.39",
   "published": true,
   "download_url": "",
-  "sha256": "4b3715746a7e4e64df85a7e589c8334b37f1bf2a8ba8b1dec0ed4fcca4e6cd22",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_38.zip",
-  "published_at": "2026-10-16T16:57:22.612Z",
+  "sha256": "cc8ebff0570cd8e623281e218dd03fb82fa0f2c8dee8a7be5766a5b0f033ae77",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_39.zip",
+  "published_at": "2026-10-16T17:04:42.236Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Ignora encerramentos mensais, trimestrais, semestrais e anuais, inclusive Encerramento 3T.",
-    "Reconhece contas de apuração e compensação pelo nome e hierarquia do plano de cada empresa, sem códigos fixos.",
-    "Mantém apurações de tributos e operações normais; preserva o razão bruto para conferência com o balancete.",
-    "Preserva as melhorias de análise mensal e fornecedores da v3.9.37.",
-    "Validado com 170 testes e com o razão da APLIC 13. Reimporte razão e plano para recalcular."
+    "Permite aprovação individual e em lote sem texto para contas sem pendência.",
+    "Não exige justificativa por alerta antigo quando os dois meses comparados estão zerados e sem movimentos.",
+    "Remove cores de alerta de contas sem revisão necessária.",
+    "Mantém justificativa obrigatória nas variações relevantes, divergências e classificações a conferir.",
+    "175 testes aprovados e sete contas da imagem validadas. Reimporte razão e plano."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.38/KBL_Comparativo_Despesas_v3_9_38.zip",
+    "path": "packages/comparativo-despesas/3.9.39/KBL_Comparativo_Despesas_v3_9_39.zip",
     "auth": "github-cli"
   }
 }
