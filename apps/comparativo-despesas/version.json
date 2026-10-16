@@ -3,25 +3,24 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.39",
+  "version": "3.9.40",
   "published": true,
   "download_url": "",
-  "sha256": "cc8ebff0570cd8e623281e218dd03fb82fa0f2c8dee8a7be5766a5b0f033ae77",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_39.zip",
-  "published_at": "2026-10-16T17:04:42.236Z",
+  "sha256": "d15838e9a9a642b43ba1fc24977e24ace83fb04407bb196aa3cb523a49a8949f",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_40.zip",
+  "published_at": "2026-10-16T17:12:27.083Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Permite aprovação individual e em lote sem texto para contas sem pendência.",
-    "Não exige justificativa por alerta antigo quando os dois meses comparados estão zerados e sem movimentos.",
-    "Remove cores de alerta de contas sem revisão necessária.",
-    "Mantém justificativa obrigatória nas variações relevantes, divergências e classificações a conferir.",
-    "175 testes aprovados e sete contas da imagem validadas. Reimporte razão e plano."
+    "Corrige erro is_closing_account não definido no processamento pela interface.",
+    "Preserva exclusão de encerramentos e justificativa opcional para contas sem pendência.",
+    "Inclui teste do processamento da interface. 176 testes aprovados; fluxo com razão e plano APLIC 13 concluído.",
+    "Feche o aplicativo, atualize pelo Hub e processe novamente."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.39/KBL_Comparativo_Despesas_v3_9_39.zip",
+    "path": "packages/comparativo-despesas/3.9.40/KBL_Comparativo_Despesas_v3_9_40.zip",
     "auth": "github-cli"
   }
 }
