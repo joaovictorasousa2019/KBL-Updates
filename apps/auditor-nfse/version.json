@@ -3,24 +3,24 @@
   "app_id": "auditor-nfse",
   "name": "KBL Auditor de NFS-e",
   "channel": "stable",
-  "version": "2.5.1",
+  "version": "2.5.2",
   "published": true,
   "download_url": "",
-  "sha256": "71b7453021aa9d7a4de9b82c427e767cd9b9232e332a86fc15ffbc0325af2236",
-  "file_name": "KBL_Auditor_NFSe_v2.5.1_Hub.zip",
-  "published_at": "2026-10-09T17:48:12.298Z",
+  "sha256": "87cb34dba98c66e3b630caf499569746d619b2c585c1b1ca64cadb9cca99e4d7",
+  "file_name": "KBL_Auditor_NFSe_v2.5.2_Hub.zip",
+  "published_at": "2026-10-16T17:08:41.770Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Leitura de XML NFS-e Nacional e ABRASF 2.04 de Goiânia, inclusive lotes.",
-    "CPF/CNPJ, descrição, valores, competência e retenções dos dois modelos.",
-    "ISS retido interpretado conforme o padrão do XML.",
-    "Cada abertura inicia sem notas, razão ou plano de contas carregados."
+    "Reconhece cartas de correção e outros eventos de NF-e em área separada, sem gerar notas ou despesas fictícias.",
+    "Exibe número, chave, emitente, correção, sequência, protocolo e retorno de registro.",
+    "Reimportação de evento sem duplicidade e avisos detalhados por arquivo incompatível.",
+    "Mantém leitura de NFS-e Nacional e ABRASF e início sem documentos carregados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/auditor-nfse/2.5.1/KBL_Auditor_NFSe_v2.5.1_Hub.zip",
+    "path": "packages/auditor-nfse/2.5.2/KBL_Auditor_NFSe_v2.5.2_Hub.zip",
     "auth": "github-cli"
   }
 }
