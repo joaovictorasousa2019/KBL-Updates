@@ -16,7 +16,7 @@
     "Separa ativo diferido potencial do reconhecido; a constituição exige confirmação de recuperabilidade com justificativa.",
     "Saldos fiscais confirmados da Parte B passam a ser exigidos para compensação; o ativo contábil diferido isolado não autoriza compensação.",
     "Reimporte os arquivos e reprocesse a competência. Históricos calculados com o sinal antigo não são usados automaticamente no acumulado.",
-    "Validado com os arquivos da APLIC: prejuízo de R$ 545.997,04 e IRPJ/CSLL correntes zerados."
+    "Cálculos e exportação validados com testes de prejuízo, lucro, acumulado trimestral e reconhecimento do diferido."
   ],
   "package": {
     "provider": "github-private-repo",
