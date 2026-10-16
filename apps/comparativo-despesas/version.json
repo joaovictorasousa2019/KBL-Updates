@@ -3,27 +3,25 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.37",
+  "version": "3.9.38",
   "published": true,
   "download_url": "",
-  "sha256": "9c0d70f7b845f6aaa7b082c9d722ad41df043042b2c1e1f4b4deca6f68c37395",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_37.zip",
-  "published_at": "2026-10-13T13:14:29.538Z",
+  "sha256": "4b3715746a7e4e64df85a7e589c8334b37f1bf2a8ba8b1dec0ed4fcca4e6cd22",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_38.zip",
+  "published_at": "2026-10-16T16:57:22.612Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Investiga padrões mensais com limite de 20%, despesas sem lançamento e fornecedores recorrentes ausentes.",
-    "Detecta mudanças de conta pelo fornecedor mesmo com NF e valor diferentes, usando a janela recente da própria empresa.",
-    "Identifica documentos que explicam a variação e calcula o saldo sem cada lançamento.",
-    "Mostra indícios de classificação por histórico e nome/descrição, com conta candidata e necessidade de conferir a NF.",
-    "Excel inclui Conferência mensal e Fornecedores a conferir, além do Demonstrativo Final.",
-    "Preserva revisões humanas e diferencia mês zerado de fonte não disponível.",
-    "Validado com 166 testes e com 901 lançamentos / 56 contas da APLIC."
+    "Ignora encerramentos mensais, trimestrais, semestrais e anuais, inclusive Encerramento 3T.",
+    "Reconhece contas de apuração e compensação pelo nome e hierarquia do plano de cada empresa, sem códigos fixos.",
+    "Mantém apurações de tributos e operações normais; preserva o razão bruto para conferência com o balancete.",
+    "Preserva as melhorias de análise mensal e fornecedores da v3.9.37.",
+    "Validado com 170 testes e com o razão da APLIC 13. Reimporte razão e plano para recalcular."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.37/KBL_Comparativo_Despesas_v3_9_37.zip",
+    "path": "packages/comparativo-despesas/3.9.38/KBL_Comparativo_Despesas_v3_9_38.zip",
     "auth": "github-cli"
   }
 }
