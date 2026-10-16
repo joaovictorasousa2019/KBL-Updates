@@ -3,25 +3,25 @@
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
-  "version": "4.0.15",
+  "version": "4.0.21",
   "published": true,
   "download_url": "",
-  "sha256": "90801462765887c58d0685f4808b0f604043debaf20041d3922e697b2d5a846a",
-  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_15.zip",
-  "published_at": "2026-10-07T12:50:00+00:00",
+  "sha256": "6710b6a10748785f0ce1d2f440d7e4107e64fc06757d6ed1eddf260abc6ac562",
+  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_21.zip",
+  "published_at": "2026-10-16T12:14:07.005Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Exportação do Lucro Real refeita no modelo de papel de trabalho definido pela KBL.",
-    "Capa e Passo a Passo são removidas; permanecem as abas trimestrais, anuais, Parte B e Lançamentos, com nova aba JCP.",
-    "TJLP do JCP passa a ser atualizada automaticamente conforme a vigência, com consulta oficial e fallback seguro.",
-    "Período civil trimestral completo passa a liberar corretamente a aprovação do JCP.",
-    "Planejamento JCP mantém revisão manual de contas incluídas ou excluídas da base."
+    "Corrige a inversão de lucro/prejuízo nos cálculos mensal e trimestral e na exportação pelo razão.",
+    "Separa ativo diferido potencial do reconhecido; a constituição exige confirmação de recuperabilidade com justificativa.",
+    "Saldos fiscais confirmados da Parte B passam a ser exigidos para compensação; o ativo contábil diferido isolado não autoriza compensação.",
+    "Reimporte os arquivos e reprocesse a competência. Históricos calculados com o sinal antigo não são usados automaticamente no acumulado.",
+    "Validado com os arquivos da APLIC: prejuízo de R$ 545.997,04 e IRPJ/CSLL correntes zerados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/irpj-csll/4.0.15/KBL_Apuracao_IRPJ_CSLL_v4_0_15.zip",
+    "path": "packages/irpj-csll/4.0.21/KBL_Apuracao_IRPJ_CSLL_v4_0_21.zip",
     "auth": "github-cli"
   }
 }
