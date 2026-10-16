@@ -3,25 +3,25 @@
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
-  "version": "4.0.21",
+  "version": "4.0.22",
   "published": true,
   "download_url": "",
-  "sha256": "6710b6a10748785f0ce1d2f440d7e4107e64fc06757d6ed1eddf260abc6ac562",
-  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_21.zip",
-  "published_at": "2026-10-16T12:14:07.005Z",
+  "sha256": "b336c470925465ee0e562e43d8b79982e47c624a7db4b43a9c23e277a1b1f9fc",
+  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_22.zip",
+  "published_at": "2026-10-16T12:50:34.032Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige a inversão de lucro/prejuízo nos cálculos mensal e trimestral e na exportação pelo razão.",
-    "Separa ativo diferido potencial do reconhecido; a constituição exige confirmação de recuperabilidade com justificativa.",
-    "Saldos fiscais confirmados da Parte B passam a ser exigidos para compensação; o ativo contábil diferido isolado não autoriza compensação.",
-    "Reimporte os arquivos e reprocesse a competência. Históricos calculados com o sinal antigo não são usados automaticamente no acumulado.",
-    "Cálculos e exportação validados com testes de prejuízo, lucro, acumulado trimestral e reconhecimento do diferido."
+    "Comparativo de JCP exportado somente após aprovação do JCP no app.",
+    "Adições exportadas na linha 18; histórico com código e nome da conta.",
+    "Diferido com ativo e passivo, saldos iniciais/finais, débitos, créditos e movimentações do razão.",
+    "Passivo diferido existente preservado até validação da base temporária de origem, sem estorno automático.",
+    "Reimporte os arquivos e recalcule após atualizar. Saldos da Parte B devem refletir utilizações já registradas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/irpj-csll/4.0.21/KBL_Apuracao_IRPJ_CSLL_v4_0_21.zip",
+    "path": "packages/irpj-csll/4.0.22/KBL_Apuracao_IRPJ_CSLL_v4_0_22.zip",
     "auth": "github-cli"
   }
 }
