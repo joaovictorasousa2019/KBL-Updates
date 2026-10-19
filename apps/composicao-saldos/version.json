@@ -3,24 +3,24 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "66",
+  "version": "67",
   "published": true,
   "download_url": "",
-  "sha256": "373512aa3f675c1de6735e16e5909e92db8ddeb8446a1e71743fbe2cf0a2ccb5",
-  "file_name": "KBL_ComposicaoPatrimonial_v66_BASE_ANTERIOR_SUPORTE_LOTE.zip",
-  "published_at": "2026-10-14T12:46:42.835Z",
+  "sha256": "2bbd31c511b177132303a970fb0bf142e3d8d16df41b8e651576566b7be540d2",
+  "file_name": "KBL_ComposicaoPatrimonial_v67_RAZAO_SEM_BALANCETE.zip",
+  "published_at": "2026-10-19T18:23:47.079Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige uso da composição anterior selecionada, digitada ou colada no campo da base.",
-    "Recupera competências individuais de backups em lote e mostra o mês correto no histórico.",
-    "Preserva a base ao selecionar novamente seu próprio arquivo salvo.",
-    "Inclui Arquivo de suporte na edição em lote mensal e anual, com seleção, abertura e salvamento do vínculo."
+    "Remove a importação e a exigência de Balancete: usa Plano de Contas, Razão e composição anterior/base inicial.",
+    "Usa os saldos assinados e movimentos do Razão, preservando os lançamentos patrimoniais de encerramento.",
+    "Corrige a divergência de encerramento na conta de lucro do exercício e mantém validações de empresa, período e saldos.",
+    "Continuidade agosto/setembro validada com 62 contas patrimoniais."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/66/KBL_ComposicaoPatrimonial_v66_BASE_ANTERIOR_SUPORTE_LOTE.zip",
+    "path": "packages/composicao-saldos/67/KBL_ComposicaoPatrimonial_v67_RAZAO_SEM_BALANCETE.zip",
     "auth": "github-cli"
   }
 }
