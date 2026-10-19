@@ -3,26 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.25",
+  "version": "3.21.26",
   "published": true,
   "download_url": "",
-  "sha256": "66bb12627775a9c301d98e5fa9b942a641178137161a34a61be36f71f865770e",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_25.zip",
-  "published_at": "2026-10-09T20:13:36Z",
+  "sha256": "51287343f44b197eff614bd4da3dd4df48a3b97fb115846b6659297d73893746",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_26.zip",
+  "published_at": "2026-10-19T14:20:22Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Excel no modelo resumido aprovado, para clientes e fornecedores de qualquer empresa.",
-    "Composição somente com saldos abertos; Conciliação somente com saldos zerados.",
-    "Pagamentos/recebimentos e adiantamentos com colunas resumidas e situações padronizadas.",
-    "Ajustes mostram se estão exportados, lançados ou precisam de reexportação.",
-    "Altura 15, zerados em verde, abertos em amarelo e histórico original para terceiros não identificados.",
-    "37 testes aprovados, conferência visual e controle da diferença com o razão."
+    "Reconhecimento do documento explícito no histórico dos pagamentos (ex.: Documento 15), corrigindo também a função ativa sobrescrita.",
+    "Fornecedor abreviado identificado por nome, número de NF exato e emitente inequívoco, sem aproximar CNPJs divergentes.",
+    "Conciliação automática de uma nota por dois pagamentos quando a soma fecha e não há ambiguidade.",
+    "Pacote derivado da 3.21.25, validado com 21 regressões gerais, 50 testes financeiros e cenário NF 15 no motor."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.25/KBL_Conciliador_Contabil_v3_21_25.zip",
+    "path": "packages/conciliador-contabil/3.21.26/KBL_Conciliador_Contabil_v3_21_26.zip",
     "auth": "github-cli"
   }
 }
