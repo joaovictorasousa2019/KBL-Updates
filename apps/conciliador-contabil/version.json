@@ -3,25 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.28",
+  "version": "3.21.29",
   "published": true,
   "download_url": "",
-  "sha256": "bcb7a2624152061dc69ad5874d130baac9849c610fd320d91207fc0f61ee47bc",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_28.zip",
-  "published_at": "2026-10-19T16:30:20Z",
+  "sha256": "b787e2208bbc88e352e5f3e5d2d1bff5672ad43b26fc7e81736b299f7554e52d",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_29.zip",
+  "published_at": "2026-10-19T17:23:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Nova continuidade mensal iniciada em setembro/2026, com backup verificável da base anterior mediante confirmação no aplicativo.",
-    "Sessões de trabalho únicas por empresa, tipo e competência em banco SQLite, sem criação de rascunhos acumulados.",
-    "Apenas fechamentos aprovados transportam saldos pendentes ao mês seguinte; outubro recebe a composição aprovada de setembro.",
-    "Arquivos originais do Razão e Fiscal, cadastro de empresas e preferências preservados no reinício.",
-    "Validação do GitHub Actions aprovada: regressões existentes, NFS 15 e testes de continuidade mensal/backup."
+    "Compor saldo anterior: novo botão para vincular notas fiscais de meses anteriores à abertura de setembro/2026.",
+    "Permite importar notas antigas de relatórios fiscais e cadastrar documentos manualmente, informando o saldo realmente aberto em 31/08/2026.",
+    "Valida por CNPJ da empresa, conta contábil, fornecedor/documento, competência, duplicidades e limite do saldo inicial do Razão.",
+    "Preserva na composição o saldo sem documentos identificados e transporta os documentos validados a outubro após aprovação do fechamento.",
+    "Não cria lançamentos contábeis nem altera o Razão; testes de regressão e continuidade aprovados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.28/KBL_Conciliador_Contabil_v3_21_28.zip",
+    "path": "packages/conciliador-contabil/3.21.29/KBL_Conciliador_Contabil_v3_21_29.zip",
     "auth": "github-cli"
   }
 }
