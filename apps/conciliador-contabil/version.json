@@ -3,25 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.29",
+  "version": "3.21.30",
   "published": true,
   "download_url": "",
-  "sha256": "b787e2208bbc88e352e5f3e5d2d1bff5672ad43b26fc7e81736b299f7554e52d",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_29.zip",
-  "published_at": "2026-10-19T17:23:00Z",
+  "sha256": "16afc3926d4aeee468fe9960d7851173f7a99d1e0ceb45144ab63461c437458f",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_30.zip",
+  "published_at": "2026-10-19T18:03:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Compor saldo anterior: novo botão para vincular notas fiscais de meses anteriores à abertura de setembro/2026.",
-    "Permite importar notas antigas de relatórios fiscais e cadastrar documentos manualmente, informando o saldo realmente aberto em 31/08/2026.",
-    "Valida por CNPJ da empresa, conta contábil, fornecedor/documento, competência, duplicidades e limite do saldo inicial do Razão.",
-    "Preserva na composição o saldo sem documentos identificados e transporta os documentos validados a outubro após aprovação do fechamento.",
-    "Não cria lançamentos contábeis nem altera o Razão; testes de regressão e continuidade aprovados."
+    "Interface simplificada de verdade: não cria abas Resumo, Pendências, Duplicidades, Auditoria, Operações zeradas e Histórico de alterações.",
+    "Removidos os atalhos Auditoria fechamento, Revisar vínculos, Resolver diferença e Abrir conciliações da barra de fechamento; preservados os processos internos contábeis.",
+    "Importar conciliação TXT passa a permitir usar COMPOSICAO do TXT do período anterior como memória de abertura da competência inicial, com CNPJ, conta, duplicidades e saldos validados.",
+    "Nova continuidade permite escolher mês e ano; para reiniciar e arquivar rascunhos exige confirmação e digitação exata de REINICIAR MM/AAAA.",
+    "Regressões, TXT, proteção contra perda de dados, continuidade e versões Windows testados no GitHub Actions."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.29/KBL_Conciliador_Contabil_v3_21_29.zip",
+    "path": "packages/conciliador-contabil/3.21.30/KBL_Conciliador_Contabil_v3_21_30.zip",
     "auth": "github-cli"
   }
 }
