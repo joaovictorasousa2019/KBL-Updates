@@ -3,24 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.26",
+  "version": "3.21.27",
   "published": true,
   "download_url": "",
-  "sha256": "51287343f44b197eff614bd4da3dd4df48a3b97fb115846b6659297d73893746",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_26.zip",
-  "published_at": "2026-10-19T14:20:22Z",
+  "sha256": "11e90c7734149b872a5532f8f1e177c2830abc1363908ffb268f060e3c43840f",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_27.zip",
+  "published_at": "2026-10-19T14:35:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Reconhecimento do documento explícito no histórico dos pagamentos (ex.: Documento 15), corrigindo também a função ativa sobrescrita.",
-    "Fornecedor abreviado identificado por nome, número de NF exato e emitente inequívoco, sem aproximar CNPJs divergentes.",
-    "Conciliação automática de uma nota por dois pagamentos quando a soma fecha e não há ambiguidade.",
-    "Pacote derivado da 3.21.25, validado com 21 regressões gerais, 50 testes financeiros e cenário NF 15 no motor."
+    "Gerenciar cadeia econômica: a nota fiscal aparece sempre na primeira linha, destacada em verde-claro.",
+    "Documento fiscal é separado visualmente dos movimentos do Razão, com débito e crédito em traços porque é evidência, não lançamento.",
+    "Incluído painel de conferência automática do valor fiscal, abertura contabilizada, retenções e pagamentos, com diagnóstico do residual sem gerar lançamentos fictícios.",
+    "Motor de conciliação mantido da v3.21.26; testes existentes e conferência dos R$ 210,65 aprovados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.26/KBL_Conciliador_Contabil_v3_21_26.zip",
+    "path": "packages/conciliador-contabil/3.21.27/KBL_Conciliador_Contabil_v3_21_27.zip",
     "auth": "github-cli"
   }
 }
