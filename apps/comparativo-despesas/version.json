@@ -3,24 +3,24 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.40",
+  "version": "3.9.41",
   "published": true,
   "download_url": "",
-  "sha256": "d15838e9a9a642b43ba1fc24977e24ace83fb04407bb196aa3cb523a49a8949f",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_40.zip",
-  "published_at": "2026-10-16T17:12:27.083Z",
+  "sha256": "18de733509ee1f6a00af1b37af5264e8f085a398a6bae9c5d3dbc0d6892960e1",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_41.zip",
+  "published_at": "2026-10-19T18:02:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige erro is_closing_account não definido no processamento pela interface.",
-    "Preserva exclusão de encerramentos e justificativa opcional para contas sem pendência.",
-    "Inclui teste do processamento da interface. 176 testes aprovados; fluxo com razão e plano APLIC 13 concluído.",
-    "Feche o aplicativo, atualize pelo Hub e processe novamente."
+    "Exportação final em Excel passa a incluir somente a aba Demonstrativo Final.",
+    "Abas de apoio Conferência mensal e Fornecedores a conferir não são inseridas no arquivo final.",
+    "Layout, valores, justificativas e filtros do Demonstrativo Final permanecem iguais.",
+    "Incluído teste de regressão test_v3941.py."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.40/KBL_Comparativo_Despesas_v3_9_40.zip",
+    "path": "packages/comparativo-despesas/3.9.41/KBL_Comparativo_Despesas_v3_9_41.zip",
     "auth": "github-cli"
   }
 }
