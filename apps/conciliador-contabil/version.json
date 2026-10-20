@@ -3,25 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.30",
+  "version": "3.21.31",
   "published": true,
   "download_url": "",
-  "sha256": "16afc3926d4aeee468fe9960d7851173f7a99d1e0ceb45144ab63461c437458f",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_30.zip",
-  "published_at": "2026-10-19T18:03:00Z",
+  "sha256": "cd4a2207777e00695c932c897c3e8dbc2fecc16eb9d6132604c136a70b2c1fd2",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_31.zip",
+  "published_at": "2026-10-20T20:25:58.176Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Interface simplificada de verdade: não cria abas Resumo, Pendências, Duplicidades, Auditoria, Operações zeradas e Histórico de alterações.",
-    "Removidos os atalhos Auditoria fechamento, Revisar vínculos, Resolver diferença e Abrir conciliações da barra de fechamento; preservados os processos internos contábeis.",
-    "Importar conciliação TXT passa a permitir usar COMPOSICAO do TXT do período anterior como memória de abertura da competência inicial, com CNPJ, conta, duplicidades e saldos validados.",
-    "Nova continuidade permite escolher mês e ano; para reiniciar e arquivar rascunhos exige confirmação e digitação exata de REINICIAR MM/AAAA.",
-    "Regressões, TXT, proteção contra perda de dados, continuidade e versões Windows testados no GitHub Actions."
+    "Importar Excel gerado no ChatGPT com somente três abas: Composição, Conciliação e Pagamento sem documento, preservando históricos completos e lançamentos.",
+    "Revisão editável no próprio aplicativo: corrigir identificação de fornecedor/NF em campos separados, justificar, classificar, aprovar ou rejeitar.",
+    "Vincular créditos e pagamentos manualmente com bloqueio de valores acima do saldo e controle de duplicidades; nenhum vínculo importado é aprovado automaticamente.",
+    "Exportar Excel revisado para retornar ao ChatGPT; salvamento atômico e backup por CNPJ e intervalo de competências.",
+    "Espaço de revisão separado do motor de reconciliação e da continuidade mensal para impedir baixas automáticas indevidas; versão testada por GitHub Actions."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.30/KBL_Conciliador_Contabil_v3_21_30.zip",
+    "path": "packages/conciliador-contabil/3.21.31/KBL_Conciliador_Contabil_v3_21_31.zip",
     "auth": "github-cli"
   }
 }
