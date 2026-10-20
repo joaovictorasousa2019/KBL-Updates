@@ -3,24 +3,24 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.42",
+  "version": "3.9.43",
   "published": true,
   "download_url": "",
-  "sha256": "b5b9fb884160528416b89fdbd3a598a6188f9b34a539c7a7a6cc4d88093d795e",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_42.zip",
-  "published_at": "2026-10-20T12:10:17.212Z",
+  "sha256": "379e7e27c3ad3dbd6ba2db7b7f0037d4d1ba52117be34cd0c16d39e675a2a666",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_43.zip",
+  "published_at": "2026-10-20T12:16:15.356Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Aprovação manual aceita notas do mês atual e do mês anterior na mesma conta.",
-    "Justificativas podem explicar os principais fatores sem cobrir 100% da variação.",
-    "Evidências do mês anterior são identificadas na justificativa.",
-    "Mantida a exportação somente do Demonstrativo Final."
+    "Aprovação individual e em lote salva revisão, aprendizado e rascunho em uma única gravação.",
+    "Rascunhos existentes atualizam apenas as contas alteradas.",
+    "Tabela atualiza só as linhas alteradas, preservando seleção e rolagem.",
+    "Mantidas referências ao mês anterior e exportação somente do Demonstrativo Final."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.42/KBL_Comparativo_Despesas_v3_9_42.zip",
+    "path": "packages/comparativo-despesas/3.9.43/KBL_Comparativo_Despesas_v3_9_43.zip",
     "auth": "github-cli"
   }
 }
