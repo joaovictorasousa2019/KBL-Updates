@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.32",
+  "version": "3.21.33",
   "published": true,
   "download_url": "",
-  "sha256": "2960a02b6d389ddb3ea179cdd62d4b159e7db7ae1d2fc925c1df2d187aea715d",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_32.zip",
-  "published_at": "2026-10-20T20:45:13.491Z",
+  "sha256": "4eb621ce714f13fc69ab115d520c7f61667e9fe62addacdcb50f52f313db9f9c",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_33.zip",
+  "published_at": "2026-10-20T21:04:13.813Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Importar Excel diretamente nas abas nativas, sem janela independente: Composição e Baixas conciliadas.",
-    "Os 283 registros da aba Conciliação no exemplo Faculdade CDPI entram em Baixas conciliadas, mantendo históricos completos e evidência de origem; não passam por Sugestões.",
-    "Os 280 créditos e 453 pagamentos não vinculados do exemplo entram juntos na Composição, disponíveis para seleção, conciliação manual e formação de cadeias.",
-    "Botão Importar Excel na conciliação substitui Revisar Excel do ChatGPT; rascunho anterior protegido por backup e confirmação.",
-    "Saldo importado é declarado PARCIAL: não substitui fechamento ou saldo do Razão; não cria lançamentos contábeis.",
-    "Validação automatizada passou: importação nativa, vínculo de baixa, cenário MABBIX e testes existentes do motor."
+    "Reconstitui na cadeia o valor integral da abertura e todas as baixas identificadas, com datas, lançamentos, linhas, históricos e contrapartidas originais do Razão.",
+    "Cadeias zeradas e baixas parciais recebem classificações distintas: nunca classificar parcialmente baixada como quitação total.",
+    "Importação Excel agora permite selecionar opcionalmente o Razão Domínio de mesma empresa para validar o valor original e os lançamentos do crédito, e recuperar datas ausentes no Excel.",
+    "Exemplo real NF 671 MESTRA: crédito 13/07/2026 de R$ 75.153,03, baixa 01/08/2026 de R$ 15.552,79, residual R$ 59.600,24.",
+    "Abas existentes Composição e Baixas conciliadas preservadas; nenhuma aba extra, nenhuma contrapartida fictícia ou ajuste automático.",
+    "Testes de importação, reconciliação, histórico, datas e cadeias completas passaram no GitHub Actions."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.32/KBL_Conciliador_Contabil_v3_21_32.zip",
+    "path": "packages/conciliador-contabil/3.21.33/KBL_Conciliador_Contabil_v3_21_33.zip",
     "auth": "github-cli"
   }
 }
