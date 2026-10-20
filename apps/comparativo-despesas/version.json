@@ -3,23 +3,24 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.47",
+  "version": "3.9.48",
   "published": true,
   "download_url": "",
-  "sha256": "bf991aa3d8dca0f82f32f6aa9ea473218b1777183da9416690ef380bce1eeb1f",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_47.zip",
-  "published_at": "2026-10-20T13:56:49.859Z",
+  "sha256": "9e41402bae7878db3b19ceb70b0d513a4dd3634ad32e981368c9b5458fe1ef97",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_48.zip",
+  "published_at": "2026-10-20T18:31:11.079Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Aprovação manual aceita confirmação de nota não emitida ou ausência de pagamento, sem exigir anexo.",
-    "Mantidas as verificações de documentos e valores citados e da consistência do Razão.",
-    "A confirmação humana permanece salva ao reabrir a empresa."
+    "Colunas mensais calculadas pelo saldo final do Razão Domínio, considerando saldo anterior quando informado.",
+    "Se não houver coluna de saldo no Razão, o aplicativo mantém a alternativa por débitos menos créditos.",
+    "Continua ignorando lançamentos de encerramento e respeitando a tolerância percentual inclusiva de 20%.",
+    "Mantidos histórico, rascunhos, aprovações e validações independentes de natureza contábil."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.47/KBL_Comparativo_Despesas_v3_9_47.zip",
+    "path": "packages/comparativo-despesas/3.9.48/KBL_Comparativo_Despesas_v3_9_48.zip",
     "auth": "github-cli"
   }
 }
