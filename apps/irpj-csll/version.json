@@ -3,25 +3,26 @@
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
-  "version": "4.0.24",
+  "version": "4.0.25",
   "published": true,
   "download_url": "",
-  "sha256": "38f43c1620fe0ec25771883e8404fdffdf16d448b2b736a48edf6e3b684d1d48",
-  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_24.zip",
-  "published_at": "2026-10-20T18:50:31Z",
+  "sha256": "af2baa7ef5bddf2786a4b4729c75309138ec661c8498c884f3090420b8cc4c10",
+  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_25.zip",
+  "published_at": "2026-10-20T19:44:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Nova importação de histórico trimestral por TXT dentro da aba Parte B: botão Importar TXT e revisão antes de confirmar.",
-    "Botão Gerar modelo TXT com linhas para 1º e 2º trimestre, preenchimento por campo e origem, associado ao CNPJ.",
-    "Históricos importados preservados por empresa e exibidos separadamente da apuração corrente; sem aprovação automática, sem alterar Parte B ou tributos diferidos.",
-    "Confere consistência de resultado contábil, adições/exclusões, compensações e bases; mostra divergências/avisos no painel de importação.",
-    "Mantidos o assistente de abertura LALUR e os cálculos de IRPJ, CSLL, JCP e diferidos da 4.0.23."
+    "Corrigida integração do TXT: 1º e 2º trimestres são agora efetivamente preenchidos nas abas do Excel, incluindo bases e compensações importadas.",
+    "Parte B recalculada por trimestre com prejuízo fiscal da Parte A (após adições e exclusões), não pelo prejuízo contábil.",
+    "Faculdade CDPI: R$ 722.111,17 de saldo do exercício anterior + R$ 205.238,45 de prejuízo fiscal no 1º tri - R$ 132.855,83 de compensação no 2º tri = R$ 794.493,79 para o 3º tri.",
+    "TXT aceita ABERTURA;ANO;PREJUIZO_FISCAL_IRPJ;SALDO;ORIGEM, para comprovar abertura. Guarda período por CNPJ e exige prévia/confirmacão.",
+    "Planilha exportada evidencia o movimento trimestral da Parte B; não presume base negativa de CSLL nem aprova apurações anteriores.",
+    "Abertura direta de LALUR também concilia Parte A dos primeiros dois trimestres com o controle de 2025."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/irpj-csll/4.0.24/KBL_Apuracao_IRPJ_CSLL_v4_0_24.zip",
+    "path": "packages/irpj-csll/4.0.25/KBL_Apuracao_IRPJ_CSLL_v4_0_25.zip",
     "auth": "github-cli"
   }
 }
