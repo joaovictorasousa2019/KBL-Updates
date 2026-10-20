@@ -3,26 +3,27 @@
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
-  "version": "4.0.25",
+  "version": "4.0.26",
   "published": true,
   "download_url": "",
-  "sha256": "af2baa7ef5bddf2786a4b4729c75309138ec661c8498c884f3090420b8cc4c10",
-  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_25.zip",
-  "published_at": "2026-10-20T19:44:00Z",
+  "sha256": "61ce7fb49c6da31f5124c11251524925c72fdf1de3361fca96523dd759110f9f",
+  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_26.zip",
+  "published_at": "2026-10-20T19:55:35Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrigida integração do TXT: 1º e 2º trimestres são agora efetivamente preenchidos nas abas do Excel, incluindo bases e compensações importadas.",
-    "Parte B recalculada por trimestre com prejuízo fiscal da Parte A (após adições e exclusões), não pelo prejuízo contábil.",
-    "Faculdade CDPI: R$ 722.111,17 de saldo do exercício anterior + R$ 205.238,45 de prejuízo fiscal no 1º tri - R$ 132.855,83 de compensação no 2º tri = R$ 794.493,79 para o 3º tri.",
-    "TXT aceita ABERTURA;ANO;PREJUIZO_FISCAL_IRPJ;SALDO;ORIGEM, para comprovar abertura. Guarda período por CNPJ e exige prévia/confirmacão.",
-    "Planilha exportada evidencia o movimento trimestral da Parte B; não presume base negativa de CSLL nem aprova apurações anteriores.",
-    "Abertura direta de LALUR também concilia Parte A dos primeiros dois trimestres com o controle de 2025."
+    "Importação histórica validada: os 1º e 2º trimestres são preenchidos no Excel padrão nas células existentes, sem mudar abas, fórmulas, estilos, mesclagens ou larguras.",
+    "Correção de classificação: os totais de adições fiscais do TXT são alocados em Outras Adições, sem classificá-los indevidamente como custos não dedutíveis.",
+    "Parte B do IRPJ reconciliada por trimestre com o prejuízo fiscal da Parte A: 722.111,17 + 205.238,45 - 132.855,83 = 794.493,79 na Faculdade CDPI para o 3º tri.",
+    "A memória histórica fica em células disponíveis da própria Parte B, preservando a estrutura e as fórmulas originais.",
+    "A exportação é bloqueada se o saldo Parte B do IRPJ na apuração corrente divergir do fechamento do histórico importado.",
+    "Base negativa inicial da CSLL não comprovada no TXT: cálculos de compensação da CSLL mantêm fórmulas originais e exigem controle e-Lacs para reconciliação completa.",
+    "Compilação v4.0.26 aprovada com 27 testes, incluindo exportação end-to-end do Excel padrão."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/irpj-csll/4.0.25/KBL_Apuracao_IRPJ_CSLL_v4_0_25.zip",
+    "path": "packages/irpj-csll/4.0.26/KBL_Apuracao_IRPJ_CSLL_v4_0_26.zip",
     "auth": "github-cli"
   }
 }
