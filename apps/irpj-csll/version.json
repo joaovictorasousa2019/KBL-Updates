@@ -3,25 +3,25 @@
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
-  "version": "4.0.23",
+  "version": "4.0.24",
   "published": true,
   "download_url": "",
-  "sha256": "d62d84c693487d6a04d328e491d8c222b478c978f4f4a7b71878c80a16bb637b",
-  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_23.zip",
-  "published_at": "2026-10-20T18:32:04Z",
+  "sha256": "38f43c1620fe0ec25771883e8404fdffdf16d448b2b736a48edf6e3b684d1d48",
+  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_24.zip",
+  "published_at": "2026-10-20T18:50:31Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Nova Abertura Inicial no painel Empresas e na Parte B, com importação assistida da planilha LALUR.",
-    "O app identifica CNPJ, razão social e saldo acumulado do prejuízo fiscal; a base negativa CSLL permanece em branco quando não houver controle específico.",
-    "Revisão obrigatória da data-base e dos saldos, com confirmação antes de substituir valores; registro por CNPJ e backup antes de salvar.",
-    "A abertura não lança impostos diferidos nem contabiliza provisões automaticamente. Reimporte balancete, razão e plano para processar a próxima competência.",
-    "Mantidas as regras de JCP, IRPJ/CSLL corrente, Parte B e diferidos da v4.0.22."
+    "Nova importação de histórico trimestral por TXT dentro da aba Parte B: botão Importar TXT e revisão antes de confirmar.",
+    "Botão Gerar modelo TXT com linhas para 1º e 2º trimestre, preenchimento por campo e origem, associado ao CNPJ.",
+    "Históricos importados preservados por empresa e exibidos separadamente da apuração corrente; sem aprovação automática, sem alterar Parte B ou tributos diferidos.",
+    "Confere consistência de resultado contábil, adições/exclusões, compensações e bases; mostra divergências/avisos no painel de importação.",
+    "Mantidos o assistente de abertura LALUR e os cálculos de IRPJ, CSLL, JCP e diferidos da 4.0.23."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/irpj-csll/4.0.23/KBL_Apuracao_IRPJ_CSLL_v4_0_23.zip",
+    "path": "packages/irpj-csll/4.0.24/KBL_Apuracao_IRPJ_CSLL_v4_0_24.zip",
     "auth": "github-cli"
   }
 }
