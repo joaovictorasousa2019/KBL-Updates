@@ -3,25 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.31",
+  "version": "3.21.32",
   "published": true,
   "download_url": "",
-  "sha256": "cd4a2207777e00695c932c897c3e8dbc2fecc16eb9d6132604c136a70b2c1fd2",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_31.zip",
-  "published_at": "2026-10-20T20:25:58.176Z",
+  "sha256": "2960a02b6d389ddb3ea179cdd62d4b159e7db7ae1d2fc925c1df2d187aea715d",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_32.zip",
+  "published_at": "2026-10-20T20:45:13.491Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Importar Excel gerado no ChatGPT com somente três abas: Composição, Conciliação e Pagamento sem documento, preservando históricos completos e lançamentos.",
-    "Revisão editável no próprio aplicativo: corrigir identificação de fornecedor/NF em campos separados, justificar, classificar, aprovar ou rejeitar.",
-    "Vincular créditos e pagamentos manualmente com bloqueio de valores acima do saldo e controle de duplicidades; nenhum vínculo importado é aprovado automaticamente.",
-    "Exportar Excel revisado para retornar ao ChatGPT; salvamento atômico e backup por CNPJ e intervalo de competências.",
-    "Espaço de revisão separado do motor de reconciliação e da continuidade mensal para impedir baixas automáticas indevidas; versão testada por GitHub Actions."
+    "Importar Excel diretamente nas abas nativas, sem janela independente: Composição e Baixas conciliadas.",
+    "Os 283 registros da aba Conciliação no exemplo Faculdade CDPI entram em Baixas conciliadas, mantendo históricos completos e evidência de origem; não passam por Sugestões.",
+    "Os 280 créditos e 453 pagamentos não vinculados do exemplo entram juntos na Composição, disponíveis para seleção, conciliação manual e formação de cadeias.",
+    "Botão Importar Excel na conciliação substitui Revisar Excel do ChatGPT; rascunho anterior protegido por backup e confirmação.",
+    "Saldo importado é declarado PARCIAL: não substitui fechamento ou saldo do Razão; não cria lançamentos contábeis.",
+    "Validação automatizada passou: importação nativa, vínculo de baixa, cenário MABBIX e testes existentes do motor."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.31/KBL_Conciliador_Contabil_v3_21_31.zip",
+    "path": "packages/conciliador-contabil/3.21.32/KBL_Conciliador_Contabil_v3_21_32.zip",
     "auth": "github-cli"
   }
 }
