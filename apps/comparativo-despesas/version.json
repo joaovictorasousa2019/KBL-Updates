@@ -3,26 +3,25 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.45",
+  "version": "3.9.46",
   "published": true,
   "download_url": "",
-  "sha256": "410aad33e3af9a6f1bd3efa8de81af1c632b2e81b70f41dacfec04eae25c45b1",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_45.zip",
-  "published_at": "2026-10-20T13:28:16.482Z",
+  "sha256": "7976805458ec8b032e60be51f45c19b9533cdb34ae0954bba6cc7ca5505d2b71",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_46.zip",
+  "published_at": "2026-10-20T13:54:30.013Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Novo botão Importar entradas (opcional): relatórios XLS/XLSX com itens, quantidades e preços.",
-    "Nova aba Itens das entradas e sugestão editável para a justificativa da conta.",
-    "Vínculo por NF e data; CNPJ confere quando disponível. Ambiguidades e diferenças são sinalizadas.",
-    "Compara itens idênticos entre meses e aponta possíveis naturezas distintas na mesma nota.",
-    "Detalhamento também apoia respostas à controladoria. Valores e justificativas aprovadas são preservados.",
-    "Dependência xlrd incluída; se necessário, executar INSTALAR_DEPENDENCIAS.bat."
+    "Aprovar não regrava mais a base inteira: revisão salva de forma incremental e durável.",
+    "Correção ortográfica, validação e gravação executadas em segundo plano.",
+    "Aprovação só é confirmada na tela após concluir a gravação; falhas permitem tentar novamente.",
+    "Autosave e fechamento coordenados com as revisões, mantendo recuperação ao reabrir.",
+    "Teste sintético com base de 40 MB e testes de recuperação passaram; velocidade no Windows depende do ambiente."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.45/KBL_Comparativo_Despesas_v3_9_45.zip",
+    "path": "packages/comparativo-despesas/3.9.46/KBL_Comparativo_Despesas_v3_9_46.zip",
     "auth": "github-cli"
   }
 }
