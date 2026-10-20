@@ -3,25 +3,23 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.46",
+  "version": "3.9.47",
   "published": true,
   "download_url": "",
-  "sha256": "7976805458ec8b032e60be51f45c19b9533cdb34ae0954bba6cc7ca5505d2b71",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_46.zip",
-  "published_at": "2026-10-20T13:54:30.013Z",
+  "sha256": "bf991aa3d8dca0f82f32f6aa9ea473218b1777183da9416690ef380bce1eeb1f",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_47.zip",
+  "published_at": "2026-10-20T13:56:49.859Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Aprovar não regrava mais a base inteira: revisão salva de forma incremental e durável.",
-    "Correção ortográfica, validação e gravação executadas em segundo plano.",
-    "Aprovação só é confirmada na tela após concluir a gravação; falhas permitem tentar novamente.",
-    "Autosave e fechamento coordenados com as revisões, mantendo recuperação ao reabrir.",
-    "Teste sintético com base de 40 MB e testes de recuperação passaram; velocidade no Windows depende do ambiente."
+    "Aprovação manual aceita confirmação de nota não emitida ou ausência de pagamento, sem exigir anexo.",
+    "Mantidas as verificações de documentos e valores citados e da consistência do Razão.",
+    "A confirmação humana permanece salva ao reabrir a empresa."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.46/KBL_Comparativo_Despesas_v3_9_46.zip",
+    "path": "packages/comparativo-despesas/3.9.47/KBL_Comparativo_Despesas_v3_9_47.zip",
     "auth": "github-cli"
   }
 }
