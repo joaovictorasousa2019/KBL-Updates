@@ -3,25 +3,25 @@
   "app_id": "irpj-csll",
   "name": "KBL IRPJ e CSLL",
   "channel": "stable",
-  "version": "4.0.22",
+  "version": "4.0.23",
   "published": true,
   "download_url": "",
-  "sha256": "b336c470925465ee0e562e43d8b79982e47c624a7db4b43a9c23e277a1b1f9fc",
-  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_22.zip",
-  "published_at": "2026-10-16T12:50:34.032Z",
+  "sha256": "d62d84c693487d6a04d328e491d8c222b478c978f4f4a7b71878c80a16bb637b",
+  "file_name": "KBL_Apuracao_IRPJ_CSLL_v4_0_23.zip",
+  "published_at": "2026-10-20T18:32:04Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Comparativo de JCP exportado somente após aprovação do JCP no app.",
-    "Adições exportadas na linha 18; histórico com código e nome da conta.",
-    "Diferido com ativo e passivo, saldos iniciais/finais, débitos, créditos e movimentações do razão.",
-    "Passivo diferido existente preservado até validação da base temporária de origem, sem estorno automático.",
-    "Reimporte os arquivos e recalcule após atualizar. Saldos da Parte B devem refletir utilizações já registradas."
+    "Nova Abertura Inicial no painel Empresas e na Parte B, com importação assistida da planilha LALUR.",
+    "O app identifica CNPJ, razão social e saldo acumulado do prejuízo fiscal; a base negativa CSLL permanece em branco quando não houver controle específico.",
+    "Revisão obrigatória da data-base e dos saldos, com confirmação antes de substituir valores; registro por CNPJ e backup antes de salvar.",
+    "A abertura não lança impostos diferidos nem contabiliza provisões automaticamente. Reimporte balancete, razão e plano para processar a próxima competência.",
+    "Mantidas as regras de JCP, IRPJ/CSLL corrente, Parte B e diferidos da v4.0.22."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/irpj-csll/4.0.22/KBL_Apuracao_IRPJ_CSLL_v4_0_22.zip",
+    "path": "packages/irpj-csll/4.0.23/KBL_Apuracao_IRPJ_CSLL_v4_0_23.zip",
     "auth": "github-cli"
   }
 }
