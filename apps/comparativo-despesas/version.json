@@ -3,25 +3,26 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.44",
+  "version": "3.9.45",
   "published": true,
   "download_url": "",
-  "sha256": "70e140e1be31a1ec6b31f45629315e884a8506cb0abb7da8ab3767bc726845b6",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_44.zip",
-  "published_at": "2026-10-20T13:17:54.950Z",
+  "sha256": "410aad33e3af9a6f1bd3efa8de81af1c632b2e81b70f41dacfec04eae25c45b1",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_45.zip",
+  "published_at": "2026-10-20T13:28:16.482Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Novo botão Responder à controladoria: cole a mensagem ou anexe print, TXT ou PDF com texto.",
-    "Classificações questionadas são cruzadas com o plano e o Razão; sugestões editáveis trazem evidências e possíveis contas de destino.",
-    "Aprovação individual e cópia somente das respostas aprovadas, na ordem da mensagem.",
-    "Respostas salvas por empresa e competência; saldo patrimonial é distinto da movimentação mensal.",
-    "Após atualizar, reprocesse os arquivos para disponibilizar o Razão completo à nova tela."
+    "Novo botão Importar entradas (opcional): relatórios XLS/XLSX com itens, quantidades e preços.",
+    "Nova aba Itens das entradas e sugestão editável para a justificativa da conta.",
+    "Vínculo por NF e data; CNPJ confere quando disponível. Ambiguidades e diferenças são sinalizadas.",
+    "Compara itens idênticos entre meses e aponta possíveis naturezas distintas na mesma nota.",
+    "Detalhamento também apoia respostas à controladoria. Valores e justificativas aprovadas são preservados.",
+    "Dependência xlrd incluída; se necessário, executar INSTALAR_DEPENDENCIAS.bat."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.44/KBL_Comparativo_Despesas_v3_9_44.zip",
+    "path": "packages/comparativo-despesas/3.9.45/KBL_Comparativo_Despesas_v3_9_45.zip",
     "auth": "github-cli"
   }
 }
