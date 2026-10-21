@@ -3,26 +3,24 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.33",
+  "version": "3.21.34",
   "published": true,
   "download_url": "",
-  "sha256": "4eb621ce714f13fc69ab115d520c7f61667e9fe62addacdcb50f52f313db9f9c",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_33.zip",
-  "published_at": "2026-10-20T21:04:13.813Z",
+  "sha256": "7254645bc4f4a5b760ae50c5a9cb2cd8cfd2724b3f67416de3858875c9621148",
+  "file_name": "KBL_Conciliador_Contabil_v3_21_34.zip",
+  "published_at": "2026-10-21T11:25:44.709Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Reconstitui na cadeia o valor integral da abertura e todas as baixas identificadas, com datas, lançamentos, linhas, históricos e contrapartidas originais do Razão.",
-    "Cadeias zeradas e baixas parciais recebem classificações distintas: nunca classificar parcialmente baixada como quitação total.",
-    "Importação Excel agora permite selecionar opcionalmente o Razão Domínio de mesma empresa para validar o valor original e os lançamentos do crédito, e recuperar datas ausentes no Excel.",
-    "Exemplo real NF 671 MESTRA: crédito 13/07/2026 de R$ 75.153,03, baixa 01/08/2026 de R$ 15.552,79, residual R$ 59.600,24.",
-    "Abas existentes Composição e Baixas conciliadas preservadas; nenhuma aba extra, nenhuma contrapartida fictícia ou ajuste automático.",
-    "Testes de importação, reconciliação, histórico, datas e cadeias completas passaram no GitHub Actions."
+    "A Central de Conciliação do Saldo mantém Salvar conciliações, Conciliar e voltar e Fechar sempre visíveis no rodapé, inclusive com múltiplos filtros.",
+    "O painel lateral de filtros agora possui rolagem independente; Aplicar e Limpar permanecem acessíveis mesmo com vários fornecedores selecionados.",
+    "Correção exclusivamente visual: preserva conciliações, cadeias econômicas, lançamentos, importação do Excel e rascunhos da versão 3.21.33.",
+    "Compilação e testes de layout, vínculos contábeis e regressão concluídos no GitHub Actions."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.33/KBL_Conciliador_Contabil_v3_21_33.zip",
+    "path": "packages/conciliador-contabil/3.21.34/KBL_Conciliador_Contabil_v3_21_34.zip",
     "auth": "github-cli"
   }
 }
