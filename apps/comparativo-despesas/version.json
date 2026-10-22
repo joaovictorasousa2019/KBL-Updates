@@ -3,15 +3,16 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.53",
+  "version": "3.9.54",
   "published": true,
   "download_url": "",
-  "sha256": "7f0b824541f06b9635db0bfe94e8396535e97ec30d4ff6bfc99ff6f8a33554b6",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_53.zip",
-  "published_at": "2026-10-22T16:58:11.352Z",
+  "sha256": "42d89b81dd7b816d4f291e89dd5082ffcba1f4397eecc8dd7772d4597ea3ba23",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_54.zip",
+  "published_at": "2026-10-22T17:17:12.437Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
+    "Itens das entradas agrupados por fornecedor/CNPJ, com notas e produtos abaixo e quantidades/valores em colunas. Expandir/Recolher na mesma aba, sem novas telas.",
     "Copiar descrição do serviço: botão acima da tabela, Ctrl+C e menu do botão direito. Copia somente as descrições selecionadas, sem NF ou fornecedor.",
     "Importar fiscal aceita PDFs de NFS-e DANFSe v2, São Paulo e Campinas. Diagnóstico e confiança mostra só NF, fornecedor e resumo do serviço do mês atual. Avisos superiores compactos. Validado em PDF com 42 notas e 18 páginas complementares; 46 testes aprovados.",
     "Justificativa da folha em frase curta com funcionários agrupados por rubrica. Prévia ao selecionar; botão Usar explicação na justificativa acima da tabela. 37 testes aprovados.",
@@ -25,7 +26,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.53/KBL_Comparativo_Despesas_v3_9_53.zip",
+    "path": "packages/comparativo-despesas/3.9.54/KBL_Comparativo_Despesas_v3_9_54.zip",
     "auth": "github-cli"
   }
 }
