@@ -3,15 +3,16 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.50",
+  "version": "3.9.51",
   "published": true,
   "download_url": "",
-  "sha256": "4d9e6fd44545448778846ae94500e5b1adfe549991a78c285132107873e1bf75",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_50.zip",
-  "published_at": "2026-10-22T13:27:57.496Z",
+  "sha256": "d6ecc7e082a8c71ba44e7ed6a52959faea834413ca89e8dd8452c1cf0928f998",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_51.zip",
+  "published_at": "2026-10-22T13:38:41.035Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
+    "Justificativa da folha em frase curta com funcionários agrupados por rubrica. Prévia ao selecionar; botão Usar explicação na justificativa acima da tabela. 37 testes aprovados.",
     "Removido o botão Processar comparativo, mantendo o processamento automático ao incluir Plano e Razão. Importar fiscal e Importar folha são opcionais. Folha permite selecionar rubricas por funcionário e competência para compor justificativas. Validado com 33 testes.",
     "Aceita o relatório ENTRADAS E SAÍDAS COM PRODUTOS com Documento, Entrada, Emissão, CNPJ Fornecedor e descrição separada do código do produto. Validado com 363 itens de 154 notas de entrada; 29 testes aprovados.",
     "Colunas mensais calculadas pelo saldo final do Razão Domínio, considerando saldo anterior quando informado.",
@@ -22,7 +23,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.50/KBL_Comparativo_Despesas_v3_9_50.zip",
+    "path": "packages/comparativo-despesas/3.9.51/KBL_Comparativo_Despesas_v3_9_51.zip",
     "auth": "github-cli"
   }
 }
