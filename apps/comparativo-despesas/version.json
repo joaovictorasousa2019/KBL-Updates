@@ -3,15 +3,16 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.49",
+  "version": "3.9.50",
   "published": true,
   "download_url": "",
-  "sha256": "4bba1464f08f468d1d6ee1d42911296492f9257f6c5ad66b4ecf1cd559d82512",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_49.zip",
-  "published_at": "2026-10-22T13:03:02.909Z",
+  "sha256": "4d9e6fd44545448778846ae94500e5b1adfe549991a78c285132107873e1bf75",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_50.zip",
+  "published_at": "2026-10-22T13:27:57.496Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
+    "Removido o botão Processar comparativo, mantendo o processamento automático ao incluir Plano e Razão. Importar fiscal e Importar folha são opcionais. Folha permite selecionar rubricas por funcionário e competência para compor justificativas. Validado com 33 testes.",
     "Aceita o relatório ENTRADAS E SAÍDAS COM PRODUTOS com Documento, Entrada, Emissão, CNPJ Fornecedor e descrição separada do código do produto. Validado com 363 itens de 154 notas de entrada; 29 testes aprovados.",
     "Colunas mensais calculadas pelo saldo final do Razão Domínio, considerando saldo anterior quando informado.",
     "Se não houver coluna de saldo no Razão, o aplicativo mantém a alternativa por débitos menos créditos.",
@@ -21,7 +22,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.49/KBL_Comparativo_Despesas_v3_9_49.zip",
+    "path": "packages/comparativo-despesas/3.9.50/KBL_Comparativo_Despesas_v3_9_50.zip",
     "auth": "github-cli"
   }
 }
