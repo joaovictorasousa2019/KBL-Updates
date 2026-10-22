@@ -3,15 +3,16 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.48",
+  "version": "3.9.49",
   "published": true,
   "download_url": "",
-  "sha256": "9e41402bae7878db3b19ceb70b0d513a4dd3634ad32e981368c9b5458fe1ef97",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_48.zip",
-  "published_at": "2026-10-20T18:31:11.079Z",
+  "sha256": "4bba1464f08f468d1d6ee1d42911296492f9257f6c5ad66b4ecf1cd559d82512",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_49.zip",
+  "published_at": "2026-10-22T13:03:02.909Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
+    "Aceita o relatório ENTRADAS E SAÍDAS COM PRODUTOS com Documento, Entrada, Emissão, CNPJ Fornecedor e descrição separada do código do produto. Validado com 363 itens de 154 notas de entrada; 29 testes aprovados.",
     "Colunas mensais calculadas pelo saldo final do Razão Domínio, considerando saldo anterior quando informado.",
     "Se não houver coluna de saldo no Razão, o aplicativo mantém a alternativa por débitos menos créditos.",
     "Continua ignorando lançamentos de encerramento e respeitando a tolerância percentual inclusiva de 20%.",
@@ -20,7 +21,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.48/KBL_Comparativo_Despesas_v3_9_48.zip",
+    "path": "packages/comparativo-despesas/3.9.49/KBL_Comparativo_Despesas_v3_9_49.zip",
     "auth": "github-cli"
   }
 }
