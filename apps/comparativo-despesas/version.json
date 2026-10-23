@@ -3,15 +3,18 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.55",
+  "version": "3.9.56",
   "published": true,
   "download_url": "",
-  "sha256": "3413240a69cf3580253b0d7f2f4d7cfe16de3feb27a7bec2615e7c385f0cd3e1",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_55.zip",
-  "published_at": "2026-10-22T17:31:40.152Z",
+  "sha256": "6a99e2a8638b54ddf27f94c7f103816c27ec4fca6621bd1116b177b758b5ee8b",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_56.zip",
+  "published_at": "2026-10-23T17:36:17.368Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
+    "Ao importar fiscal ou folha, atualiza imediatamente as justificativas automáticas e salva o rascunho. Preserva textos editados e aprovações. Reaplica as evidências ao reabrir e reprocessar a competência.",
+    "Folha identifica as admissões do mês com nome, data e centro de custo. Justificativa automática usa somente rubricas do mês compatíveis com a conta e seu saldo; seleção manual permanece disponível.",
+    "Corrigida a página de Informações Complementares da DANFSe: NF 4627 Reachr validada como 1 nota + 1 complemento. 37 testes direcionados aprovados; revisão geral sem novas falhas.",
     "Justificativas automáticas curtas a partir dos itens e descrições de serviços: abastecimento com gasolina, compra de papel-toalha e papel higiênico, serviços de bordado e outros. Preserva textos humanos. 53 testes aprovados.",
     "Itens das entradas agrupados por fornecedor/CNPJ, com notas e produtos abaixo e quantidades/valores em colunas. Expandir/Recolher na mesma aba, sem novas telas.",
     "Copiar descrição do serviço: botão acima da tabela, Ctrl+C e menu do botão direito. Copia somente as descrições selecionadas, sem NF ou fornecedor.",
@@ -27,7 +30,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.55/KBL_Comparativo_Despesas_v3_9_55.zip",
+    "path": "packages/comparativo-despesas/3.9.56/KBL_Comparativo_Despesas_v3_9_56.zip",
     "auth": "github-cli"
   }
 }
