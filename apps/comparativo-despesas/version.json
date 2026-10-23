@@ -3,15 +3,16 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.56",
+  "version": "3.9.57",
   "published": true,
   "download_url": "",
-  "sha256": "6a99e2a8638b54ddf27f94c7f103816c27ec4fca6621bd1116b177b758b5ee8b",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_56.zip",
-  "published_at": "2026-10-23T17:36:17.368Z",
+  "sha256": "ec1292bec0610a0db7a51c965eea1648d164e68c31826312bc5cec0757327172",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_57.zip",
+  "published_at": "2026-10-23T17:44:18.496Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
+    "Corrigido erro 'items' na primeira importação fiscal da empresa sem documentos anteriores. Testado com memória vazia, reimportação sem duplicação e PDF sem produtos. 39 testes direcionados aprovados; 713 itens de matriz/filial e 4 NFS-e importados em banco vazio.",
     "Ao importar fiscal ou folha, atualiza imediatamente as justificativas automáticas e salva o rascunho. Preserva textos editados e aprovações. Reaplica as evidências ao reabrir e reprocessar a competência.",
     "Folha identifica as admissões do mês com nome, data e centro de custo. Justificativa automática usa somente rubricas do mês compatíveis com a conta e seu saldo; seleção manual permanece disponível.",
     "Corrigida a página de Informações Complementares da DANFSe: NF 4627 Reachr validada como 1 nota + 1 complemento. 37 testes direcionados aprovados; revisão geral sem novas falhas.",
@@ -30,7 +31,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.56/KBL_Comparativo_Despesas_v3_9_56.zip",
+    "path": "packages/comparativo-despesas/3.9.57/KBL_Comparativo_Despesas_v3_9_57.zip",
     "auth": "github-cli"
   }
 }
