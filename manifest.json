@@ -60,6 +60,11 @@
       "app_id": "demonstracoes-financeiras",
       "name": "KBL Demonstrações Contábeis",
       "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/demonstracoes-financeiras/version.json?v=0.4.47"
+    },
+    {
+      "app_id": "validador-balancete",
+      "name": "KBL Validador de Balancete",
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/validador-balancete/version.json?v=1.0.2"
     }
   ],
   "package_repository": {
@@ -68,5 +73,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-10-23-comparativo-3.9.59"
+  "revision": "2026-10-26-validador-balancete-1.0.2"
 }
