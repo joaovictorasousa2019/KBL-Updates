@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "app_id": "comparativo-despesas",
+  "name": "KBL Comparativo de Despesas",
+  "channel": "stable",
+  "version": "3.9.60",
+  "published": true,
+  "download_url": "",
+  "sha256": "7501204b7cc061ec1ae0b9d9bbb10e1c0df8fc3464fbac3f2f8f8f241efb21bc",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_60.zip",
+  "published_at": "2026-10-27T19:51:02.988Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Compara razão, folha e provisões de férias/13º entre competências. Separa Extrato Mensal com vários meses; compara empregado, rubrica, salário base e admissão comprovada. Confere provisões com Total Geral e razão, destaca o responsável pelo estorno e a conferência específica quando faltar causa. Compara fornecedores, aponta possíveis duplicidades sem alterar saldos. Preserva textos validados e tolerância inclusiva de ±20%. 60 testes e validação com fontes reais.",
+    "Faixa inclusiva de -20% a +20% não exige justificativa nem aprovação. Impede que alertas de classificação, histórico ou natureza e pendências antigas reabram contas dentro da tolerância. Corrige status e cores, reabertura e importações. Preserva textos humanos e aprovações. 50 testes direcionados aprovados.",
+    "Prioriza a Descrição do Serviço do PDF vinculado no lugar do item genérico SERVICOS do XLS, nos itens da nota e nas justificativas. Corrige cabeçalhos de ISSQN/município e remove Pix e dados bancários dos resumos. Corrige os PDFs já importados ao reabrir a conta. 44 testes direcionados aprovados.",
+    "Reimportar a mesma NFS-e atualiza sua descrição sem duplicar a nota. Mantém valores, quantidades, textos editados e aprovações.",
+    "Corrigido erro 'items' na primeira importação fiscal da empresa sem documentos anteriores. Testado com memória vazia, reimportação sem duplicação e PDF sem produtos. 39 testes direcionados aprovados; 713 itens de matriz/filial e 4 NFS-e importados em banco vazio.",
+    "Ao importar fiscal ou folha, atualiza imediatamente as justificativas automáticas e salva o rascunho. Preserva textos editados e aprovações. Reaplica as evidências ao reabrir e reprocessar a competência.",
+    "Folha identifica as admissões do mês com nome, data e centro de custo. Justificativa automática usa somente rubricas do mês compatíveis com a conta e seu saldo; seleção manual permanece disponível.",
+    "Corrigida a página de Informações Complementares da DANFSe: NF 4627 Reachr validada como 1 nota + 1 complemento. 37 testes direcionados aprovados; revisão geral sem novas falhas.",
+    "Justificativas automáticas curtas a partir dos itens e descrições de serviços: abastecimento com gasolina, compra de papel-toalha e papel higiênico, serviços de bordado e outros. Preserva textos humanos. 53 testes aprovados.",
+    "Itens das entradas agrupados por fornecedor/CNPJ, com notas e produtos abaixo e quantidades/valores em colunas. Expandir/Recolher na mesma aba, sem novas telas.",
+    "Copiar descrição do serviço: botão acima da tabela, Ctrl+C e menu do botão direito. Copia somente as descrições selecionadas, sem NF ou fornecedor.",
+    "Importar fiscal aceita PDFs de NFS-e DANFSe v2, São Paulo e Campinas. Diagnóstico e confiança mostra só NF, fornecedor e resumo do serviço do mês atual. Avisos superiores compactos. Validado em PDF com 42 notas e 18 páginas complementares; 46 testes aprovados.",
+    "Justificativa da folha em frase curta com funcionários agrupados por rubrica. Prévia ao selecionar; botão Usar explicação na justificativa acima da tabela. 37 testes aprovados.",
+    "Removido o botão Processar comparativo, mantendo o processamento automático ao incluir Plano e Razão. Importar fiscal e Importar folha são opcionais. Folha permite selecionar rubricas por funcionário e competência para compor justificativas. Validado com 33 testes.",
+    "Aceita o relatório ENTRADAS E SAÍDAS COM PRODUTOS com Documento, Entrada, Emissão, CNPJ Fornecedor e descrição separada do código do produto. Validado com 363 itens de 154 notas de entrada; 29 testes aprovados.",
+    "Colunas mensais calculadas pelo saldo final do Razão Domínio, considerando saldo anterior quando informado.",
+    "Se não houver coluna de saldo no Razão, o aplicativo mantém a alternativa por débitos menos créditos.",
+    "Continua ignorando lançamentos de encerramento e respeitando a tolerância percentual inclusiva de 20%.",
+    "Mantidos histórico, rascunhos, aprovações e validações independentes de natureza contábil."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/comparativo-despesas/3.9.60/KBL_Comparativo_Despesas_v3_9_60.zip",
+    "auth": "github-cli"
+  }
+}
