@@ -3,29 +3,32 @@
   "app_id": "validador-balancete",
   "name": "KBL Validador de Balancete",
   "channel": "stable",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "published": true,
   "download_url": "",
-  "sha256": "a063ebc26554dc4885ccfd9d11886aaaba256222a88810ede0453b5a61e72f9d",
-  "file_name": "KBL_Validador_Balancete_v1_0_2_Hub.zip",
+  "sha256": "76ab0de934e2fcf4332fa21cb8c850d91c7c77ec44ba1fe6ed9d8e1b0d019ed8",
+  "file_name": "KBL_Validador_Balancete_v1_0_3_Hub.zip",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Pacote no padrão KBL Hub, com abertura, status e progresso de conferência integrados.",
-    "Setas navegam apenas nas analíticas; Enter confere a conta selecionada.",
-    "Saldos virados sinalizados em vermelho claro e conferência automática das contas de compensação.",
-    "PDF conferido, observações, anexos e revisões persistentes por empresa, competência e consolidação."
+    "Inicia sempre com a tela limpa, sem reabrir automaticamente o último trabalho.",
+    "Histórico pesquisável por empresa, competência e revisão; dados anteriores preservados.",
+    "Situação das contas sintéticas calculada automaticamente pelas contas analíticas.",
+    "Atalhos Ctrl+N/H/B/F, F4, Shift+Enter e Ctrl+Enter; painel de conferência recolhível.",
+    "Revisão e fechamento com alertas de formação de saldo, hierarquia, saldos virados e contas de compensação.",
+    "Conclusão somente após conferência das analíticas e resolução de alertas bloqueadores.",
+    "Inclui geração do status de progresso para o KBL Hub."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/validador-balancete/1.0.2/KBL_Validador_Balancete_v1_0_2_Hub.zip",
+    "path": "packages/validador-balancete/1.0.3/KBL_Validador_Balancete_v1_0_3_Hub.zip",
     "auth": "github-cli"
   },
   "hub": {
     "app_id": "validador-balancete",
     "name": "KBL Validador de Balancete",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "entry": "app.pyw",
     "entrypoint": "app.pyw",
     "description": "Conferência visual do balancete Domínio, marcações, observações, revisão de alterações e PDF conferido.",
@@ -35,5 +38,5 @@
     "data_directory": "%APPDATA%\\KBLAccounting\\ValidadorBalancete",
     "status_file": "%APPDATA%\\KBLAccounting\\Hub\\status\\validador-balancete.json"
   },
-  "published_at": "2026-10-26T19:55:10.872Z"
+  "published_at": "2026-10-27T20:16:13Z"
 }
