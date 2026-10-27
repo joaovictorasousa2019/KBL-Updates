@@ -3,15 +3,16 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.60",
+  "version": "3.9.61",
   "published": true,
   "download_url": "",
-  "sha256": "7501204b7cc061ec1ae0b9d9bbb10e1c0df8fc3464fbac3f2f8f8f241efb21bc",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_60.zip",
-  "published_at": "2026-10-27T19:51:02.988Z",
+  "sha256": "ab9669a3461095de925c51768c11753beeb20445e2b84e99751cbf8e159f896f",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_61.zip",
+  "published_at": "2026-10-27T20:13:22.907Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
+    "Correção geral validada no SESICON: folha deixa de virar falso fornecedor por mês. Gratificações, bolsas e adicionais exigem vínculo por rubrica/centro e valores; fonte de só um mês não comprova mudança por empregado. Separa compras/descontos de benefícios, férias/13º/rescisões de FGTS, ajustes de juros e INSS patronal. Destaca saldo credor e possível classificação de seguro em energia. Mantém textos validados e tolerância inclusiva ±20%. 73 testes e regressão real Sanusphar.",
     "Compara razão, folha e provisões de férias/13º entre competências. Separa Extrato Mensal com vários meses; compara empregado, rubrica, salário base e admissão comprovada. Confere provisões com Total Geral e razão, destaca o responsável pelo estorno e a conferência específica quando faltar causa. Compara fornecedores, aponta possíveis duplicidades sem alterar saldos. Preserva textos validados e tolerância inclusiva de ±20%. 60 testes e validação com fontes reais.",
     "Faixa inclusiva de -20% a +20% não exige justificativa nem aprovação. Impede que alertas de classificação, histórico ou natureza e pendências antigas reabram contas dentro da tolerância. Corrige status e cores, reabertura e importações. Preserva textos humanos e aprovações. 50 testes direcionados aprovados.",
     "Prioriza a Descrição do Serviço do PDF vinculado no lugar do item genérico SERVICOS do XLS, nos itens da nota e nas justificativas. Corrige cabeçalhos de ISSQN/município e remove Pix e dados bancários dos resumos. Corrige os PDFs já importados ao reabrir a conta. 44 testes direcionados aprovados.",
@@ -35,7 +36,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.60/KBL_Comparativo_Despesas_v3_9_60.zip",
+    "path": "packages/comparativo-despesas/3.9.61/KBL_Comparativo_Despesas_v3_9_61.zip",
     "auth": "github-cli"
   }
 }
