@@ -64,7 +64,7 @@
     {
       "app_id": "validador-balancete",
       "name": "KBL Validador de Balancete",
-      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/validador-balancete/version.json?v=1.0.2"
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/validador-balancete/version.json?v=1.0.3"
     }
   ],
   "package_repository": {
@@ -73,5 +73,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-10-27-comparativo-despesas-3.9.61"
+  "revision": "2026-10-27-validador-balancete-1.0.3"
 }
