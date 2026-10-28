@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.21.35",
+  "version": "3.22.0",
   "published": true,
   "download_url": "",
-  "sha256": "2704cda3057b9c47a225e9d2dc38d27e55851ac11aaeae5e998412a98623005b",
-  "file_name": "KBL_Conciliador_Contabil_v3_21_35.zip",
-  "published_at": "2026-10-21T11:41:38.702Z",
+  "sha256": "19194480f1563e10e12c931b13d7c8ca6dd9c5e838dba57bff79c9a3896debf3",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_0.zip",
+  "published_at": "2026-10-28T19:05:27.163Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Salvar rascunho e Abrir rascunho do Excel integrado: preserva conciliações, composição, identificações e vínculos ao fechar e reabrir sem repetir importação.",
-    "Gravação atômica do rascunho na pasta persistente do Windows, com cópia de segurança antes de substituições manuais; erro de gravação é mostrado.",
-    "Saldo anterior do Razão: importar apenas a abertura comprovada da conta e CNPJ corretos para vinculação na Composição; impede duplicar abertura e não inventa notas.",
-    "Na conciliação com residual a seleção da Natureza da diferença já é justificativa suficiente; detalhes adicionais opcionais, residual preservado.",
-    "Mantidas somente as abas existentes, o histórico integral do Razão, as cadeias e as regras de fechamento.",
-    "Compilação e testes automatizados de dados, abertura, persistência e regressão concluídos com sucesso."
+    "Motor com identificação de fornecedor antes da busca de candidatos; bloqueia vínculos entre fornecedores distintos por coincidência de documento ou valor.",
+    "Composição por fornecedor e documento nas abas existentes, com conferência da soma dos grupos e valores não identificados.",
+    "Importação dos relatórios PIS/COFINS e Informações complementares: consolida notas repetidas, separa saídas e serviços prestados e sinaliza valores fiscais divergentes.",
+    "Classificação com justificativa: pagamento esperado, sem pagamento esperado ou a revisar. Remessas permanecem no histórico; a classificação não apaga lançamentos nem elimina saldos.",
+    "Cadastros e identificações preservados nos rascunhos da empresa. Saldo anterior agregado permanece separado, sem distribuição por suposição.",
+    "Validação concluída: 49 testes unitários, 21 regressões gerais, 50 regressões financeiras e abertura da interface."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.21.35/KBL_Conciliador_Contabil_v3_21_35.zip",
+    "path": "packages/conciliador-contabil/3.22.0/KBL_Conciliador_Contabil_v3_22_0.zip",
     "auth": "github-cli"
   }
 }
