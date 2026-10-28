@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.0",
+  "version": "3.22.1",
   "published": true,
   "download_url": "",
-  "sha256": "19194480f1563e10e12c931b13d7c8ca6dd9c5e838dba57bff79c9a3896debf3",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_0.zip",
-  "published_at": "2026-10-28T19:05:27.163Z",
+  "sha256": "a957497f0819e1f40f0e5b3a718855808e7168685800dab0acab6972557d71d1",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_1.zip",
+  "published_at": "2026-10-28T20:52:57.122Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Motor com identificação de fornecedor antes da busca de candidatos; bloqueia vínculos entre fornecedores distintos por coincidência de documento ou valor.",
-    "Composição por fornecedor e documento nas abas existentes, com conferência da soma dos grupos e valores não identificados.",
-    "Importação dos relatórios PIS/COFINS e Informações complementares: consolida notas repetidas, separa saídas e serviços prestados e sinaliza valores fiscais divergentes.",
-    "Classificação com justificativa: pagamento esperado, sem pagamento esperado ou a revisar. Remessas permanecem no histórico; a classificação não apaga lançamentos nem elimina saldos.",
-    "Cadastros e identificações preservados nos rascunhos da empresa. Saldo anterior agregado permanece separado, sem distribuição por suposição.",
-    "Validação concluída: 49 testes unitários, 21 regressões gerais, 50 regressões financeiras e abertura da interface."
+    "Corrige o botão Fiscal: reconhece automaticamente Conferir PIS/COFINS e Informações complementares, sem solicitar mapeamento para esses layouts.",
+    "O título misto Entradas e Saídas não faz mais o relatório de produtos ser classificado como saída; são importadas as entradas de fornecedores.",
+    "Valida CNPJ, razão social do cabeçalho quando o CNPJ está ausente e competência antes de alterar a conciliação aberta.",
+    "Consolida documentos das duas fontes sem somar totais repetidos em linhas de produto; valores divergentes ficam para revisão e fora da baixa automática.",
+    "Preserva classificações financeiras e vínculos manuais de composição na reimportação. Os outros layouts fiscais mantêm o fluxo existente.",
+    "Validação concluída: 57 testes unitários, 21 regressões gerais, 50 regressões financeiras e testes do botão Fiscal na interface real."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.0/KBL_Conciliador_Contabil_v3_22_0.zip",
+    "path": "packages/conciliador-contabil/3.22.1/KBL_Conciliador_Contabil_v3_22_1.zip",
     "auth": "github-cli"
   }
 }
