@@ -3,24 +3,25 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.62",
+  "version": "3.9.63",
   "published": true,
   "download_url": "",
-  "sha256": "2ae1a961cb7cca995782a4ee515c24f1d6751135bc62a4bd3c13f82c0f49750b",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_62.zip",
-  "published_at": "2026-10-29T19:51:10.308Z",
+  "sha256": "61705a829b18707351dbef2cdad77652d0afca5c8e29324a7c9a219c9bb7abdb",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_63.zip",
+  "published_at": "2026-10-29T20:04:47.175Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Justificativas unem variação por fornecedor às descrições dos serviços e produtos das notas. Importação fiscal lê também o relatório Excel de quatro colunas do Auditor de NFS-e; vínculos exigem fornecedor e documento.",
-    "Separa instalações das mensalidades, complemento de depreciação da despesa mensal e identifica empregados nos estornos das provisões, sem presumir desligamento.",
-    "Mantém valores do razão, influência, textos editados/aprovados e faixa inclusiva de ±20%. Documentos sem vínculo confiável ficam para revisão.",
-    "Validação: 46 testes direcionados aprovados e regressão com plano, razão, folha, provisões e relatórios fiscais reais. Suíte geral sem novas falhas; quatro testes legados ainda exigem antigas abas de exportação. Interface Windows não executada."
+    "Prioriza as principais causas pelas alterações absolutas: mostra aumentos e reduções relevantes juntos. Agrupa cobranças e descrições iguais com as respectivas notas.",
+    "Compara quantidade e preço médio quando fornecedor/CNPJ, produto, NCM, unidade e valores conferem nos dois meses. Identifica aumento no número de cobranças de mesmo serviço e valor, sem presumir mais funcionários.",
+    "Reconhece abreviações comprovadas nos dois meses; separa instalação e mensalidade; começa pelo estorno quando ele é a causa principal da provisão e mostra empregado e resultado líquido.",
+    "Mantém influência, saldos, textos editados/aprovados, tolerância inclusiva de ±20% e somente o Demonstrativo Final no Excel. Ambiguidades e componentes sem causa ficam na análise.",
+    "Validação: 342 testes aprovados e fluxo completo com arquivos reais da faculdade; 294 linhas analisadas e 29 justificativas automáticas atualizadas. Quatro testes legados foram adequados à regra existente de exportação em aba única. Interface Windows não executada."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.62/KBL_Comparativo_Despesas_v3_9_62.zip",
+    "path": "packages/comparativo-despesas/3.9.63/KBL_Comparativo_Despesas_v3_9_63.zip",
     "auth": "github-cli"
   }
 }

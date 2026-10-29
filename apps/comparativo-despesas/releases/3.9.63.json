@@ -1,0 +1,27 @@
+{
+  "schema_version": 3,
+  "app_id": "comparativo-despesas",
+  "name": "KBL Comparativo de Despesas",
+  "channel": "stable",
+  "version": "3.9.63",
+  "published": true,
+  "download_url": "",
+  "sha256": "61705a829b18707351dbef2cdad77652d0afca5c8e29324a7c9a219c9bb7abdb",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_63.zip",
+  "published_at": "2026-10-29T20:04:47.175Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Prioriza as principais causas pelas alterações absolutas: mostra aumentos e reduções relevantes juntos. Agrupa cobranças e descrições iguais com as respectivas notas.",
+    "Compara quantidade e preço médio quando fornecedor/CNPJ, produto, NCM, unidade e valores conferem nos dois meses. Identifica aumento no número de cobranças de mesmo serviço e valor, sem presumir mais funcionários.",
+    "Reconhece abreviações comprovadas nos dois meses; separa instalação e mensalidade; começa pelo estorno quando ele é a causa principal da provisão e mostra empregado e resultado líquido.",
+    "Mantém influência, saldos, textos editados/aprovados, tolerância inclusiva de ±20% e somente o Demonstrativo Final no Excel. Ambiguidades e componentes sem causa ficam na análise.",
+    "Validação: 342 testes aprovados e fluxo completo com arquivos reais da faculdade; 294 linhas analisadas e 29 justificativas automáticas atualizadas. Quatro testes legados foram adequados à regra existente de exportação em aba única. Interface Windows não executada."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/comparativo-despesas/3.9.63/KBL_Comparativo_Despesas_v3_9_63.zip",
+    "auth": "github-cli"
+  }
+}
