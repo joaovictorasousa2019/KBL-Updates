@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.1",
+  "version": "3.22.2",
   "published": true,
   "download_url": "",
-  "sha256": "a957497f0819e1f40f0e5b3a718855808e7168685800dab0acab6972557d71d1",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_1.zip",
-  "published_at": "2026-10-28T20:52:57.122Z",
+  "sha256": "ca74f40710e17a6164565cfb7b366c29571c915d022374e3bcc3cf3553850416",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_2.zip",
+  "published_at": "2026-10-29T14:28:12.984Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige o botão Fiscal: reconhece automaticamente Conferir PIS/COFINS e Informações complementares, sem solicitar mapeamento para esses layouts.",
-    "O título misto Entradas e Saídas não faz mais o relatório de produtos ser classificado como saída; são importadas as entradas de fornecedores.",
-    "Valida CNPJ, razão social do cabeçalho quando o CNPJ está ausente e competência antes de alterar a conciliação aberta.",
-    "Consolida documentos das duas fontes sem somar totais repetidos em linhas de produto; valores divergentes ficam para revisão e fora da baixa automática.",
-    "Preserva classificações financeiras e vínculos manuais de composição na reimportação. Os outros layouts fiscais mantêm o fluxo existente.",
-    "Validação concluída: 57 testes unitários, 21 regressões gerais, 50 regressões financeiras e testes do botão Fiscal na interface real."
+    "Corrige o Razão Domínio quando a descrição da conta está na coluna E, F ou após células mescladas. A classificação contábil não é interpretada como nome da conta.",
+    "Razão explicitamente CONSOLIDADO aceita matriz e filiais da mesma raiz de CNPJ. Razão isolado mantém validação por estabelecimento.",
+    "Relatórios de PIS/COFINS sem CNPJ são associados à unidade pelas chaves NF-e dos complementares, sem presumir pelo nome do arquivo.",
+    "Referências fiscais preservam o CNPJ do estabelecimento, visível no fornecedor. Notas e códigos locais são separados por unidade; fornecedor com mesmo CNPJ permanece agrupado.",
+    "Classificações são preservadas na reimportação. Referências ambíguas ficam para revisão. O saldo continua consolidado, sem rateio inventado entre unidades.",
+    "Validação: 67 testes unitários, 21 regressões gerais, 50 regressões financeiras e três fluxos reais da interface, incluindo os botões Razão e Fiscal."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.1/KBL_Conciliador_Contabil_v3_22_1.zip",
+    "path": "packages/conciliador-contabil/3.22.2/KBL_Conciliador_Contabil_v3_22_2.zip",
     "auth": "github-cli"
   }
 }
