@@ -3,24 +3,24 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "68",
+  "version": "69",
   "published": true,
   "download_url": "",
-  "sha256": "fdac365c5c6e2e3381fd907113224124015d9bea1def9ad2b4c9b58a1d141ed8",
-  "file_name": "KBL_ComposicaoPatrimonial_v68_REVISAO_DESEMPENHO.zip",
-  "published_at": "2026-10-29T20:18:54.146Z",
+  "sha256": "d64bfd9ca56ab28f3ab2d952bac040e9f915f3bfd3d2474c517a02bed743befe",
+  "file_name": "KBL_ComposicaoPatrimonial_v69_DATAS_MODO_ANUAL.zip",
+  "published_at": "2026-10-29T20:26:30.819Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige falso bloqueio de R$ 0,01 por precisão decimal; preserva valores e tolerância contábil existente.",
-    "Divergências das partidas em aberto aparecem na conferência anual antes da geração, com conta e competência.",
-    "Confere todos os meses antes de gravar e otimiza a busca de parcelas, reutilizando os cálculos na exportação.",
-    "Validado com 100 cenários comparados à v67 e exportação de dois meses com 105 fichas por mês."
+    "Corrige o erro can't compare datetime.datetime to datetime.date no carregamento anual.",
+    "Normaliza datas do Excel e datas internas ao calcular a data de diferenças residuais; trata datas ausentes.",
+    "Validado com composição anterior real em XLSX, controlador de carregamento anual e exportação de agosto e setembro.",
+    "Preserva os saldos e as otimizações e conferências da v68."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/68/KBL_ComposicaoPatrimonial_v68_REVISAO_DESEMPENHO.zip",
+    "path": "packages/composicao-saldos/69/KBL_ComposicaoPatrimonial_v69_DATAS_MODO_ANUAL.zip",
     "auth": "github-cli"
   }
 }
