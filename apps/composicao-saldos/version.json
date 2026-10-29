@@ -3,24 +3,24 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "67",
+  "version": "68",
   "published": true,
   "download_url": "",
-  "sha256": "2bbd31c511b177132303a970fb0bf142e3d8d16df41b8e651576566b7be540d2",
-  "file_name": "KBL_ComposicaoPatrimonial_v67_RAZAO_SEM_BALANCETE.zip",
-  "published_at": "2026-10-19T18:23:47.079Z",
+  "sha256": "fdac365c5c6e2e3381fd907113224124015d9bea1def9ad2b4c9b58a1d141ed8",
+  "file_name": "KBL_ComposicaoPatrimonial_v68_REVISAO_DESEMPENHO.zip",
+  "published_at": "2026-10-29T20:18:54.146Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Remove a importação e a exigência de Balancete: usa Plano de Contas, Razão e composição anterior/base inicial.",
-    "Usa os saldos assinados e movimentos do Razão, preservando os lançamentos patrimoniais de encerramento.",
-    "Corrige a divergência de encerramento na conta de lucro do exercício e mantém validações de empresa, período e saldos.",
-    "Continuidade agosto/setembro validada com 62 contas patrimoniais."
+    "Corrige falso bloqueio de R$ 0,01 por precisão decimal; preserva valores e tolerância contábil existente.",
+    "Divergências das partidas em aberto aparecem na conferência anual antes da geração, com conta e competência.",
+    "Confere todos os meses antes de gravar e otimiza a busca de parcelas, reutilizando os cálculos na exportação.",
+    "Validado com 100 cenários comparados à v67 e exportação de dois meses com 105 fichas por mês."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/67/KBL_ComposicaoPatrimonial_v67_RAZAO_SEM_BALANCETE.zip",
+    "path": "packages/composicao-saldos/68/KBL_ComposicaoPatrimonial_v68_REVISAO_DESEMPENHO.zip",
     "auth": "github-cli"
   }
 }
