@@ -3,24 +3,24 @@
   "app_id": "auditor-nfse",
   "name": "KBL Auditor de NFS-e",
   "channel": "stable",
-  "version": "2.5.2",
+  "version": "2.5.3",
   "published": true,
   "download_url": "",
-  "sha256": "87cb34dba98c66e3b630caf499569746d619b2c585c1b1ca64cadb9cca99e4d7",
-  "file_name": "KBL_Auditor_NFSe_v2.5.2_Hub.zip",
-  "published_at": "2026-10-16T17:08:41.770Z",
+  "sha256": "ae25b690ef95f3aa1db2434ca373aa0cde1e1b31d6a8a957a9b2afff43e5997b",
+  "file_name": "KBL_Auditor_NFSe_v2.5.3_Hub.zip",
+  "published_at": "2026-10-29T11:24:27.341Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Reconhece cartas de correção e outros eventos de NF-e em área separada, sem gerar notas ou despesas fictícias.",
-    "Exibe número, chave, emitente, correção, sequência, protocolo e retorno de registro.",
-    "Reimportação de evento sem duplicidade e avisos detalhados por arquivo incompatível.",
-    "Mantém leitura de NFS-e Nacional e ABRASF e início sem documentos carregados."
+    "Novo botão Exportar notas em Excel: uma aba com NFS-e, Fornecedor, Tributação Nacional e Discriminação.",
+    "Preserva textos completos, zeros à esquerda e acentuação, com quebra de linha, filtros e linhas alternadas.",
+    "Respeita empresa, competência, busca, status e ordenação da tela. Não exige razão ou plano de contas.",
+    "Salvamento nativo em Excel e bibliotecas locais; mantém auditoria, eventos NF-e e integrações existentes."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/auditor-nfse/2.5.2/KBL_Auditor_NFSe_v2.5.2_Hub.zip",
+    "path": "packages/auditor-nfse/2.5.3/KBL_Auditor_NFSe_v2.5.3_Hub.zip",
     "auth": "github-cli"
   }
 }
