@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.2",
+  "version": "3.22.3",
   "published": true,
   "download_url": "",
-  "sha256": "ca74f40710e17a6164565cfb7b366c29571c915d022374e3bcc3cf3553850416",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_2.zip",
-  "published_at": "2026-10-29T14:28:12.984Z",
+  "sha256": "d6cb9ef3893d18ad9263d5717a24d84d4353c390224a18bbe884a73cdcdbd781",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_3.zip",
+  "published_at": "2026-10-29T15:11:22.132Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige o Razão Domínio quando a descrição da conta está na coluna E, F ou após células mescladas. A classificação contábil não é interpretada como nome da conta.",
-    "Razão explicitamente CONSOLIDADO aceita matriz e filiais da mesma raiz de CNPJ. Razão isolado mantém validação por estabelecimento.",
-    "Relatórios de PIS/COFINS sem CNPJ são associados à unidade pelas chaves NF-e dos complementares, sem presumir pelo nome do arquivo.",
-    "Referências fiscais preservam o CNPJ do estabelecimento, visível no fornecedor. Notas e códigos locais são separados por unidade; fornecedor com mesmo CNPJ permanece agrupado.",
-    "Classificações são preservadas na reimportação. Referências ambíguas ficam para revisão. O saldo continua consolidado, sem rateio inventado entre unidades.",
-    "Validação: 67 testes unitários, 21 regressões gerais, 50 regressões financeiras e três fluxos reais da interface, incluindo os botões Razão e Fiscal."
+    "Corrige a identificação de pagamentos no padrão código - fornecedor / DOC / NUFIN, incluindo NF/DOC. DOC é a referência da nota; NUFIN é o título financeiro.",
+    "Reconstrói a referência documental em linhas já carregadas e separa corretamente nomes de fornecedor, campos bancários e números citados na descrição.",
+    "Identifica fornecedor por cadastro, código e nome compatível, ou documento exato com nome abreviado e emitente único. Ambiguidades continuam para revisão.",
+    "Reúne evidências complementares do mesmo documento sem somar valores, conservando origens, CNPJ do estabelecimento e classificação financeira.",
+    "Mantém datas, retenções, baixas parciais, valores originais do Razão e limites de uso do pagamento. O indicador continua calculado pelos vínculos efetivos.",
+    "Validação: 82 testes unitários, 21 regressões contábeis, 50 regressões financeiras e quatro fluxos reais da interface."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.2/KBL_Conciliador_Contabil_v3_22_2.zip",
+    "path": "packages/conciliador-contabil/3.22.3/KBL_Conciliador_Contabil_v3_22_3.zip",
     "auth": "github-cli"
   }
 }
