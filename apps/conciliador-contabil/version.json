@@ -3,27 +3,27 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.5",
+  "version": "3.22.6",
   "published": true,
   "download_url": "",
-  "sha256": "4cf111017c91d4552083b8c17a65f909cbb6a096364dd5017d82e363c55786b5",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_5.zip",
-  "published_at": "2026-10-30T11:53:18.740Z",
+  "sha256": "7bb503ebd98a1dcdea1872b65386153f610ee3a8b6f759b52ccfc976dccbf401",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_6.zip",
+  "published_at": "2026-10-30T12:22:06.309Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Novo Controle por Cliente na aba Composição, em modo Clientes, sem depender do painel Fornecedores.",
-    "Lista os clientes e as NF/NFS-e do fiscal de saídas/serviços já importado; seleciona cliente e documento para ver o saldo individual.",
-    "Cada documento conserva sua identidade, e lançamentos sem cliente confirmado permanecem pendentes, sem conciliação por coincidência de número ou valor.",
-    "Permite identificar manualmente um cliente usando evidência, mantendo histórico e valores do Razão.",
-    "Saldo anterior agregado permanece separado e não é distribuído arbitrariamente entre clientes.",
-    "Preserva o Controle por Fornecedor e as proteções Abbott × ICF da versão 3.22.4.",
-    "Validação: testes unitários, regressões contábeis e financeiras, além de smoketests de ambas as telas."
+    "Interface enxuta: mostra apenas os painéis Razão e Fiscal, sem cartão de importação do Financeiro opcional.",
+    "Remove da barra principal Limpar Financeiro, Importar conciliação TXT e Modelo TXT.",
+    "Oculta Importar Excel na conciliação, Compor saldo anterior e Aprovar sugestões selecionadas da tela principal.",
+    "Retira as abas passivas Sugestões, Divergências e Contabilidade × Financeiro; seus quadros duplicados não são mais renderizados, reduzindo uso de interface.",
+    "Preserva as análises de sugestão/divergência no motor contábil, a composição fiscal, as baixas, documentos, Clientes, Fornecedores, lançamentos e exportações.",
+    "Retira percentual Financeiro do resumo principal, mantendo os saldos e indicadores contábeis relevantes.",
+    "Testado com regressões unitárias, fiscais, contábeis e financeiras, incluindo fluxo real de interface para Clientes e Fornecedores."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.5/KBL_Conciliador_Contabil_v3_22_5.zip",
+    "path": "packages/conciliador-contabil/3.22.6/KBL_Conciliador_Contabil_v3_22_6.zip",
     "auth": "github-cli"
   }
 }
