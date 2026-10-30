@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.3",
+  "version": "3.22.4",
   "published": true,
   "download_url": "",
-  "sha256": "d6cb9ef3893d18ad9263d5717a24d84d4353c390224a18bbe884a73cdcdbd781",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_3.zip",
-  "published_at": "2026-10-29T15:11:22.132Z",
+  "sha256": "242847cf2f3890b277eeb3ca47a827c0caa26d2761cc673acc46f9d3e0a19cdb",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_4.zip",
+  "published_at": "2026-10-30T11:26:37.909Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige a identificação de pagamentos no padrão código - fornecedor / DOC / NUFIN, incluindo NF/DOC. DOC é a referência da nota; NUFIN é o título financeiro.",
-    "Reconstrói a referência documental em linhas já carregadas e separa corretamente nomes de fornecedor, campos bancários e números citados na descrição.",
-    "Identifica fornecedor por cadastro, código e nome compatível, ou documento exato com nome abreviado e emitente único. Ambiguidades continuam para revisão.",
-    "Reúne evidências complementares do mesmo documento sem somar valores, conservando origens, CNPJ do estabelecimento e classificação financeira.",
-    "Mantém datas, retenções, baixas parciais, valores originais do Razão e limites de uso do pagamento. O indicador continua calculado pelos vínculos efetivos.",
-    "Validação: 82 testes unitários, 21 regressões contábeis, 50 regressões financeiras e quatro fluxos reais da interface."
+    "Organiza por documento fiscal e cliente; cada nota mantém sua própria cadeia e saldo, sem misturar lançamentos de notas diferentes.",
+    "Prioriza a referência da NF sobre o número do documento financeiro: Abbott NF 925 / DOC 958 não pode liquidar a NFS-e 958 do ICF.",
+    "Bloqueia baixa ou recebimento de cliente explicitamente diferente do emissor/tomador da nota, mesmo com coincidência de valor, data ou número.",
+    "Mantém saldo anterior sempre visível no topo da Central, independentemente dos filtros, sem somar abertura fora da competência no subtotal filtrado.",
+    "Preserva pagamentos bancários genéricos (ex.: PIX PJBANK) sem atribuição artificial de cliente; vínculos devem ter suporte verificável.",
+    "Validação: 88 testes unitários, 21 regressões contábeis, 50 regressões financeiras e testes reais de interface Tk."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.3/KBL_Conciliador_Contabil_v3_22_3.zip",
+    "path": "packages/conciliador-contabil/3.22.4/KBL_Conciliador_Contabil_v3_22_4.zip",
     "auth": "github-cli"
   }
 }
