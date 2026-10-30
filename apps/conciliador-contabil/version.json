@@ -3,28 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.9",
+  "version": "3.22.10",
   "published": true,
   "download_url": "",
-  "sha256": "84193b4eef2822a17c3a3ef63801ba56bd5a4b70e4cfb05bb0be0515b57559e2",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_9.zip",
-  "published_at": "2026-10-30T14:06:36.665Z",
+  "sha256": "562ed3f153227d52776993b9ccca981a7cb6d9afb3db0db43498768222b1169d",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_10.zip",
+  "published_at": "2026-10-30T17:13:14.503Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Áreas de importação de Razão e Fiscal compactadas em uma faixa única, liberando mais espaço para a Composição.",
-    "Nova seleção de Empresa por cadastro (razão social e CNPJ), com opção de cadastrar sem carregar Razão.",
-    "Campo Conta Clientes/Fornecedores junto à Empresa e botão Importar base validada destacado nessa mesma faixa.",
-    "Importação da planilha de fechamento validada sem exigir Razão/Fiscal; associa base ao CNPJ raiz, conta e competência.",
-    "Aceita os cabeçalhos originais Cliente ou Clientes, Fornecedor ou Fornecedores, preservando a validação de colunas e totais.",
-    "Conciliações do mês fechado permanecem históricas; a Composição validada vira abertura do próximo mês.",
-    "Quando um Razão for importado posteriormente, CNPJ raiz divergente da empresa selecionada é recusado antes de modificar a sessão.",
-    "Validação aprovada: testes unitários, regressões contábeis e financeiras, teste Tk de importação sem Razão e bloqueio de CNPJ incompatível."
+    "Corrige empresa já exibida/selecionada no campo Empresa que não era reconhecida ao clicar Importar base validada.",
+    "A importação passa a ler a empresa diretamente da escolha visível, mesmo quando o evento do combobox não foi disparado.",
+    "Sincroniza o CNPJ raiz selecionado e impede usar empresa antiga em cache se o campo mostrar outra escolha.",
+    "Preserva importação de base validada sem Razão, identidade da empresa, layout de quatro abas e a abertura por documento fiscal.",
+    "Se houver Razão carregado de CNPJ raiz diferente, a importação continua bloqueada antes de alterar a sessão.",
+    "Validado com testes unitários, regressões contábeis e financeiras e interface Tk, incluindo cenário sem evento de seleção."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.9/KBL_Conciliador_Contabil_v3_22_9.zip",
+    "path": "packages/conciliador-contabil/3.22.10/KBL_Conciliador_Contabil_v3_22_10.zip",
     "auth": "github-cli"
   }
 }
