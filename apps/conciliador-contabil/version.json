@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.10",
+  "version": "3.22.11",
   "published": true,
   "download_url": "",
-  "sha256": "562ed3f153227d52776993b9ccca981a7cb6d9afb3db0db43498768222b1169d",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_10.zip",
-  "published_at": "2026-10-30T17:13:14.503Z",
+  "sha256": "040eff2bfbf5840ea0735c860b5605de761513d70841fd1bfabf55f3dbe1085c",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_11.zip",
+  "published_at": "2026-10-30T17:24:43.151Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige empresa já exibida/selecionada no campo Empresa que não era reconhecida ao clicar Importar base validada.",
-    "A importação passa a ler a empresa diretamente da escolha visível, mesmo quando o evento do combobox não foi disparado.",
-    "Sincroniza o CNPJ raiz selecionado e impede usar empresa antiga em cache se o campo mostrar outra escolha.",
-    "Preserva importação de base validada sem Razão, identidade da empresa, layout de quatro abas e a abertura por documento fiscal.",
-    "Se houver Razão carregado de CNPJ raiz diferente, a importação continua bloqueada antes de alterar a sessão.",
-    "Validado com testes unitários, regressões contábeis e financeiras e interface Tk, incluindo cenário sem evento de seleção."
+    "Correção crítica de inicialização: não ocorre mais KeyError da raiz de CNPJ ao restaurar uma empresa cadastrada por CNPJ completo.",
+    "Cadastros indexados por raiz do CNPJ somente em memória; JSON original, matriz e filiais permanecem preservados.",
+    "Seleciona a matriz como rótulo preferencial para cadastros da mesma raiz, sem eliminar a filial.",
+    "Preferência de empresa desatualizada não impede o aplicativo de abrir.",
+    "Mantém seleção de empresa, importação de base validada sem Razão, controle por documento fiscal e histórico mensal da versão 3.22.10.",
+    "Testes unitários, regressões contábeis e financeiras, inicialização Tk com cadastros de CNPJ completo e seleção/importação sem Razão aprovados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.10/KBL_Conciliador_Contabil_v3_22_10.zip",
+    "path": "packages/conciliador-contabil/3.22.11/KBL_Conciliador_Contabil_v3_22_11.zip",
     "auth": "github-cli"
   }
 }
