@@ -3,29 +3,28 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.8",
+  "version": "3.22.9",
   "published": true,
   "download_url": "",
-  "sha256": "8d3a26ee55d84c7587a19d60e9e892bff8b1efe5c0b02245991855ef288cbb8d",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_8.zip",
-  "published_at": "2026-10-30T13:44:05.682Z",
+  "sha256": "84193b4eef2822a17c3a3ef63801ba56bd5a4b70e4cfb05bb0be0515b57559e2",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_9.zip",
+  "published_at": "2026-10-30T14:06:36.665Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Interface simplificada: Composição em largura total, sem controle lateral duplicado de Clientes/Fornecedores.",
-    "Central do Saldo sem painel lateral de filtros e sem a janela redundante Gerenciar cadeia econômica. Seleção múltipla e vínculo manual continuam disponíveis.",
-    "Novo botão Importar base validada. Requer Razão/CNPJ da empresa para evitar mesclar bases distintas.",
-    "Importa planilha Excel com as quatro abas do fechamento aprovado: Clientes ou Fornecedores, Composição, Conciliação e Créditos/Débitos pendentes.",
-    "Valida totais, documentos e competência. Preserva arquivo original e histórico de conciliação sem recriar pagamentos já conciliados.",
-    "Transporta a composição individual por documento fiscal para o mês seguinte; não distribui saldo anterior sem evidência.",
-    "Baixas automáticas em saldos trazidos do mês anterior exigem NF compatível e ausência de conflito de terceiro.",
-    "Gerar Excel passa a utilizar o mesmo layout oficial de quatro abas para Clientes e Fornecedores. O período validado é devolvido exatamente como importado.",
-    "Validação automática aprovada: testes unitários, regressões contábeis e financeiras e smoke da interface enxuta."
+    "Áreas de importação de Razão e Fiscal compactadas em uma faixa única, liberando mais espaço para a Composição.",
+    "Nova seleção de Empresa por cadastro (razão social e CNPJ), com opção de cadastrar sem carregar Razão.",
+    "Campo Conta Clientes/Fornecedores junto à Empresa e botão Importar base validada destacado nessa mesma faixa.",
+    "Importação da planilha de fechamento validada sem exigir Razão/Fiscal; associa base ao CNPJ raiz, conta e competência.",
+    "Aceita os cabeçalhos originais Cliente ou Clientes, Fornecedor ou Fornecedores, preservando a validação de colunas e totais.",
+    "Conciliações do mês fechado permanecem históricas; a Composição validada vira abertura do próximo mês.",
+    "Quando um Razão for importado posteriormente, CNPJ raiz divergente da empresa selecionada é recusado antes de modificar a sessão.",
+    "Validação aprovada: testes unitários, regressões contábeis e financeiras, teste Tk de importação sem Razão e bloqueio de CNPJ incompatível."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.8/KBL_Conciliador_Contabil_v3_22_8.zip",
+    "path": "packages/conciliador-contabil/3.22.9/KBL_Conciliador_Contabil_v3_22_9.zip",
     "auth": "github-cli"
   }
 }
