@@ -3,27 +3,30 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.6",
+  "version": "3.22.7",
   "published": true,
   "download_url": "",
-  "sha256": "7bb503ebd98a1dcdea1872b65386153f610ee3a8b6f759b52ccfc976dccbf401",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_6.zip",
-  "published_at": "2026-10-30T12:22:06.309Z",
+  "sha256": "53b38d9399a8d28f3ae048080921ced76a08408bf322a4a3ef8628fa7caf65fb",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_7.zip",
+  "published_at": "2026-10-30T12:53:24.223Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Interface enxuta: mostra apenas os painéis Razão e Fiscal, sem cartão de importação do Financeiro opcional.",
-    "Remove da barra principal Limpar Financeiro, Importar conciliação TXT e Modelo TXT.",
-    "Oculta Importar Excel na conciliação, Compor saldo anterior e Aprovar sugestões selecionadas da tela principal.",
-    "Retira as abas passivas Sugestões, Divergências e Contabilidade × Financeiro; seus quadros duplicados não são mais renderizados, reduzindo uso de interface.",
-    "Preserva as análises de sugestão/divergência no motor contábil, a composição fiscal, as baixas, documentos, Clientes, Fornecedores, lançamentos e exportações.",
-    "Retira percentual Financeiro do resumo principal, mantendo os saldos e indicadores contábeis relevantes.",
-    "Testado com regressões unitárias, fiscais, contábeis e financeiras, incluindo fluxo real de interface para Clientes e Fornecedores."
+    "Central: pesquisa instantânea por cliente, NFS-e, NF, DOC, NUFIN, pedido e histórico, com filtros combinados.",
+    "Permite selecionar vários clientes ou fornecedores por identidade reconhecida no fiscal, sem misturar terceiros.",
+    "Seleção múltipla de competências e manutenção dos filtros de valores, saldo e situação.",
+    "Pesquisa indexada com atualização rápida, sem reprocessar o motor a cada tecla, e remoção do botão Aplicar.",
+    "Gerenciar cadeia econômica: mostra contrapartidas com motivo da correspondência, busca por texto e saldo projetado antes de vincular.",
+    "Vinculação exige cliente e documento fiscal comprovados, sinal contrário e validação pelo motor; diferenças e outras NFs não são baixadas automaticamente.",
+    "Movimentos isolados do Razão fora da Composição ficam visíveis para conferência, mas não podem consumir baixas sem revisão.",
+    "Janela de cadeia: justificar pendência e concentrar opções secundárias em Mais ações.",
+    "Preserva o saldo anterior fixo, os lançamentos existentes, Clientes, Fornecedores, fechamento e Excel.",
+    "Validação: 108 testes unitários, 21 regressões contábeis, 50 financeiras e testes Tk da Central e cadeia."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.6/KBL_Conciliador_Contabil_v3_22_6.zip",
+    "path": "packages/conciliador-contabil/3.22.7/KBL_Conciliador_Contabil_v3_22_7.zip",
     "auth": "github-cli"
   }
 }
