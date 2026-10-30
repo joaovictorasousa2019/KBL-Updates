@@ -3,26 +3,27 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.4",
+  "version": "3.22.5",
   "published": true,
   "download_url": "",
-  "sha256": "242847cf2f3890b277eeb3ca47a827c0caa26d2761cc673acc46f9d3e0a19cdb",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_4.zip",
-  "published_at": "2026-10-30T11:26:37.909Z",
+  "sha256": "4cf111017c91d4552083b8c17a65f909cbb6a096364dd5017d82e363c55786b5",
+  "file_name": "KBL_Conciliador_Contabil_v3_22_5.zip",
+  "published_at": "2026-10-30T11:53:18.740Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Organiza por documento fiscal e cliente; cada nota mantém sua própria cadeia e saldo, sem misturar lançamentos de notas diferentes.",
-    "Prioriza a referência da NF sobre o número do documento financeiro: Abbott NF 925 / DOC 958 não pode liquidar a NFS-e 958 do ICF.",
-    "Bloqueia baixa ou recebimento de cliente explicitamente diferente do emissor/tomador da nota, mesmo com coincidência de valor, data ou número.",
-    "Mantém saldo anterior sempre visível no topo da Central, independentemente dos filtros, sem somar abertura fora da competência no subtotal filtrado.",
-    "Preserva pagamentos bancários genéricos (ex.: PIX PJBANK) sem atribuição artificial de cliente; vínculos devem ter suporte verificável.",
-    "Validação: 88 testes unitários, 21 regressões contábeis, 50 regressões financeiras e testes reais de interface Tk."
+    "Novo Controle por Cliente na aba Composição, em modo Clientes, sem depender do painel Fornecedores.",
+    "Lista os clientes e as NF/NFS-e do fiscal de saídas/serviços já importado; seleciona cliente e documento para ver o saldo individual.",
+    "Cada documento conserva sua identidade, e lançamentos sem cliente confirmado permanecem pendentes, sem conciliação por coincidência de número ou valor.",
+    "Permite identificar manualmente um cliente usando evidência, mantendo histórico e valores do Razão.",
+    "Saldo anterior agregado permanece separado e não é distribuído arbitrariamente entre clientes.",
+    "Preserva o Controle por Fornecedor e as proteções Abbott × ICF da versão 3.22.4.",
+    "Validação: testes unitários, regressões contábeis e financeiras, além de smoketests de ambas as telas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.4/KBL_Conciliador_Contabil_v3_22_4.zip",
+    "path": "packages/conciliador-contabil/3.22.5/KBL_Conciliador_Contabil_v3_22_5.zip",
     "auth": "github-cli"
   }
 }
