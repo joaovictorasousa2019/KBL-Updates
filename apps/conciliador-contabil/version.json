@@ -3,26 +3,28 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.4",
+  "version": "3.23.5",
   "published": true,
   "download_url": "",
-  "sha256": "57418621c22ca9a77ed040bd5130bb7a8c3f1add9083a0829fd7f9411c9a9b96",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_4.zip",
-  "published_at": "2026-11-03T16:39:10.477Z",
+  "sha256": "5c990a52780d4d45cbb87bedc0c14c9e9aa10cf537bd8afb495f76c2f44c275d",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_5.zip",
+  "published_at": "2026-11-03T17:05:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige travamento ao clicar no X: a compactação e gravação do rascunho são executadas fora da interface, mantendo a janela responsiva.",
-    "Durante o encerramento, exibe estado do salvamento e opção Sair sem novo salvamento; mantém intacta a sessão anteriormente salva.",
-    "Salvamento final continua atômico, com formato compatível com rascunhos anteriores.",
-    "Interrompe o agendamento de novos autosaves no fechamento e impede que um salvamento antigo sobrescreva a nova sessão.",
-    "Se houver conciliação em andamento, pede confirmação antes de descartar o processamento.",
-    "Mantidas correções da v3.23.3 e importação Entradas/Complementares da v3.23.2; 200 testes unitários, regressões e testes de interface aprovados."
+    "Contas de adiantamento a fornecedores (ativo) segregadas das contas de fornecedores (passivo); créditos de adiantamento não são criados como novas obrigações.",
+    "Reconhece transferências contábeis comprovadas entre fornecedores e adiantamentos por lançamento/data/valor; não cria vínculo fictício com NF.",
+    "Na Central, pagamentos pendentes deixam de aparecer como valor original de NF e passam a constar na coluna Baixado/Recebido com saldo negativo pendente.",
+    "Restaura duplo clique e tecla Enter para abrir detalhes e cadeias de lançamentos na Central.",
+    "Leitura de históricos Domínio aprimorada para TOMADOSNF e REFERENTE com separadores, com proteção para não usar datas como NFs.",
+    "Saldo de adiantamentos segregado do saldo do passivo no resumo executivo.",
+    "Suíte automatizada aprovada: 204 testes unitários, regressão contábil e financeira e smoke tests da interface.",
+    "Taxa efetiva de conciliação ainda depende das evidências e validação dos arquivos reais; não há baixa automática por mera coincidência de valor."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.4/KBL_Conciliador_Contabil_v3_23_4.zip",
+    "path": "packages/conciliador-contabil/3.23.5/KBL_Conciliador_Contabil_v3_23_5.zip",
     "auth": "github-cli"
   }
 }
