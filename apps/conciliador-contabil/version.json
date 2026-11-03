@@ -3,28 +3,28 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.6",
+  "version": "3.23.7",
   "published": true,
   "download_url": "",
-  "sha256": "a338d8625ef64623bfcc940dc570baafa3cf9ad0cc6f08ad4cb1e2c8eb02b59b",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_6.zip",
-  "published_at": "2026-11-03T17:25:00Z",
+  "sha256": "272e85f59cc218479b83f1c7603e5ecf1a831115f6eb161d45fc09e75b418523",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_7.zip",
+  "published_at": "2026-11-03T18:01:28.196Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Composição agora tem filtros permanentes por NF, fornecedor, histórico, conta e situação, com busca por texto e opção Limpar.",
-    "Restaurados abrir cadeia por duplo clique e Enter e botão Abrir cadeia diretamente na aba Composição.",
-    "Nova janela vinculadora NF + pagamento com duas listas independentes e filtros, seleção múltipla, verificação de diferença e justificativa obrigatória quando aplicável.",
-    "Vínculos manuais passam pelo motor de conciliação e salvamento de sessão, sem inventar baixas ou compensações.",
-    "Motor recupera pares documentais de fornecedores por NF única, valor integral, conta e datas compatíveis quando o pagamento não repete o nome cadastral. Conflitos de CNPJ, ambiguidade e adiantamentos ficam bloqueados.",
-    "Conservação do razão e separação de adiantamentos a fornecedores da v3.23.5 mantidas.",
-    "Validado: 209 testes unitários, 21 casos de regressão, regressões financeiras e testes gráficos incluindo filtro, cadeia e botão Vincular NF + pagamento.",
-    "Percentual final da Sanusphar deverá ser conferido com os arquivos reais após instalar; nenhuma taxa é presumida."
+    "Central de Conciliação do Saldo corrigida diretamente: barra visível com filtros por NF/fornecedor/histórico e situação, Limpar, Abrir cadeia, Vincular NF + pagamento e Filtros avançados.",
+    "Filtros da Central passam a alterar a grade efetiva; o contêiner Canvas dos filtros avançados volta a ficar visível.",
+    "Gerenciar cadeia econômica restaurado na Central: botão Abrir cadeia e duplo clique/Enter abrem os lançamentos realmente selecionados.",
+    "Janela de vinculação NF + pagamento com listas independentes da versão 3.23.6 permanece acessível a partir da Central.",
+    "Título da janela Central apresenta v3.23.7 para distinguir de instalações desatualizadas.",
+    "Testes gráficos específicos da Central validam visibilidade dos controles, filtro, abrir cadeia, duplo clique, vinculação e filtros avançados.",
+    "209 testes unitários, 21 regressões gerais e 50 regressões financeiras aprovados.",
+    "A atualização foi testada no ambiente de integração; confirmar também o comportamento da instalação Windows e sessão real antes de aprovar conciliações."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.6/KBL_Conciliador_Contabil_v3_23_6.zip",
+    "path": "packages/conciliador-contabil/3.23.7/KBL_Conciliador_Contabil_v3_23_7.zip",
     "auth": "github-cli"
   }
 }
