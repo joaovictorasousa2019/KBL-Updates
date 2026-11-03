@@ -3,26 +3,25 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.2",
+  "version": "3.23.3",
   "published": true,
   "download_url": "",
-  "sha256": "0e677d199b51f2ac8112ee9d6ed1601ee716effd23a2efeb8c74afff9d552826",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_2.zip",
-  "published_at": "2026-11-03T14:56:44.607Z",
+  "sha256": "1e5ff8a2fec8e38b62f4749433c1dd8e9888017a91f98c28800f59d50a662b4e",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_3.zip",
+  "published_at": "2026-11-03T15:08:28.235Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Entradas passa a ser a fonte principal de NF, fornecedor, datas, valores e CFOP; Informações Complementares enriquecem a mesma nota sem duplicar obrigações.",
-    "Notas existentes somente no complementar permanecem elegíveis, enquanto divergências de valores exigem revisão.",
-    "Preservada a separação de clientes e fornecedores e a consolidação validada de matriz e filiais.",
-    "Motor otimizado com índices de lançamentos/documentos e eliminação de varredura de outras contas sem relatório financeiro.",
-    "Status acompanha as etapas de conciliação e o tempo decorrido, sem mensagem única durante todo o processamento.",
-    "Suíte unitária, regressões financeiras e testes de interface e de importação fiscal combinada aprovados."
+    "Corrigido erro 'why' ao importar Razão e reaplicar automaticamente conciliação mensal anterior.",
+    "Compatibilidade entre critérios do motor novo (method/conclusion) e resultados anteriores (why), preservando a evidência original.",
+    "Pendências sem campo legado tipo são exibidas pela situação contábil, sem interromper a reabertura.",
+    "Mantidas otimizações de desempenho e importação conjunta Entradas + Informações Complementares da versão 3.23.2.",
+    "Pacote validado: 196 testes unitários, regressões gerais/financeiras e testes de interface aprovados. ZIP conferido com 1.012.417 bytes."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.2/KBL_Conciliador_Contabil_v3_23_2.zip",
+    "path": "packages/conciliador-contabil/3.23.3/KBL_Conciliador_Contabil_v3_23_3.zip",
     "auth": "github-cli"
   }
 }
