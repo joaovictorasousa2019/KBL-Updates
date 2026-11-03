@@ -3,25 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.3",
+  "version": "3.23.4",
   "published": true,
   "download_url": "",
-  "sha256": "1e5ff8a2fec8e38b62f4749433c1dd8e9888017a91f98c28800f59d50a662b4e",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_3.zip",
-  "published_at": "2026-11-03T15:08:28.235Z",
+  "sha256": "57418621c22ca9a77ed040bd5130bb7a8c3f1add9083a0829fd7f9411c9a9b96",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_4.zip",
+  "published_at": "2026-11-03T16:39:10.477Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrigido erro 'why' ao importar Razão e reaplicar automaticamente conciliação mensal anterior.",
-    "Compatibilidade entre critérios do motor novo (method/conclusion) e resultados anteriores (why), preservando a evidência original.",
-    "Pendências sem campo legado tipo são exibidas pela situação contábil, sem interromper a reabertura.",
-    "Mantidas otimizações de desempenho e importação conjunta Entradas + Informações Complementares da versão 3.23.2.",
-    "Pacote validado: 196 testes unitários, regressões gerais/financeiras e testes de interface aprovados. ZIP conferido com 1.012.417 bytes."
+    "Corrige travamento ao clicar no X: a compactação e gravação do rascunho são executadas fora da interface, mantendo a janela responsiva.",
+    "Durante o encerramento, exibe estado do salvamento e opção Sair sem novo salvamento; mantém intacta a sessão anteriormente salva.",
+    "Salvamento final continua atômico, com formato compatível com rascunhos anteriores.",
+    "Interrompe o agendamento de novos autosaves no fechamento e impede que um salvamento antigo sobrescreva a nova sessão.",
+    "Se houver conciliação em andamento, pede confirmação antes de descartar o processamento.",
+    "Mantidas correções da v3.23.3 e importação Entradas/Complementares da v3.23.2; 200 testes unitários, regressões e testes de interface aprovados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.3/KBL_Conciliador_Contabil_v3_23_3.zip",
+    "path": "packages/conciliador-contabil/3.23.4/KBL_Conciliador_Contabil_v3_23_4.zip",
     "auth": "github-cli"
   }
 }
