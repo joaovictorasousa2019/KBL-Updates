@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.0",
+  "version": "3.23.1",
   "published": true,
   "download_url": "",
-  "sha256": "b18a7d64a4fa9411848652f1fa5e8e1a89ee33947cbb8719eda8a12479e25f2d",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_0.zip",
-  "published_at": "2026-11-03T13:35:54.002Z",
+  "sha256": "e330be236cb19e99ac1fdc102f711576244801b45afe461d32a347298e2c485a",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_1.zip",
+  "published_at": "2026-11-03T14:09:04.289Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Conciliação por fornecedor e documento, apoiada no Razão completo, fiscal e movimentações financeiras.",
-    "Reconhece parcelas e baixas parciais, conserva excedentes e rastreia resíduos de até R$ 0,05.",
-    "Confere o fechamento aprovado da competência com abertura, movimentos mensais, contabilizações das baixas e ajustes em outras contas. Divergências nas fontes bloqueiam o reaproveitamento.",
-    "Preserva as decisões fornecidas pelo contador; o recálculo sem base aprovada mantém equivalências sem suporte como pendentes de revisão.",
-    "Transporta títulos e pagamentos pendentes para o próximo mês e exporta o layout de quatro abas com valores contábeis e números de contabilização.",
-    "Validação concluída: 168 testes unitários, 21 regressões gerais, 50 regressões financeiras e testes de interface Tk."
+    "Reconhece o relatório Informações Complementares de Entradas, Saídas e Serviços sem mapeamento manual.",
+    "Separa clientes e fornecedores por bloco e natureza da operação; trocar o modo seleciona a partição correta sem misturar as notas.",
+    "Preserva estabelecimento, NF, série, CFOP, acumulador, terceiro e informações complementares. Códigos locais e acumuladores não determinam o lado financeiro.",
+    "Devoluções, remessas, transferências, cancelamentos e operações conflitantes ficam como referências para conferência, sem criar título financeiro automaticamente.",
+    "Valida CNPJ da empresa e consolidação de matriz/filiais, trata documentos repetidos e bloqueia valores conflitantes.",
+    "Validação concluída: 190 testes unitários, 21 regressões gerais, 50 regressões financeiras e testes de interface, incluindo troca de lado."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.0/KBL_Conciliador_Contabil_v3_23_0.zip",
+    "path": "packages/conciliador-contabil/3.23.1/KBL_Conciliador_Contabil_v3_23_1.zip",
     "auth": "github-cli"
   }
 }
