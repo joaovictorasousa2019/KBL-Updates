@@ -1,0 +1,27 @@
+{
+  "schema_version": 3,
+  "app_id": "composicao-saldos",
+  "name": "KBL Composição Patrimonial",
+  "channel": "stable",
+  "version": "70",
+  "published": true,
+  "download_url": "",
+  "sha256": "a0ff2ce9b2407b8fbff965aa4d26de159d99076cbf5d0ac2e5c18f9ed8a1e9ec",
+  "file_name": "KBL_ComposicaoPatrimonial_v70_PENDENCIAS_DESEMPENHO.zip",
+  "published_at": "2026-11-03T12:58:26.475Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Lista de pendências com busca e acesso direto à composição em um clique, nos modos mensal e anual.",
+    "Prévia da composição e da origem do saldo, incluindo alterações ainda não salvas.",
+    "Importação e geração mensal em segundo plano; reutilização dos relatórios e conferência anual incremental.",
+    "Atualização das linhas preservando seleção e rolagem; autosave com aviso de falha e desfazer de edições em lote.",
+    "Preserva a correção de datas do modo anual da v69; 11 testes e regressão de datas aprovados."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/composicao-saldos/70/KBL_ComposicaoPatrimonial_v70_PENDENCIAS_DESEMPENHO.zip",
+    "auth": "github-cli"
+  }
+}
