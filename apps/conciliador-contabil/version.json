@@ -3,27 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.22.12",
+  "version": "3.23.0",
   "published": true,
   "download_url": "",
-  "sha256": "58c506adfeb7f9bf682162e9e7979aaf1a2485d94a4c7762228095009b4f525b",
-  "file_name": "KBL_Conciliador_Contabil_v3_22_12.zip",
-  "published_at": "2026-10-30T18:07:22.785Z",
+  "sha256": "b18a7d64a4fa9411848652f1fa5e8e1a89ee33947cbb8719eda8a12479e25f2d",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_0.zip",
+  "published_at": "2026-11-03T13:35:54.002Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Importa a base validada com título sem número de NF, desde que cliente, data e saldo estejam presentes e os totais conciliem.",
-    "Não descarta nem inventa NF para a COLBRAS IND E COM LTDA: mantém R$ 2.141,70 como saldo pendente de identificação.",
-    "Preserva a composição integral do Instituto de setembro/2026, inclusive os 180 títulos e o total de R$ 8.033.613,08.",
-    "Transporta o título sem número fiscal para o mês seguinte com status PENDENTE DOCUMENTO FISCAL e evidência SEM SUPORTE, sem baixa automática.",
-    "Mantém validação de data, sinal do título, consistência da composição por cliente e CNPJ da empresa.",
-    "Conserva os recursos de seleção da empresa, importação sem Razão, Composição e exportação em quatro abas das versões anteriores.",
-    "Pacote validado no GitHub Actions com testes unitários, regressões contábeis e financeiras e interface Tk."
+    "Conciliação por fornecedor e documento, apoiada no Razão completo, fiscal e movimentações financeiras.",
+    "Reconhece parcelas e baixas parciais, conserva excedentes e rastreia resíduos de até R$ 0,05.",
+    "Confere o fechamento aprovado da competência com abertura, movimentos mensais, contabilizações das baixas e ajustes em outras contas. Divergências nas fontes bloqueiam o reaproveitamento.",
+    "Preserva as decisões fornecidas pelo contador; o recálculo sem base aprovada mantém equivalências sem suporte como pendentes de revisão.",
+    "Transporta títulos e pagamentos pendentes para o próximo mês e exporta o layout de quatro abas com valores contábeis e números de contabilização.",
+    "Validação concluída: 168 testes unitários, 21 regressões gerais, 50 regressões financeiras e testes de interface Tk."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.22.12/KBL_Conciliador_Contabil_v3_22_12.zip",
+    "path": "packages/conciliador-contabil/3.23.0/KBL_Conciliador_Contabil_v3_23_0.zip",
     "auth": "github-cli"
   }
 }
