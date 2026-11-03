@@ -3,26 +3,26 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.1",
+  "version": "3.23.2",
   "published": true,
   "download_url": "",
-  "sha256": "e330be236cb19e99ac1fdc102f711576244801b45afe461d32a347298e2c485a",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_1.zip",
-  "published_at": "2026-11-03T14:09:04.289Z",
+  "sha256": "0e677d199b51f2ac8112ee9d6ed1601ee716effd23a2efeb8c74afff9d552826",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_2.zip",
+  "published_at": "2026-11-03T14:56:44.607Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Reconhece o relatório Informações Complementares de Entradas, Saídas e Serviços sem mapeamento manual.",
-    "Separa clientes e fornecedores por bloco e natureza da operação; trocar o modo seleciona a partição correta sem misturar as notas.",
-    "Preserva estabelecimento, NF, série, CFOP, acumulador, terceiro e informações complementares. Códigos locais e acumuladores não determinam o lado financeiro.",
-    "Devoluções, remessas, transferências, cancelamentos e operações conflitantes ficam como referências para conferência, sem criar título financeiro automaticamente.",
-    "Valida CNPJ da empresa e consolidação de matriz/filiais, trata documentos repetidos e bloqueia valores conflitantes.",
-    "Validação concluída: 190 testes unitários, 21 regressões gerais, 50 regressões financeiras e testes de interface, incluindo troca de lado."
+    "Entradas passa a ser a fonte principal de NF, fornecedor, datas, valores e CFOP; Informações Complementares enriquecem a mesma nota sem duplicar obrigações.",
+    "Notas existentes somente no complementar permanecem elegíveis, enquanto divergências de valores exigem revisão.",
+    "Preservada a separação de clientes e fornecedores e a consolidação validada de matriz e filiais.",
+    "Motor otimizado com índices de lançamentos/documentos e eliminação de varredura de outras contas sem relatório financeiro.",
+    "Status acompanha as etapas de conciliação e o tempo decorrido, sem mensagem única durante todo o processamento.",
+    "Suíte unitária, regressões financeiras e testes de interface e de importação fiscal combinada aprovados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.1/KBL_Conciliador_Contabil_v3_23_1.zip",
+    "path": "packages/conciliador-contabil/3.23.2/KBL_Conciliador_Contabil_v3_23_2.zip",
     "auth": "github-cli"
   }
 }
