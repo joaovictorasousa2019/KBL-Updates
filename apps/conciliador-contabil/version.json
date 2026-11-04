@@ -3,27 +3,28 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.9",
+  "version": "3.23.10",
   "published": true,
   "download_url": "",
-  "sha256": "ab48a6293372433efeba04a9ac0901330017a2284b7ce634264ff059b945b061",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_9.zip",
-  "published_at": "2026-11-04T14:45:47.458Z",
+  "sha256": "0c32158687a664e1f5cc40cc49a5d8e5eb14ef71b3bb1bb0202ccf080bf38fe5",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_10.zip",
+  "published_at": "2026-11-04T15:12:56.871Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Conciliação de Clientes: leitura completa das retenções IRRF, PIS-RET, COFINS-R e CSOC-RET do relatório de Serviços Domínio; cálculo do líquido pelo valor bruto menos retenções documentadas, sem descontar ISS comum.",
-    "Subtotais do relatório fiscal sem NF não são mais agregados indevidamente à última nota; a importação distingue documento de totais.",
-    "Central de Conciliação: a cadeia remove repetições da mesma linha física do Razão, evita misturar documentos ou CNPJs diferentes e sinaliza baixas de associação duvidosa.",
-    "Atualiza o título da Central de Conciliação para v3.23.9.",
-    "234 testes unitários, 21 testes de regressão geral, 50 de regressão financeira e testes gráficos da interface aprovados.",
-    "Conferência independente dos arquivos anexados: 72 notas com retenções na base histórica e 10 notas com valores líquidos consistentes com as aberturas contábeis do Razão enviado.",
-    "Este pacote não promete fechamento contábil automático universal; conciliações ambíguas permanecem para revisão e a instalação Windows requer homologação operacional."
+    "Clientes: pagamentos sem vínculo documental não podem baixar automaticamente outras notas do mesmo cliente apenas por PEPS, data ou valor parcial.",
+    "NF 398: R$ 20.856,00 bruto menos IRRF R$ 312,84 = R$ 20.543,16 líquido; os créditos R$ 10.839,67 e R$ 4.516,40 de outros pedidos voltam às pendências, sem fabricar residual de R$ 5.187,09.",
+    "Motor recalcula composição, créditos pendentes e totais quando encontra associações automáticas sem evidência, mantendo intacto o Razão importado.",
+    "Conferência automática considera o valor líquido fiscal após retenções para comparar com a abertura contábil.",
+    "Central usa recebimentos rastreáveis na cadeia e sinaliza discrepâncias entre os valores apresentados e os movimentos associados.",
+    "Mantém reconhecimentos por referência explícita de NF, vínculo financeiro e valor exato único com contraparte identificada; aprovações manuais são preservadas.",
+    "245 testes unitários, 21 regressões gerais, 50 financeiras e smoke tests da Central aprovados, incluindo teste end-to-end de cenário sintético da NF 398.",
+    "Homologar com as bases completas da empresa no Windows antes de concluir a conciliação; regras não substituem análise do saldo anterior nem de pagamentos de outras competências."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.9/KBL_Conciliador_Contabil_v3_23_9.zip",
+    "path": "packages/conciliador-contabil/3.23.10/KBL_Conciliador_Contabil_v3_23_10.zip",
     "auth": "github-cli"
   }
 }
