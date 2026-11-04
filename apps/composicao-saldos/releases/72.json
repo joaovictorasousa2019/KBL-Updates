@@ -1,0 +1,27 @@
+{
+  "schema_version": 3,
+  "app_id": "composicao-saldos",
+  "name": "KBL Composição Patrimonial",
+  "channel": "stable",
+  "version": "72",
+  "published": true,
+  "download_url": "",
+  "sha256": "8d47725dbd59b14ed71ae4cf615c1a9704f32c3f867c4c4644c323dd8d9fee11",
+  "file_name": "KBL_ComposicaoPatrimonial_v72_DESEMPENHO_ANUAL.zip",
+  "published_at": "2026-11-04T15:07:13.144Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Otimiza a leitura do Razão e reutiliza os metadados da composição-base.",
+    "Salvamento de fichas e rascunhos em segundo plano, sem reconferir contas não alteradas.",
+    "Conferência incremental por conta e competência, com proteção contra resultados desatualizados.",
+    "Preparação anual em segundo plano, com progresso e cancelamento.",
+    "Preserva as correções de abertura da v71; interface real e 440 composições validadas."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/composicao-saldos/72/KBL_ComposicaoPatrimonial_v72_DESEMPENHO_ANUAL.zip",
+    "auth": "github-cli"
+  }
+}

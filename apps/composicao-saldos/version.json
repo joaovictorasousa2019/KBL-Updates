@@ -3,24 +3,25 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "71",
+  "version": "72",
   "published": true,
   "download_url": "",
-  "sha256": "97cad36fd7e2dc9827d574f9dfd46868ce22ab86b3010d709121cad5ffab9038",
-  "file_name": "KBL_ComposicaoPatrimonial_v71_CORRECAO_ABERTURA.zip",
-  "published_at": "2026-11-03T13:08:08.652Z",
+  "sha256": "8d47725dbd59b14ed71ae4cf615c1a9704f32c3f867c4c4644c323dd8d9fee11",
+  "file_name": "KBL_ComposicaoPatrimonial_v72_DESEMPENHO_ANUAL.zip",
+  "published_at": "2026-11-04T15:07:13.144Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige a falha de abertura da v70 causada pelo posicionamento da barra de pendências.",
-    "Corrige atualização da tabela mensal e limpeza da tabela ao trocar de empresa.",
-    "Erros de inicialização e da interface exibem aviso e geram registro de diagnóstico.",
-    "Abertura e clique na lista de pendências validados com Tk real nos modos mensal e anual; preserva as demais melhorias."
+    "Otimiza a leitura do Razão e reutiliza os metadados da composição-base.",
+    "Salvamento de fichas e rascunhos em segundo plano, sem reconferir contas não alteradas.",
+    "Conferência incremental por conta e competência, com proteção contra resultados desatualizados.",
+    "Preparação anual em segundo plano, com progresso e cancelamento.",
+    "Preserva as correções de abertura da v71; interface real e 440 composições validadas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/71/KBL_ComposicaoPatrimonial_v71_CORRECAO_ABERTURA.zip",
+    "path": "packages/composicao-saldos/72/KBL_ComposicaoPatrimonial_v72_DESEMPENHO_ANUAL.zip",
     "auth": "github-cli"
   }
 }
