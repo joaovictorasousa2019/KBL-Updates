@@ -3,26 +3,27 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.8",
+  "version": "3.23.9",
   "published": true,
   "download_url": "",
-  "sha256": "bcc414289330b618f065aedcdc96a8dba0d7f1c277208233023af373e5bec1ae",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_8.zip",
-  "published_at": "2026-11-04T14:00:12.352Z",
+  "sha256": "ab48a6293372433efeba04a9ac0901330017a2284b7ce634264ff059b945b061",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_9.zip",
+  "published_at": "2026-11-04T14:45:47.458Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Clientes: análise complementar com 12 critérios de associação documental, valores, combinações, parcelas, retenções, histórico, vencimento, PEPS, datas, adiantamentos, ajustes e padrões aprovados.",
-    "Clientes e adiantamentos são analisados por natureza contábil, mantendo saldos separados e registrando compensações internas sem classificá-las como recebimentos.",
-    "Propostas e evidências de correspondência exibidas na Auditoria existente; correspondências fracas permanecem para revisão.",
-    "O motor original de baixas e a composição da versão 3.23.7 são preservados. Esta versão NÃO implementa baixas automáticas integrais com os 12 critérios.",
-    "Testes automatizados do motor, regressões financeiras e smoke tests da Central aprovados no GitHub Actions.",
-    "Realizar homologação com bases reais no Windows e conferir saldos, cadeias e relatórios antes de aprovar conciliações contábeis."
+    "Conciliação de Clientes: leitura completa das retenções IRRF, PIS-RET, COFINS-R e CSOC-RET do relatório de Serviços Domínio; cálculo do líquido pelo valor bruto menos retenções documentadas, sem descontar ISS comum.",
+    "Subtotais do relatório fiscal sem NF não são mais agregados indevidamente à última nota; a importação distingue documento de totais.",
+    "Central de Conciliação: a cadeia remove repetições da mesma linha física do Razão, evita misturar documentos ou CNPJs diferentes e sinaliza baixas de associação duvidosa.",
+    "Atualiza o título da Central de Conciliação para v3.23.9.",
+    "234 testes unitários, 21 testes de regressão geral, 50 de regressão financeira e testes gráficos da interface aprovados.",
+    "Conferência independente dos arquivos anexados: 72 notas com retenções na base histórica e 10 notas com valores líquidos consistentes com as aberturas contábeis do Razão enviado.",
+    "Este pacote não promete fechamento contábil automático universal; conciliações ambíguas permanecem para revisão e a instalação Windows requer homologação operacional."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.8/KBL_Conciliador_Contabil_v3_23_8.zip",
+    "path": "packages/conciliador-contabil/3.23.9/KBL_Conciliador_Contabil_v3_23_9.zip",
     "auth": "github-cli"
   }
 }
