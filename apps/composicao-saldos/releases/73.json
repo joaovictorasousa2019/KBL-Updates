@@ -1,0 +1,27 @@
+{
+  "schema_version": 3,
+  "app_id": "composicao-saldos",
+  "name": "KBL Composição Patrimonial",
+  "channel": "stable",
+  "version": "73",
+  "published": true,
+  "download_url": "",
+  "sha256": "a1112bac3eb13873ac064b5876add3d7f6a96a39f8c18e9485825cf1b6ccf422",
+  "file_name": "KBL_ComposicaoPatrimonial_v73_DOCUMENTOS_AUTOMATICOS.zip",
+  "published_at": "2026-11-04T16:46:49.023Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Busca de documentos de suporte por empresa, conta e competência, aprendida a partir de um anexo.",
+    "Na ficha: configurar ou desativar regra, buscar agora, abrir anexo e escolher entre candidatos.",
+    "Busca inicial mensal/anual em segundo plano, limitada às pastas configuradas, preservando anexos manuais.",
+    "Um único candidato é vinculado; ausências, ambiguidades e pastas indisponíveis são sinalizadas.",
+    "Anexar automaticamente não valida a composição contábil. Preserva as otimizações da v72."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/composicao-saldos/73/KBL_ComposicaoPatrimonial_v73_DOCUMENTOS_AUTOMATICOS.zip",
+    "auth": "github-cli"
+  }
+}

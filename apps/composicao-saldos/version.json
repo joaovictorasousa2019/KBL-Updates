@@ -3,25 +3,25 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "72",
+  "version": "73",
   "published": true,
   "download_url": "",
-  "sha256": "8d47725dbd59b14ed71ae4cf615c1a9704f32c3f867c4c4644c323dd8d9fee11",
-  "file_name": "KBL_ComposicaoPatrimonial_v72_DESEMPENHO_ANUAL.zip",
-  "published_at": "2026-11-04T15:07:13.144Z",
+  "sha256": "a1112bac3eb13873ac064b5876add3d7f6a96a39f8c18e9485825cf1b6ccf422",
+  "file_name": "KBL_ComposicaoPatrimonial_v73_DOCUMENTOS_AUTOMATICOS.zip",
+  "published_at": "2026-11-04T16:46:49.023Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Otimiza a leitura do Razão e reutiliza os metadados da composição-base.",
-    "Salvamento de fichas e rascunhos em segundo plano, sem reconferir contas não alteradas.",
-    "Conferência incremental por conta e competência, com proteção contra resultados desatualizados.",
-    "Preparação anual em segundo plano, com progresso e cancelamento.",
-    "Preserva as correções de abertura da v71; interface real e 440 composições validadas."
+    "Busca de documentos de suporte por empresa, conta e competência, aprendida a partir de um anexo.",
+    "Na ficha: configurar ou desativar regra, buscar agora, abrir anexo e escolher entre candidatos.",
+    "Busca inicial mensal/anual em segundo plano, limitada às pastas configuradas, preservando anexos manuais.",
+    "Um único candidato é vinculado; ausências, ambiguidades e pastas indisponíveis são sinalizadas.",
+    "Anexar automaticamente não valida a composição contábil. Preserva as otimizações da v72."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/72/KBL_ComposicaoPatrimonial_v72_DESEMPENHO_ANUAL.zip",
+    "path": "packages/composicao-saldos/73/KBL_ComposicaoPatrimonial_v73_DOCUMENTOS_AUTOMATICOS.zip",
     "auth": "github-cli"
   }
 }
