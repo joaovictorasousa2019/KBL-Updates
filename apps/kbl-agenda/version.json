@@ -3,25 +3,25 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "published": true,
   "download_url": "",
-  "sha256": "c4f050ac732dacb25758b16d21cc250382a20420bb1eb6cfef6f01db6cae8e31",
-  "file_name": "KBL_Agenda_v1_4_2.zip",
-  "published_at": "2026-11-05T20:30:00Z",
+  "sha256": "9c2facfc01b47a38048839be93e09778b3a060b88c100f8fce2961b761d57ee4",
+  "file_name": "KBL_Agenda_v1_4_3.zip",
+  "published_at": "2026-11-05T20:34:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige API Acessórias quando /deliveries retorna um objeto de empresa contendo campo Entregas, em vez de uma lista direta.",
-    "Aceita HTTP 204 sem corpo como ausência de registros ou fim da paginação, inclusive em /users/ListAll.",
-    "Testes de regressão replicam respostas reais de erros recebidos, sem divulgar dados sensíveis.",
-    "Preserva tarefas, painel, backups, notificações, cadastros e proteção de cache existentes.",
-    "Compilação Windows e testes Go aprovados; conexão real com token do usuário requer novo teste."
+    "Visão geral, agenda semanal e janelas de obrigações agora respeitam sempre o usuário e departamento selecionados em Meu acompanhamento.",
+    "Aba Acessórias oferece alternância explícita entre somente minhas e todas as responsabilidades, iniciando em somente minhas.",
+    "Sem usuário vinculado, painel pessoal não mostra obrigações de toda a carteira por engano.",
+    "Mantém toda a carteira sincronizada em cache e preserva tarefas, backups, histórico e integração existentes.",
+    "Testes Go, regressões do filtro JavaScript e compilação Windows aprovados; validar a interface no Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.4.2/KBL_Agenda_v1_4_2.zip",
+    "path": "packages/kbl-agenda/1.4.3/KBL_Agenda_v1_4_3.zip",
     "auth": "github-cli"
   }
 }
