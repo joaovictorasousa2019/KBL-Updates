@@ -3,25 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "published": true,
   "download_url": "",
-  "sha256": "f33f036168cd20a6b1d1e42187f662858cfadddcba1d30e75c4b450957a54b1d",
-  "file_name": "KBL_Agenda_v1_2_1.zip",
-  "published_at": "2026-11-05T18:36:38Z",
+  "sha256": "5622c70ea4488d1b3ad61e639daf23114f47ce16ad5d87eca6c4f818d370f712",
+  "file_name": "KBL_Agenda_v1_3_0.zip",
+  "published_at": "2026-11-05T19:10:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige erro de navegação em todas as abas na primeira abertura: coleções e alertas vazios são serializados como listas JSON [].",
-    "Corrige compatibilidade com bases antigas que continham valores null, preservando cadastros e configurações existentes.",
-    "Configurações abre tela de API Token para salvar, remover e sincronizar com o Acessórias.",
-    "Executável Windows compilado sem Python ou CMD; instalação e atualização pelo Hub existente, sem atualizar o Hub.",
-    "Testes de regressão, validação da API local e compilação Windows aprovados; a sincronização real do Acessórias precisa de validação na empresa."
+    "Cadastro inicial e login individual com senha protegida e controle de sessão.",
+    "Saudação personalizada com nome, dia da semana e data completa.",
+    "Painel gerencial e agenda semanal com compromissos, tarefas e ausências.",
+    "Pendências e cobranças com prazos, histórico de contato e lembretes.",
+    "Notificações e correções de estabilidade, mantendo banco e token do Acessórias locais.",
+    "Build Windows e testes automatizados aprovados; validar instalação e API real no Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.2.1/KBL_Agenda_v1_2_1.zip",
+    "path": "packages/kbl-agenda/1.3.0/KBL_Agenda_v1_3_0.zip",
     "auth": "github-cli"
   }
 }
