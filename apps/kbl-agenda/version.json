@@ -3,26 +3,25 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "published": true,
   "download_url": "",
-  "sha256": "5622c70ea4488d1b3ad61e639daf23114f47ce16ad5d87eca6c4f818d370f712",
+  "sha256": "ce1a7b513d81177878bf870aacacb1a964c2303bf514fcbc75a5848f0c9175c2",
   "file_name": "KBL_Agenda_v1_3_0.zip",
-  "published_at": "2026-11-05T19:10:00Z",
+  "published_at": "2026-11-05T19:16:45Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Cadastro inicial e login individual com senha protegida e controle de sessão.",
-    "Saudação personalizada com nome, dia da semana e data completa.",
-    "Painel gerencial e agenda semanal com compromissos, tarefas e ausências.",
-    "Pendências e cobranças com prazos, histórico de contato e lembretes.",
-    "Notificações e correções de estabilidade, mantendo banco e token do Acessórias locais.",
-    "Build Windows e testes automatizados aprovados; validar instalação e API real no Windows."
+    "Corrige diagnóstico da sincronização do Acessórias: mostra primeira falha real por empresa e preserva cache.",
+    "Tenta consulta alternativa de entregas quando CNPJ formatado causa erro de URL ou roteamento da API.",
+    "Registra avisos detalhados de erro nas Configurações, mesmo quando todas as empresas falham.",
+    "Mantém login, painel semanal, cobranças e notificações da v1.3.0.",
+    "Testes automatizados e compilação Windows no GitHub aprovados. Integração real depende de homologação no Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.3.0/KBL_Agenda_v1_3_0.zip",
+    "path": "packages/kbl-agenda/1.3.1/KBL_Agenda_v1_3_0.zip",
     "auth": "github-cli"
   }
 }
