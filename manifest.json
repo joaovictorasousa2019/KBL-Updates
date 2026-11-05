@@ -65,6 +65,11 @@
       "app_id": "validador-balancete",
       "name": "KBL Validador de Balancete",
       "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/validador-balancete/version.json?v=1.0.3"
+    },
+    {
+      "app_id": "kbl-agenda",
+      "name": "KBL Agenda",
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/kbl-agenda/version.json?v=1.2.0"
     }
   ],
   "package_repository": {
@@ -73,5 +78,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-11-04-composicao-saldos-73"
+  "revision": "2026-11-05-kbl-agenda-1.2.0"
 }
