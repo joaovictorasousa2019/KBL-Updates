@@ -3,25 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "published": true,
   "download_url": "",
-  "sha256": "9c2facfc01b47a38048839be93e09778b3a060b88c100f8fce2961b761d57ee4",
-  "file_name": "KBL_Agenda_v1_4_3.zip",
-  "published_at": "2026-11-05T20:34:00Z",
+  "sha256": "23f974951e0e512879e44f86929a2bf7f8297cf796a9741eee10855b524256ff",
+  "file_name": "KBL_Agenda_v1_4_4.zip",
+  "published_at": "2026-11-05T20:52:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Visão geral, agenda semanal e janelas de obrigações agora respeitam sempre o usuário e departamento selecionados em Meu acompanhamento.",
-    "Aba Acessórias oferece alternância explícita entre somente minhas e todas as responsabilidades, iniciando em somente minhas.",
-    "Sem usuário vinculado, painel pessoal não mostra obrigações de toda a carteira por engano.",
-    "Mantém toda a carteira sincronizada em cache e preserva tarefas, backups, histórico e integração existentes.",
-    "Testes Go, regressões do filtro JavaScript e compilação Windows aprovados; validar a interface no Windows."
+    "Corrige acúmulo de botões Excluir nos formulários de edição; sempre somente um botão.",
+    "Corrige a exclusão de pendências usando a rota real de tarefas e remove excluir ao abrir um cadastro novo.",
+    "Continua paginação de entregas e reconhece Atraso justificado/Dispensada sem gerar alertas falsos quando esse status for retornado pela API.",
+    "Rodapé mostra versão real definida no build, sem rótulo fixo desatualizado.",
+    "Preserva dados locais, configurações, autenticação e outras funções.",
+    "Testes Go e de interface (filtros/exclusão) e compilação Windows aprovados; validar na instalação Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.4.3/KBL_Agenda_v1_4_3.zip",
+    "path": "packages/kbl-agenda/1.4.4/KBL_Agenda_v1_4_4.zip",
     "auth": "github-cli"
   }
 }
