@@ -1,0 +1,27 @@
+{
+  "schema_version": 3,
+  "app_id": "kbl-agenda",
+  "name": "KBL Agenda",
+  "channel": "stable",
+  "version": "1.2.0",
+  "published": true,
+  "download_url": "",
+  "sha256": "4949946e807c4d54cc53e02d25dd5416dad256acebe5eb2b52179911e24744c2",
+  "file_name": "KBL_Agenda_v1_2_0.zip",
+  "published_at": "2026-11-05T18:24:04Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Central de coordenação contábil com painel de prioridades, agenda semanal, equipe, folgas, pendências e notificações.",
+    "Conexão de leitura com Acessórias via token cadastrado em Configurações; nenhuma chave é incluída na distribuição.",
+    "Corrige a navegação para Configurações, com tratamento de erros visível.",
+    "Preserva registros locais e token protegido pelo Windows, sem exigir Python ou CMD.",
+    "Testes automatizados e de interface aprovados; validar notificações e sincronização real no Windows."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/kbl-agenda/1.2.0/KBL_Agenda_v1_2_0.zip",
+    "auth": "github-cli"
+  }
+}
