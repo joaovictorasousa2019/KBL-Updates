@@ -3,26 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "published": true,
   "download_url": "",
-  "sha256": "23f974951e0e512879e44f86929a2bf7f8297cf796a9741eee10855b524256ff",
-  "file_name": "KBL_Agenda_v1_4_4.zip",
-  "published_at": "2026-11-05T20:52:00Z",
+  "sha256": "cd4e5c43a12fd477f829139c802580df0e470c8430917f7f7a4f3c27ed4cbdc1",
+  "file_name": "KBL_Agenda_v1_4_5.zip",
+  "published_at": "2026-11-05T21:20:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige acúmulo de botões Excluir nos formulários de edição; sempre somente um botão.",
-    "Corrige a exclusão de pendências usando a rota real de tarefas e remove excluir ao abrir um cadastro novo.",
-    "Continua paginação de entregas e reconhece Atraso justificado/Dispensada sem gerar alertas falsos quando esse status for retornado pela API.",
-    "Rodapé mostra versão real definida no build, sem rótulo fixo desatualizado.",
-    "Preserva dados locais, configurações, autenticação e outras funções.",
-    "Testes Go e de interface (filtros/exclusão) e compilação Windows aprovados; validar na instalação Windows."
+    "Períodos de sincronização: padrão de 180 dias/90 dias, 6, 12, 24 meses, histórico desde 2000 ou datas personalizadas.",
+    "Backup automático em intervalos de 4h com o app aberto, mantendo até 60 cópias periódicas e as cópias diárias anteriores.",
+    "Sincronização automática em segundo plano a cada 6h com o aplicativo aberto, impedindo consultas simultâneas.",
+    "Revisão ortográfica nativa pt-BR nos campos de texto; não altera automaticamente nomes, senhas ou identificadores técnicos.",
+    "Importação seletiva de colaboradores a partir de usuários e responsáveis do Acessórias já sincronizados, com prevenção de duplicidades e trilha de auditoria.",
+    "Testes de regressão e build Windows concluídos; confirmar instalação e execução de rotinas no Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.4.4/KBL_Agenda_v1_4_4.zip",
+    "path": "packages/kbl-agenda/1.4.5/KBL_Agenda_v1_4_5.zip",
     "auth": "github-cli"
   }
 }
