@@ -3,25 +3,25 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "published": true,
   "download_url": "",
-  "sha256": "4949946e807c4d54cc53e02d25dd5416dad256acebe5eb2b52179911e24744c2",
-  "file_name": "KBL_Agenda_v1_2_0.zip",
-  "published_at": "2026-11-05T18:24:04Z",
+  "sha256": "f33f036168cd20a6b1d1e42187f662858cfadddcba1d30e75c4b450957a54b1d",
+  "file_name": "KBL_Agenda_v1_2_1.zip",
+  "published_at": "2026-11-05T18:36:38Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Central de coordenação contábil com painel de prioridades, agenda semanal, equipe, folgas, pendências e notificações.",
-    "Conexão de leitura com Acessórias via token cadastrado em Configurações; nenhuma chave é incluída na distribuição.",
-    "Corrige a navegação para Configurações, com tratamento de erros visível.",
-    "Preserva registros locais e token protegido pelo Windows, sem exigir Python ou CMD.",
-    "Testes automatizados e de interface aprovados; validar notificações e sincronização real no Windows."
+    "Corrige erro de navegação em todas as abas na primeira abertura: coleções e alertas vazios são serializados como listas JSON [].",
+    "Corrige compatibilidade com bases antigas que continham valores null, preservando cadastros e configurações existentes.",
+    "Configurações abre tela de API Token para salvar, remover e sincronizar com o Acessórias.",
+    "Executável Windows compilado sem Python ou CMD; instalação e atualização pelo Hub existente, sem atualizar o Hub.",
+    "Testes de regressão, validação da API local e compilação Windows aprovados; a sincronização real do Acessórias precisa de validação na empresa."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.2.0/KBL_Agenda_v1_2_0.zip",
+    "path": "packages/kbl-agenda/1.2.1/KBL_Agenda_v1_2_1.zip",
     "auth": "github-cli"
   }
 }
