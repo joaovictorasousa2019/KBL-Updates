@@ -3,26 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "published": true,
   "download_url": "",
-  "sha256": "3f97222fff07d911e55e8cfe38185a3be093d6bc648785ef2a87dd8bf9ac638b",
-  "file_name": "KBL_Agenda_v1_4_0.zip",
-  "published_at": "2026-11-05T19:44:00Z",
+  "sha256": "48d6d24ed9afab2578296e452d3a97127535ca62e85922d6a80475bfa7c77aca",
+  "file_name": "KBL_Agenda_v1_4_1.zip",
+  "published_at": "2026-11-05T20:13:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Interface minimalista premium com painel e indicadores clicáveis e janelas funcionais.",
-    "Central de atenção; ações rápidas pelo botão direito; busca global e filtros persistentes.",
-    "Histórico de atividades; cobranças recorrentes; carga da equipe; modelos de tarefas e produtividade baseada nos registros.",
-    "Backup automático e restauração com verificações; preserva dados locais e token protegido.",
-    "Integração Acessórias: consulta de usuários sem paginação indevida, diagnóstico seguro de HTTP/HTML e tentativas alternativas de identificação para entregas.",
-    "Testes automatizados e compilação Windows aprovados. Sincronização autenticada e uso em Windows dependem de validação do usuário."
+    "Evita timeout repetitivo: aborta após cinco falhas de consulta de entregas sem nenhum sucesso.",
+    "Usa CNPJ/CPF sem pontuação primeiro e rota com barra final; mantém fallback quando apropriado.",
+    "Detalha formato da resposta JSON inesperada (somente nomes de campos, sem dados pessoais).",
+    "Corrige paginação documentada de usuários; preserva cache e registros anteriores em caso de erro.",
+    "Mantém painel, tarefas, cobranças, backup e recursos 1.4.0.",
+    "Testes automatizados e compilação Windows concluídos. Sincronização com token real ainda precisa ser testada no Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.4.0/KBL_Agenda_v1_4_0.zip",
+    "path": "packages/kbl-agenda/1.4.1/KBL_Agenda_v1_4_1.zip",
     "auth": "github-cli"
   }
 }
