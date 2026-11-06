@@ -3,26 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.5.3",
+  "version": "1.5.4",
   "published": true,
   "download_url": "",
-  "sha256": "275b9c5590d4916896a7c3c7ec13d4b3b3dab97a13eba82077213a9b9eb22126",
-  "file_name": "KBL_Agenda_v1_5_3.zip",
-  "published_at": "2026-11-06T15:40:00Z",
+  "sha256": "a13ab6050eba09c3e8702fcd427101ead194b9144230aaf059657ee698899b65",
+  "file_name": "KBL_Agenda_v1_5_4.zip",
+  "published_at": "2026-11-06T16:30:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Filtros persistentes e combináveis na aba Acessórias: empresas (inclusive múltiplas), competência ou mês do vencimento, departamento, situação, responsável, tipo de obrigação e ordenação.",
-    "Paginação em 25, 50 ou 100 registros, contagem por status, detalhes por obrigação e filtros nomeados e salvos.",
-    "Exportação CSV em UTF-8 compatível com Excel; reflete todos os resultados filtrados.",
-    "Removida frase longa de aviso do topo da aba Acessórias, mantendo resumo de última leitura.",
-    "Duas versões da logo KBL específicas para tema claro e escuro; refinamento de contraste, bordas e cartões claros.",
-    "Sem alteração dos dados internos ou do executável do KBL Hub. Testes de regressão Go/JS e compilação Windows aprovados; verificar visual e dados reais no Windows."
+    "Corrige regressão da v1.5.3: competência 11/2026 não é mais predefinida, restaurando obrigações atrasadas anteriores.",
+    "Migra as preferências da v1.5.3, removendo apenas a competência imposta automaticamente.",
+    "Nova barra compacta com empresa, competência, situação, responsável, área e pesquisa; opções secundárias recolhidas em Mais filtros.",
+    "Contadores Todas, Pendente, Atrasada, Justificada, Concluída e demais situações agora são clicáveis e filtram exclusivamente a situação; o segundo clique retorna a Todas.",
+    "Contadores calculados a partir dos demais filtros, sem zerar as outras situações ao selecionar uma.",
+    "Mantém todas as obrigações no cache, exportação CSV, temas KBL e recursos anteriores; testes Go e JavaScript aprovados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.5.3/KBL_Agenda_v1_5_3.zip",
+    "path": "packages/kbl-agenda/1.5.4/KBL_Agenda_v1_5_4.zip",
     "auth": "github-cli"
   }
 }
