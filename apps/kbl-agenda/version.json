@@ -3,26 +3,25 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.5.9",
+  "version": "1.6.1",
   "published": true,
   "download_url": "",
-  "sha256": "3f4483d55740482f37a7eb5a0a94929d8f9a491852fa3d115b25319da32300bc",
-  "file_name": "KBL_Agenda_v1_5_9.zip",
-  "published_at": "2026-11-06T17:09:54.840Z",
+  "sha256": "b21462a1def13e15d834f499482abbf0a2e7f6655784345fc2613bd889115672",
+  "file_name": "KBL_Agenda_v1_6_1.zip",
+  "published_at": "2026-11-06T18:36:39.239Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige carregamento HTTP do autocomplete: ao digitar facul, sugere FACULDADE CDPI e refina a lista a cada letra; seleção preenche e salva o nome completo.",
-    "Corrige cursor da busca global: não inverte a primeira letra, preserva posição e seleção durante digitação e mostra empresas cadastradas mesmo sem obrigações atribuídas ao usuário.",
-    "Ativa início automático com o Windows na primeira abertura desta versão, usando o executável atual e sem solicitar administrador.",
-    "Corrige Esc na lista de sugestões para não fechar todo o formulário.",
-    "Mantém ícone incorporado e instância única da versão 1.5.8.",
-    "Validado: rotas HTTP dos recursos da interface, testes Go/JS, fluxo real em Chromium com persistência e registro de inicialização em Windows."
+    "Inclui filtro por grupo de empresas na aba Acessórias, com cadastro, alteração e exclusão de grupos locais.",
+    "Associa várias empresas a cada grupo e combina o filtro com empresa, responsável, situação, competência e área.",
+    "Preserva preferências de filtro entre abas, com dados locais armazenados neste computador.",
+    "Mantém verificação de atualização ao iniciar, ícone integrado, instância única e inicialização automática no Windows.",
+    "Build Windows, testes Go e scripts JavaScript aprovados; teste automatizado de navegador não executado nesta compilação."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.5.9/KBL_Agenda_v1_5_9.zip",
+    "path": "packages/kbl-agenda/1.6.1/KBL_Agenda_v1_6_1.zip",
     "auth": "github-cli"
   }
 }
