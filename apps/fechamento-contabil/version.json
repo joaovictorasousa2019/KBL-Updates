@@ -3,26 +3,26 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.9",
+  "version": "2.10",
   "published": true,
   "download_url": "",
-  "sha256": "b005527eec7c9c6bcc5ce2a0e195537fd2f024b0fef00087df666f10afec138b",
-  "file_name": "KBL_Fechamento_Contabil_v2_9_Outlook.zip",
-  "published_at": "2026-11-06T15:10:43.803Z",
+  "sha256": "41f896b8d2906d755c2bc605df1312738e59cad08d1eb1059289b6d474c340f1",
+  "file_name": "KBL_Fechamento_Contabil_v2_10_Microsoft365.zip",
+  "published_at": "2026-11-06T16:27:38.494Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Solicitação de movimentação por empresa e competência, com modelos e destinatários próprios.",
-    "Rascunho e envio pelo Outlook clássico do Windows, com revisão antes do envio.",
-    "Histórico, confirmação em Itens Enviados e bloqueio de duplicação.",
-    "Consulta de respostas e nomes dos anexos; recebimento parcial ou completo após conferência.",
-    "Cobrança manual de documentos pendentes, sem tarefa do ChatGPT.",
-    "Preserva fechamentos anteriores e fecha conexões SQLite após leitura e gravação."
+    "Microsoft 365 corporativo: login pelo navegador com OAuth PKCE, sem Outlook instalado.",
+    "Requer registro do aplicativo na organização e ID do aplicativo (cliente). Instruções em Conectar Microsoft 365.",
+    "Sessão protegida pelo usuário Windows, sem senha no aplicativo.",
+    "Rascunhos, envio revisado, confirmação em Itens Enviados e respostas com anexos relacionados.",
+    "Preserva histórico por empresa e competência e a opção de Outlook clássico.",
+    "24 testes e abertura das telas aprovados em Windows; login e envio no tenant dependem do cadastro e consentimento."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.9/KBL_Fechamento_Contabil_v2_9_Outlook.zip",
+    "path": "packages/fechamento-contabil/2.10/KBL_Fechamento_Contabil_v2_10_Microsoft365.zip",
     "auth": "github-cli"
   }
 }
