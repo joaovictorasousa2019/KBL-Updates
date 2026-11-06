@@ -3,26 +3,27 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "published": true,
   "download_url": "",
-  "sha256": "02197863ff45ae86640843ba92a7747f7d01e80c5259e4b4eb57a5d6c26c0679",
-  "file_name": "KBL_Agenda_v1_6_6.zip",
-  "published_at": "2026-11-06T19:45:17.992Z",
+  "sha256": "a444d790d2a3f4da96b82bd272e6332746ed8211d79d7a4e436a61c0b04b737a",
+  "file_name": "KBL_Agenda_v1_6_7.zip",
+  "published_at": "2026-11-06T20:10:27.687Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Respeita o Departamento monitorado em todos os modos de sincronização e remove da visualização o histórico de outros departamentos.",
-    "Toda a equipe inclui apenas colaboradores ativos cadastrados e vinculados na aba Equipe; responsáveis não cadastrados não são incluídos.",
-    "Integra grupos de empresas e tags do Acessórias por API somente leitura, inclusive tags GRUPO CDPI, mediante as permissões da API.",
-    "As empresas vinculadas aos grupos são correlacionadas por identificador de empresa; grupos locais anteriores continuam disponíveis.",
-    "Mantém correções dos seletores, da gestão da equipe, inicialização única e atualização automática ao abrir.",
-    "Testes de integração com API simulada, Go, JavaScript, compilação Windows e testes de inicialização aprovados. Integração com token real deve ser conferida na primeira sincronização."
+    "Melhora o desempenho com grandes carteiras: filtros de Acessórias com varredura única, IDs de colaboradores e grupos em conjuntos indexados.",
+    "Indicadores de situação reutilizam a filtragem e não reprocessam todas as obrigações três vezes a cada alteração.",
+    "Equipe: carteira consolidada em uma leitura por sincronização, sem nova varredura para cada colaborador.",
+    "Busca com atualização após 180 ms sem digitar e reconstruir a tabela a cada tecla; autocomplete só reage a novos campos, não a cada alteração da tabela.",
+    "Recarregamento completo periódico da interface ajustado de 1 para 5 minutos, preservando sincronização automática e atualização imediata ao concluir a sincronização.",
+    "Mantém departamento monitorado, equipe ativa e grupos/tags do Acessórias.",
+    "Build e testes Go, JavaScript, benchmark sintético com 30 mil obrigações e testes Windows aprovados. Teste de navegação em Chromium não executado."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.6.6/KBL_Agenda_v1_6_6.zip",
+    "path": "packages/kbl-agenda/1.6.7/KBL_Agenda_v1_6_7.zip",
     "auth": "github-cli"
   }
 }
