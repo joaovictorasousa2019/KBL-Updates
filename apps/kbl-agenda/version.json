@@ -3,27 +3,25 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "published": true,
   "download_url": "",
-  "sha256": "4a48550f73cd7c14894f31df3a192e40c4e6793dd821fe8eca79dbf40c1ac75a",
-  "file_name": "KBL_Agenda_v1_5_0.zip",
-  "published_at": "2026-11-05T23:45:00Z",
+  "sha256": "d02e3007b94b6c624e53f897523cc40b2bccc1fe1c14b40b267373c4005c19a6",
+  "file_name": "KBL_Agenda_v1_5_1.zip",
+  "published_at": "2026-11-06T12:00:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Temas claro e escuro minimalistas: claro predominantemente branco e escuro preto, acentos vinho/dourado da KBL; slogan Transformando decisões em legado.",
-    "Central de gestão organizada por Operacional, Equipe, Análise e recursos, com janelas clicáveis.",
-    "Fechamento contábil por empresa/competência, seis etapas de checklist e progresso calculado.",
-    "Distribuição de tarefas em lote com pré-validação de todos os registros; substituição temporária de responsáveis em ausências.",
-    "Pendências agrupadas por empresa, comentários e anexos locais de até 10 MB, calendário mensal e busca global existente.",
-    "Diagnóstico de integração com contagens reais, indicadores, modelos e histórico preservados.",
-    "Testes automatizados Go/JS e compilação Windows aprovados. Interface visual e operação em Windows ainda requerem homologação."
+    "Corrige timeout de consultas do Acessórias por empresa, preservando dados anteriormente sincronizados.",
+    "Tenta novamente uma vez para falhas transitórias; não tenta automaticamente uma segunda grafia de CNPJ após timeout.",
+    "Reduz espera de uma consulta sem resposta de 35 para 22 segundos. Mantém respeito ao limite de requisições da API; uma carteira com 538 empresas ainda leva minutos.",
+    "Preserva os recursos da v1.5.0: central de gestão, temas branco/preto, backups e sincronização automática.",
+    "Testes automatizados Go/JS e compilação Windows aprovados; validar tempo e integridade em ambiente real."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.5.0/KBL_Agenda_v1_5_0.zip",
+    "path": "packages/kbl-agenda/1.5.1/KBL_Agenda_v1_5_1.zip",
     "auth": "github-cli"
   }
 }
