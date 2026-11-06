@@ -3,26 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.2",
+  "version": "1.6.6",
   "published": true,
   "download_url": "",
-  "sha256": "f187ff019c11a9ae83d3026e2834f9fb2bdecab35c70ec373c8dcd8252331336",
-  "file_name": "KBL_Agenda_v1_6_2.zip",
-  "published_at": "2026-11-06T18:52:40.108Z",
+  "sha256": "02197863ff45ae86640843ba92a7747f7d01e80c5259e4b4eb57a5d6c26c0679",
+  "file_name": "KBL_Agenda_v1_6_6.zip",
+  "published_at": "2026-11-06T19:45:17.992Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Clique em Empresa, Responsável e campos de busca similares para ver opções existentes antes de digitar; a pesquisa filtra conforme as letras.",
-    "Acessórias: campos reorganizados e listagem de empresas derivada do cadastro sincronizado.",
-    "Equipe: cada colaborador vinculado por ID ao Acessórias apresenta a quantidade de empresas e obrigações atribuídas.",
-    "Botão Ver empresas e obrigações abre a aba Acessórias já filtrada pelo usuário do colaborador, respeitando grupo, competência, situação e área.",
-    "Se a sincronização estiver em Minhas obrigações, o app avisa que os dados de outros colaboradores podem estar incompletos. Configure Área completa ou Carteira completa.",
-    "Testes Go e JavaScript, compilação Windows e inicialização aprovados. Testes automatizados com navegador Chromium não executados."
+    "Respeita o Departamento monitorado em todos os modos de sincronização e remove da visualização o histórico de outros departamentos.",
+    "Toda a equipe inclui apenas colaboradores ativos cadastrados e vinculados na aba Equipe; responsáveis não cadastrados não são incluídos.",
+    "Integra grupos de empresas e tags do Acessórias por API somente leitura, inclusive tags GRUPO CDPI, mediante as permissões da API.",
+    "As empresas vinculadas aos grupos são correlacionadas por identificador de empresa; grupos locais anteriores continuam disponíveis.",
+    "Mantém correções dos seletores, da gestão da equipe, inicialização única e atualização automática ao abrir.",
+    "Testes de integração com API simulada, Go, JavaScript, compilação Windows e testes de inicialização aprovados. Integração com token real deve ser conferida na primeira sincronização."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.6.2/KBL_Agenda_v1_6_2.zip",
+    "path": "packages/kbl-agenda/1.6.6/KBL_Agenda_v1_6_6.zip",
     "auth": "github-cli"
   }
 }
