@@ -3,25 +3,26 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.8",
+  "version": "2.9",
   "published": true,
   "download_url": "",
-  "sha256": "2fe79ee88a6a6243eff147436c37a9680674dd5c74840ded998f7fd852f27524",
-  "file_name": "KBL_Fechamento_Contabil_v2_8_Acessorias.zip",
-  "published_at": "2026-10-30T17:32:40.750Z",
+  "sha256": "b005527eec7c9c6bcc5ce2a0e195537fd2f024b0fef00087df666f10afec138b",
+  "file_name": "KBL_Fechamento_Contabil_v2_9_Outlook.zip",
+  "published_at": "2026-11-06T15:10:43.803Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Etapas alinhadas ao processo do Acessórias.",
-    "Receitas financeiras imediatamente após a importação dos extratos.",
-    "Janela 980 x 650 com rolagem interna nas etapas.",
-    "Compliance e Auditoria com status Aguardando retorno; LALUR e DARFs com opção Não se aplica.",
-    "Preserva fechamentos anteriores e tarefas adicionais cadastradas."
+    "Solicitação de movimentação por empresa e competência, com modelos e destinatários próprios.",
+    "Rascunho e envio pelo Outlook clássico do Windows, com revisão antes do envio.",
+    "Histórico, confirmação em Itens Enviados e bloqueio de duplicação.",
+    "Consulta de respostas e nomes dos anexos; recebimento parcial ou completo após conferência.",
+    "Cobrança manual de documentos pendentes, sem tarefa do ChatGPT.",
+    "Preserva fechamentos anteriores e fecha conexões SQLite após leitura e gravação."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.8/KBL_Fechamento_Contabil_v2_8_Acessorias.zip",
+    "path": "packages/fechamento-contabil/2.9/KBL_Fechamento_Contabil_v2_9_Outlook.zip",
     "auth": "github-cli"
   }
 }
