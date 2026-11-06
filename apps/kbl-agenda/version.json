@@ -3,26 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.5.5",
+  "version": "1.5.6",
   "published": true,
   "download_url": "",
-  "sha256": "9cabfca799b6010a03626dfbb6cfbee4ade21c509a03ed59faf58e65d494ccb1",
-  "file_name": "KBL_Agenda_v1_5_5.zip",
-  "published_at": "2026-11-06T16:55:00Z",
+  "sha256": "c4256635b93650d71eed01f173a7cc86af7d41dd2b4c1f9d3f9898c14af1e888",
+  "file_name": "KBL_Agenda_v1_5_6.zip",
+  "published_at": "2026-11-06T16:40:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Busca por digitação nas listas de empresas, responsáveis, colaboradores, substitutos e cadastros em todas as telas e janelas; correspondência por parte do nome e tolerância a acentos.",
-    "Filtro Responsável prioriza os colaboradores ativos da Equipe vinculados por ID ao Acessórias, com compatibilidade para seleções antigas.",
-    "Importação de colaboradores com busca por nome ou e-mail; Selecionar todas afeta somente resultados visíveis.",
-    "Preserva IDs, eventos e seleção múltipla e não altera dados das obrigações.",
-    "Favicon KBL no navegador e ícone KBL incorporado ao executável Windows pela etapa de compilação.",
-    "Mantém filtros compactos, contadores clicáveis e correção das obrigações atrasadas da v1.5.4. Testes automatizados e compilação Windows aprovados."
+    "Autocomplete imediato de empresa em tarefas e cadastros: ao digitar facul, surgem opções como Faculdade CDPI; cada letra refina os nomes e um clique preenche o texto completo.",
+    "Pesquisa por nome tolerante a acentos, sem alterar IDs, tarefas ou obrigações já salvos.",
+    "Removidos o seletor grande de empresas e a caixa de consultas salvas do Mais filtros na aba Acessórias; mantém período por vencimento, tipo e ordenação.",
+    "Removido botão Sincronizar da barra de filtros de obrigações; a sincronização manual permanece em Configurações e a automática segue a programação existente.",
+    "Corrigida utilização do ícone KBL incorporado no executável também na bandeja de notificações do Windows; instalações Windows podem precisar atualizar cache de atalhos.",
+    "Testes automatizados Go/JS e compilação Windows concluídos; operação visual real ainda depende de validação no PC."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.5.5/KBL_Agenda_v1_5_5.zip",
+    "path": "packages/kbl-agenda/1.5.6/KBL_Agenda_v1_5_6.zip",
     "auth": "github-cli"
   }
 }
