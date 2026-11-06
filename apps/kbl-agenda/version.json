@@ -3,26 +3,25 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "published": true,
   "download_url": "",
-  "sha256": "5b6fde0c41676ca4260e66e777621d229fc746304f8434d63ac369585ff4597e",
-  "file_name": "KBL_Agenda_v1_5_7.zip",
-  "published_at": "2026-11-06T16:58:00Z",
+  "sha256": "2fa82c0c447104840e7cff42c6719a060c037e662b1153265667553a1b66dcff",
+  "file_name": "KBL_Agenda_v1_5_8.zip",
+  "published_at": "2026-11-06T17:30:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Distingue atraso justificado sem entrega (situação Justificada · Em aberto) de obrigação realmente entregue (Concluída).",
-    "Confirma a conclusão somente por data de entrega ou status explícito de entrega retornado pela API, não pelo nome do responsável pela entrega.",
-    "Obrigações justificadas permanecem em aberto no acompanhamento e agenda, sem gerar aviso falso de atraso não justificado.",
-    "No detalhe da obrigação, exibe data da entrega e uma explicação da situação do acompanhamento.",
-    "Reinterpreta registros já armazenados sem excluir dados ou exigir nova sincronização para a distinção visual.",
-    "Testes Go/JavaScript e compilação Windows aprovados; validar com dados reais no Windows."
+    "Ícone KBL agora é incorporado diretamente ao executável Windows; a publicação verifica os recursos RT_ICON/RT_GROUP_ICON dentro da seção .rsrc.",
+    "Uma única instância do KBL Agenda por sessão Windows: clicar repetidamente ativa a janela já aberta sem iniciar novos servidores, bancos ou ícones na bandeja.",
+    "O ícone da bandeja usa o recurso incorporado ao executável, sem arquivos .ico externos.",
+    "Mantém dados, sincronização automática, filtros e integração existentes.",
+    "Testes Go/JS, compilação Windows e verificação do recurso de ícone aprovados; confirmar comportamento visual em Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.5.7/KBL_Agenda_v1_5_7.zip",
+    "path": "packages/kbl-agenda/1.5.8/KBL_Agenda_v1_5_8.zip",
     "auth": "github-cli"
   }
 }
