@@ -3,27 +3,25 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.7",
+  "version": "1.6.9",
   "published": true,
   "download_url": "",
-  "sha256": "a444d790d2a3f4da96b82bd272e6332746ed8211d79d7a4e436a61c0b04b737a",
-  "file_name": "KBL_Agenda_v1_6_7.zip",
-  "published_at": "2026-11-06T20:10:27.687Z",
+  "sha256": "768d82b2e5157aa80fdba24f9ba75bce565a6d843eb4e0ccc18e18b23c11a579",
+  "file_name": "KBL_Agenda_v1_6_9.zip",
+  "published_at": "2026-11-06T20:21:34.769Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Melhora o desempenho com grandes carteiras: filtros de Acessórias com varredura única, IDs de colaboradores e grupos em conjuntos indexados.",
-    "Indicadores de situação reutilizam a filtragem e não reprocessam todas as obrigações três vezes a cada alteração.",
-    "Equipe: carteira consolidada em uma leitura por sincronização, sem nova varredura para cada colaborador.",
-    "Busca com atualização após 180 ms sem digitar e reconstruir a tabela a cada tecla; autocomplete só reage a novos campos, não a cada alteração da tabela.",
-    "Recarregamento completo periódico da interface ajustado de 1 para 5 minutos, preservando sincronização automática e atualização imediata ao concluir a sincronização.",
-    "Mantém departamento monitorado, equipe ativa e grupos/tags do Acessórias.",
-    "Build e testes Go, JavaScript, benchmark sintético com 30 mil obrigações e testes Windows aprovados. Teste de navegação em Chromium não executado."
+    "Importa todos os grupos e tags ativos cadastrados no Acessórias, inclusive sem obrigações no departamento monitorado.",
+    "Corrige o vínculo de empresas em grupos usando o ID interno cadastral ou CNPJ/CPF, respeitando diferentes formas da resposta da API.",
+    "Preserva grupos já sincronizados quando parte das consultas da API falha, sem inventar empresas vinculadas.",
+    "Mantém as otimizações de filtros, pesquisa, contadores e equipe da 1.6.7, o departamento monitorado e as configurações existentes.",
+    "Testes Go, JavaScript, benchmark sintético com 30 mil obrigações e compilação Windows aprovados. A sincronização com token real precisa ser conferida na instalação."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.6.7/KBL_Agenda_v1_6_7.zip",
+    "path": "packages/kbl-agenda/1.6.9/KBL_Agenda_v1_6_9.zip",
     "auth": "github-cli"
   }
 }
