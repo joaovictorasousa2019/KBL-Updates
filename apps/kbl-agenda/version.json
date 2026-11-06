@@ -3,25 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "published": true,
   "download_url": "",
-  "sha256": "b21462a1def13e15d834f499482abbf0a2e7f6655784345fc2613bd889115672",
-  "file_name": "KBL_Agenda_v1_6_1.zip",
-  "published_at": "2026-11-06T18:36:39.239Z",
+  "sha256": "f187ff019c11a9ae83d3026e2834f9fb2bdecab35c70ec373c8dcd8252331336",
+  "file_name": "KBL_Agenda_v1_6_2.zip",
+  "published_at": "2026-11-06T18:52:40.108Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Inclui filtro por grupo de empresas na aba Acessórias, com cadastro, alteração e exclusão de grupos locais.",
-    "Associa várias empresas a cada grupo e combina o filtro com empresa, responsável, situação, competência e área.",
-    "Preserva preferências de filtro entre abas, com dados locais armazenados neste computador.",
-    "Mantém verificação de atualização ao iniciar, ícone integrado, instância única e inicialização automática no Windows.",
-    "Build Windows, testes Go e scripts JavaScript aprovados; teste automatizado de navegador não executado nesta compilação."
+    "Clique em Empresa, Responsável e campos de busca similares para ver opções existentes antes de digitar; a pesquisa filtra conforme as letras.",
+    "Acessórias: campos reorganizados e listagem de empresas derivada do cadastro sincronizado.",
+    "Equipe: cada colaborador vinculado por ID ao Acessórias apresenta a quantidade de empresas e obrigações atribuídas.",
+    "Botão Ver empresas e obrigações abre a aba Acessórias já filtrada pelo usuário do colaborador, respeitando grupo, competência, situação e área.",
+    "Se a sincronização estiver em Minhas obrigações, o app avisa que os dados de outros colaboradores podem estar incompletos. Configure Área completa ou Carteira completa.",
+    "Testes Go e JavaScript, compilação Windows e inicialização aprovados. Testes automatizados com navegador Chromium não executados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.6.1/KBL_Agenda_v1_6_1.zip",
+    "path": "packages/kbl-agenda/1.6.2/KBL_Agenda_v1_6_2.zip",
     "auth": "github-cli"
   }
 }
