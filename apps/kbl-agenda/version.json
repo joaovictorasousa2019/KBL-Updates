@@ -3,26 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "published": true,
   "download_url": "",
-  "sha256": "f471bacd818b2d945958b9d0872c2a142da35ef5763467adf8d2d8abb55b3b0c",
-  "file_name": "KBL_Agenda_v1_5_2.zip",
-  "published_at": "2026-11-06T14:55:00Z",
+  "sha256": "275b9c5590d4916896a7c3c7ec13d4b3b3dab97a13eba82077213a9b9eb22126",
+  "file_name": "KBL_Agenda_v1_5_3.zip",
+  "published_at": "2026-11-06T15:40:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Configuração de escopo de sincronização: minhas obrigações, departamento(s) ou carteira inteira.",
-    "Carregamento de áreas diretamente da API Acessórias, com seleção múltipla de IDs e filtro department_id aplicado à requisição.",
-    "Sincronização incremental opcional usando DtLastDH; mantém entregas históricas ao receber apenas alterações.",
-    "Modo pessoal consulta empresas com atribuições no cache entre varreduras gerais de 7 dias, preservando descoberta de novas atribuições.",
-    "Continua com sincronização automática a cada seis horas, backups a cada quatro horas e tratamento de timeout da v1.5.1.",
-    "Testes de regressão Go/JS e compilação Windows aprovados; validar com token e dados reais."
+    "Filtros persistentes e combináveis na aba Acessórias: empresas (inclusive múltiplas), competência ou mês do vencimento, departamento, situação, responsável, tipo de obrigação e ordenação.",
+    "Paginação em 25, 50 ou 100 registros, contagem por status, detalhes por obrigação e filtros nomeados e salvos.",
+    "Exportação CSV em UTF-8 compatível com Excel; reflete todos os resultados filtrados.",
+    "Removida frase longa de aviso do topo da aba Acessórias, mantendo resumo de última leitura.",
+    "Duas versões da logo KBL específicas para tema claro e escuro; refinamento de contraste, bordas e cartões claros.",
+    "Sem alteração dos dados internos ou do executável do KBL Hub. Testes de regressão Go/JS e compilação Windows aprovados; verificar visual e dados reais no Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.5.2/KBL_Agenda_v1_5_2.zip",
+    "path": "packages/kbl-agenda/1.5.3/KBL_Agenda_v1_5_3.zip",
     "auth": "github-cli"
   }
 }
