@@ -1,0 +1,27 @@
+{
+  "schema_version": 3,
+  "app_id": "composicao-saldos",
+  "name": "KBL Composição Patrimonial",
+  "channel": "stable",
+  "version": "74",
+  "published": true,
+  "download_url": "",
+  "sha256": "004ace060436739085ea8f0afd8ddec1f633c69ff06f2247c7f81f6b6704eefa",
+  "file_name": "KBL_ComposicaoPatrimonial_v74_SALDOS_FOLHA_SUPORTE.zip",
+  "published_at": "2026-11-06T18:20:04.816Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Saldo final documental em uma única linha, sem saldo anterior e movimentos mensais; valor informado por competência, sem confirmação automática pelo Razão.",
+    "Salários e ordenados a pagar por partidas em aberto, preservando pendências sem vínculo seguro.",
+    "Razão contábil retirado da lista de documentos de suporte das fichas.",
+    "Altura das linhas ajustada na exportação ao texto, inclusive em células mescladas.",
+    "Preserva busca automática de documentos, desempenho anual e correções de abertura/datas da v73; testes contábeis e da interface aprovados."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/composicao-saldos/74/KBL_ComposicaoPatrimonial_v74_SALDOS_FOLHA_SUPORTE.zip",
+    "auth": "github-cli"
+  }
+}
