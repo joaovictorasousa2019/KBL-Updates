@@ -3,25 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.5.8",
+  "version": "1.5.9",
   "published": true,
   "download_url": "",
-  "sha256": "2fa82c0c447104840e7cff42c6719a060c037e662b1153265667553a1b66dcff",
-  "file_name": "KBL_Agenda_v1_5_8.zip",
-  "published_at": "2026-11-06T17:30:00Z",
+  "sha256": "3f4483d55740482f37a7eb5a0a94929d8f9a491852fa3d115b25319da32300bc",
+  "file_name": "KBL_Agenda_v1_5_9.zip",
+  "published_at": "2026-11-06T17:09:54.840Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Ícone KBL agora é incorporado diretamente ao executável Windows; a publicação verifica os recursos RT_ICON/RT_GROUP_ICON dentro da seção .rsrc.",
-    "Uma única instância do KBL Agenda por sessão Windows: clicar repetidamente ativa a janela já aberta sem iniciar novos servidores, bancos ou ícones na bandeja.",
-    "O ícone da bandeja usa o recurso incorporado ao executável, sem arquivos .ico externos.",
-    "Mantém dados, sincronização automática, filtros e integração existentes.",
-    "Testes Go/JS, compilação Windows e verificação do recurso de ícone aprovados; confirmar comportamento visual em Windows."
+    "Corrige carregamento HTTP do autocomplete: ao digitar facul, sugere FACULDADE CDPI e refina a lista a cada letra; seleção preenche e salva o nome completo.",
+    "Corrige cursor da busca global: não inverte a primeira letra, preserva posição e seleção durante digitação e mostra empresas cadastradas mesmo sem obrigações atribuídas ao usuário.",
+    "Ativa início automático com o Windows na primeira abertura desta versão, usando o executável atual e sem solicitar administrador.",
+    "Corrige Esc na lista de sugestões para não fechar todo o formulário.",
+    "Mantém ícone incorporado e instância única da versão 1.5.8.",
+    "Validado: rotas HTTP dos recursos da interface, testes Go/JS, fluxo real em Chromium com persistência e registro de inicialização em Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.5.8/KBL_Agenda_v1_5_8.zip",
+    "path": "packages/kbl-agenda/1.5.9/KBL_Agenda_v1_5_9.zip",
     "auth": "github-cli"
   }
 }
