@@ -3,25 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.9",
+  "version": "1.6.11",
   "published": true,
   "download_url": "",
-  "sha256": "768d82b2e5157aa80fdba24f9ba75bce565a6d843eb4e0ccc18e18b23c11a579",
-  "file_name": "KBL_Agenda_v1_6_9.zip",
-  "published_at": "2026-11-06T20:21:34.769Z",
+  "sha256": "ee5dd7001d0f4f1969ada102a8620f3171b95931b1c9cb308d6c97af03801bb2",
+  "file_name": "KBL_Agenda_v1_6_11.zip",
+  "published_at": "2026-11-06T20:52:10.288Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Importa todos os grupos e tags ativos cadastrados no Acessórias, inclusive sem obrigações no departamento monitorado.",
-    "Corrige o vínculo de empresas em grupos usando o ID interno cadastral ou CNPJ/CPF, respeitando diferentes formas da resposta da API.",
-    "Preserva grupos já sincronizados quando parte das consultas da API falha, sem inventar empresas vinculadas.",
-    "Mantém as otimizações de filtros, pesquisa, contadores e equipe da 1.6.7, o departamento monitorado e as configurações existentes.",
-    "Testes Go, JavaScript, benchmark sintético com 30 mil obrigações e compilação Windows aprovados. A sincronização com token real precisa ser conferida na instalação."
+    "Visão Geral mostra obrigações atrasadas e vencimentos de toda a equipe ativa vinculada na aba Equipe, mesmo quando o coordenador não possui obrigações próprias; sem duplicidade.",
+    "Departamento monitorado continua obrigatório em todos os modos.",
+    "Leitura de grupos e tags detecta páginas repetidas na API e interrompe a consulta sem perder grupos já recebidos.",
+    "Falhas ou paginação parcial são informadas com diagnóstico específico; a API precisa suportar paginação real para garantir a lista completa.",
+    "Mantém cruzamento de empresas por CNPJ/ID interno e as otimizações de interface da 1.6.9.",
+    "Compilação Windows e testes Go/JavaScript de paginação, painel do coordenador e inicialização aprovados. API com token real não validada."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.6.9/KBL_Agenda_v1_6_9.zip",
+    "path": "packages/kbl-agenda/1.6.11/KBL_Agenda_v1_6_11.zip",
     "auth": "github-cli"
   }
 }
