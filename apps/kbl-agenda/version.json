@@ -3,26 +3,27 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.4.5",
+  "version": "1.5.0",
   "published": true,
   "download_url": "",
-  "sha256": "cd4e5c43a12fd477f829139c802580df0e470c8430917f7f7a4f3c27ed4cbdc1",
-  "file_name": "KBL_Agenda_v1_4_5.zip",
-  "published_at": "2026-11-05T21:20:00Z",
+  "sha256": "4a48550f73cd7c14894f31df3a192e40c4e6793dd821fe8eca79dbf40c1ac75a",
+  "file_name": "KBL_Agenda_v1_5_0.zip",
+  "published_at": "2026-11-05T23:45:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Períodos de sincronização: padrão de 180 dias/90 dias, 6, 12, 24 meses, histórico desde 2000 ou datas personalizadas.",
-    "Backup automático em intervalos de 4h com o app aberto, mantendo até 60 cópias periódicas e as cópias diárias anteriores.",
-    "Sincronização automática em segundo plano a cada 6h com o aplicativo aberto, impedindo consultas simultâneas.",
-    "Revisão ortográfica nativa pt-BR nos campos de texto; não altera automaticamente nomes, senhas ou identificadores técnicos.",
-    "Importação seletiva de colaboradores a partir de usuários e responsáveis do Acessórias já sincronizados, com prevenção de duplicidades e trilha de auditoria.",
-    "Testes de regressão e build Windows concluídos; confirmar instalação e execução de rotinas no Windows."
+    "Temas claro e escuro minimalistas: claro predominantemente branco e escuro preto, acentos vinho/dourado da KBL; slogan Transformando decisões em legado.",
+    "Central de gestão organizada por Operacional, Equipe, Análise e recursos, com janelas clicáveis.",
+    "Fechamento contábil por empresa/competência, seis etapas de checklist e progresso calculado.",
+    "Distribuição de tarefas em lote com pré-validação de todos os registros; substituição temporária de responsáveis em ausências.",
+    "Pendências agrupadas por empresa, comentários e anexos locais de até 10 MB, calendário mensal e busca global existente.",
+    "Diagnóstico de integração com contagens reais, indicadores, modelos e histórico preservados.",
+    "Testes automatizados Go/JS e compilação Windows aprovados. Interface visual e operação em Windows ainda requerem homologação."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.4.5/KBL_Agenda_v1_4_5.zip",
+    "path": "packages/kbl-agenda/1.5.0/KBL_Agenda_v1_5_0.zip",
     "auth": "github-cli"
   }
 }
