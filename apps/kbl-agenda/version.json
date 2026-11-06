@@ -3,25 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "published": true,
   "download_url": "",
-  "sha256": "d02e3007b94b6c624e53f897523cc40b2bccc1fe1c14b40b267373c4005c19a6",
-  "file_name": "KBL_Agenda_v1_5_1.zip",
-  "published_at": "2026-11-06T12:00:00Z",
+  "sha256": "f471bacd818b2d945958b9d0872c2a142da35ef5763467adf8d2d8abb55b3b0c",
+  "file_name": "KBL_Agenda_v1_5_2.zip",
+  "published_at": "2026-11-06T14:55:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrige timeout de consultas do Acessórias por empresa, preservando dados anteriormente sincronizados.",
-    "Tenta novamente uma vez para falhas transitórias; não tenta automaticamente uma segunda grafia de CNPJ após timeout.",
-    "Reduz espera de uma consulta sem resposta de 35 para 22 segundos. Mantém respeito ao limite de requisições da API; uma carteira com 538 empresas ainda leva minutos.",
-    "Preserva os recursos da v1.5.0: central de gestão, temas branco/preto, backups e sincronização automática.",
-    "Testes automatizados Go/JS e compilação Windows aprovados; validar tempo e integridade em ambiente real."
+    "Configuração de escopo de sincronização: minhas obrigações, departamento(s) ou carteira inteira.",
+    "Carregamento de áreas diretamente da API Acessórias, com seleção múltipla de IDs e filtro department_id aplicado à requisição.",
+    "Sincronização incremental opcional usando DtLastDH; mantém entregas históricas ao receber apenas alterações.",
+    "Modo pessoal consulta empresas com atribuições no cache entre varreduras gerais de 7 dias, preservando descoberta de novas atribuições.",
+    "Continua com sincronização automática a cada seis horas, backups a cada quatro horas e tratamento de timeout da v1.5.1.",
+    "Testes de regressão Go/JS e compilação Windows aprovados; validar com token e dados reais."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.5.1/KBL_Agenda_v1_5_1.zip",
+    "path": "packages/kbl-agenda/1.5.2/KBL_Agenda_v1_5_2.zip",
     "auth": "github-cli"
   }
 }
