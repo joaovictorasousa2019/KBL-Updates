@@ -3,26 +3,26 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.5.6",
+  "version": "1.5.7",
   "published": true,
   "download_url": "",
-  "sha256": "c4256635b93650d71eed01f173a7cc86af7d41dd2b4c1f9d3f9898c14af1e888",
-  "file_name": "KBL_Agenda_v1_5_6.zip",
-  "published_at": "2026-11-06T16:40:00Z",
+  "sha256": "5b6fde0c41676ca4260e66e777621d229fc746304f8434d63ac369585ff4597e",
+  "file_name": "KBL_Agenda_v1_5_7.zip",
+  "published_at": "2026-11-06T16:58:00Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Autocomplete imediato de empresa em tarefas e cadastros: ao digitar facul, surgem opções como Faculdade CDPI; cada letra refina os nomes e um clique preenche o texto completo.",
-    "Pesquisa por nome tolerante a acentos, sem alterar IDs, tarefas ou obrigações já salvos.",
-    "Removidos o seletor grande de empresas e a caixa de consultas salvas do Mais filtros na aba Acessórias; mantém período por vencimento, tipo e ordenação.",
-    "Removido botão Sincronizar da barra de filtros de obrigações; a sincronização manual permanece em Configurações e a automática segue a programação existente.",
-    "Corrigida utilização do ícone KBL incorporado no executável também na bandeja de notificações do Windows; instalações Windows podem precisar atualizar cache de atalhos.",
-    "Testes automatizados Go/JS e compilação Windows concluídos; operação visual real ainda depende de validação no PC."
+    "Distingue atraso justificado sem entrega (situação Justificada · Em aberto) de obrigação realmente entregue (Concluída).",
+    "Confirma a conclusão somente por data de entrega ou status explícito de entrega retornado pela API, não pelo nome do responsável pela entrega.",
+    "Obrigações justificadas permanecem em aberto no acompanhamento e agenda, sem gerar aviso falso de atraso não justificado.",
+    "No detalhe da obrigação, exibe data da entrega e uma explicação da situação do acompanhamento.",
+    "Reinterpreta registros já armazenados sem excluir dados ou exigir nova sincronização para a distinção visual.",
+    "Testes Go/JavaScript e compilação Windows aprovados; validar com dados reais no Windows."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.5.6/KBL_Agenda_v1_5_6.zip",
+    "path": "packages/kbl-agenda/1.5.7/KBL_Agenda_v1_5_7.zip",
     "auth": "github-cli"
   }
 }
