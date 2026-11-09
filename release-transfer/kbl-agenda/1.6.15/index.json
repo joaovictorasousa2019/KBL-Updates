@@ -1,0 +1,16 @@
+{
+  "files": {
+    "zip": {
+      "count": 13,
+      "sha256": "91f597d8274893ef151a073dce15c7aa80cdf99ee0c424155941595efbe5af67",
+      "size": 5688349,
+      "name": "KBL_Agenda_v1_6_15.zip"
+    },
+    "setup": {
+      "count": 13,
+      "sha256": "f41b2e0589578e9d7c05997e8448bb9d353c733c40793e3c06a0ae71c8335a23",
+      "size": 5444625,
+      "name": "KBL_Agenda_Setup_v1.6.15.exe"
+    }
+  }
+}
