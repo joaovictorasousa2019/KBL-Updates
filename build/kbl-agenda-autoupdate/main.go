@@ -124,7 +124,7 @@ func launchCore(dir string) error {
  return cmd.Run()
 }
 func uniqueInstance() (func(),bool) {
- name,err:=syscall.UTF16PtrFromString("Local\KBL_Agenda_Launcher")
+ name,err:=syscall.UTF16PtrFromString("Local\\KBL_Agenda_Launcher")
  if err!=nil{return func(){},true}
  kernel:=syscall.NewLazyDLL("kernel32.dll").NewProc("CreateMutexW")
  h,_,callErr:=kernel.Call(0,0,uintptr(unsafe.Pointer(name)))
