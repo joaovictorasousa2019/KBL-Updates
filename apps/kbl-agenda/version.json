@@ -5,7 +5,7 @@
   "channel": "stable",
   "version": "1.6.13",
   "published": true,
-  "download_url": "",
+  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.13/KBL_Agenda_v1_6_13.zip",
   "sha256": "c5cf86a7aac4f5d1d6deac46346280cff9fdbc484162a7874efcad448f97cae1",
   "file_name": "KBL_Agenda_v1_6_13.zip",
   "published_at": "2026-11-09T11:18:46.951Z",
@@ -17,9 +17,9 @@
     "Nomes de responsáveis são associados apenas por identificadores válidos quando a API não informa o nome."
   ],
   "package": {
-    "provider": "github-private-repo",
-    "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.6.13/KBL_Agenda_v1_6_13.zip",
-    "auth": "github-cli"
+    "provider": "github-public-repo",
+    "repository": "joaovictorasousa2019/KBL-Updates",
+    "path": "downloads/kbl-agenda/1.6.13/KBL_Agenda_v1_6_13.zip",
+    "auth": "none"
   }
 }
