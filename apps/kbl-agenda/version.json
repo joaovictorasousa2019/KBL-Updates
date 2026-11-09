@@ -3,23 +3,23 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.13",
+  "version": "1.6.14",
   "published": true,
-  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.13/KBL_Agenda_v1_6_13.zip",
-  "sha256": "c5cf86a7aac4f5d1d6deac46346280cff9fdbc484162a7874efcad448f97cae1",
-  "file_name": "KBL_Agenda_v1_6_13.zip",
-  "published_at": "2026-11-09T11:18:46.951Z",
+  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.14/KBL_Agenda_v1_6_14.zip",
+  "sha256": "4ef4aa8374e080c0685af58b438d2a576ba12dd24d419ab719d300b6c93ce781",
+  "file_name": "KBL_Agenda_v1_6_14.zip",
+  "published_at": "2026-11-09T11:47:41.245235+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Obrigações justificadas e vencidas continuam na lista de atrasadas até a entrega.",
-    "Aviso de cobertura parcial quando a sincronização do Acessórias usa Minhas obrigações.",
-    "Nomes de responsáveis são associados apenas por identificadores válidos quando a API não informa o nome."
+    "Atualizacao automatica ao iniciar, sem login GitHub.",
+    "Preserva o aplicativo original, dados, configuracoes e backup.",
+    "Validacao SHA-256, inicializacao unica e rollback se a nova versao falhar."
   ],
   "package": {
     "provider": "github-public-repo",
     "repository": "joaovictorasousa2019/KBL-Updates",
-    "path": "downloads/kbl-agenda/1.6.13/KBL_Agenda_v1_6_13.zip",
+    "path": "downloads/kbl-agenda/1.6.14/KBL_Agenda_v1_6_14.zip",
     "auth": "none"
   }
 }
