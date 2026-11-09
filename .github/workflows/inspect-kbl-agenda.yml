@@ -1,0 +1,34 @@
+name: Inspect KBL Agenda Update Package
+on:
+  push:
+    paths:
+      - '.github/workflows/inspect-kbl-agenda.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect archive and updater entrypoints
+        shell: bash
+        run: |
+          python - <<'PY'
+          import zipfile, hashlib, pathlib
+          p=pathlib.Path('downloads/kbl-agenda/1.6.13/KBL_Agenda_v1_6_13.zip')
+          print('SIZE',p.stat().st_size,'SHA256',hashlib.sha256(p.read_bytes()).hexdigest())
+          with zipfile.ZipFile(p) as z:
+              print('ZIP FILES',len(z.infolist()),'CORRUPT',z.testzip())
+              for i in z.infolist()[:130]: print('ENTRY', i.filename, 'bytes', i.file_size)
+              print('POTENTIAL UPDATE REFERENCES')
+              for i in z.infolist():
+                  if not i.filename.lower().endswith(('.py','.pyw','.js','.json','.bat','.ps1','.go','.md','.txt','.html','.yaml','.yml')) or i.file_size>250000: continue
+                  try: s=z.read(i).decode('utf-8')
+                  except Exception: continue
+                  lines=s.splitlines()
+                  hits=[(n+1,x.strip()[:180]) for n,x in enumerate(lines) if any(k in x.lower() for k in ['standalone.json','version.json','kbl_update','github','download_url','check_update','update_available','auto.update','auto_update','updater'])]
+                  if hits:
+                      print('FILE',i.filename,'LINES',len(lines),'MATCHES',len(hits))
+                      for n,t in hits[:12]: print(' L',n,t)
+          PY
