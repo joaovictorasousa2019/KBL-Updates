@@ -43,8 +43,11 @@ jobs:
         shell: pwsh
         run: |
           python -m pip install --disable-pip-version-check icoextract==0.3.1
-          python -m icoextract "build/kbl-agenda-autoupdate/output/KBL Agenda Core.exe" "build/kbl-agenda-autoupdate/app.ico"
+          python -c "from icoextract import IconExtractor; IconExtractor(r'build/kbl-agenda-autoupdate/output/KBL Agenda Core.exe').export_icon(r'build/kbl-agenda-autoupdate/app.ico')"
+          $env:GO111MODULE = "on"
           go install github.com/akavel/rsrc@latest
+          if ($LASTEXITCODE -ne 0) { throw "Icon resource compiler installation failed" }
+          $env:GO111MODULE = "off"
           & "$(go env GOPATH)\bin\rsrc.exe" -arch amd64 -ico "build/kbl-agenda-autoupdate/app.ico" -o "build/kbl-agenda-autoupdate/rsrc_windows_amd64.syso"
           if ($LASTEXITCODE -ne 0) { throw "Embedding icon failed" }
       - name: Test updater safety and compile the GUI launcher
