@@ -3,25 +3,23 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.12",
+  "version": "1.6.13",
   "published": true,
   "download_url": "",
-  "sha256": "c640ef4f4e734e5c5701bec139ec4140e3234655b52c1b2abccc04dbba798484",
-  "file_name": "KBL_Agenda_v1_6_12.zip",
-  "published_at": "2026-11-06T21:05:31.539Z",
+  "sha256": "c5cf86a7aac4f5d1d6deac46346280cff9fdbc484162a7874efcad448f97cae1",
+  "file_name": "KBL_Agenda_v1_6_13.zip",
+  "published_at": "2026-11-09T11:18:46.951Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Próximos vencimentos considera somente obrigações em aberto de hoje até os próximos 7 dias, por vencimento, independentemente da competência.",
-    "Contador, painel e janela usam o mesmo filtro; ordenação por vencimento crescente.",
-    "Exibe o nome do responsável; quando diferentes, identifica também o responsável pela entrega.",
-    "Atualiza o intervalo diariamente, ao voltar à janela e após a sincronização. Mantém a visão da equipe ativa e o departamento monitorado.",
-    "Testes Go, JavaScript, virada do dia e inicialização no Windows aprovados."
+    "Obrigações justificadas e vencidas continuam na lista de atrasadas até a entrega.",
+    "Aviso de cobertura parcial quando a sincronização do Acessórias usa Minhas obrigações.",
+    "Nomes de responsáveis são associados apenas por identificadores válidos quando a API não informa o nome."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/kbl-agenda/1.6.12/KBL_Agenda_v1_6_12.zip",
+    "path": "packages/kbl-agenda/1.6.13/KBL_Agenda_v1_6_13.zip",
     "auth": "github-cli"
   }
 }
