@@ -1,0 +1,191 @@
+name: Build and verify KBL Agenda Auto Update 1.6.14
+on:
+  push:
+    paths:
+      - '.github/workflows/build-kbl-agenda-autoupdate.yml'
+      - 'build/kbl-agenda-autoupdate/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build-test-publish:
+    runs-on: windows-latest
+    timeout-minutes: 35
+    env:
+      GO111MODULE: 'off'
+      KBL_AGENDA_SKIP_UPDATE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.24.x'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify original release integrity and extract core
+        shell: pwsh
+        run: |
+          @'
+          import hashlib, zipfile, pathlib
+          p=pathlib.Path('downloads/kbl-agenda/1.6.13/KBL_Agenda_v1_6_13.zip')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=='c5cf86a7aac4f5d1d6deac46346280cff9fdbc484162a7874efcad448f97cae1'
+          out=pathlib.Path('build/kbl-agenda-autoupdate/output')
+          out.mkdir(parents=True,exist_ok=True)
+          with zipfile.ZipFile(p) as z:
+              assert sorted(z.namelist())==sorted(['KBL Agenda.exe','LEIA_PRIMEIRO.txt'])
+              assert z.testzip() is None
+              (out/'KBL Agenda Core.exe').write_bytes(z.read('KBL Agenda.exe'))
+          print('BASE_PACKAGE_VERIFIED')
+          '@ | python -
+      - name: Embed original application icon
+        shell: pwsh
+        run: |
+          python -m pip install --disable-pip-version-check icoextract==0.3.1
+          python -m icoextract "build/kbl-agenda-autoupdate/output/KBL Agenda Core.exe" "build/kbl-agenda-autoupdate/app.ico"
+          go install github.com/akavel/rsrc@latest
+          & "$(go env GOPATH)\bin\rsrc.exe" -arch amd64 -ico "build/kbl-agenda-autoupdate/app.ico" -o "build/kbl-agenda-autoupdate/rsrc_windows_amd64.syso"
+          if ($LASTEXITCODE -ne 0) { throw "Embedding icon failed" }
+      - name: Test updater safety and compile the GUI launcher
+        shell: pwsh
+        run: |
+          Push-Location build/kbl-agenda-autoupdate
+          go test -v
+          if ($LASTEXITCODE -ne 0) { throw "Unit tests failed" }
+          go build -trimpath -ldflags="-H windowsgui -s -w" -o "output/KBL Agenda.exe" .
+          if ($LASTEXITCODE -ne 0) { throw "Go build failed" }
+          Pop-Location
+      - name: Create version sidecar and portable package
+        shell: pwsh
+        run: |
+          @'
+          import pathlib,json,zipfile
+          out=pathlib.Path('build/kbl-agenda-autoupdate/output')
+          (out/'version.json').write_text(json.dumps({'version':'1.6.14'},indent=2)+'\n',encoding='utf-8')
+          (out/'LEIA_PRIMEIRO.txt').write_text(
+           'KBL AGENDA v1.6.14 - ATUALIZACAO AUTOMATICA\n\n'
+           'Abra KBL Agenda.exe. O iniciador consulta atualizacoes antes de iniciar\n'
+           'o KBL Agenda Core.exe (aplicativo original, preservado).\n'
+           'NUNCA execute o arquivo Core.exe diretamente.\n'
+           'Feche as versoes antigas antes da primeira instalacao da v1.6.14.\n'
+           'Se voce usa a v1.6.13 ou anterior, substitua manualmente os arquivos\n'
+           'uma unica vez. Depois, as proximas versoes serao verificadas ao abrir.\n'
+           'Os dados e ajustes ficam em %LOCALAPPDATA%\\KBL Agenda.\n'
+           'Logs de atualizacao: %LOCALAPPDATA%\\KBL Agenda\\Updater\\update.log.\n'
+           'Se nao houver internet, o aplicativo abre com a versao instalada.\n',
+           encoding='utf-8'
+          )
+          package=out/'KBL_Agenda_v1_6_14.zip'
+          with zipfile.ZipFile(package,'w',zipfile.ZIP_DEFLATED,compresslevel=8) as z:
+           for n in ('KBL Agenda.exe','KBL Agenda Core.exe','version.json','LEIA_PRIMEIRO.txt'):
+            assert (out/n).stat().st_size>0
+            z.write(out/n,arcname=n)
+          with zipfile.ZipFile(package) as z:
+           assert z.testzip() is None
+          print('PORTABLE_PACKAGE_OK',package.stat().st_size)
+          '@ | python -
+      - name: Windows smoke test (real Agenda application)
+        shell: pwsh
+        run: |
+          $dir = (Resolve-Path "build/kbl-agenda-autoupdate/output").Path
+          $exe = Join-Path $dir "KBL Agenda.exe"
+          $p = Start-Process -FilePath $exe -WorkingDirectory $dir -PassThru
+          Start-Sleep -Seconds 7
+          if ($p.HasExited) { throw "Launcher exited prematurely: $($p.ExitCode)" }
+          $cores = @(Get-CimInstance Win32_Process -Filter "name='KBL Agenda Core.exe'" | Where-Object { $_.ExecutablePath -like "$dir*" })
+          if ($cores.Count -lt 1) { throw "Original application core did not start." }
+          Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+          foreach ($core in $cores) { Stop-Process -Id $core.ProcessId -Force -ErrorAction SilentlyContinue }
+          Write-Host "AGENDA_STARTUP_OK"
+      - name: Simulate offline update and rollback on Windows
+        shell: pwsh
+        run: |
+          @'
+          import pathlib,os,subprocess,time,zipfile,json,hashlib,shutil
+          root=pathlib.Path('build/kbl-agenda-autoupdate/output').resolve()
+          target=pathlib.Path(os.environ['RUNNER_TEMP'])/'KBLAgendaUpgradeSmoke'
+          if target.exists(): shutil.rmtree(target)
+          target.mkdir()
+          for n in ('KBL Agenda.exe','KBL Agenda Core.exe','version.json','LEIA_PRIMEIRO.txt'):
+              shutil.copy2(root/n,target/n)
+          (target/'custom-user-file.txt').write_text('PRESERVE',encoding='utf-8')
+          # Package is a valid signed-by-hash structure. Use the original GUI as core.
+          tmp=pathlib.Path(os.environ['RUNNER_TEMP'])/'KBLAgendaUpgradeTest.zip'
+          with zipfile.ZipFile(tmp,'w',zipfile.ZIP_DEFLATED) as z:
+              for n in ('KBL Agenda.exe','KBL Agenda Core.exe','LEIA_PRIMEIRO.txt'):
+                  z.write(root/n,n)
+              z.writestr('version.json',json.dumps({'version':'1.6.15'}))
+          sha=hashlib.sha256(tmp.read_bytes()).hexdigest()
+          parent=subprocess.Popen(['cmd.exe','/c','timeout /t 4 /nobreak >nul'])
+          cmd=[str(root/'KBL Agenda.exe'),'--apply','--dir',str(target),'--zip',str(tmp),'--sha',sha,'--version','1.6.15','--pid',str(parent.pid)]
+          # The helper must wait until the parent has stopped.
+          helper=subprocess.Popen(cmd,env={**os.environ,'KBL_AGENDA_SKIP_UPDATE':'1'})
+          parent.wait(timeout=12)
+          helper.wait(timeout=45)
+          changed=json.loads((target/'version.json').read_text(encoding='utf-8'))
+          assert changed['version']=='1.6.15', 'version was not updated'
+          assert (target/'custom-user-file.txt').read_text(encoding='utf-8')=='PRESERVE'
+          print('OFFLINE_UPGRADE_AND_USER_DATA_OK')
+          # Test a bad package cannot change the installed app.
+          before=(target/'version.json').read_bytes()
+          bad=pathlib.Path(os.environ['RUNNER_TEMP'])/'bad.zip'
+          bad.write_bytes(b'invalid ZIP')
+          badsha=hashlib.sha256(bad.read_bytes()).hexdigest()
+          parent2=subprocess.Popen(['cmd.exe','/c','timeout /t 2 /nobreak >nul'])
+          helper2=subprocess.Popen([str(root/'KBL Agenda.exe'),'--apply','--dir',str(target),'--zip',str(bad),'--sha',badsha,'--version','1.6.16','--pid',str(parent2.pid)])
+          parent2.wait(timeout=10)
+          helper2.wait(timeout=15)
+          assert (target/'version.json').read_bytes()==before
+          print('CORRUPT_PACKAGE_REJECTED')
+          '@ | python -
+      - name: Prepare verified public artifacts and manifest
+        shell: pwsh
+        run: |
+          @'
+          import pathlib,hashlib,json,datetime,shutil
+          root=pathlib.Path('.')
+          pkg=root/'build/kbl-agenda-autoupdate/output/KBL_Agenda_v1_6_14.zip'
+          path='downloads/kbl-agenda/1.6.14/KBL_Agenda_v1_6_14.zip'
+          dest=root/path;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(pkg,dest)
+          url='https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/'+path
+          sha=hashlib.sha256(dest.read_bytes()).hexdigest()
+          app=root/'apps/kbl-agenda'
+          rel=json.loads((app/'version.json').read_text(encoding='utf-8'))
+          rel.update(version='1.6.14',published=True,download_url=url,
+           sha256=sha,file_name='KBL_Agenda_v1_6_14.zip',
+           published_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+           notes=['Atualizacao automatica ao iniciar, sem login GitHub.',
+                  'Preserva o aplicativo original, dados, configuracoes e backup.',
+                  'Validacao SHA-256, inicializacao unica e rollback se a nova versao falhar.'],
+           package={'provider':'github-public-repo','repository':'joaovictorasousa2019/KBL-Updates',
+                    'path':path,'auth':'none'})
+          (app/'version.json').write_text(json.dumps(rel,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          (app/'standalone.json').write_text(json.dumps({'version':'1.6.14','download_url':url,'sha256':sha},
+             ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          catalog=root/'manifest.json'
+          c=json.loads(catalog.read_text(encoding='utf-8'))
+          for a in c['apps']:
+           if a['app_id']=='kbl-agenda':
+            a['manifest_url']='https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/kbl-agenda/version.json?v=1.6.14'
+          c['revision']='2026-11-09-kbl-agenda-1.6.14-autoupdater'
+          catalog.write_text(json.dumps(c,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('RELEASE_READY',sha,len(dest.read_bytes()))
+          '@ | python -
+      - name: Publish after all Windows tests passed
+        shell: pwsh
+        run: |
+          git config user.name 'KBL Build Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add downloads/kbl-agenda/1.6.14/KBL_Agenda_v1_6_14.zip apps/kbl-agenda/version.json apps/kbl-agenda/standalone.json manifest.json
+          git diff --cached --quiet
+          if ($LASTEXITCODE -ne 0) {
+            git commit -m 'release: KBL Agenda v1.6.14 with self-updating bootstrap'
+            git restore --worktree .
+            git clean -fd -e build/kbl-agenda-autoupdate/output/
+            git fetch origin main
+            git rebase origin/main
+            if ($LASTEXITCODE -ne 0) { throw 'Rebase failed before publishing.' }
+            git push origin HEAD:main
+            if ($LASTEXITCODE -ne 0) { throw 'Publish push failed.' }
+          }
