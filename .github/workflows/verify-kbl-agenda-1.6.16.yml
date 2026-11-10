@@ -1,0 +1,46 @@
+name: Verify KBL Agenda v1.6.16 public installer
+on:
+  push:
+    paths:
+      - '.github/workflows/verify-kbl-agenda-1.6.16.yml'
+      - 'downloads/kbl-agenda/1.6.16/**'
+      - 'apps/kbl-agenda/version.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify portable release, real Windows installer and SHA256
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,pathlib,hashlib,zipfile
+          root=pathlib.Path('.')
+          m=json.loads((root/'apps/kbl-agenda/version.json').read_text(encoding='utf-8'))
+          if m.get('version')!='1.6.16':
+              print('RELEASE_NOT_YET_PUBLISHED')
+              raise SystemExit(0)
+          zp=root/'downloads/kbl-agenda/1.6.16/KBL_Agenda_v1_6_16.zip'
+          setup=root/'downloads/kbl-agenda/1.6.16/KBL_Agenda_Setup_v1.6.16.exe'
+          assert zp.is_file() and setup.is_file(), 'A required public distribution file is missing'
+          actual=hashlib.sha256(zp.read_bytes()).hexdigest()
+          assert actual==m['sha256'],f'ZIP SHA256 mismatched {actual}'
+          assert m['download_url'].endswith('/downloads/kbl-agenda/1.6.16/KBL_Agenda_v1_6_16.zip')
+          with zipfile.ZipFile(zp) as z:
+              assert z.testzip() is None
+              assert set(z.namelist())=={'KBL Agenda.exe','KBL Agenda Core.exe','version.json','LEIA_PRIMEIRO.txt'}
+              v=json.loads(z.read('version.json').decode('utf-8'))
+              assert v['version']=='1.6.16'
+              assert z.read('KBL Agenda.exe')[:2]==b'MZ'
+              assert z.read('KBL Agenda Core.exe')[:2]==b'MZ'
+          assert setup.stat().st_size>2_000_000
+          assert setup.read_bytes()[:2]==b'MZ'
+          j=json.loads((root/'apps/kbl-agenda/installer.json').read_text(encoding='utf-8'))
+          setupsha=hashlib.sha256(setup.read_bytes()).hexdigest()
+          assert j['sha256']==setupsha
+          assert j['version']=='1.6.16'
+          print('KBL_AGENDA_1_6_16_PUBLIC_RELEASE_VERIFIED',actual,setupsha)
+          PY
