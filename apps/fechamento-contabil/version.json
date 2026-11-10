@@ -3,26 +3,26 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.13",
+  "version": "2.14",
   "published": true,
   "download_url": "",
-  "sha256": "189800010dbae33985ef6f559ce98f5b9674009068610db3f5006dbe08d3eafe",
-  "file_name": "KBL_Fechamento_Contabil_v2_13_Movimentacao.zip",
-  "published_at": "2026-11-10T18:35:20.811Z",
+  "sha256": "bd31a9abbbdc905fbd61abe31d4534da16a956cf0ec027599173a08c8c486ada",
+  "file_name": "KBL_Fechamento_Contabil_v2_14_Cobranca_Assinatura.zip",
+  "published_at": "2026-11-10T18:49:11.053Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Movimentação: removido 'até {prazo}' do texto padrão de solicitação por e-mail.",
-    "Prazo de envio passou a ser opcional e usado apenas para controle interno.",
-    "Assunto padrão encurtado para 'Movimentação {competencia} — {empresa}' com código de resposta menor e único.",
-    "Modelos anteriores só são migrados quando ainda são exatamente o padrão original; textos personalizados são preservados.",
-    "Corrigido erro can't compare offset-naive and offset-aware datetimes na atualização dos registros de Outlook.",
-    "Mantém as permissões Microsoft Graph já autorizadas e o callback do KBL Agenda; testes Windows, Graph/PKCE, PowerShell e interface aprovados. Login e envio reais não foram executados."
+    "Cobrança por e-mail com assunto curto: Cobrança {competencia} — {empresa_curta}, mais o identificador KBL de rastreamento.",
+    "Corpo da cobrança objetivo e sem repetição do e-mail inicial; botão Editar cobrança permite personalizar assunto e texto por empresa.",
+    "Assunto inicial agora usa o apelido/nome curto da empresa, mantendo o nome completo no corpo.",
+    "Importação opcional de assinatura HTML com logos locais incluídos como anexos inline; novos rascunhos Microsoft 365 usam assinatura importada sem duplicar assinatura em texto.",
+    "Sem importar HTML, permanece a assinatura simples configurada no Fechamento; Microsoft Graph não copia automaticamente a assinatura salva no Outlook.",
+    "Mantém as correções de timezone e OAuth do Agenda; testes em Windows, Graph, PKCE, PowerShell e interface aprovados, sem envio real."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.13/KBL_Fechamento_Contabil_v2_13_Movimentacao.zip",
+    "path": "packages/fechamento-contabil/2.14/KBL_Fechamento_Contabil_v2_14_Cobranca_Assinatura.zip",
     "auth": "github-cli"
   }
 }
