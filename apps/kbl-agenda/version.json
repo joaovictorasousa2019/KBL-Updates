@@ -3,23 +3,23 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.17",
+  "version": "1.6.18",
   "published": true,
-  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.17/KBL_Agenda_v1_6_17.zip",
-  "sha256": "e1fd155524104465f95e502a1b02292096f773a4f2cda30152dfb102648fefe4",
-  "file_name": "KBL_Agenda_v1_6_17.zip",
-  "published_at": "2026-11-10T13:28:00.741328+00:00",
+  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.18/KBL_Agenda_v1_6_18.zip",
+  "sha256": "21dcaf0f30169324661b71b7aa0ec2950fc1b2fbfb678ddc466be204b508d980",
+  "file_name": "KBL_Agenda_v1_6_18.zip",
+  "published_at": "2026-11-10T13:55:21.197658+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Abertura direta, sem cadastro nem senha local.",
-    "Preserva tarefas, configurações e nome do perfil anterior."
+    "Cadastro inicial de nome e função, sem senha.",
+    "Layout restaurado e dados anteriores preservados."
   ],
   "package": {
     "provider": "github-public-repo",
     "repository": "joaovictorasousa2019/KBL-Updates",
-    "path": "downloads/kbl-agenda/1.6.17/KBL_Agenda_v1_6_17.zip",
+    "path": "downloads/kbl-agenda/1.6.18/KBL_Agenda_v1_6_18.zip",
     "auth": "none"
   },
-  "installer_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.17/KBL_Agenda_Setup_v1.6.17.exe"
+  "installer_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.18/KBL_Agenda_Setup_v1.6.18.exe"
 }
