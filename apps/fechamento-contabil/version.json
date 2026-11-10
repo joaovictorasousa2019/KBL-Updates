@@ -3,26 +3,26 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.15",
+  "version": "2.16",
   "published": true,
   "download_url": "",
-  "sha256": "390bb6525acd77b7afd9756c0dd6b748f3b24a2338df5e1ac9c85a986a2008fa",
-  "file_name": "KBL_Fechamento_Contabil_v2_15_Email_Padronizado.zip",
-  "published_at": "2026-11-10T19:04:17.762Z",
+  "sha256": "4e9f1f27d7b6833781f1cd42d9edc5e3ca3aae107750a11247c56c1840af6e6e",
+  "file_name": "KBL_Fechamento_Contabil_v2_16_Lembrete.zip",
+  "published_at": "2026-11-10T19:17:27.062Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Padronização visual dos novos e-mails Microsoft 365: HTML completo em fonte Arial 13 px, com espaçamento coerente com a assinatura KBL.",
-    "Nome reduzido (apelido exibido na carteira) usado no assunto e corpo de solicitações e cobranças; razão social disponível no campo {razao_social}.",
-    "Assinatura HTML importada continua sendo anexada com imagens inline, sem duplicar texto simples; sem assinatura importada, o corpo ainda é padronizado.",
-    "Botão Excluir rascunho: mostra a condição da mensagem, confirma antes de mover rascunho para Itens Excluídos e não exclui e-mails enviados.",
-    "Preserva histórico, integração Microsoft 365, escopos concedidos e correções de timezone das versões anteriores.",
-    "Testes de HTML, Graph, PKCE, exclusão segura, histórico, PowerShell e telas concluídos no Windows; nenhum e-mail real disparado durante validação."
+    "Padronizado o nome da cobrança para Lembrete de Movimentação Contábil, com texto cordial e objetivo; modelo de lembrete editável por empresa.",
+    "Solicitação inicial com assunto Movimentação Contábil {competencia} — {empresa_curta}.",
+    "Novos e-mails Microsoft 365 não exibem código KBL no assunto: vínculo de respostas por ID imutável, conversationId e remetente autorizado.",
+    "Eventos e e-mails antigos permanecem rastreáveis com o código KBL original; Outlook clássico mantém a tag por compatibilidade.",
+    "Mantém assinatura HTML, fonte Arial 13 px, apelidos e demais configurações existentes.",
+    "Testes Windows, Graph, PKCE e simulação de respostas concluídos; autenticação/recebimento real no tenant KBL ainda requer conferência."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.15/KBL_Fechamento_Contabil_v2_15_Email_Padronizado.zip",
+    "path": "packages/fechamento-contabil/2.16/KBL_Fechamento_Contabil_v2_16_Lembrete.zip",
     "auth": "github-cli"
   }
 }
