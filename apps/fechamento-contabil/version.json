@@ -3,24 +3,26 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.12",
+  "version": "2.13",
   "published": true,
   "download_url": "",
-  "sha256": "2b0b54f290d80094467569d9a8bf150c9b84f2c97beb69e423b4bf2c89279029",
-  "file_name": "KBL_Fechamento_Contabil_v2_12_Redirect_Outlook.zip",
-  "published_at": "2026-11-10T18:16:21.620Z",
+  "sha256": "189800010dbae33985ef6f559ce98f5b9674009068610db3f5006dbe08d3eafe",
+  "file_name": "KBL_Fechamento_Contabil_v2_13_Movimentacao.zip",
+  "published_at": "2026-11-10T18:35:20.811Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Corrigido AADSTS50011: callback Microsoft 365 usa /outlook/callback como no KBL Agenda (localhost com porta dinâmica).",
-    "Mantém mesmo Client ID do KBL Agenda e apenas as permissões já aprovadas: User.Read, Mail.ReadWrite e Mail.Send.Shared.",
-    "Sem alterar histórico, rascunhos, envio revisado, acompanhamento de respostas ou demais recursos de fechamento.",
-    "Fluxo OAuth PKCE, testes de movimentação, Graph, sessão Windows, PowerShell e interface aprovados automaticamente; teste real no tenant ainda não realizado."
+    "Movimentação: removido 'até {prazo}' do texto padrão de solicitação por e-mail.",
+    "Prazo de envio passou a ser opcional e usado apenas para controle interno.",
+    "Assunto padrão encurtado para 'Movimentação {competencia} — {empresa}' com código de resposta menor e único.",
+    "Modelos anteriores só são migrados quando ainda são exatamente o padrão original; textos personalizados são preservados.",
+    "Corrigido erro can't compare offset-naive and offset-aware datetimes na atualização dos registros de Outlook.",
+    "Mantém as permissões Microsoft Graph já autorizadas e o callback do KBL Agenda; testes Windows, Graph/PKCE, PowerShell e interface aprovados. Login e envio reais não foram executados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.12/KBL_Fechamento_Contabil_v2_12_Redirect_Outlook.zip",
+    "path": "packages/fechamento-contabil/2.13/KBL_Fechamento_Contabil_v2_13_Movimentacao.zip",
     "auth": "github-cli"
   }
 }
