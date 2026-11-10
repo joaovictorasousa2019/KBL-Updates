@@ -3,24 +3,24 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.15",
+  "version": "1.6.16",
   "published": true,
-  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.15/KBL_Agenda_v1_6_15.zip",
-  "sha256": "91f597d8274893ef151a073dce15c7aa80cdf99ee0c424155941595efbe5af67",
-  "file_name": "KBL_Agenda_v1_6_15.zip",
-  "published_at": "2026-11-09T12:28:09.677070+00:00",
+  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.16/KBL_Agenda_v1_6_16.zip",
+  "sha256": "5c4d8ab8fb1e3c9d4952742b21fdcf454210e1bfcff1e5f33d128f4d4ee13e35",
+  "file_name": "KBL_Agenda_v1_6_16.zip",
+  "published_at": "2026-11-10T13:04:46.162844+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Visão Geral sem os quatro botões e sem aviso de última leitura do Acessórias.",
-    "Instalador Windows com atalhos, desinstalação e inicialização automática.",
-    "Inicialização pelo atualizador, preservando dados locais e realizando verificação de integridade."
+    "Obrigações atrasadas mostram competência real MM/AAAA, sem confundir com vencimento.",
+    "Mantém filtros, responsáveis, status, integração Acessórias e dados locais.",
+    "Instalador Windows com atualização automática, atalhos e desinstalação."
   ],
   "package": {
     "provider": "github-public-repo",
     "repository": "joaovictorasousa2019/KBL-Updates",
-    "path": "downloads/kbl-agenda/1.6.15/KBL_Agenda_v1_6_15.zip",
+    "path": "downloads/kbl-agenda/1.6.16/KBL_Agenda_v1_6_16.zip",
     "auth": "none"
   },
-  "installer_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.15/KBL_Agenda_Setup_v1.6.15.exe"
+  "installer_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.16/KBL_Agenda_Setup_v1.6.16.exe"
 }
