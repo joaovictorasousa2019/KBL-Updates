@@ -3,23 +3,23 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.18",
+  "version": "1.6.19",
   "published": true,
-  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.18/KBL_Agenda_v1_6_18.zip",
-  "sha256": "21dcaf0f30169324661b71b7aa0ec2950fc1b2fbfb678ddc466be204b508d980",
-  "file_name": "KBL_Agenda_v1_6_18.zip",
-  "published_at": "2026-11-10T13:55:21.197658+00:00",
+  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.19/KBL_Agenda_v1_6_19.zip",
+  "sha256": "be7e7c544d157427c1fbb0298a31d2f0463fa6752692b11cacd3e73184f97602",
+  "file_name": "KBL_Agenda_v1_6_19.zip",
+  "published_at": "2026-11-10T16:36:18.367033+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Cadastro inicial de nome e função, sem senha.",
-    "Layout restaurado e dados anteriores preservados."
+    "Integração opcional Outlook Microsoft 365: somente leitura, eventos e destaques do RH.",
+    "Cadastro sem senha, dados anteriores preservados e sincronização de calendário a cada 15 minutos."
   ],
   "package": {
     "provider": "github-public-repo",
     "repository": "joaovictorasousa2019/KBL-Updates",
-    "path": "downloads/kbl-agenda/1.6.18/KBL_Agenda_v1_6_18.zip",
+    "path": "downloads/kbl-agenda/1.6.19/KBL_Agenda_v1_6_19.zip",
     "auth": "none"
   },
-  "installer_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.18/KBL_Agenda_Setup_v1.6.18.exe"
+  "installer_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.19/KBL_Agenda_Setup_v1.6.19.exe"
 }
