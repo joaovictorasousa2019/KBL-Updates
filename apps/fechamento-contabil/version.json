@@ -3,25 +3,24 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.11",
+  "version": "2.12",
   "published": true,
   "download_url": "",
-  "sha256": "055114464ffabfbd08aadb4a0a734495f16fbabb4d9c202a39349b36cbcd39b1",
-  "file_name": "KBL_Fechamento_Contabil_v2_11_Outlook_Aprovado.zip",
-  "published_at": "2026-11-10T18:08:51.317Z",
+  "sha256": "2b0b54f290d80094467569d9a8bf150c9b84f2c97beb69e423b4bf2c89279029",
+  "file_name": "KBL_Fechamento_Contabil_v2_12_Redirect_Outlook.zip",
+  "published_at": "2026-11-10T18:16:21.620Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Integração Microsoft 365 usa o registro KBL Agenda já aprovado pela organização.",
-    "Solicita somente User.Read, Mail.ReadWrite e Mail.Send.Shared; não solicita Mail.Send.",
-    "Client ID do KBL Agenda preenchido automaticamente quando ausente; mantém a autenticação PKCE com cache protegido no Windows.",
-    "Mantém solicitações de movimentação, rascunhos, envio revisado, histórico, respostas e Outlook clássico.",
-    "Testes unitários, PKCE/DPAPI, sintaxe PowerShell e abertura de telas aprovados em Windows; conexão e envio reais dependem da conta da KBL."
+    "Corrigido AADSTS50011: callback Microsoft 365 usa /outlook/callback como no KBL Agenda (localhost com porta dinâmica).",
+    "Mantém mesmo Client ID do KBL Agenda e apenas as permissões já aprovadas: User.Read, Mail.ReadWrite e Mail.Send.Shared.",
+    "Sem alterar histórico, rascunhos, envio revisado, acompanhamento de respostas ou demais recursos de fechamento.",
+    "Fluxo OAuth PKCE, testes de movimentação, Graph, sessão Windows, PowerShell e interface aprovados automaticamente; teste real no tenant ainda não realizado."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.11/KBL_Fechamento_Contabil_v2_11_Outlook_Aprovado.zip",
+    "path": "packages/fechamento-contabil/2.12/KBL_Fechamento_Contabil_v2_12_Redirect_Outlook.zip",
     "auth": "github-cli"
   }
 }
