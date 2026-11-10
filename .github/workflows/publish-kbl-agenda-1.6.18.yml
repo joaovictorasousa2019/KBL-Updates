@@ -1,0 +1,94 @@
+name: Publish KBL Agenda v1.6.18 Setup and Portable
+on:
+  push:
+    paths:
+      - 'release-transfer/kbl-agenda/1.6.18/index.json'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: kbl-agenda-release-1.6.18
+  cancel-in-progress: false
+jobs:
+  verify-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Reassemble verified installers from public staging
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,base64,hashlib,pathlib,zipfile,datetime
+          root=pathlib.Path('.')
+          transfer=root/'release-transfer/kbl-agenda/1.6.18'
+          index=json.loads((transfer/'index.json').read_text(encoding='utf-8'))
+          assert set(index['files'])=={'zip','setup'}
+          output=root/'downloads/kbl-agenda/1.6.18'
+          output.mkdir(parents=True,exist_ok=True)
+          for kind,meta in index['files'].items():
+              parts=[(transfer/kind/f'{i:03d}.txt').read_text(encoding='ascii') for i in range(meta['count'])]
+              data=base64.b64decode(''.join(parts),validate=True)
+              digest=hashlib.sha256(data).hexdigest()
+              assert len(data)==meta['size'],f'{kind}: unexpected size'
+              assert digest==meta['sha256'],f'{kind}: sha256 mismatch'
+              target=output/meta['name']
+              target.write_bytes(data)
+              if kind=='zip':
+                  with zipfile.ZipFile(target) as z:
+                      assert z.testzip() is None
+                      assert set(z.namelist())=={'KBL Agenda.exe','KBL Agenda Core.exe','LEIA_PRIMEIRO.txt','version.json'}
+                      assert json.loads(z.read('version.json').decode('utf8'))['version']=='1.6.18'
+                      assert z.read('KBL Agenda.exe')[:2]==b'MZ'
+                      assert z.read('KBL Agenda Core.exe')[:2]==b'MZ'
+              if kind=='setup':
+                  assert data[:2]==b'MZ'
+              print('RELEASE_FILE_OK',kind,len(data),digest)
+          base='https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.18/'
+          app=root/'apps/kbl-agenda'
+          m=json.loads((app/'version.json').read_text(encoding='utf8'))
+          assert m['version'] in {'1.6.17','1.6.18'}, 'Unexpected version in the stable channel'
+          m.update(version='1.6.18',published=True,
+              download_url=base+index['files']['zip']['name'],
+              installer_url=base+index['files']['setup']['name'],
+              sha256=index['files']['zip']['sha256'],
+              file_name=index['files']['zip']['name'],
+              published_at=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              notes=['Cadastro inicial de nome e função, sem senha.',
+                     'Layout restaurado e dados anteriores preservados.'],
+              package={'provider':'github-public-repo','repository':'joaovictorasousa2019/KBL-Updates',
+                       'path':'downloads/kbl-agenda/1.6.18/'+index['files']['zip']['name'],'auth':'none'})
+          (app/'version.json').write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          (app/'standalone.json').write_text(json.dumps({
+              'version':'1.6.18','download_url':base+index['files']['zip']['name'],
+              'sha256':index['files']['zip']['sha256']
+          },ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          (app/'installer.json').write_text(json.dumps({
+              'version':'1.6.18','file_name':index['files']['setup']['name'],
+              'download_url':base+index['files']['setup']['name'],
+              'sha256':index['files']['setup']['sha256'],
+              'size':index['files']['setup']['size']
+          },ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          catalog=root/'manifest.json'
+          c=json.loads(catalog.read_text(encoding='utf8'))
+          for a in c['apps']:
+              if a['app_id']=='kbl-agenda':
+                  a['manifest_url']='https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/kbl-agenda/version.json?v=1.6.18'
+          c['revision']='2026-11-10-kbl-agenda-v1.6.18'
+          catalog.write_text(json.dumps(c,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          print('KBL_AGENDA_SETUP_READY')
+          PY
+      - name: Commit after binary validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'KBL Build Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add downloads/kbl-agenda/1.6.18 apps/kbl-agenda/version.json apps/kbl-agenda/standalone.json apps/kbl-agenda/installer.json manifest.json
+          if git diff --cached --quiet; then
+             echo 'Already published'
+             exit 0
+          fi
+          git commit -m 'release: KBL Agenda v1.6.18 layout restaurado e perfil sem senha'
+          git push origin HEAD:main
