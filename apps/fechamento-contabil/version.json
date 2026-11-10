@@ -3,26 +3,25 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.10",
+  "version": "2.11",
   "published": true,
   "download_url": "",
-  "sha256": "41f896b8d2906d755c2bc605df1312738e59cad08d1eb1059289b6d474c340f1",
-  "file_name": "KBL_Fechamento_Contabil_v2_10_Microsoft365.zip",
-  "published_at": "2026-11-06T16:27:38.494Z",
+  "sha256": "055114464ffabfbd08aadb4a0a734495f16fbabb4d9c202a39349b36cbcd39b1",
+  "file_name": "KBL_Fechamento_Contabil_v2_11_Outlook_Aprovado.zip",
+  "published_at": "2026-11-10T18:08:51.317Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Microsoft 365 corporativo: login pelo navegador com OAuth PKCE, sem Outlook instalado.",
-    "Requer registro do aplicativo na organização e ID do aplicativo (cliente). Instruções em Conectar Microsoft 365.",
-    "Sessão protegida pelo usuário Windows, sem senha no aplicativo.",
-    "Rascunhos, envio revisado, confirmação em Itens Enviados e respostas com anexos relacionados.",
-    "Preserva histórico por empresa e competência e a opção de Outlook clássico.",
-    "24 testes e abertura das telas aprovados em Windows; login e envio no tenant dependem do cadastro e consentimento."
+    "Integração Microsoft 365 usa o registro KBL Agenda já aprovado pela organização.",
+    "Solicita somente User.Read, Mail.ReadWrite e Mail.Send.Shared; não solicita Mail.Send.",
+    "Client ID do KBL Agenda preenchido automaticamente quando ausente; mantém a autenticação PKCE com cache protegido no Windows.",
+    "Mantém solicitações de movimentação, rascunhos, envio revisado, histórico, respostas e Outlook clássico.",
+    "Testes unitários, PKCE/DPAPI, sintaxe PowerShell e abertura de telas aprovados em Windows; conexão e envio reais dependem da conta da KBL."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.10/KBL_Fechamento_Contabil_v2_10_Microsoft365.zip",
+    "path": "packages/fechamento-contabil/2.11/KBL_Fechamento_Contabil_v2_11_Outlook_Aprovado.zip",
     "auth": "github-cli"
   }
 }
