@@ -3,26 +3,26 @@
   "app_id": "fechamento-contabil",
   "name": "KBL Fechamento Contábil",
   "channel": "stable",
-  "version": "2.14",
+  "version": "2.15",
   "published": true,
   "download_url": "",
-  "sha256": "bd31a9abbbdc905fbd61abe31d4534da16a956cf0ec027599173a08c8c486ada",
-  "file_name": "KBL_Fechamento_Contabil_v2_14_Cobranca_Assinatura.zip",
-  "published_at": "2026-11-10T18:49:11.053Z",
+  "sha256": "390bb6525acd77b7afd9756c0dd6b748f3b24a2338df5e1ac9c85a986a2008fa",
+  "file_name": "KBL_Fechamento_Contabil_v2_15_Email_Padronizado.zip",
+  "published_at": "2026-11-10T19:04:17.762Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Cobrança por e-mail com assunto curto: Cobrança {competencia} — {empresa_curta}, mais o identificador KBL de rastreamento.",
-    "Corpo da cobrança objetivo e sem repetição do e-mail inicial; botão Editar cobrança permite personalizar assunto e texto por empresa.",
-    "Assunto inicial agora usa o apelido/nome curto da empresa, mantendo o nome completo no corpo.",
-    "Importação opcional de assinatura HTML com logos locais incluídos como anexos inline; novos rascunhos Microsoft 365 usam assinatura importada sem duplicar assinatura em texto.",
-    "Sem importar HTML, permanece a assinatura simples configurada no Fechamento; Microsoft Graph não copia automaticamente a assinatura salva no Outlook.",
-    "Mantém as correções de timezone e OAuth do Agenda; testes em Windows, Graph, PKCE, PowerShell e interface aprovados, sem envio real."
+    "Padronização visual dos novos e-mails Microsoft 365: HTML completo em fonte Arial 13 px, com espaçamento coerente com a assinatura KBL.",
+    "Nome reduzido (apelido exibido na carteira) usado no assunto e corpo de solicitações e cobranças; razão social disponível no campo {razao_social}.",
+    "Assinatura HTML importada continua sendo anexada com imagens inline, sem duplicar texto simples; sem assinatura importada, o corpo ainda é padronizado.",
+    "Botão Excluir rascunho: mostra a condição da mensagem, confirma antes de mover rascunho para Itens Excluídos e não exclui e-mails enviados.",
+    "Preserva histórico, integração Microsoft 365, escopos concedidos e correções de timezone das versões anteriores.",
+    "Testes de HTML, Graph, PKCE, exclusão segura, histórico, PowerShell e telas concluídos no Windows; nenhum e-mail real disparado durante validação."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/fechamento-contabil/2.14/KBL_Fechamento_Contabil_v2_14_Cobranca_Assinatura.zip",
+    "path": "packages/fechamento-contabil/2.15/KBL_Fechamento_Contabil_v2_15_Email_Padronizado.zip",
     "auth": "github-cli"
   }
 }
