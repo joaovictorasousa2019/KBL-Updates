@@ -3,24 +3,23 @@
   "app_id": "kbl-agenda",
   "name": "KBL Agenda",
   "channel": "stable",
-  "version": "1.6.16",
+  "version": "1.6.17",
   "published": true,
-  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.16/KBL_Agenda_v1_6_16.zip",
-  "sha256": "5c4d8ab8fb1e3c9d4952742b21fdcf454210e1bfcff1e5f33d128f4d4ee13e35",
-  "file_name": "KBL_Agenda_v1_6_16.zip",
-  "published_at": "2026-11-10T13:04:46.162844+00:00",
+  "download_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.17/KBL_Agenda_v1_6_17.zip",
+  "sha256": "e1fd155524104465f95e502a1b02292096f773a4f2cda30152dfb102648fefe4",
+  "file_name": "KBL_Agenda_v1_6_17.zip",
+  "published_at": "2026-11-10T13:28:00.741328+00:00",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Obrigações atrasadas mostram competência real MM/AAAA, sem confundir com vencimento.",
-    "Mantém filtros, responsáveis, status, integração Acessórias e dados locais.",
-    "Instalador Windows com atualização automática, atalhos e desinstalação."
+    "Abertura direta, sem cadastro nem senha local.",
+    "Preserva tarefas, configurações e nome do perfil anterior."
   ],
   "package": {
     "provider": "github-public-repo",
     "repository": "joaovictorasousa2019/KBL-Updates",
-    "path": "downloads/kbl-agenda/1.6.16/KBL_Agenda_v1_6_16.zip",
+    "path": "downloads/kbl-agenda/1.6.17/KBL_Agenda_v1_6_17.zip",
     "auth": "none"
   },
-  "installer_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.16/KBL_Agenda_Setup_v1.6.16.exe"
+  "installer_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/downloads/kbl-agenda/1.6.17/KBL_Agenda_Setup_v1.6.17.exe"
 }
