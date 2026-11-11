@@ -19,7 +19,7 @@
     {
       "app_id": "conciliador-contabil",
       "name": "KBL Conciliador Contábil",
-      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/conciliador-contabil/version.json?v=3.23.10"
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/conciliador-contabil/version.json?v=3.23.11"
     },
     {
       "app_id": "irpj-csll",
@@ -78,5 +78,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-11-10-fechamento-2.16-friendly-reminder-thread-tracking"
+  "revision": "2026-11-11-conciliador-3.23.11-fiscal-opcional"
 }

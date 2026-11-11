@@ -3,28 +3,22 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.10",
+  "version": "3.23.11",
   "published": true,
   "download_url": "",
-  "sha256": "0c32158687a664e1f5cc40cc49a5d8e5eb14ef71b3bb1bb0202ccf080bf38fe5",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_10.zip",
-  "published_at": "2026-11-04T15:12:56.871Z",
+  "sha256": "c8c1c163e2bf1d4034c83044bf8c37afa180ce49ebe722017bcf6d90a640ce5f",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_11.zip",
+  "published_at": "2026-11-11T11:33:29Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Clientes: pagamentos sem vínculo documental não podem baixar automaticamente outras notas do mesmo cliente apenas por PEPS, data ou valor parcial.",
-    "NF 398: R$ 20.856,00 bruto menos IRRF R$ 312,84 = R$ 20.543,16 líquido; os créditos R$ 10.839,67 e R$ 4.516,40 de outros pedidos voltam às pendências, sem fabricar residual de R$ 5.187,09.",
-    "Motor recalcula composição, créditos pendentes e totais quando encontra associações automáticas sem evidência, mantendo intacto o Razão importado.",
-    "Conferência automática considera o valor líquido fiscal após retenções para comparar com a abertura contábil.",
-    "Central usa recebimentos rastreáveis na cadeia e sinaliza discrepâncias entre os valores apresentados e os movimentos associados.",
-    "Mantém reconhecimentos por referência explícita de NF, vínculo financeiro e valor exato único com contraparte identificada; aprovações manuais são preservadas.",
-    "245 testes unitários, 21 regressões gerais, 50 financeiras e smoke tests da Central aprovados, incluindo teste end-to-end de cenário sintético da NF 398.",
-    "Homologar com as bases completas da empresa no Windows antes de concluir a conciliação; regras não substituem análise do saldo anterior nem de pagamentos de outras competências."
+    "O anexo Fiscal é opcional. A conciliação pode ser processada apenas com o Razão.",
+    "Movimentos sem evidência suficiente seguem para revisão nas pendências. O Excel mantém o formato de quatro abas."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.10/KBL_Conciliador_Contabil_v3_23_10.zip",
+    "path": "packages/conciliador-contabil/3.23.11/KBL_Conciliador_Contabil_v3_23_11.zip",
     "auth": "github-cli"
   }
 }
