@@ -3,22 +3,22 @@
   "app_id": "conciliador-contabil",
   "name": "KBL Conciliador Contábil",
   "channel": "stable",
-  "version": "3.23.11",
+  "version": "3.23.12",
   "published": true,
   "download_url": "",
-  "sha256": "c8c1c163e2bf1d4034c83044bf8c37afa180ce49ebe722017bcf6d90a640ce5f",
-  "file_name": "KBL_Conciliador_Contabil_v3_23_11.zip",
-  "published_at": "2026-11-11T11:33:29Z",
+  "sha256": "18adcca9f3063ea260ab0d6abb3522da3b2423bd3df10414cd8222c4ba0ec37f",
+  "file_name": "KBL_Conciliador_Contabil_v3_23_12.zip",
+  "published_at": "2026-11-11T12:25:43Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "O anexo Fiscal é opcional. A conciliação pode ser processada apenas com o Razão.",
-    "Movimentos sem evidência suficiente seguem para revisão nas pendências. O Excel mantém o formato de quatro abas."
+    "Conciliação de Clientes pelo Razão com NF, cliente, parcelas, estornos, adiantamentos e devoluções.",
+    "Excel de quatro abas com opção de incluir vínculos provisórios. A exportação mantém a conciliação ativa separada das hipóteses."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/conciliador-contabil/3.23.11/KBL_Conciliador_Contabil_v3_23_11.zip",
+    "path": "packages/conciliador-contabil/3.23.12/KBL_Conciliador_Contabil_v3_23_12.zip",
     "auth": "github-cli"
   }
 }
