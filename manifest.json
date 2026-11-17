@@ -75,6 +75,11 @@
       "app_id": "imobilizado-new-line",
       "name": "KBL Imobilizado e Depreciação | New Line",
       "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/imobilizado-new-line/version.json?v=1.1.0"
+    },
+    {
+      "app_id": "intercompany-grupo",
+      "name": "KBL Intercompany | Grupo Empresarial",
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/intercompany-grupo/version.json?v=1.0.0"
     }
   ],
   "package_repository": {
@@ -83,5 +88,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-11-11-conciliador-3.23.12-conciliacao-pelo-razao"
+  "revision": "2026-11-17-intercompany-native-1.0.0"
 }
