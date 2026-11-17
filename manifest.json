@@ -79,7 +79,7 @@
     {
       "app_id": "intercompany-grupo",
       "name": "KBL Intercompany | Grupo Empresarial",
-      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/intercompany-grupo/version.json?v=1.0.0"
+      "manifest_url": "https://raw.githubusercontent.com/joaovictorasousa2019/KBL-Updates/main/apps/intercompany-grupo/version.json?v=1.0.1"
     }
   ],
   "package_repository": {
@@ -88,5 +88,5 @@
     "visibility": "private",
     "auth": "github-cli"
   },
-  "revision": "2026-11-17-intercompany-native-1.0.0"
+  "revision": "2026-11-17-intercompany-native-1.0.1"
 }
