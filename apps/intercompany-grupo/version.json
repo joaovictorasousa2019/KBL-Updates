@@ -1,0 +1,41 @@
+{
+  "schema_version": 3,
+  "app_id": "intercompany-grupo",
+  "name": "KBL Intercompany | Grupo Empresarial",
+  "channel": "stable",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Aplicativo Windows nativo em Python/Tkinter, sem HTML, navegador ou servidor HTTP.",
+    "Mútuos entre múltiplos CNPJs, conciliação bilateral de principal e juros, leitura XLSX/CSV/TXT tabular.",
+    "Base de 53 contratos importada sem vínculos presumidos; baixas do principal dependem de comprovante.",
+    "Exportação CSV para conferência; o TXT de importação Sankhya ainda depende de homologação do layout."
+  ],
+  "version": "1.0.0",
+  "published": true,
+  "download_url": "",
+  "sha256": "087c8ad5c510e8c18e431f7c543f8cb599efcfd8034bcf76fb254435995ae3fb",
+  "file_name": "KBL_Intercompany_Grupo_Nativo_v1.0.0.zip",
+  "published_at": "2026-11-17T11:00:00Z",
+  "hub": {
+    "schema_version": 2,
+    "id": "intercompany-grupo",
+    "app_id": "intercompany-grupo",
+    "name": "KBL Intercompany | Grupo Empresarial",
+    "version": "1.0.0",
+    "entry": "app.pyw",
+    "entrypoint": "app.pyw",
+    "category": "Contábil",
+    "description": "Sistema nativo para mútuos e empréstimos entre empresas do grupo, com importação de razões, conciliação bilateral de principal e juros e propostas de lançamentos.",
+    "singleton": true,
+    "window_title": "KBL Intercompany | Grupo Empresarial",
+    "data_directory": "%APPDATA%\\KBLAccounting\\Intercompany",
+    "slogan": "Transformando decisões em legado."
+  },
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/intercompany-grupo/1.0.0/KBL_Intercompany_Grupo_Nativo_v1.0.0.zip",
+    "auth": "github-cli"
+  }
+}
