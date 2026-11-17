@@ -6,27 +6,30 @@
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Aplicativo Windows nativo em Python/Tkinter, sem HTML, navegador ou servidor HTTP.",
-    "Mútuos entre múltiplos CNPJs, conciliação bilateral de principal e juros, leitura XLSX/CSV/TXT tabular.",
-    "Base de 53 contratos importada sem vínculos presumidos; baixas do principal dependem de comprovante.",
-    "Exportação CSV para conferência; o TXT de importação Sankhya ainda depende de homologação do layout."
+    "Aplicativo Python/Tkinter nativo, sem HTML, navegador nem servidor HTTP.",
+    "Importação de razões XLS/XLSX/CSV, incluindo arquivos do Sankhya com extensão XLS e conteúdo XLSX.",
+    "Novo Confronto bancário entre empresas: cruza valores, datas, documentos e histórico, destacando pares ambíguos.",
+    "Testado com EDMO, New Line 1, 5 e 6, totalizando 1.592 movimentos em outubro/2026.",
+    "Não gera contabilização automática sem confirmação do contrato e da natureza da transferência; juros e principal exigem validação.",
+    "SQLite persistido fora da pasta de instalação: atualizações do Hub não apagam o histórico.",
+    "TXT para Sankhya ainda não homologado; exportação CSV de revisão."
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "published": true,
   "download_url": "",
-  "sha256": "087c8ad5c510e8c18e431f7c543f8cb599efcfd8034bcf76fb254435995ae3fb",
-  "file_name": "KBL_Intercompany_Grupo_Nativo_v1.0.0.zip",
-  "published_at": "2026-11-17T11:00:00Z",
+  "sha256": "6417bb1570f11a6716249e72ca97a94f027e085599b551bebc6a0b264ae87325",
+  "file_name": "KBL_Intercompany_Grupo_Nativo_v1.0.1.zip",
+  "published_at": "2026-11-17T13:05:07Z",
   "hub": {
     "schema_version": 2,
     "id": "intercompany-grupo",
     "app_id": "intercompany-grupo",
     "name": "KBL Intercompany | Grupo Empresarial",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "entry": "app.pyw",
     "entrypoint": "app.pyw",
     "category": "Contábil",
-    "description": "Sistema nativo para mútuos e empréstimos entre empresas do grupo, com importação de razões, conciliação bilateral de principal e juros e propostas de lançamentos.",
+    "description": "Sistema nativo Python/Tkinter para mútuos multiempresa, importação de razões XLS/XLSX e confronto bancário com controle de classificação, conciliação de principal e juros.",
     "singleton": true,
     "window_title": "KBL Intercompany | Grupo Empresarial",
     "data_directory": "%APPDATA%\\KBLAccounting\\Intercompany",
@@ -35,7 +38,7 @@
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/intercompany-grupo/1.0.0/KBL_Intercompany_Grupo_Nativo_v1.0.0.zip",
+    "path": "packages/intercompany-grupo/1.0.1/KBL_Intercompany_Grupo_Nativo_v1.0.1.zip",
     "auth": "github-cli"
   }
 }
