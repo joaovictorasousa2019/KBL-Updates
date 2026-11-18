@@ -3,26 +3,27 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.66",
+  "version": "3.9.67",
   "published": true,
   "download_url": "",
-  "sha256": "e3abc17be2c1009679d3df0bd86be341b021763407b530835117a4a6f36f2e75",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_66.zip",
-  "published_at": "2026-11-18T13:20:15.591Z",
+  "sha256": "c6930daa363e18dcb73b7e13c9dd3943e200ca1693c8bc90c97c406b29877d3f",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_67.zip",
+  "published_at": "2026-11-18T17:05:55.086Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Extrato Mensal do Domínio agora aceita PDF textual e reconhece rubricas P/D por empregado, competência, centro de custo, valor e identificação; impede duplicar linhas do Resumo por Rubrica.",
-    "Valida rubricas com totalizador do empregado e total geral da competência, rejeitando PDF com divergências em vez de completar dados artificialmente.",
-    "Provisões de férias e 13º em PDF com detalhamento por empregado e verificação de Total Geral, incluindo alterações na composição mensal.",
-    "Justificativas automáticas de folha explicam variações por funcionário e admissões/desligamentos quando comprovados e reconciliados ao Razão; divergências permanecem para conferência.",
-    "Mantidos os formatos XLS/XLSX, o suporte ao fiscal ZIP com NFS-e PDF/XML, justificativas baseadas no Razão, textos manuais/aprovados, classificações e tolerância anteriores.",
-    "Validação: 366 testes automatizados aprovados. Nos três PDFs reais recebidos: 54 rubricas (agosto:12, setembro:30, outubro:12) e 6 relatórios de provisão validados. Interface Windows não foi testada automaticamente."
+    "Justificativas de variações contábeis com fornecedor, natureza do lançamento (materiais/serviços), valor e NF, incluindo as movimentações dos dois meses que explicam e compensam a variação.",
+    "Correção da conta 313: identifica Baterias e Elétrica Dujão (NFs 26449/26452 em materiais e NF 21252 em serviços) em setembro e Pneulândia Comercial (NF 388384) em outubro.",
+    "Impede frases incompletas como 'R$ 402 em manutenção' sem fornecedor e nota, sempre que a origem estiver identificável no Razão.",
+    "Evita inferir o veículo, peça ou serviço específico quando não constarem nos documentos analisados.",
+    "Explicação automática somente quando movimentos conciliam com o Razão; textos editados manualmente e aprovações preservados.",
+    "Mantido suporte a folha PDF, provisões de férias e 13º, ZIP fiscal, XLS/XLSX e layout de comparativo.",
+    "Validação: 370 testes automatizados aprovados; interface Windows não executada em CI."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.66/KBL_Comparativo_Despesas_v3_9_66.zip",
+    "path": "packages/comparativo-despesas/3.9.67/KBL_Comparativo_Despesas_v3_9_67.zip",
     "auth": "github-cli"
   }
 }
