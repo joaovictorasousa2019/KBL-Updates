@@ -1,0 +1,29 @@
+{
+  "schema_version": 3,
+  "app_id": "comparativo-despesas",
+  "name": "KBL Comparativo de Despesas",
+  "channel": "stable",
+  "version": "3.9.70",
+  "published": true,
+  "download_url": "",
+  "sha256": "d143beff725cffc0b546a611917872a11438ddad01a23b667c7d427b12015a49",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_70.zip",
+  "published_at": "2026-11-18T18:18:41.567Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Corrigido o erro crítico no Razão Sankhya: gastos e receitas são calculados pela soma mensal dos débitos menos créditos; não é utilizado Saldo Acum.",
+    "O algoritmo para arquivos Domínio não foi modificado. Apenas movimentos de origem explicitamente identificada como Sankhya adotam a regra mensal.",
+    "As contas sintéticas do Balancete Sankhya permanecem no layout apenas como grupos e subtotais, sem justificativas nem dupla contagem.",
+    "Exemplo conferido New Line 05, outubro/2026: salários R$ 232.665,80 (não R$ 912.968,06), hora extra R$ 3.232,63, INSS R$ 80.818,95, FGTS R$ 25.429,24.",
+    "Apuração de três meses continua automática, com classificações 3 em diante, justificativas nas analíticas com variações fora da faixa ±20%.",
+    "Compatível com todas as funções anteriores, inclusive importação Domínio, folha PDF, documentos fiscais e justificativas manuais.",
+    "385 testes automatizados aprovados, incluindo preservação do Domínio. Interface gráfica Windows ainda não testada diretamente."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/comparativo-despesas/3.9.70/KBL_Comparativo_Despesas_v3_9_70.zip",
+    "auth": "github-cli"
+  }
+}
