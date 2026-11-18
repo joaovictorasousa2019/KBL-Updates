@@ -3,26 +3,26 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.64",
+  "version": "3.9.66",
   "published": true,
   "download_url": "",
-  "sha256": "39ba7b76a146a437d4159fc51f9bb745c18fc9af864e0c5381a9a1464a9a84d7",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_64.zip",
-  "published_at": "2026-11-18T12:16:37.035Z",
+  "sha256": "e3abc17be2c1009679d3df0bd86be341b021763407b530835117a4a6f36f2e75",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_66.zip",
+  "published_at": "2026-11-18T13:20:15.591Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Importação fiscal aceita ZIP de NFS-e em PDF, DANFE em PDF, XML de NF-e, PDF avulso e relatórios fiscais XLS/XLSX. Corrige o reconhecimento de 'NFS-e' em caixa mista; 24 cabeçalhos de PDFs reais conferidos.",
-    "Relatório de informações complementares do Domínio passa a ser importado como evidência de notas de entrada, sem criar lançamentos contábeis artificiais nem misturar notas de saída com despesas.",
-    "Importações da folha e fiscal continuam quando um documento isolado estiver inválido, com aviso do arquivo e motivo. O Extrato Mensal sem Workbook válido é corretamente identificado, sem bloquear provisões de férias e 13º.",
-    "Justificativas mais objetivas e causais: reduz a repetição de 'setembro teve' e 'outubro teve' e preserva descrição, documento, empregado, estorno, valores e competência.",
-    "Preserva saldos, classificação, período, tolerância de ±20%, textos editados/aprovados e Excel final em aba única.",
-    "Validação automatizada: 353 testes aprovados (incluindo XML, ZIP PDF, XLS complementar e cabeçalho NFS-e); interface Windows não executada em CI."
+    "Extrato Mensal do Domínio agora aceita PDF textual e reconhece rubricas P/D por empregado, competência, centro de custo, valor e identificação; impede duplicar linhas do Resumo por Rubrica.",
+    "Valida rubricas com totalizador do empregado e total geral da competência, rejeitando PDF com divergências em vez de completar dados artificialmente.",
+    "Provisões de férias e 13º em PDF com detalhamento por empregado e verificação de Total Geral, incluindo alterações na composição mensal.",
+    "Justificativas automáticas de folha explicam variações por funcionário e admissões/desligamentos quando comprovados e reconciliados ao Razão; divergências permanecem para conferência.",
+    "Mantidos os formatos XLS/XLSX, o suporte ao fiscal ZIP com NFS-e PDF/XML, justificativas baseadas no Razão, textos manuais/aprovados, classificações e tolerância anteriores.",
+    "Validação: 366 testes automatizados aprovados. Nos três PDFs reais recebidos: 54 rubricas (agosto:12, setembro:30, outubro:12) e 6 relatórios de provisão validados. Interface Windows não foi testada automaticamente."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.64/KBL_Comparativo_Despesas_v3_9_64.zip",
+    "path": "packages/comparativo-despesas/3.9.66/KBL_Comparativo_Despesas_v3_9_66.zip",
     "auth": "github-cli"
   }
 }
