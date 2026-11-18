@@ -1,0 +1,29 @@
+{
+  "schema_version": 3,
+  "app_id": "comparativo-despesas",
+  "name": "KBL Comparativo de Despesas",
+  "channel": "stable",
+  "version": "3.9.71",
+  "published": true,
+  "download_url": "",
+  "sha256": "b3b549847540135a36344a2f54623a59fef73a6a310337f0eb4d232964d241a0",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_71.zip",
+  "published_at": "2026-11-18T19:43:31.647Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Layout padrão oficial do comparativo aprovado na New Line 05: faixa vinho #7C1C2A, cabeçalho azul-marinho #112334, grupos em cinza-azulado, destaque bege discreto de justificativas e fonte Carlito.",
+    "Exportação contém somente uma aba denominada Demonstrativo Final, sem Evidências, Conferências ou Alterações do Razão.",
+    "Não exporta contas analíticas sem valores em todas as três competências exibidas.",
+    "Contas sintéticas aparecem apenas quando agrupam contas analíticas apresentadas; são visuais, sem justificativas e sem duplicação de saldos.",
+    "Contas que zeraram em outubro mas tiveram valores em setembro ou agosto permanecem visíveis para evidenciar redução de 100%.",
+    "Domínio e Sankhya: cálculo contábil mensal, leitores e demais funções preservados integralmente da 3.9.70.",
+    "Validação completa: 389 testes automatizados aprovados. Interface gráfica Windows não testada diretamente."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/comparativo-despesas/3.9.71/KBL_Comparativo_Despesas_v3_9_71.zip",
+    "auth": "github-cli"
+  }
+}
