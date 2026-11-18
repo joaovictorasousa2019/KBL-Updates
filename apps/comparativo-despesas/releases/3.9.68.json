@@ -1,0 +1,30 @@
+{
+  "schema_version": 3,
+  "app_id": "comparativo-despesas",
+  "name": "KBL Comparativo de Despesas",
+  "channel": "stable",
+  "version": "3.9.68",
+  "published": true,
+  "download_url": "",
+  "sha256": "b9d4ebd98d0de90083e231dd92ca8d2466271c47326ae16bfcb2b2ceccf17e42",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_68.zip",
+  "published_at": "2026-11-18T17:30:29.266Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Importar diretamente o Razão Principal do Sankhya em formato OOXML com extensão .xls ou .xlsx, sem Plano de Contas nem Balancete.",
+    "Classificações e contas reduzidas extraídas das movimentações; por padrão, contas analíticas das classes 3 em diante e variações além de ±20% são analisadas.",
+    "Históricos multilinha íntegros, valores de débito e crédito, saldo, documentos e competência, sem duplicar continuação ou linha de saldo anterior.",
+    "Se o relatório não incluir empresa/CNPJ, o aplicativo solicita confirmação explícita ou cadastro da empresa para evitar misturar fontes.",
+    "Continua compatível com os Razões do Domínio, folhas PDF, provisões, arquivos fiscais e com justificativas editadas/aprovadas.",
+    "Verificação com arquivo real: 10.416 lançamentos, 114 contas movimentadas, 87 continuações de histórico, 3 competências (08-10/2026), incluindo 61 contas de resultado.",
+    "Limite de origem: o Razão apresenta algumas descrições de contas truncadas, não contém contas sem movimento e não detalha todos os itens e rubricas; o aplicativo não inventa conteúdo ausente.",
+    "Validação: 375 testes automatizados aprovados; interface gráfica Windows não foi executada no ambiente de teste."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/comparativo-despesas/3.9.68/KBL_Comparativo_Despesas_v3_9_68.zip",
+    "auth": "github-cli"
+  }
+}
