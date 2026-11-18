@@ -3,29 +3,27 @@
   "app_id": "comparativo-despesas",
   "name": "KBL Comparativo de Despesas",
   "channel": "stable",
-  "version": "3.9.69",
+  "version": "3.9.70",
   "published": true,
   "download_url": "",
-  "sha256": "a2ff14f7e494bee0d1434b20c4aaaf9acdf73ab0a17c2d14582a9da3502a26f7",
-  "file_name": "KBL_Comparativo_Despesas_v3_9_69.zip",
-  "published_at": "2026-11-18T18:02:37.915Z",
+  "sha256": "d143beff725cffc0b546a611917872a11438ddad01a23b667c7d427b12015a49",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_70.zip",
+  "published_at": "2026-11-18T18:18:41.567Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Todas as classificações contábeis seguem hierarquia genérica por prefixo: 5.2.1.01 é sintética se existir 5.2.1.01.0002 (analítica), inclusive nas classes 3 e 4.",
-    "O Balancete Principal Sankhya XLSX fornece os grupos sintéticos, as contas analíticas, os nomes e a ordem visual; nenhum valor de balanço é importado para o comparativo.",
-    "Valores e variações de agosto, setembro e outubro continuam sendo calculados exclusivamente pelo Razão; sintéticas apenas somam contas analíticas descendentes.",
-    "Contas sintéticas não recebem justificativas; somente analíticas com variação fora de ±20% recebem explicação.",
-    "Layout exportado com todos os agrupamentos, inclusive linhas zeradas, sem duplicar lançamentos ou somar sintéticas aos totais.",
-    "Empresa e CNPJ identificados automaticamente a partir do cabeçalho do Balancete quando disponível, evitando vincular a outro cliente selecionado anteriormente.",
-    "Conferência com Balancete New Line 5: 120 linhas de contas de resultado, sendo 32 sintéticas e 88 analíticas; 61 contas do Razão confirmadas sem conflito.",
-    "Compatibilidade mantida com Domínio, leitura de Razão Sankhya XLS, folha PDF, provisões, fiscal, justificativas e aprovações humanas.",
-    "381 testes automatizados aprovados; a interface gráfica Windows não foi testada diretamente."
+    "Corrigido o erro crítico no Razão Sankhya: gastos e receitas são calculados pela soma mensal dos débitos menos créditos; não é utilizado Saldo Acum.",
+    "O algoritmo para arquivos Domínio não foi modificado. Apenas movimentos de origem explicitamente identificada como Sankhya adotam a regra mensal.",
+    "As contas sintéticas do Balancete Sankhya permanecem no layout apenas como grupos e subtotais, sem justificativas nem dupla contagem.",
+    "Exemplo conferido New Line 05, outubro/2026: salários R$ 232.665,80 (não R$ 912.968,06), hora extra R$ 3.232,63, INSS R$ 80.818,95, FGTS R$ 25.429,24.",
+    "Apuração de três meses continua automática, com classificações 3 em diante, justificativas nas analíticas com variações fora da faixa ±20%.",
+    "Compatível com todas as funções anteriores, inclusive importação Domínio, folha PDF, documentos fiscais e justificativas manuais.",
+    "385 testes automatizados aprovados, incluindo preservação do Domínio. Interface gráfica Windows ainda não testada diretamente."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/comparativo-despesas/3.9.69/KBL_Comparativo_Despesas_v3_9_69.zip",
+    "path": "packages/comparativo-despesas/3.9.70/KBL_Comparativo_Despesas_v3_9_70.zip",
     "auth": "github-cli"
   }
 }
