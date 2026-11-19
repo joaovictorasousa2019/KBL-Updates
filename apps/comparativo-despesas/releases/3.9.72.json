@@ -1,0 +1,28 @@
+{
+  "schema_version": 3,
+  "app_id": "comparativo-despesas",
+  "name": "KBL Comparativo de Despesas",
+  "channel": "stable",
+  "version": "3.9.72",
+  "published": true,
+  "download_url": "",
+  "sha256": "65074ab75bb0b4189f0b921ef7eeb4df41a55afa75ffd9cefe2b5ddd62ff37ac",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_72.zip",
+  "published_at": "2026-11-19T15:12:27Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Mantido exatamente o layout do Demonstrativo Final, com todas as contas pertinentes e somente justificativas nas contas analíticas selecionadas.",
+    "As contas sintéticas de agosto, setembro e outubro agora têm fórmulas que somam somente as filhas imediatas; contas analíticas continuam editáveis.",
+    "Os percentuais de setembro para outubro são fórmulas automáticas, inclusive para aumento, redução e variações partindo de zero.",
+    "A folha identifica valores por funcionário e desconta faltas e DSR quando esses eventos fecham com o razão; sem folha anterior, não atribui causas não comprovadas.",
+    "Preservadas justificativas manuais, controle de lançamentos, leitores Domínio e Sankhya e formatação aprovada.",
+    "393 testes automatizados passaram. A interface gráfica Windows não foi testada diretamente."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/comparativo-despesas/3.9.72/KBL_Comparativo_Despesas_v3_9_72.zip",
+    "auth": "github-cli"
+  }
+}
