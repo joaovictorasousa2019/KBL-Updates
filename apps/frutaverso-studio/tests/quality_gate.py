@@ -32,11 +32,11 @@ with tempfile.TemporaryDirectory(prefix="frutaverso_gate_") as temp:
         p=source/"imagens"/name
         frame=Image.open(p)
         d=ImageDraw.Draw(frame)
-        for k in range(150):
+        for k in range(65):
             d.ellipse((k*5,300+k,320+k*2,550+k),outline=(k%250,150,220),width=2)
         if name=="aberta.png":
             d.ellipse((230,530,480,625),fill=(10,10,15))
-        frame.save(p)
+        frame.save(p,compress_level=0)
     payload={"titulo":"Teste 90 segundos","cenas":[]}
     for k in range(8):
         payload["cenas"].append({
