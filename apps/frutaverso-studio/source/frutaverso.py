@@ -412,8 +412,8 @@ def local_comfy_installs():
             except OSError:
                 pass
     for root,name in entries:
-        if root.name.lower()=="comfyui":
-            root=root.parent
+        # A instalacao pode se chamar ComfyUI e conter outra pasta ComfyUI.
+        # Subir um nivel apenas quando este root for a pasta do codigo main.py.
         if (root/"main.py").is_file():
             root=root.parent
         main = root/"ComfyUI"/"main.py"
