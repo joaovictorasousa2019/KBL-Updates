@@ -2,6 +2,8 @@
 """Frutaverso Studio: aplicativo Windows com atualizacao automatica e Wan 2.2 local."""
 from __future__ import annotations
 import ctypes
+import concurrent.futures
+import re
 import datetime
 import hashlib
 import json
@@ -22,8 +24,9 @@ import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 from PIL import Image, ImageDraw, ImageFont
 import imageio_ffmpeg
+import psutil
 
-VERSION = "0.4.0"
+VERSION = "0.4.1"
 REPO = "joaovictorasousa2019/KBL-Updates"
 RELEASES_API = f"https://api.github.com/repos/{REPO}/releases?per_page=60"
 APP_HOME = Path(os.environ.get("LOCALAPPDATA", str(Path.home()))) / "FrutaversoStudio"
@@ -211,7 +214,7 @@ def wf_template(image,prompt,frames=33):
      "3":{"class_type":"KSampler","inputs":{"model":["48",0],"positive":["6",0],"negative":["7",0],"latent_image":["55",0],
             "seed":int(time.time_ns())%(2**48),"steps":20,"cfg":5,"sampler_name":"uni_pc","scheduler":"simple","denoise":1}},
      "8":{"class_type":"VAEDecode","inputs":{"samples":["3",0],"vae":["39",0]}},
-     "57":{"class_type":"CreateVideo","inputs":{"images":["8",0],"fps":16,"codec":"none","color_space":"sRGB","bit_depth":"auto"}},
+     "57":{"class_type":"CreateVideo","inputs":{"images":["8",0],"fps":16}},
      "58":{"class_type":"SaveVideo","inputs":{"video":["57",0],"filename_prefix":"frutaverso/gerado","format":"auto","format.codec":"auto"}}
     }
 
@@ -220,36 +223,177 @@ def request(base,endpoint,data=None,ctype="application/json",timeout=30):
     hdr={"Content-Type":ctype} if raw is not None else {}
     with urllib.request.urlopen(urllib.request.Request(base+endpoint,data=raw,headers=hdr),timeout=timeout) as r:return r.read()
 
-def server():
-    ports=[8000,8188,8189,8190,8187,8191]
-    for port in ports:
-        url=f"http://127.0.0.1:{port}"
-        try:
-            data=json.loads(request(url,"/system_stats",timeout=1))
-            if "devices" in data or "system" in data:return url
-        except Exception:pass
+COMFY_SETTINGS = APP_HOME / "comfy_desktop.json"
+
+def configured_desktop():
+    try:
+        data=json.loads(COMFY_SETTINGS.read_text(encoding="utf-8"))
+        path=Path(data.get("executable",""))
+        if path.is_file() and path.suffix.lower()==".exe":return path
+    except (OSError,ValueError,TypeError):pass
     return None
 
-def start_comfy():
-    if os.name!="nt":return False
+def save_desktop_executable(path):
+    path=Path(path)
+    if not path.is_file() or path.suffix.lower()!=".exe":
+        raise ValueError("Selecione o executavel .exe instalado do Comfy Desktop.")
+    # Protege contra a selecao acidental de outro aplicativo.
+    if "comfy" not in path.name.lower() and "comfy" not in str(path.parent).lower():
+        raise ValueError("Esse arquivo nao parece ser o Comfy Desktop.")
+    COMFY_SETTINGS.write_text(json.dumps({"executable":str(path)},ensure_ascii=False,indent=2),encoding="utf-8")
+
+def running_comfy():
+    """Identifica processos do Desktop e argumentos --port do backend sem abrir CMD."""
+    desktop=[]; ports=set()
+    for procinfo in psutil.process_iter(["name","exe","cmdline"]):
+        try:
+            name=(procinfo.info.get("name") or "").lower()
+            exe=procinfo.info.get("exe") or ""
+            parts=procinfo.info.get("cmdline") or []
+            joined=" ".join(str(p) for p in parts)
+            lower=joined.lower()
+            if "comfy" in name and "desktop" in name and exe:
+                desktop.append(Path(exe))
+            if name=="comfyui.exe" and exe:desktop.append(Path(exe))
+            if "main.py" in lower and ("comfy" in lower or "comfyui" in lower):
+                match=re.search(r"(?:^|\s)--port(?:=|\s+)(\d{2,5})\b",joined,re.I)
+                if match:ports.add(int(match.group(1)))
+                else:ports.add(8188)
+        except (psutil.AccessDenied,psutil.NoSuchProcess,OSError):continue
+    return desktop,ports
+
+def candidate_desktops():
     local=Path(os.environ.get("LOCALAPPDATA",str(Path.home())))
     programs=Path(os.environ.get("PROGRAMFILES","C:/Program Files"))
-    opts=[local/"Programs"/"ComfyUI"/"ComfyUI.exe",local/"ComfyUI"/"ComfyUI.exe",programs/"ComfyUI"/"ComfyUI.exe"]
-    for opt in opts:
-        if opt.is_file():
-            proc([str(opt)],cwd=str(opt.parent));return True
+    p86=Path(os.environ.get("PROGRAMFILES(X86)","C:/Program Files (x86)"))
+    roots=[
+       local/"Programs"/"Comfy Desktop", local/"Programs"/"ComfyUI",
+       local/"Programs"/"comfyui-desktop-2", local/"Programs"/"comfyui-electron",
+       local/"Comfy Desktop", local/"ComfyUI", local/"Comfy-Desktop",
+       programs/"Comfy Desktop", programs/"ComfyUI", p86/"Comfy Desktop",
+       local/"Programs", programs
+    ]
+    filenames=("Comfy Desktop.exe","ComfyUI.exe","Comfy-Desktop.exe","comfyui-desktop-2.exe")
+    found=[];seen=set()
+    def put(p):
+        try:
+            if p.is_file() and str(p).lower() not in seen:
+                seen.add(str(p).lower());found.append(p)
+        except OSError:pass
+    custom=configured_desktop()
+    if custom:put(custom)
+    running,_=running_comfy()
+    for exe in running:put(exe)
+    for root in roots:
+        for exe in filenames:put(root/exe)
+        # Desktop pode ser instalado em subdiretorio com nome diferente.
+        if root.name=="Programs" and root.is_dir():
+            try:
+                for child in root.iterdir():
+                    if child.is_dir() and "comfy" in child.name.lower():
+                        for exe in filenames:put(child/exe)
+            except OSError:pass
+    if os.name=="nt":
+        try:
+            import winreg
+            for hive in (winreg.HKEY_CURRENT_USER,winreg.HKEY_LOCAL_MACHINE):
+                for keyname in (r"SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall",
+                                r"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall"):
+                    try:rootkey=winreg.OpenKey(hive,keyname)
+                    except OSError:continue
+                    with rootkey:
+                        count=winreg.QueryInfoKey(rootkey)[0]
+                        for i in range(count):
+                            try:
+                                with winreg.OpenKey(rootkey,winreg.EnumKey(rootkey,i)) as sub:
+                                    name=str(winreg.QueryValueEx(sub,"DisplayName")[0])
+                                    if "comfy" not in name.lower():continue
+                                    try:
+                                        location=Path(winreg.QueryValueEx(sub,"InstallLocation")[0])
+                                        for exe in filenames:put(location/exe)
+                                    except OSError:pass
+                                    try:
+                                        icon=str(winreg.QueryValueEx(sub,"DisplayIcon")[0]).split('",')[0].strip('"')
+                                        put(Path(icon))
+                                    except OSError:pass
+                            except OSError:continue
+        except (OSError,ImportError) as exc:logline("Registro ComfyUI: "+str(exc))
+    return found
+
+def comfy_ports():
+    _,process_ports=running_comfy()
+    ports=set([8000,8188,8189,8190,8187,8191,8200])
+    ports.update(range(8000,8251))
+    ports.update(p for p in process_ports if 1<=p<=65535)
+    settings=APP_HOME/"comfy_desktop.json"
+    if settings.is_file():
+        try:
+            saved=int(json.loads(settings.read_text(encoding="utf-8")).get("port",0))
+            if 1<=saved<=65535:ports.add(saved)
+        except (ValueError,TypeError,OSError):pass
+    return sorted(ports,key=lambda p:(p not in (8000,8188,8189,8190),p))
+
+def _probe_comfy(port):
+    base=f"http://127.0.0.1:{port}"
+    try:
+        obj=json.loads(request(base,"/system_stats",timeout=.45))
+        if isinstance(obj,dict) and "devices" in obj and "system" in obj:
+            return base
+    except Exception:pass
+    return None
+
+def server():
+    # Comfy Desktop moderno pode atribuir portas dinamicas a cada instancia.
+    ports=comfy_ports()
+    for port in (8000,8188,8189,8190):
+        if port in ports:
+            found=_probe_comfy(port)
+            if found:return found
+    remaining=[p for p in ports if p not in (8000,8188,8189,8190)]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=36) as pool:
+        results=pool.map(_probe_comfy,remaining)
+        for base in results:
+            if base:return base
+    return None
+
+def start_comfy(status):
+    if os.name!="nt":return False
+    running,_=running_comfy()
+    if running:
+        status("Comfy Desktop aberto; procurando o servidor da instancia...")
+        return True
+    paths=candidate_desktops()
+    for exe in paths:
+        try:
+            proc([str(exe)],cwd=str(exe.parent))
+            status("Comfy Desktop localizado e iniciado: "+exe.name)
+            return True
+        except OSError as exc:logline("Falha para abrir "+str(exe)+": "+str(exc))
     return False
 
 def get_server(status):
     base=server()
-    if base:return base
-    status("Iniciando motor ComfyUI local...")
-    if not start_comfy():raise RuntimeError("ComfyUI Desktop nao encontrado. Mantenha a instalacao atual do ComfyUI.")
-    for _ in range(75):
+    if base:
+        status("ComfyUI conectado automaticamente em "+base)
+        return base
+    status("Localizando Comfy Desktop e sua instancia...")
+    found=start_comfy(status)
+    if not found:
+        raise RuntimeError("Comfy Desktop nao localizado. Clique em 'Localizar Comfy Desktop' no Frutaverso uma unica vez para selecionar o .exe instalado.")
+    # O Desktop pode demorar para iniciar a instancia de GPU.
+    for attempt in range(48):
         base=server()
-        if base:return base
-        time.sleep(2)
-    raise RuntimeError("ComfyUI abriu mas a API local nao respondeu. Verifique a instalacao do Wan 2.2.")
+        if base:
+            status("Motor Wan conectado em "+base)
+            return base
+        if attempt%5==0:status("Comfy Desktop encontrado. Aguardando inicializacao da instancia Wan...")
+        time.sleep(3)
+    raise RuntimeError(
+      "Comfy Desktop foi encontrado, mas nenhuma instancia local respondeu. "
+      "No Comfy Desktop, acesse Desktop Settings > Preferences > Auto-launch on startup "
+      "e selecione Last used instance. Depois abra o Frutaverso novamente. "
+      "Se o Comfy ja estiver funcionando, use o botao 'Diagnosticar motor'."
+    )
 
 def upload_image(base,img):
     boundary="----Fruta"+uuid.uuid4().hex
@@ -438,6 +582,8 @@ class Studio(tk.Tk):
         bottom=tk.Frame(self,bg="#111927");bottom.pack(fill="x",padx=18,pady=(0,10))
         self.button(bottom,"GERAR EPISODIO COMPLETO COM IA",self.generate).pack(side="left")
         self.button(bottom,"Abrir videos",lambda:os.startfile(str(OUTPUT)) if os.name=="nt" else None).pack(side="left",padx=8)
+        self.button(bottom,"Localizar Comfy Desktop",self.choose_comfy).pack(side="left",padx=8)
+        self.button(bottom,"Diagnosticar motor",self.diagnose_async).pack(side="left",padx=5)
         self.status=tk.StringVar(value="Pronto para produzir. Os modelos Wan permanecem no ComfyUI instalado.")
         self.label(bottom,"",color="#c4d5e4").pack(side="left")
         tk.Label(self,textvariable=self.status,fg="#f4c04d",bg="#111927",wraplength=310,justify="left").pack(anchor="w",padx=18)
@@ -506,6 +652,32 @@ class Studio(tk.Tk):
         self.remember_scene()
         PROJECT_FILE.write_text(json.dumps(self.project,ensure_ascii=False,indent=2),encoding="utf-8")
         self.inform("Projeto salvo.")
+    def choose_comfy(self):
+        folder=filedialog.askopenfilename(title="Selecione Comfy Desktop.exe",filetypes=[("Aplicativos Windows","*.exe")])
+        if not folder:return
+        try:
+            save_desktop_executable(folder)
+            self.inform("Comfy Desktop configurado: "+folder)
+            messagebox.showinfo("Motor configurado","O caminho foi salvo. Clique em Gerar episodio completo com IA.")
+        except Exception as exc:messagebox.showerror("Caminho invalido",str(exc))
+
+    def diagnose_async(self):
+        def work():
+            try:
+                paths=candidate_desktops()
+                self.inform("Comfy Desktop instalado: "+("; ".join(map(str,paths[:4])) if paths else "nao localizado"))
+                base=server()
+                if base:self.inform("API local encontrada: "+base)
+                else:self.inform("API local nao encontrada nas portas 8000 a 8250. Confira a instancia ativa no Comfy Desktop.")
+                diag=APP_HOME/"DIAGNOSTICO_FRUTAVERSO.txt"
+                diag.write_text(
+                    "Frutaverso v"+VERSION+"\nComfy Desktop: "+(", ".join(map(str,paths)) if paths else "nao localizado")+
+                    "\nMotor: "+str(base)+"\nPortas pesquisadas: 8000-8250\nLog: "+str(APP_HOME/"frutaverso.log"),
+                    encoding="utf-8")
+                self.inform("Diagnostico gravado em "+str(diag))
+            except Exception as exc:self.inform("Falha no diagnostico: "+str(exc))
+        threading.Thread(target=work,daemon=True).start()
+
     def generate(self):
         if self.busy:return
         self.save();self.busy=True;self.progress.start(9)
