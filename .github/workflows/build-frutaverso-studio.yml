@@ -1,4 +1,4 @@
-name: "Frutaverso Studio - Windows EXE autoatualizavel"
+name: "Frutaverso Studio - 90s TikTok EXE"
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
       - name: Compilar EXE sem console
         shell: pwsh
         run: |
-          pyinstaller --noconfirm --clean --onefile --windowed --name FrutaversoStudio --collect-all imageio_ffmpeg --collect-all PIL --collect-all kokoro_onnx --collect-all espeakng_loader --collect-all phonemizer --collect-all onnxruntime --collect-all soundfile apps/frutaverso-studio/source/frutaverso.py
+          pyinstaller --noconfirm --clean --onefile --windowed --name FrutaversoStudio --collect-all imageio_ffmpeg --collect-all PIL --collect-all kokoro_onnx --collect-all espeakng_loader --collect-all phonemizer --collect-all onnxruntime --collect-all soundfile --collect-all numpy apps/frutaverso-studio/source/studio90.py
           if (!(Test-Path "dist/FrutaversoStudio.exe")) { throw "O EXE nao foi gerado" }
       - name: Preparar checksum e versao
         shell: pwsh
