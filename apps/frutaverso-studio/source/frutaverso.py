@@ -25,8 +25,9 @@ from tkinter import ttk, filedialog, messagebox
 from PIL import Image, ImageDraw, ImageFont
 import imageio_ffmpeg
 import psutil
+import socket
 
-VERSION = "0.4.1"
+VERSION = "0.4.2"
 REPO = "joaovictorasousa2019/KBL-Updates"
 RELEASES_API = f"https://api.github.com/repos/{REPO}/releases?per_page=60"
 APP_HOME = Path(os.environ.get("LOCALAPPDATA", str(Path.home()))) / "FrutaversoStudio"
@@ -343,56 +344,194 @@ def _probe_comfy(port):
     return None
 
 def server():
-    # Comfy Desktop moderno pode atribuir portas dinamicas a cada instancia.
-    ports=comfy_ports()
-    for port in (8000,8188,8189,8190):
-        if port in ports:
-            found=_probe_comfy(port)
-            if found:return found
-    remaining=[p for p in ports if p not in (8000,8188,8189,8190)]
-    with concurrent.futures.ThreadPoolExecutor(max_workers=36) as pool:
-        results=pool.map(_probe_comfy,remaining)
-        for base in results:
+    """Detecta API em processo Python Comfy ou servidor ja iniciado pelo Frutaverso."""
+    quick=[MANAGED_PORT,8000,8188,8189,8190]
+    quick += sorted(active_comfy_ports())
+    seen=set()
+    for port in quick:
+        if not port or port in seen:
+            continue
+        seen.add(port)
+        base=_probe_comfy(port)
+        if base:return base
+    # Em caso de Desktop com porta dinamica, procure em segundo plano.
+    ports=[p for p in comfy_ports() if p not in seen]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=32) as pool:
+        for base in pool.map(_probe_comfy,ports):
             if base:return base
     return None
 
-def start_comfy(status):
-    if os.name!="nt":return False
-    running,_=running_comfy()
-    if running:
-        status("Comfy Desktop aberto; procurando o servidor da instancia...")
-        return True
-    paths=candidate_desktops()
-    for exe in paths:
+MANAGED_BACKEND = None
+MANAGED_PORT = None
+
+def local_comfy_installs():
+    """Instalacoes registradas pelo Comfy Desktop (nao confundir com seu executavel)."""
+    found = []
+    seen = set()
+    roaming = Path(os.environ.get("APPDATA", str(Path.home()/"AppData"/"Roaming")))
+    local = Path(os.environ.get("LOCALAPPDATA", str(Path.home()/"AppData"/"Local")))
+    config = roaming/"Comfy Desktop"
+    entries = []
+    config_path = config/"installations.json"
+    if config_path.is_file():
         try:
-            proc([str(exe)],cwd=str(exe.parent))
-            status("Comfy Desktop localizado e iniciado: "+exe.name)
-            return True
-        except OSError as exc:logline("Falha para abrir "+str(exe)+": "+str(exc))
-    return False
+            records = json.loads(config_path.read_text(encoding="utf-8-sig"))
+            if isinstance(records, list):
+                for record in records:
+                    if not isinstance(record, dict):
+                        continue
+                    if str(record.get("sourceId","")).lower() in ("cloud","remote","desktop"):
+                        continue
+                    location = record.get("installPath")
+                    if location:
+                        entries.append((Path(location), record.get("name","ComfyUI")))
+        except (OSError,ValueError,TypeError) as exc:
+            logline("Nao foi possivel interpretar installations.json: "+str(exc))
+    settings = config/"settings.json"
+    if settings.is_file():
+        try:
+            settings_obj = json.loads(settings.read_text(encoding="utf-8-sig"))
+            install_dir=settings_obj.get("installDir")
+            if install_dir and Path(install_dir).is_dir():
+                for child in list(Path(install_dir).iterdir())[:80]:
+                    if child.is_dir():
+                        entries.append((child, child.name))
+        except (OSError,ValueError,TypeError):
+            pass
+    locations = [
+        local/"Comfy-Desktop"/"ComfyUI-Installs",
+        Path.home()/"ComfyUI-Installs",
+        local/"Programs"/"ComfyUI",
+    ]
+    for location in locations:
+        if location.is_dir():
+            try:
+                entries.extend((p,p.name) for p in list(location.iterdir())[:80] if p.is_dir())
+            except OSError:
+                pass
+    for root,name in entries:
+        if root.name.lower()=="comfyui":
+            root=root.parent
+        if (root/"main.py").is_file():
+            root=root.parent
+        main = root/"ComfyUI"/"main.py"
+        if not main.is_file():
+            continue
+        py_candidates = (
+            root/"ComfyUI"/".venv"/"Scripts"/"python.exe",
+            root/"standalone-env"/"Scripts"/"python.exe",
+            root/"standalone-env"/"python.exe",
+            root/"envs"/"default"/"Scripts"/"python.exe",
+            root/"ComfyUI"/"venv"/"Scripts"/"python.exe"
+        )
+        exe = next((p for p in py_candidates if p.is_file()),None)
+        if not exe:
+            continue
+        key=str(root).lower()
+        if key not in seen:
+            seen.add(key)
+            found.append((root,exe,str(name)))
+    return found
+
+def active_comfy_ports():
+    ports=set()
+    try:
+        listeners=psutil.net_connections(kind="tcp")
+    except (psutil.AccessDenied,OSError):
+        return ports
+    for item in listeners:
+        try:
+            if item.status != psutil.CONN_LISTEN or not item.pid:
+                continue
+            p=psutil.Process(item.pid)
+            cmd=" ".join(p.cmdline()).lower()
+            if "main.py" in cmd and ("comfy" in cmd or "comfyui" in cmd):
+                port=item.laddr.port
+                if port and 1<=port<=65535:
+                    ports.add(port)
+        except (psutil.AccessDenied,psutil.NoSuchProcess,OSError,ValueError):
+            continue
+    return ports
+
+def start_backend(status):
+    """Inicia a instalacao Python ja existente. Nao abre a janela do Comfy Desktop."""
+    global MANAGED_BACKEND,MANAGED_PORT
+    installs=local_comfy_installs()
+    if not installs:
+        raise RuntimeError(
+            "Nao encontrei a instalacao de IA do Comfy Desktop. "
+            "Acesse 'Diagnosticar motor' e envie o arquivo DIAGNOSTICO_FRUTAVERSO.txt. "
+            "Nao reinstale os modelos."
+        )
+    root,python_exe,name=installs[0]
+    comfy_dir=root/"ComfyUI"
+    with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as sock:
+        sock.bind(("127.0.0.1",0))
+        port=sock.getsockname()[1]
+    log_path=APP_HOME/"motor_comfy.log"
+    roaming=Path(os.environ.get("APPDATA", str(Path.home()/"AppData"/"Roaming")))
+    config_path=roaming/"Comfy Desktop"/"shared_model_paths.yaml"
+    args=[str(python_exe),"-s",str(comfy_dir/"main.py"),
+          "--listen","127.0.0.1","--port",str(port),"--lowvram"]
+    if config_path.is_file():
+        args += ["--extra-model-paths-config",str(config_path)]
+    else:
+        shared = Path(os.environ.get("LOCALAPPDATA",str(Path.home()))) / "Comfy-Desktop"/"ComfyUI-Shared"
+        if (shared/"models").is_dir():
+            config_file=APP_HOME/"frutaverso_models.yaml"
+            base=str(shared).replace("\\","/")
+            config_file.write_text(
+                "frutaverso_shared:\n  base_path: '"+base.replace("'","''")+"'\n"+
+                "  diffusion_models: models/diffusion_models\n"+
+                "  text_encoders: models/text_encoders\n"+
+                "  vae: models/vae\n"+
+                "  checkpoints: models/checkpoints\n"+
+                "  loras: models/loras\n",encoding="utf-8")
+            args += ["--extra-model-paths-config",str(config_file)]
+    status("Motor Wan localizado em "+str(root)+". Iniciando em segundo plano, sem CMD...")
+    logline("Iniciando motor local na porta "+str(port)+" usando "+str(python_exe))
+    with log_path.open("ab") as fp:
+        fp.write(("\n=== Frutaverso "+VERSION+" em "+datetime.datetime.now().isoformat()+" ===\n").encode())
+        fp.flush()
+        MANAGED_BACKEND=proc(args,cwd=str(root),stdout=fp,stderr=subprocess.STDOUT)
+    MANAGED_PORT=port
+    return port
+
+def tail_backend_log():
+    path=APP_HOME/"motor_comfy.log"
+    try:
+        data=path.read_bytes()[-9000:]
+        return data.decode("utf-8","replace")[-1100:]
+    except OSError:return "Sem log de inicializacao."
 
 def get_server(status):
+    global MANAGED_BACKEND,MANAGED_PORT
     base=server()
     if base:
-        status("ComfyUI conectado automaticamente em "+base)
+        status("Motor ComfyUI conectado em "+base)
         return base
-    status("Localizando Comfy Desktop e sua instancia...")
-    found=start_comfy(status)
-    if not found:
-        raise RuntimeError("Comfy Desktop nao localizado. Clique em 'Localizar Comfy Desktop' no Frutaverso uma unica vez para selecionar o .exe instalado.")
-    # O Desktop pode demorar para iniciar a instancia de GPU.
-    for attempt in range(48):
-        base=server()
-        if base:
-            status("Motor Wan conectado em "+base)
-            return base
-        if attempt%5==0:status("Comfy Desktop encontrado. Aguardando inicializacao da instancia Wan...")
-        time.sleep(3)
+    status("Lendo a instalacao do ComfyUI registrada no Windows...")
+    try:
+        port=start_backend(status)
+    except Exception as exc:
+        logline("Falha na descoberta do backend: "+repr(exc))
+        raise
+    candidate=f"http://127.0.0.1:{port}"
+    for elapsed in range(0,121,2):
+        if MANAGED_BACKEND is not None and MANAGED_BACKEND.poll() is not None:
+            raise RuntimeError(
+                "O motor Wan iniciou mas encerrou com erro. Consulte motor_comfy.log. "
+                "Detalhe: "+tail_backend_log()
+            )
+        if _probe_comfy(port):
+            status("Motor Wan conectado. Preparando as cenas...")
+            return candidate
+        if elapsed%10==0:
+            status("Inicializando IA na sua RTX 4060, sem CMD... "+str(elapsed)+"s")
+        time.sleep(2)
     raise RuntimeError(
-      "Comfy Desktop foi encontrado, mas nenhuma instancia local respondeu. "
-      "No Comfy Desktop, acesse Desktop Settings > Preferences > Auto-launch on startup "
-      "e selecione Last used instance. Depois abra o Frutaverso novamente. "
-      "Se o Comfy ja estiver funcionando, use o botao 'Diagnosticar motor'."
+        "A instalacao de IA foi localizada, mas nao iniciou em 120 segundos. "
+        "Consulte o arquivo motor_comfy.log no diagnostico. Detalhe: "+tail_backend_log()
     )
 
 def upload_image(base,img):
@@ -665,6 +804,8 @@ class Studio(tk.Tk):
         def work():
             try:
                 paths=candidate_desktops()
+                installs=local_comfy_installs()
+                self.inform("Instalacoes IA encontradas: "+("; ".join(str(root) for root,_,_ in installs[:3]) if installs else "nenhuma"))
                 self.inform("Comfy Desktop instalado: "+("; ".join(map(str,paths[:4])) if paths else "nao localizado"))
                 base=server()
                 if base:self.inform("API local encontrada: "+base)
@@ -672,7 +813,10 @@ class Studio(tk.Tk):
                 diag=APP_HOME/"DIAGNOSTICO_FRUTAVERSO.txt"
                 diag.write_text(
                     "Frutaverso v"+VERSION+"\nComfy Desktop: "+(", ".join(map(str,paths)) if paths else "nao localizado")+
-                    "\nMotor: "+str(base)+"\nPortas pesquisadas: 8000-8250\nLog: "+str(APP_HOME/"frutaverso.log"),
+                    "\nInstalacoes IA: "+("; ".join(str(r) for r,_,_ in installs) if installs else "nenhuma")+
+                    "\nMotor: "+str(base)+"\nLog Frutaverso: "+str(APP_HOME/"frutaverso.log")+
+                    "\nLog motor Python: "+str(APP_HOME/"motor_comfy.log")+
+                    "\nTrecho ultimo log: "+tail_backend_log(),
                     encoding="utf-8")
                 self.inform("Diagnostico gravado em "+str(diag))
             except Exception as exc:self.inform("Falha no diagnostico: "+str(exc))
