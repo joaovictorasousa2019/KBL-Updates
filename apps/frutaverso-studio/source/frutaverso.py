@@ -60,8 +60,10 @@ def logline(msg):
         f.write(datetime.datetime.now().isoformat(timespec="seconds")+" "+str(msg)+"\n")
 
 def proc(argv, **kwargs):
-    return subprocess.Popen(argv, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
-                            stderr=subprocess.DEVNULL, **HIDDEN, **kwargs)
+    opts=dict(HIDDEN)
+    opts.update({"stdin":subprocess.DEVNULL,"stdout":subprocess.DEVNULL,"stderr":subprocess.DEVNULL})
+    opts.update(kwargs)
+    return subprocess.Popen(argv, **opts)
 
 def fetch_json(url, timeout=15):
     req=urllib.request.Request(url,headers={"User-Agent":"FrutaversoStudio/"+VERSION,"Accept":"application/vnd.github+json"})
