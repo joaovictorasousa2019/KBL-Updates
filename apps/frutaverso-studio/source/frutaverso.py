@@ -19,6 +19,7 @@ import urllib.parse
 import urllib.request
 import uuid
 import wave
+import zipfile
 from pathlib import Path
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
@@ -27,7 +28,7 @@ import imageio_ffmpeg
 import psutil
 import socket
 
-VERSION = "0.4.2"
+VERSION = "0.5.0"
 REPO = "joaovictorasousa2019/KBL-Updates"
 RELEASES_API = f"https://api.github.com/repos/{REPO}/releases?per_page=60"
 APP_HOME = Path(os.environ.get("LOCALAPPDATA", str(Path.home()))) / "FrutaversoStudio"
@@ -167,22 +168,103 @@ def bootstrap():
         logline("Falha na instalacao: "+str(exc))
         raise
 
+def _is_auto_placeholder(p, kind):
+    if not p.is_file():return True
+    try:
+        if p.stat().st_size < 13000:return True
+        with tempfile.TemporaryDirectory(prefix="fruta_asset_") as temp:
+            sample=Path(temp)/"sample.jpg"
+            generate_placeholder(sample,kind)
+            return hashlib.sha256(p.read_bytes()).digest()==hashlib.sha256(sample.read_bytes()).digest()
+    except (OSError,ValueError):return False
+
+def _asset_missing_or_invalid(filename):
+    kind=filename.split("_",1)[-1].split(".",1)[0]
+    return _is_auto_placeholder(ASSETS/filename, kind)
+
 def import_old_images():
-    if all((ASSETS/f"{i:02d}_{name}.jpg").exists() for i,name in [(1,"laranja"),(2,"banana"),(3,"confronto")]):return
-    home=Path.home()
-    bases=[home/"Downloads",home/"Desktop",home/"Documents",home/"OneDrive"/"Desktop"]
-    names=("Frutaverso_Studio_Automatico_v0_3","Frutaverso_Studio_Automatico_v0_2","Frutaverso_Studio_Gratis")
+    """Recupera as imagens 3D dos ZIPs que o usuario ja baixou. Nunca fabrica substitutos."""
+    filenames=("01_laranja.jpg","02_banana.jpg","03_confronto.jpg")
+    if not any(_asset_missing_or_invalid(name) for name in filenames):return
+    user=Path.home()
+    bases=[user/"Downloads",user/"Desktop",user/"Documents",user/"OneDrive"/"Desktop",
+           user/"OneDrive"/"Downloads"]
+    oldfolders=("Frutaverso_Studio_Automatico_v0_3",
+                "Frutaverso_Studio_Automatico_v0_2",
+                "Frutaverso_Studio_Gratis")
+    candidates=[]
+    archives=[]
     for base in bases:
-        if not base.exists():continue
-        candidates=[base/name for name in names]
-        candidates += [sub/name for sub in list(base.iterdir())[:50] if sub.is_dir() for name in names]
-        for folder in candidates:
-            old=folder/"assets"
-            if not old.is_dir():continue
-            for name in ("01_laranja.jpg","02_banana.jpg","03_confronto.jpg"):
-                src=old/name;dest=ASSETS/name
-                if src.exists() and not dest.exists():shutil.copy2(src,dest)
-            if (ASSETS/"01_laranja.jpg").exists():return
+        if not base.is_dir():continue
+        candidates.extend(base/name for name in oldfolders)
+        try:
+            children=list(base.iterdir())[:180]
+            for child in children:
+                if child.is_file() and child.suffix.lower()==".zip" and "frutaverso" in child.name.lower():
+                    archives.append(child)
+                elif child.is_dir():
+                    if "frutaverso" in child.name.lower():
+                        candidates.append(child)
+                    try:
+                        grandchildren=list(child.iterdir())[:80]
+                        for gc in grandchildren:
+                            if gc.is_dir() and "frutaverso" in gc.name.lower():
+                                candidates.append(gc)
+                            elif gc.is_file() and gc.suffix.lower()==".zip" and "frutaverso" in gc.name.lower():
+                                archives.append(gc)
+                    except OSError:pass
+        except OSError:pass
+
+    for folder in candidates:
+        for name in filenames:
+            if not _asset_missing_or_invalid(name):continue
+            for possible in (folder/"assets"/name,folder/name):
+                if possible.is_file() and possible.stat().st_size > 20_000:
+                    shutil.copy2(possible,ASSETS/name)
+                    logline("Imagem 3D recuperada de "+str(possible))
+                    break
+
+    for archive in archives:
+        if not any(_asset_missing_or_invalid(name) for name in filenames):break
+        try:
+            with zipfile.ZipFile(archive) as z:
+                members=z.infolist()
+                for name in filenames:
+                    if not _asset_missing_or_invalid(name):continue
+                    matches=[i for i in members
+                             if i.filename.replace("\\","/").endswith("/assets/"+name)
+                             or i.filename.replace("\\","/")=="assets/"+name]
+                    if not matches:continue
+                    info=matches[0]
+                    if info.file_size < 20_000 or info.file_size > 8_000_000:continue
+                    data=z.read(info)
+                    tmp=ASSETS/(name+".tmp")
+                    tmp.write_bytes(data)
+                    if tmp.stat().st_size>20_000:
+                        os.replace(tmp,ASSETS/name)
+                        logline("Imagem 3D recuperada do ZIP "+str(archive))
+                    else:tmp.unlink(missing_ok=True)
+        except (OSError,ValueError,zipfile.BadZipFile) as exc:
+            logline("Falha ao verificar ZIP "+str(archive)+": "+str(exc))
+    remaining=[name for name in filenames if _asset_missing_or_invalid(name)]
+    if remaining:
+        logline("Imagens 3D ausentes: "+", ".join(remaining)+". Exportacao bloqueada ate importar imagens reais.")
+
+def verify_assets(project):
+    """Impede renderizar bonecos/cartuns temporarios em vez dos personagens 3D."""
+    bad=[]
+    for scene in project.get("cenas",[]):
+        image=resolve_image(scene)
+        if image.parent==ASSETS and _asset_missing_or_invalid(image.name):
+            bad.append(scene.get("nome","Cena"))
+        if not image.exists():bad.append(scene.get("nome","Cena"))
+    if bad:
+        raise RuntimeError(
+            "Imagens 3D originais nao encontradas para: "+", ".join(bad)+
+            ". Nao vou produzir outra animacao de desenhos provisórios. "
+            "Selecione as imagens reais com 'Escolher imagem' em cada cena. "
+            "O aplicativo tambem procura automaticamente os ZIPs antigos na pasta Downloads."
+        )
 
 def generate_placeholder(path,kind):
     """Reserva de demonstracao caso o pacote antigo nao seja localizado."""
@@ -198,11 +280,11 @@ def generate_placeholder(path,kind):
     im.save(path,quality=92)
 
 def setup_data():
-    for folder in (APP_HOME,APP_DIR,DATA,ASSETS,OUTPUT,CACHE):folder.mkdir(parents=True,exist_ok=True)
+    for folder in (APP_HOME,APP_DIR,DATA,ASSETS,OUTPUT,CACHE):
+        folder.mkdir(parents=True,exist_ok=True)
     import_old_images()
-    for file,kind in (("01_laranja.jpg","laranja"),("02_banana.jpg","banana"),("03_confronto.jpg","confronto")):
-        if not (ASSETS/file).exists():generate_placeholder(ASSETS/file,kind)
-    if not PROJECT_FILE.exists():PROJECT_FILE.write_text(json.dumps(PILOT,ensure_ascii=False,indent=2),encoding="utf-8")
+    if not PROJECT_FILE.exists():
+        PROJECT_FILE.write_text(json.dumps(PILOT,ensure_ascii=False,indent=2),encoding="utf-8")
 
 def wf_template(image,prompt,frames=33):
     return {
@@ -586,26 +668,101 @@ def resolve_image(scene):
     if not path.is_file():raise FileNotFoundError("Imagem nao encontrada: "+str(path))
     return path
 
-def voice(text,out,status):
-    """SAPI do Windows, sem servicos pagos ou janelas de terminal."""
+VOICE_DIR = APP_HOME / "modelos_voz"
+VOICE_FILES = {
+ "kokoro-v1.0.onnx": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.onnx",
+ "voices-v1.0.bin": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin",
+}
+NEURAL_ENGINE = None
+NEURAL_LOCK = threading.RLock()
+VOICE_CHARACTER = {
+ "narrador":("pm_santa",0.92),
+ "banana":("pm_alex",1.04),
+ "laranja":("pm_santa",1.12),
+}
+VOICE_CHOICES = ["Automatica por personagem","Narrador — voz grave","Banana — voz provocadora","Laranja — voz firme","Feminina — Dora"]
+VOICE_CUSTOM = {
+ "Narrador — voz grave":("pm_santa",0.92),
+ "Banana — voz provocadora":("pm_alex",1.04),
+ "Laranja — voz firme":("pm_santa",1.12),
+ "Feminina — Dora":("pf_dora",1.00),
+}
+
+def _download_model(url,path,status):
+    if not url.startswith("https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/"):
+        raise RuntimeError("Endereco de download de voz nao confiavel.")
+    temp=path.with_suffix(".download")
+    h=urllib.request.Request(url,headers={"User-Agent":"FrutaversoStudio"})
+    try:
+        with urllib.request.urlopen(h,timeout=90) as response, temp.open("wb") as output:
+            total=int(response.headers.get("Content-Length","0") or 0)
+            size=0;step=-1
+            while True:
+                data=response.read(1024*1024)
+                if not data:break
+                output.write(data);size+=len(data)
+                progress=int(size*100/total) if total else size//(20*1024*1024)
+                if progress//10!=step:
+                    step=progress//10
+                    status(f"Preparando voz neural brasileira: {path.name} — "+(f"{progress}%" if total else f"{size//1048576} MB"))
+            if size < 1_000_000:raise RuntimeError("Modelo neural veio incompleto.")
+        os.replace(temp,path)
+    except Exception:
+        temp.unlink(missing_ok=True)
+        raise
+
+def neural_engine(status):
+    global NEURAL_ENGINE
+    with NEURAL_LOCK:
+        if NEURAL_ENGINE is not None:return NEURAL_ENGINE
+        VOICE_DIR.mkdir(parents=True,exist_ok=True)
+        for name,url in VOICE_FILES.items():
+            target=VOICE_DIR/name
+            if not target.is_file() or target.stat().st_size < 1_000_000:
+                status("Baixando voz neural local pela primeira vez: "+name)
+                _download_model(url,target,status)
+        try:
+            from kokoro_onnx import Kokoro
+            NEURAL_ENGINE=Kokoro(str(VOICE_DIR/"kokoro-v1.0.onnx"),
+                                 str(VOICE_DIR/"voices-v1.0.bin"))
+        except Exception as exc:
+            raise RuntimeError(
+                "O modelo de voz neural nao iniciou. Nao vou usar a voz robotica do Windows. "
+                "Detalhe: "+str(exc)
+            ) from exc
+        return NEURAL_ENGINE
+
+def voice_settings(scene):
+    chosen=scene.get("voz","Automatica por personagem")
+    if chosen in VOICE_CUSTOM:return VOICE_CUSTOM[chosen]
+    speaker=scene.get("personagem","narrador").lower().strip()
+    return VOICE_CHARACTER.get(speaker,VOICE_CHARACTER["narrador"])
+
+def voice(text,out,status,scene=None):
+    """Voz neural pt-BR no proprio computador. Sem SAPI nem mensalidades."""
     if not text.strip():return None
-    inp=out.with_suffix(".txt")
-    script=out.with_suffix(".ps1")
-    inp.write_text(text,encoding="utf-8")
-    esc=lambda x:str(x).replace("'","''")
-    ps=(r"Add-Type -AssemblyName System.Speech;" +
-        r"$v=New-Object System.Speech.Synthesis.SpeechSynthesizer;" +
-        r"$pt=$v.GetInstalledVoices()|Where-Object {$_.VoiceInfo.Culture.Name -eq 'pt-BR'}|Select-Object -First 1;" +
-        r"if($pt){$v.SelectVoice($pt.VoiceInfo.Name)};" +
-        "$v.SetOutputToWaveFile('"+esc(out)+"');" +
-        "$v.Speak([System.IO.File]::ReadAllText('"+esc(inp)+"',[System.Text.Encoding]::UTF8));" +
-        "$v.Dispose()")
-    script.write_text(ps,encoding="utf-8-sig")
-    p=subprocess.run(["powershell.exe","-NoProfile","-NonInteractive","-ExecutionPolicy","Bypass","-File",str(script)],
-                     capture_output=True,text=True,timeout=120,**HIDDEN)
-    if p.returncode or not out.exists():raise RuntimeError("Falha ao gerar voz local: "+p.stderr[-400:])
-    status("Voz local criada.")
-    return out
+    scene=scene or {"personagem":"narrador"}
+    name,speed=voice_settings(scene)
+    key=hashlib.sha256((text+"|"+name+"|"+str(speed)+"|kokoro-v1").encode("utf-8")).hexdigest()
+    cache=CACHE/("voz_"+key[:24]+".wav")
+    if cache.is_file() and cache.stat().st_size>1200:
+        shutil.copy2(cache,out)
+        return out
+    status(f"Sintetizando voz brasileira {name} (neural local)...")
+    model=neural_engine(status)
+    try:
+        import soundfile as sf
+        with NEURAL_LOCK:
+            samples,sr=model.create(text,voice=name,lang="pt-br",speed=speed)
+        sf.write(str(out),samples,sr,subtype="PCM_16")
+        if out.stat().st_size<1200:raise RuntimeError("Audio gerado muito curto.")
+        shutil.copy2(out,cache)
+        return out
+    except Exception as exc:
+        raise RuntimeError(
+            "A voz neural nao foi gerada; nao farei fallback para voz robotica. "
+            "Detalhe: "+str(exc)
+        ) from exc
 
 def length_wav(p):
     if not p:return 0
@@ -648,7 +805,7 @@ def compose(project,clips,status):
         tmp=Path(temp);pieces=[]
         for idx,scene in enumerate(project["cenas"],1):
             raw=clips[idx-1];text=scene.get("fala","")
-            wav=voice(text,tmp/f"voz{idx}.wav",status) if text else None
+            wav=voice(text,tmp/f"voz{idx}.wav",status,scene) if text else None
             duration=max(float(scene.get("duracao",6)), length_wav(wav)+.5)
             poster=tmp/f"legenda{idx}.png"
             overlay(text,scene.get("personagem","Narrador"),poster)
@@ -707,11 +864,16 @@ class Studio(tk.Tk):
         self.button(tools,"Excluir",self.remove_scene).pack(side="left",padx=5)
         self.label(right,"EDITAR CENA",color="#f4c04d",size=12,bold=True).pack(anchor="w",padx=14,pady=12)
         form=tk.Frame(right,bg="#192338");form.pack(fill="both",expand=True,padx=14)
-        self.name=tk.StringVar();self.speaker=tk.StringVar();self.duration=tk.StringVar();self.picture=tk.StringVar()
+        self.name=tk.StringVar();self.speaker=tk.StringVar();self.duration=tk.StringVar();self.picture=tk.StringVar();self.chosen_voice=tk.StringVar(value=VOICE_CHOICES[0])
         def field(label,var):
             self.label(form,label,color="#b9c6dc").pack(anchor="w",pady=(8,3))
             tk.Entry(form,textvariable=var,bg="#25354e",fg="white",insertbackground="white",bd=0).pack(fill="x",ipady=6)
         field("Nome",self.name);field("Personagem",self.speaker);field("Duracao em segundos",self.duration)
+        self.label(form,"Voz brasileira neural (Kokoro)",color="#b9c6dc").pack(anchor="w",pady=(8,3))
+        voicebar=tk.Frame(form,bg="#192338");voicebar.pack(fill="x")
+        self.voice_choice=ttk.Combobox(voicebar,textvariable=self.chosen_voice,values=VOICE_CHOICES,state="readonly")
+        self.voice_choice.pack(side="left",fill="x",expand=True)
+        self.button(voicebar,"Ouvir amostra",self.preview_voice).pack(side="right",padx=5)
         self.label(form,"Fala (voz automatica)",color="#b9c6dc").pack(anchor="w",pady=(9,2))
         self.speech=tk.Text(form,height=3,bg="#25354e",fg="white",insertbackground="white",bd=0,wrap="word");self.speech.pack(fill="x")
         self.label(form,"Movimento (prompt Wan 2.2)",color="#b9c6dc").pack(anchor="w",pady=(9,2))
@@ -756,13 +918,14 @@ class Studio(tk.Tk):
         self.listbox.selection_clear(0,"end");self.listbox.selection_set(i);self.listbox.activate(i)
         self.name.set(s.get("nome",""));self.speaker.set(s.get("personagem","Narrador"))
         self.duration.set(str(s.get("duracao",6)))
+        self.chosen_voice.set(s.get("voz",VOICE_CHOICES[0]))
         self.picture.set(s.get("imagem",""))
         self.speech.delete("1.0","end");self.speech.insert("1.0",s.get("fala",""))
         self.motion.delete("1.0","end");self.motion.insert("1.0",s.get("prompt",""))
         self.image_label.config(text=Path(self.picture.get()).name)
     def remember_scene(self):
         s=self.project["cenas"][self.index]
-        s.update(nome=self.name.get(),personagem=self.speaker.get(),
+        s.update(nome=self.name.get(),personagem=self.speaker.get(),voz=self.chosen_voice.get(),
                  fala=self.speech.get("1.0","end-1c").strip(),prompt=self.motion.get("1.0","end-1c").strip(),
                  imagem=self.picture.get())
         try:s["duracao"]=max(1,float(self.duration.get().replace(",",".")))
@@ -824,10 +987,35 @@ class Studio(tk.Tk):
             except Exception as exc:self.inform("Falha no diagnostico: "+str(exc))
         threading.Thread(target=work,daemon=True).start()
 
+    def preview_voice(self):
+        self.remember_scene()
+        scene=dict(self.project["cenas"][self.index])
+        words=scene.get("fala","").strip()
+        if not words:
+            messagebox.showinfo("Amostra de voz","Digite a fala antes de testar.")
+            return
+        def work():
+            try:
+                sample=CACHE/("amostra_"+uuid.uuid4().hex[:10]+".wav")
+                voice(words,sample,self.inform,scene)
+                if os.name=="nt":
+                    os.startfile(str(sample))
+                    self.inform("Amostra neural aberta no Reprodutor de Midia.")
+                else:self.inform("Amostra pronta em "+str(sample))
+            except Exception as exc:self.jobs.put(("fail",str(exc)))
+        threading.Thread(target=work,daemon=True).start()
+
     def generate(self):
         if self.busy:return
-        self.save();self.busy=True;self.progress.start(9)
+        self.save()
         project=json.loads(json.dumps(self.project))
+        import_old_images()
+        try:
+            verify_assets(project)
+        except Exception as exc:
+            messagebox.showerror("Imagens 3D obrigatorias",str(exc))
+            return
+        self.busy=True;self.progress.start(9)
         def worker():
             try:
                 base=get_server(self.inform)
