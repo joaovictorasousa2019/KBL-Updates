@@ -34,6 +34,10 @@ jobs:
         shell: pwsh
         run: |
           python -m py_compile apps/frutaverso-studio/source/frutaverso.py
+      - name: Impedir entrega incompleta
+        shell: pwsh
+        run: |
+          python apps/frutaverso-studio/tests/quality_gate.py
       - name: Compilar EXE sem console
         shell: pwsh
         run: |
