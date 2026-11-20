@@ -12,6 +12,8 @@ Aplicativo Windows (.exe) para gerar videos verticais com Wan 2.2 / ComfyUI loca
 
 **Requisitos:** Windows 10/11 x64, ComfyUI Desktop previamente configurado com Wan 2.2 TI2V 5B e seus modelos, placa NVIDIA (recomendacao do piloto: RTX 4060 8 GB), espaco livre, memoria RAM suficiente e acesso a internet somente para verificar/baixar atualizacoes. Nao precisa instalar Python nem abrir terminal para utilizar o EXE. FFmpeg e componentes de edicao sao incluidos pelo PyInstaller.
 
-**Voz:** usa sintese offline do Windows (SAPI). A qualidade e o idioma dependem das vozes instaladas no Windows; sincronizacao labial realista ainda nao foi implementada.
+**Voz (a partir da v0.5.0):** TTS neural Kokoro ONNX em portugues brasileiro (`pm_santa`, `pm_alex`, `pf_dora`), com seletor por personagem, opcao automatica e botao `Ouvir amostra`. A primeira amostra baixa, uma vez, modelos publicados pelo projeto kokoro-onnx para `%LOCALAPPDATA%\FrutaversoStudio\modelos_voz` (~355 MB no total). Sem SAPI ou voz robotica como fallback. Requer conexao somente nesse download. `kokoro-onnx` MIT e modelos Kokoro Apache-2.0; respeitar as licencas de dependencias redistribuidas. Sincronizacao labial realista ainda nao implementada.
 
 **Observacoes:** como o executavel nao possui assinatura digital, o SmartScreen do Windows podera exibir alerta. Os downloads so sao aceitos dos releases do proprio repositorio e sao verificados por SHA-256. Para a primeira producao, o ComfyUI deve estar instalado e com a API local funcional. O aplicativo inicia o ComfyUI se o localizar e controla as cenas pela API; nao precisa operar workflows manualmente.
+
+**Personagens 3D (v0.5.0):** o aplicativo tenta recuperar as imagens reais existentes nos ZIPs originais v0.2/v0.3 na pasta Downloads, inclusive ZIPs nao extraidos. Se faltarem imagens, a renderizacao sera interrompida e o usuario podera escolher imagens reais, em vez de receber os bonecos geometricos provisórios.
