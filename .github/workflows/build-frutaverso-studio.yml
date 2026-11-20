@@ -1,0 +1,68 @@
+name: "Frutaverso Studio - Windows EXE autoatualizavel"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/frutaverso-studio/source/**"
+      - ".github/workflows/build-frutaverso-studio.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: frutaverso-build
+  cancel-in-progress: false
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dependencias
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "pyinstaller>=6.12,<7" "Pillow>=10,<13" "imageio-ffmpeg>=0.5,<1"
+      - name: Compilar EXE sem console
+        shell: pwsh
+        run: |
+          pyinstaller --noconfirm --clean --onefile --windowed --name FrutaversoStudio --collect-all imageio_ffmpeg --collect-all PIL apps/frutaverso-studio/source/frutaverso.py
+          if (!(Test-Path "dist/FrutaversoStudio.exe")) { throw "O EXE nao foi gerado" }
+      - name: Preparar checksum e versao
+        shell: pwsh
+        run: |
+          $source = Get-Content "apps/frutaverso-studio/source/frutaverso.py" -Raw
+          $v = [regex]::Match($source, '(?m)^VERSION\s*=\s*"([0-9]+\.[0-9]+\.[0-9]+)"')
+          if (!$v.Success) { throw "VERSION nao encontrada no codigo" }
+          "FRUTA_VERSION=$($v.Groups[1].Value)" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          $hash = (Get-FileHash "dist/FrutaversoStudio.exe" -Algorithm SHA256).Hash.ToLower()
+          [IO.File]::WriteAllText((Join-Path (Get-Location) "dist/FrutaversoStudio.exe.sha256"), "$hash  FrutaversoStudio.exe")
+      - name: Publicar EXE em GitHub Release publico
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "frutaverso-v$env:FRUTA_VERSION"
+          $assets = @("dist/FrutaversoStudio.exe", "dist/FrutaversoStudio.exe.sha256")
+          gh release view $tag --repo $env:GITHUB_REPOSITORY 2>$null
+          if ($LASTEXITCODE -eq 0) {
+            gh release upload $tag $assets --clobber --repo $env:GITHUB_REPOSITORY
+          } else {
+            gh release create $tag $assets --target $env:GITHUB_SHA --repo $env:GITHUB_REPOSITORY --title "Frutaverso Studio v$env:FRUTA_VERSION" --notes "Frutaverso Studio para Windows. Um unico EXE, sem CMD, geracao Wan 2.2 local e atualizacao automatica ao iniciar. Os modelos do ComfyUI permanecem instalados no computador."
+          }
+          if ($LASTEXITCODE -ne 0) { throw "Nao foi possivel publicar o GitHub Release" }
+      - name: Salvar copia de build para diagnostico
+        uses: actions/upload-artifact@v4
+        with:
+          name: FrutaversoStudio-Windows-${{ github.run_number }}
+          path: |
+            dist/FrutaversoStudio.exe
+            dist/FrutaversoStudio.exe.sha256
+          retention-days: 14
