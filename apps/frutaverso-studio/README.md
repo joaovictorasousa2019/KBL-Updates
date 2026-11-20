@@ -1,4 +1,4 @@
-# Frutaverso Studio
+> **STATUS: PROTOTIPO — NAO APROVADO PARA PUBLICACAO NO TIKTOK.** A v0.5.0 ainda nao inclui sincronizacao labial efetiva; nao inclui tres imagens 3D originais no executavel; nao houve validacao completa de audio+imagem+video na RTX 4060 Laptop. Gerar somente para diagnostico, nao para publicacao. O CI do projeto bloqueia novas releases ate existir uma integracao de lip-sync testavel e os assets efetivamente empacotados. Uma deformacao geometrica de boca foi testada offline e rejeitada por causar distorcao visual. Nao chamar prototipo de versao final.\n\n# Frutaverso Studio
 
 Aplicativo Windows (.exe) para gerar videos verticais com Wan 2.2 / ComfyUI local, montar vozes e legendas e salvar MP4.
 
