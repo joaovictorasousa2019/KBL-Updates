@@ -1,19 +1,34 @@
-> **STATUS: PROTOTIPO — NAO APROVADO PARA PUBLICACAO NO TIKTOK.** A v0.5.0 ainda nao inclui sincronizacao labial efetiva; nao inclui tres imagens 3D originais no executavel; nao houve validacao completa de audio+imagem+video na RTX 4060 Laptop. Gerar somente para diagnostico, nao para publicacao. O CI do projeto bloqueia novas releases ate existir uma integracao de lip-sync testavel e os assets efetivamente empacotados. Uma deformacao geometrica de boca foi testada offline e rejeitada por causar distorcao visual. Nao chamar prototipo de versao final.\n\n# Frutaverso Studio
+# Frutaverso Studio — TikTok 90 segundos
 
-Aplicativo Windows (.exe) para gerar videos verticais com Wan 2.2 / ComfyUI local, montar vozes e legendas e salvar MP4.
+Aplicativo nativo Windows, EXE unico com atualizacao automatica pelo GitHub.
 
-**Download permanente:** https://github.com/joaovictorasousa2019/KBL-Updates/releases?q=frutaverso-v
+Download: https://github.com/joaovictorasousa2019/KBL-Updates/releases?q=frutaverso-v
 
-**Instalacao uma unica vez:** baixe o arquivo FrutaversoStudio.exe da versao mais recente e execute por duplo clique. O aplicativo copia a si mesmo para %LOCALAPPDATA%\FrutaversoStudio\app, cria atalho Frutaverso Studio na area de trabalho e passa a verificar novas versoes na abertura, sem CMD. Instalacao sem administrador.
+## Uso
 
-**Atualizacoes:** para publicar uma nova versao, altere a constante VERSION (por exemplo, 0.4.0 -> 0.4.1) em source/frutaverso.py e envie o commit para main. O workflow build-frutaverso-studio.yml compila no Windows e publica o EXE e o SHA256 em um release publico separado pelo prefixo frutaverso-v. No inicio, o app verifica os releases, baixa, valida a integridade SHA256, substitui o executavel instalado e reinicia. Nao modifica o catalogo dos outros aplicativos KBL.
+1. Abra Frutaverso Studio no Windows, sem CMD.
+2. Clique em IMPORTAR ZIP DE ROTEIRO + IMAGENS e escolha um pacote entregue com roteiro e arte.
+3. Clique em GERAR VIDEO TIKTOK - 90 SEGUNDOS. O app valida o roteiro e os arquivos, produz vozes Kokoro locais, envia as cenas de acao/narracao ao Wan2.2 local, anima a boca entre imagens fornecidas para os dialogos conforme o envelope de audio, adiciona legendas e monta MP4 vertical.
+4. A saida fica em %LOCALAPPDATA%\FrutaversoStudio\dados\saida.
 
-**Dados persistentes:** %LOCALAPPDATA%\FrutaversoStudio\dados\ inclui episodios, imagens, cache das animacoes e videos finais. Nenhuma atualizacao apaga esses dados. Na primeira execucao, o app tenta importar automaticamente as tres imagens da pasta extraida do Frutaverso v0.2/v0.3 nos diretorios Downloads, Desktop e Documents. Se nao encontrar, disponibiliza imagens demonstrativas e permite escolher imagens reais pela interface.
+## Especificacoes
 
-**Requisitos:** Windows 10/11 x64, ComfyUI Desktop previamente configurado com Wan 2.2 TI2V 5B e seus modelos, placa NVIDIA (recomendacao do piloto: RTX 4060 8 GB), espaco livre, memoria RAM suficiente e acesso a internet somente para verificar/baixar atualizacoes. Nao precisa instalar Python nem abrir terminal para utilizar o EXE. FFmpeg e componentes de edicao sao incluidos pelo PyInstaller.
+- Formato 1080x1920, 24 fps, H.264/AAC, 90 segundos.
+- 8 a 30 cenas, cujas duracoes somam exatamente 90 segundos.
+- Imagens JPG/PNG/WebP com dimensoes minimas e codigo de roteiro JSON.
+- Em cena falada, o pacote deve fornecer imagem de boca fechada, boca aberta e coordenadas da boca. Nao ha preenchimento manual pelo usuario; esses recursos fazem parte do pacote elaborado para o episodio.
+- Em cena narrada, o programa produz animacao curta no ComfyUI Wan2.2 e usa loop de ida e volta para cobrir a duracao.
+- Vozes Kokoro pt-BR baixadas uma unica vez (aproximadamente 355 MB) e executadas localmente.
+- Dados, cache e projetos ficam fora da pasta do executavel, preservados em atualizacoes.
 
-**Voz (a partir da v0.5.0):** TTS neural Kokoro ONNX em portugues brasileiro (`pm_santa`, `pm_alex`, `pf_dora`), com seletor por personagem, opcao automatica e botao `Ouvir amostra`. A primeira amostra baixa, uma vez, modelos publicados pelo projeto kokoro-onnx para `%LOCALAPPDATA%\FrutaversoStudio\modelos_voz` (~355 MB no total). Sem SAPI ou voz robotica como fallback. Requer conexao somente nesse download. `kokoro-onnx` MIT e modelos Kokoro Apache-2.0; respeitar as licencas de dependencias redistribuidas. Sincronizacao labial realista ainda nao implementada.
+## Qualidade e limites verificados
 
-**Observacoes:** como o executavel nao possui assinatura digital, o SmartScreen do Windows podera exibir alerta. Os downloads so sao aceitos dos releases do proprio repositorio e sao verificados por SHA-256. Para a primeira producao, o ComfyUI deve estar instalado e com a API local funcional. O aplicativo inicia o ComfyUI se o localizar e controla as cenas pela API; nao precisa operar workflows manualmente.
+O CI Windows valida sintaxe, importacao de ZIP de 90s e renderizacao curta com boca reagindo a WAV; compila e publica o EXE. A renderizacao real de 90s com Wan na GPU RTX 4060 Laptop nao pode ser testada no GitHub Actions sem a instalacao local do ComfyUI.
 
-**Personagens 3D (v0.5.0):** o aplicativo tenta recuperar as imagens reais existentes nos ZIPs originais v0.2/v0.3 na pasta Downloads, inclusive ZIPs nao extraidos. Se faltarem imagens, a renderizacao sera interrompida e o usuario podera escolher imagens reais, em vez de receber os bonecos geometricos provisórios.
+A boca acompanha a energia do audio entre duas imagens, mas NAO e sincronizacao labial fonetica neural (MuseTalk/LatentSync nao estao integrados). Sem imagem aberta/fechada o programa recusa a geracao, em vez de produzir bonecos improvisados. A qualidade final precisa ser avaliada antes da publicacao no TikTok.
+
+## Pacote
+
+Coloque um unico roteiro.json na raiz do ZIP, imagens no subdiretorio imagens/, e em cada cena declare nome, tipo, personagem, duracao, fala, imagem e prompt_movimento. Nas cenas de fala, inclua boca_aberta e regiao_boca no proprio roteiro, preparado pelo assistente. Sao aceitas cenas do tipo fala, narracao e acao.
+
+Licencas: ferramentas de voz e video sao executadas localmente; verifique as licencas de modelos e dependencias aplicaveis. O EXE nao possui assinatura digital e pode gerar alerta SmartScreen.
