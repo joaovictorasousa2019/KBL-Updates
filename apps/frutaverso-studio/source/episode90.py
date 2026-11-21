@@ -266,6 +266,36 @@ def _action_clip(project,scene,index,status):
     engine=base.get_server(status)
     return Path(base.animate(engine,shot,index,status))
 
+def _smooth_action_loop(input_path:Path, out_path:Path):
+    """Monta movimento de ida e volta sem corte brusco ao repetir o clip curto Wan."""
+    try:
+        reader=read_frames(str(input_path),pix_fmt="rgb24")
+        meta=next(reader)
+        dims=meta["size"]
+        frames=list(reader)
+        if not frames:
+            raise ProjectError("O Wan nao retornou quadros de video.")
+        if len(frames)==1:
+            order=[0]
+        else:
+            order=list(range(len(frames)))+list(range(len(frames)-2,0,-1))
+        output=write_frames(str(out_path),dims,fps=16,codec="libx264",
+            pix_fmt_in="rgb24",output_params=["-preset","veryfast","-crf","20","-pix_fmt","yuv420p"])
+        output.send(None)
+        try:
+            for pos in order:
+                output.send(frames[pos])
+            output.close()
+        except Exception:
+            try:output.close()
+            except Exception:pass
+            raise
+        if out_path.stat().st_size<5000:
+            raise ProjectError("O loop visual nao gerou MP4 valido.")
+    except Exception:
+        out_path.unlink(missing_ok=True)
+        raise
+
 def _conform(scene,visual:Path,audio:Path|None,out:Path,duration:float,index:int,work:Path):
     caption=work/f"caption_{index:02}.png"
     _subtitle_asset(scene.get("fala",""),scene.get("personagem","Narrador"),caption)
@@ -322,7 +352,7 @@ def render(project,status):
                 _render_talk(scene,wav,visual,duration,idx,status)
             else:
                 generated=_action_clip(project,scene,idx,status)
-                shutil.copy2(generated,visual)
+                _smooth_action_loop(generated,visual)
         segment=job/f"montado_{idx:02}.mp4"
         if not segment.is_file() or segment.stat().st_size<5000:
             _conform(scene,visual,wav,segment,duration,idx,job)
