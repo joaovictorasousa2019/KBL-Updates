@@ -15,7 +15,7 @@ from PIL import Image, ImageTk, ImageOps
 import frutaverso as base
 import episode90 as ep
 
-VERSION="0.6.0"
+VERSION="0.6.1"
 base.VERSION=VERSION
 STATE=base.APP_HOME/"studio90_config.json"
 PACKS=base.DATA/"pacotes"
