@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "apps/frutaverso-studio/source/**"
+      - "apps/frutaverso-studio/tests/**"
       - ".github/workflows/build-frutaverso-studio.yml"
   workflow_dispatch:
 
