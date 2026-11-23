@@ -1,0 +1,27 @@
+{
+  "schema_version": 3,
+  "app_id": "composicao-saldos",
+  "name": "KBL Composição Patrimonial",
+  "channel": "stable",
+  "version": "75",
+  "published": true,
+  "download_url": "",
+  "sha256": "80e9f121d8a268b1dd2912f977f8b7cae81d936b78dc4e32af7c07298020d1c4",
+  "file_name": "KBL_ComposicaoPatrimonial_v75_SALDO_FINAL_DOCUMENTAL.zip",
+  "published_at": "2026-11-23T20:25:51.030Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Composição documental pelo saldo final líquido, com débito ou crédito segundo a natureza contábil, sem movimentos brutos do Razão.",
+    "Saldo bancário zero gera ficha limpa, sem partidas artificiais; saldo final de R$ 1,00 gera exatamente uma partida de R$ 1,00.",
+    "Fichas automáticas antigas com suporte anexado migram para saldo final; não altera o método analítico intencional nem os títulos em aberto.",
+    "Arquivo de suporte anexado sem valor confirmado permanece pendente; divergência entre valor documental informado e Razão é evidenciada.",
+    "Layout KBL, folhas, outros documentos e integração preservados. Testes automáticos de composição e interface aprovados."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/composicao-saldos/75/KBL_ComposicaoPatrimonial_v75_SALDO_FINAL_DOCUMENTAL.zip",
+    "auth": "github-cli"
+  }
+}
