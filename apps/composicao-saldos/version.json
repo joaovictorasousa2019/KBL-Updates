@@ -3,25 +3,25 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "75",
+  "version": "76",
   "published": true,
   "download_url": "",
-  "sha256": "80e9f121d8a268b1dd2912f977f8b7cae81d936b78dc4e32af7c07298020d1c4",
-  "file_name": "KBL_ComposicaoPatrimonial_v75_SALDO_FINAL_DOCUMENTAL.zip",
-  "published_at": "2026-11-23T20:25:51.030Z",
+  "sha256": "9169afabe042d0c8e1266abee887fb73788c37b659d34201c05946ce0eadc2ca",
+  "file_name": "KBL_ComposicaoPatrimonial_v76_ANEXO_MANUAL.zip",
+  "published_at": "2026-11-24T11:25:17Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Composição documental pelo saldo final líquido, com débito ou crédito segundo a natureza contábil, sem movimentos brutos do Razão.",
-    "Saldo bancário zero gera ficha limpa, sem partidas artificiais; saldo final de R$ 1,00 gera exatamente uma partida de R$ 1,00.",
-    "Fichas automáticas antigas com suporte anexado migram para saldo final; não altera o método analítico intencional nem os títulos em aberto.",
-    "Arquivo de suporte anexado sem valor confirmado permanece pendente; divergência entre valor documental informado e Razão é evidenciada.",
-    "Layout KBL, folhas, outros documentos e integração preservados. Testes automáticos de composição e interface aprovados."
+    "Contas documentais (inclusive salários, pró-labore, rescisões, férias, 13º, encargos, bancos, tributos e imobilizado) usam exclusivamente o saldo final líquido, mesmo sem documento anexado.",
+    "Regras antigas de partidas em aberto não prevalecem sobre a natureza documental. Saldo zero não gera partidas artificiais; diferença documental permanece visível.",
+    "Busca e vinculação automática de documentos removidas dos modos mensal e anual; anexos existentes e anexação manual preservados.",
+    "Clientes, fornecedores e integração analítica KBL preservados; layout original mantido.",
+    "Testes de composição, regressão e interface mensal/anual aprovados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/75/KBL_ComposicaoPatrimonial_v75_SALDO_FINAL_DOCUMENTAL.zip",
+    "path": "packages/composicao-saldos/76/KBL_ComposicaoPatrimonial_v76_ANEXO_MANUAL.zip",
     "auth": "github-cli"
   }
 }
