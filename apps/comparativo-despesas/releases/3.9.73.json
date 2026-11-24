@@ -1,0 +1,28 @@
+{
+  "schema_version": 3,
+  "app_id": "comparativo-despesas",
+  "name": "KBL Comparativo de Despesas",
+  "channel": "stable",
+  "version": "3.9.73",
+  "published": true,
+  "download_url": "",
+  "sha256": "a767e4103914371bf323df899a673fb3e947cc491eeaca569177fbbb7049dea9",
+  "file_name": "KBL_Comparativo_Despesas_v3_9_73.zip",
+  "published_at": "2026-11-24T11:54:31Z",
+  "min_updater_version": "1.0.0",
+  "mandatory": false,
+  "notes": [
+    "Novo layout Abertura, baseado no demonstrativo New Line: Ct_1, Nome_2, Cód. Contábil, meses e justificativa; uma única aba, Arial 8 e Total Geral.",
+    "Todos os meses efetivamente importados são considerados; competência intermediária indisponível fica em branco, sem confundir ausência de dados com saldo zero.",
+    "Despesas negativas e receitas positivas, movimento mensal líquido (créditos menos débitos), sem saldo acumulado. Total Geral e variação em fórmulas.",
+    "Sem competência anterior, não calcula variação; descreve somente os lançamentos atuais comprovados e mantém justificativa manual da competência.",
+    "Mantém análise de materialidade, integração e leitores Domínio e Sankhya; não depende de tabela dinâmica ou abas auxiliares.",
+    "Regressão automatizada e testes do novo layout aprovados. Interface Windows não testada diretamente."
+  ],
+  "package": {
+    "provider": "github-private-repo",
+    "repository": "joaovictorasousa2019/KBL-Apps",
+    "path": "packages/comparativo-despesas/3.9.73/KBL_Comparativo_Despesas_v3_9_73.zip",
+    "auth": "github-cli"
+  }
+}
