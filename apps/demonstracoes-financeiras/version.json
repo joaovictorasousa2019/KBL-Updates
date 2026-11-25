@@ -3,23 +3,23 @@
   "app_id": "demonstracoes-financeiras",
   "name": "KBL Demonstrações Contábeis",
   "channel": "stable",
-  "version": "0.4.68",
+  "version": "0.4.69",
   "published": true,
   "download_url": "",
-  "sha256": "8ee3863fb404e4989d735910ae164ebc3625071b8bb9ad4667dedbd1f63a34fc",
-  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_68.zip",
-  "published_at": "2026-11-25T11:25:37.4028044Z",
+  "sha256": "1a19f03b23800079d01d55d841f0ee4ab37342131a81e3a740d70ae0ce8f08c4",
+  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_69.zip",
+  "published_at": "2026-11-25T12:05:46.6793892Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Recuo semântico padronizado nas contas de detalhe do Balanço Patrimonial e da DRE, no PDF e nas duas planilhas de saída, com ou sem comparativo.",
-    "Máscaras automáticas nos quatro campos de CPF/CNPJ das assinaturas, durante digitação e colagem, com persistência e validação de documentos incompletos.",
-    "Classificação contábil e alinhamento das assinaturas preservados. Testes de regressão e do executável aprovados."
+    "Documento do administrador emitido independentemente do CNPJ da empresa, no PDF e no Excel, inclusive quando os documentos coincidem. CPF exibido quando informado com 11 dígitos.",
+    "Botão Salvar contador para todas as empresas: razão social, CNPJ, nome, cargo, CPF/CNPJ e CRC persistidos localmente e carregados nas empresas novas e já cadastradas, sem alterar os dados dos clientes.",
+    "Recuos, máscaras de documentos, classificação contábil e alinhamento das assinaturas das versões anteriores preservados. Testes de regressão e do executável aprovados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/demonstracoes-financeiras/0.4.68/KBL_Demonstracoes_Financeiras_v0_4_68.zip",
+    "path": "packages/demonstracoes-financeiras/0.4.69/KBL_Demonstracoes_Financeiras_v0_4_69.zip",
     "auth": "github-cli"
   },
   "hub": {
@@ -27,7 +27,7 @@
     "id": "demonstracoes-financeiras",
     "app_id": "demonstracoes-financeiras",
     "name": "KBL Demonstrações Contábeis",
-    "version": "0.4.68",
+    "version": "0.4.69",
     "entry": "KBL_Demonstracoes_Financeiras.exe",
     "category": "Contábil",
     "description": "Balanço, DRE e DRA em A4 paisagem, com páginas uniformes, comparativo opcional e seleção de emissão.",
