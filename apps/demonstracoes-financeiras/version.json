@@ -3,23 +3,23 @@
   "app_id": "demonstracoes-financeiras",
   "name": "KBL Demonstrações Contábeis",
   "channel": "stable",
-  "version": "0.4.67",
+  "version": "0.4.68",
   "published": true,
   "download_url": "",
-  "sha256": "109dab675b2fda05edb8e0a5863be609e1fdc557db33f8569c7bbea8f92f97ba",
-  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_67.zip",
-  "published_at": "2026-11-24T18:23:57.6001609Z",
+  "sha256": "8ee3863fb404e4989d735910ae164ebc3625071b8bb9ad4667dedbd1f63a34fc",
+  "file_name": "KBL_Demonstracoes_Financeiras_v0_4_68.zip",
+  "published_at": "2026-11-25T11:25:37.4028044Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Classificação unificada da DRE pela natureza da conta analítica e sua hierarquia, com correção das despesas indedutíveis, tributárias e receitas financeiras.",
-    "Contas financeiras zeradas e estornos mantêm a classificação de sua natureza; resultado líquido preservado.",
-    "PDF, Excel, fórmulas e tipificações usam a mesma classificação. Alinhamento das assinaturas e geração dos três arquivos preservados. Testes de regressão aprovados."
+    "Recuo semântico padronizado nas contas de detalhe do Balanço Patrimonial e da DRE, no PDF e nas duas planilhas de saída, com ou sem comparativo.",
+    "Máscaras automáticas nos quatro campos de CPF/CNPJ das assinaturas, durante digitação e colagem, com persistência e validação de documentos incompletos.",
+    "Classificação contábil e alinhamento das assinaturas preservados. Testes de regressão e do executável aprovados."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/demonstracoes-financeiras/0.4.67/KBL_Demonstracoes_Financeiras_v0_4_67.zip",
+    "path": "packages/demonstracoes-financeiras/0.4.68/KBL_Demonstracoes_Financeiras_v0_4_68.zip",
     "auth": "github-cli"
   },
   "hub": {
@@ -27,7 +27,7 @@
     "id": "demonstracoes-financeiras",
     "app_id": "demonstracoes-financeiras",
     "name": "KBL Demonstrações Contábeis",
-    "version": "0.4.67",
+    "version": "0.4.68",
     "entry": "KBL_Demonstracoes_Financeiras.exe",
     "category": "Contábil",
     "description": "Balanço, DRE e DRA em A4 paisagem, com páginas uniformes, comparativo opcional e seleção de emissão.",
