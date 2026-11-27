@@ -3,25 +3,26 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "76",
+  "version": "77",
   "published": true,
   "download_url": "",
-  "sha256": "9169afabe042d0c8e1266abee887fb73788c37b659d34201c05946ce0eadc2ca",
-  "file_name": "KBL_ComposicaoPatrimonial_v76_ANEXO_MANUAL.zip",
-  "published_at": "2026-11-24T11:25:17Z",
+  "sha256": "d1a5f8cb7e0e145e0a4f3527c7804c0f63171c470f0dfeb539970be349af40fc",
+  "file_name": "KBL_ComposicaoPatrimonial_v77.zip",
+  "published_at": "2026-11-27T11:41:26Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Contas documentais (inclusive salários, pró-labore, rescisões, férias, 13º, encargos, bancos, tributos e imobilizado) usam exclusivamente o saldo final líquido, mesmo sem documento anexado.",
-    "Regras antigas de partidas em aberto não prevalecem sobre a natureza documental. Saldo zero não gera partidas artificiais; diferença documental permanece visível.",
-    "Busca e vinculação automática de documentos removidas dos modos mensal e anual; anexos existentes e anexação manual preservados.",
-    "Clientes, fornecedores e integração analítica KBL preservados; layout original mantido.",
-    "Testes de composição, regressão e interface mensal/anual aprovados."
+    "Documentos e valores de suporte facultativos em todas as contas. Aprovação manual permanece válida na planilha, sem exigir extrato ou anexo.",
+    "Folha de pagamento e guias por competência: baixas anteriores e descontos líquidos; competências históricas identificadas preservadas.",
+    "Adiantamentos de férias, 13º e fornecedores pelo razão; zeragem e seleção direta das partidas remanescentes.",
+    "Controle de estoque quando informado; capital social pelo saldo final e indicação de alteração contratual quando cabível.",
+    "Motor de conciliação de fornecedores e integração analítica KBL preservados. Layout original mantido.",
+    "Compilação Python e regressões contábeis, seleção, integração, exportação e preflight aprovadas no GitHub Actions."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/76/KBL_ComposicaoPatrimonial_v76_ANEXO_MANUAL.zip",
+    "path": "packages/composicao-saldos/77/KBL_ComposicaoPatrimonial_v77.zip",
     "auth": "github-cli"
   }
 }
