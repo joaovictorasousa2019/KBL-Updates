@@ -3,25 +3,25 @@
   "app_id": "composicao-saldos",
   "name": "KBL Composição Patrimonial",
   "channel": "stable",
-  "version": "79",
+  "version": "80",
   "published": true,
   "download_url": "",
-  "sha256": "e4a0febae89cec7654f6b7ef56bd8d85fe971b4b4c71f6c892e7de507329936d",
-  "file_name": "KBL_ComposicaoPatrimonial_v79.zip",
-  "published_at": "2026-11-27T17:18:00Z",
+  "sha256": "4e320e1116dc6e46bbf03acbbd2a3feec9b6b8677d7ee4787de210d38187cee5",
+  "file_name": "KBL_ComposicaoPatrimonial_v80.zip",
+  "published_at": "2026-11-27T17:22:43.804Z",
   "min_updater_version": "1.0.0",
   "mandatory": false,
   "notes": [
-    "Classificação por hierarquia do plano de contas, com prioridade sobre palavras isoladas no histórico.",
-    "Guias de impostos por competência; elimina saldos anteriores liquidados e preserva obrigações históricas ainda abertas.",
-    "Imobilizado, empréstimos, encargos, parcelamentos tributários, cotas de capital e IRRF sobre aplicações com históricos específicos e saldo líquido.",
-    "Cartão de crédito zerado sem partidas liquidadas; motor de fornecedores e integração KBL preservados.",
-    "Testes de regressão v77/v78 e v79 aprovados no GitHub Actions."
+    "Clientes: composição pelo saldo final do relatório financeiro quando informado, sem transportar movimentos brutos; integração analítica preservada.",
+    "Tributos a recuperar e compensar: saldo acumulado líquido, com histórico específico.",
+    "Fornecedores: conciliação existente preservada; saldo sem conciliação analítica suficiente identificado como a conciliar, sem aprovação automática.",
+    "Anexos facultativos e demais regras v79 preservados.",
+    "Compilação e regressões v77-v80 aprovadas no GitHub Actions."
   ],
   "package": {
     "provider": "github-private-repo",
     "repository": "joaovictorasousa2019/KBL-Apps",
-    "path": "packages/composicao-saldos/79/KBL_ComposicaoPatrimonial_v79.zip",
+    "path": "packages/composicao-saldos/80/KBL_ComposicaoPatrimonial_v80.zip",
     "auth": "github-cli"
   }
 }
